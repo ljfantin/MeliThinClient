@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MTCMeliServiceApi.h"
 
-@interface MTCMeliServiceApiImpl : NSObject
+@interface MTCMeliServiceApiImpl : NSObject<MTCServiceMeliApi>
+
++ (instancetype)sharedInstance;
 
 @end

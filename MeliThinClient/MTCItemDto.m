@@ -10,4 +10,13 @@
 
 @implementation MTCItemDto
 
++(instancetype) initWithTitle:(NSString *) tittle price:(NSString*) price thumbnail:(UIImage*) image
+{
+    MTCItemDto * item = [[[MTCItemDto alloc] init] autorelease];
+    item.tittle = tittle;
+    item.price = price;
+    item.thumbnail = image;
+    return item;
+}
+
 @end

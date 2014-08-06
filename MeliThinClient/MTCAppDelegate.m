@@ -7,15 +7,33 @@
 //
 
 #import "MTCAppDelegate.h"
+#import "MTCSearchViewController.h"
 
 @implementation MTCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
+    //Creo el MainviewController
+    MTCSearchViewController * mainViewController = [[MTCSearchViewController alloc] initWithNibName:nil bundle:nil];
+    
+    //Creo un navigationcontrolles con el MainController
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    
+    //le seteo el navigation controller
+    [self.window setRootViewController:navigationController];
+    
+    [mainViewController release];
+    //[navigationController release];
+    
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    return YES;
+    
+    
     return YES;
 }
 

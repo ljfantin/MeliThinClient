@@ -7,6 +7,10 @@
 //
 
 #import "MTCAbtractListItemTableViewViewController.h"
+#import "MTCItemDto.h"
+#import "MTCMeliServiceApiImpl.h"
+#import "MTCPagerList.h"
+
 
 @interface MTCAbtractListItemTableViewViewController ()
 
@@ -19,6 +23,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _pager = [[MTCPagerList alloc] init];
     }
     return self;
 }
@@ -35,15 +40,46 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+#pragma mark - Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return 1;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.values count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellDetail"];
+    if (cell == nil)
+    {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cellDetail"] autorelease];
+        
+        MTCItemDto * item = [self.values objectAtIndex:indexPath.row];
+        
+        cell.textLabel.text = item.tittle;
+        cell.detailTextLabel.text = item.price;
+        cell.imageView.image = item.thumbnail;
+        
+    }
+    return cell;
+}
+
+/*- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+ 
+ return 100;
+ 
+ }*/
+
+/*- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return self.footer;
+}*/
+
+/*- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return self.header;
+}*/
 
 @end

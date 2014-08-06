@@ -7,6 +7,8 @@
 //
 
 #import "MTCSearchViewController.h"
+#import "MTCItemsSearchResultsViewController.h"
+
 
 @interface MTCSearchViewController ()
 
@@ -18,6 +20,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.title = @"Mercadolibre";
         // Custom initialization
     }
     return self;
@@ -35,4 +38,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)searchItems:(id)sender {
+    MTCItemsSearchResultsViewController * nextController = [[MTCItemsSearchResultsViewController alloc] init];
+    NSArray * values = [[MTCMeliServiceApiImpl sharedInstance] search:nil];
+    [nextController setValues:values];
+    nextController.pager.countPages = 10;
+    nextController.pager.numberPage = 1;
+    
+    //pusheo el controller
+    [self.navigationController pushViewController:nextController animated:YES];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return @"Resultados";
+}
 @end

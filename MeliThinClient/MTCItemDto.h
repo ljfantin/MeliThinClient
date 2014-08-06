@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface MTCItemDto : NSObject
+@property (nonatomic,retain) NSString * tittle;
+@property (nonatomic,retain) NSString * price;
+@property (nonatomic,retain) UIImage * thumbnail;
+
++(instancetype) initWithTitle:(NSString *) tittle price:(NSString*) price thumbnail:(UIImage*) image;
 
 @end

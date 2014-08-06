@@ -10,4 +10,6 @@
 
 @protocol MTCServiceMeliApi <NSObject>
 
+-(NSArray*)search:(NSDictionary*)params;
+
 @end

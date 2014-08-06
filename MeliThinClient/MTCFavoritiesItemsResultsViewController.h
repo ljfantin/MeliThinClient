@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MTCAbtractListItemTableViewViewController.h"
 
-@interface MTCFavoritiesItemsResultsViewController : UIViewController
+@interface MTCFavoritiesItemsResultsViewController : MTCAbtractListItemTableViewViewController
 
 @end

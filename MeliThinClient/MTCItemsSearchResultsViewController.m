@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "MTCSearchResultsViewController.h"
+#import "MTCItemsSearchResultsViewController.h"
 
-@interface MTCSearchResultsViewController ()
+@interface MTCItemsSearchResultsViewController ()
 
 @end
 
-@implementation MTCSearchResultsViewController
+@implementation MTCItemsSearchResultsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,5 +34,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
+
 
 @end

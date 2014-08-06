@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MTCAbtractListItemTableViewViewController.h"
 
-@interface MTCSearchResultsViewController : UIViewController
+
+@interface MTCItemsSearchResultsViewController : MTCAbtractListItemTableViewViewController
 
 @end

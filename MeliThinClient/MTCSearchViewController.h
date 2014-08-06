@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MTCSearchViewController : UIViewController
+- (IBAction)searchItems:(id)sender;
 
 @end

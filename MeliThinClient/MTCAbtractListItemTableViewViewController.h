@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MTCPagerList.h"
+#import "MTCMeliServiceApiImpl.h"
 
-@interface MTCAbtractListItemTableViewViewController : UIViewController
+@interface MTCAbtractListItemTableViewViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+
+@property (nonatomic,retain) MTCPagerList * pager;
+@property (nonatomic,retain) NSArray * values;
 
 @end
