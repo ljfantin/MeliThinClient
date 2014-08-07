@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MTCPagerList.h"
-#import "MTCMeliServiceApiImpl.h"
+#import "MTCMeliServiceApiMockImpl.h"
 
 @interface MTCAbtractListItemTableViewViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 

@@ -8,7 +8,7 @@
 
 #import "MTCAbtractListItemTableViewViewController.h"
 #import "MTCItemDto.h"
-#import "MTCMeliServiceApiImpl.h"
+#import "MTCMeliServiceApiMockImpl.h"
 #import "MTCPagerList.h"
 
 

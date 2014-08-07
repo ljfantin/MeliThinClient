@@ -10,6 +10,8 @@
 
 @protocol MTCServiceMeliApi <NSObject>
 
--(NSArray*)search:(NSDictionary*)params;
++ (instancetype)sharedInstance;
+
+-(NSArray*)search:(NSString*)query;
 
 @end

@@ -19,4 +19,12 @@
     return item;
 }
 
+- (void)dealloc
+{
+    [_tittle release];
+    [_price release];
+    [_thumbnail release];
+    [super dealloc];
+}
+
 @end

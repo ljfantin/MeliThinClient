@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41E6DA8DACE94463A5EB74D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A337731D19444F29D529790 /* libPods.a */; };
 		4FF2B0281992876F000BFE85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B0271992876F000BFE85 /* Foundation.framework */; };
 		4FF2B02A1992876F000BFE85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B0291992876F000BFE85 /* CoreGraphics.framework */; };
 		4FF2B02C1992876F000BFE85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B02B1992876F000BFE85 /* UIKit.framework */; };
@@ -28,9 +29,10 @@
 		4FF2B0721992A7A1000BFE85 /* MTCUIListItemResult.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B0711992A7A1000BFE85 /* MTCUIListItemResult.xib */; };
 		4FF2B0751992ADF7000BFE85 /* MTCItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0741992ADF7000BFE85 /* MTCItemDto.m */; };
 		4FF2B0781992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0771992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m */; };
-		4FF2B07D1992B32F000BFE85 /* MTCMeliServiceApiImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B07C1992B32F000BFE85 /* MTCMeliServiceApiImpl.m */; };
+		4FF2B07D1992B32F000BFE85 /* MTCMeliServiceApiMockImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B07C1992B32F000BFE85 /* MTCMeliServiceApiMockImpl.m */; };
 		4FF2B0851992BAD6000BFE85 /* MTCPagerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */; };
 		4FF2B08A1992D0D8000BFE85 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B0891992D0D8000BFE85 /* image1.jpg */; };
+		8BAD05EE1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,11 +77,17 @@
 		4FF2B0761992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCAbtractListItemTableViewViewController.h; sourceTree = "<group>"; };
 		4FF2B0771992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCAbtractListItemTableViewViewController.m; sourceTree = "<group>"; };
 		4FF2B0791992B190000BFE85 /* MTCMeliServiceApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApi.h; sourceTree = "<group>"; };
-		4FF2B07B1992B32F000BFE85 /* MTCMeliServiceApiImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiImpl.h; sourceTree = "<group>"; };
-		4FF2B07C1992B32F000BFE85 /* MTCMeliServiceApiImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceApiImpl.m; sourceTree = "<group>"; };
+		4FF2B07B1992B32F000BFE85 /* MTCMeliServiceApiMockImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiMockImpl.h; sourceTree = "<group>"; };
+		4FF2B07C1992B32F000BFE85 /* MTCMeliServiceApiMockImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceApiMockImpl.m; sourceTree = "<group>"; };
 		4FF2B0831992BAD6000BFE85 /* MTCPagerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCPagerList.h; sourceTree = "<group>"; };
 		4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCPagerList.m; sourceTree = "<group>"; };
 		4FF2B0891992D0D8000BFE85 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
+		5A337731D19444F29D529790 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BAD05E61992F99400BE28C1 /* MTCDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCDao.h; sourceTree = "<group>"; };
+		8BAD05E71992F9A700BE28C1 /* MTCDaoFileImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCDaoFileImpl.h; sourceTree = "<group>"; };
+		8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApiImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiImpl.h; sourceTree = "<group>"; };
+		8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceApiImpl.m; sourceTree = "<group>"; };
+		D7E87F6F256746BD8060E767 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,7 @@
 				4FF2B02A1992876F000BFE85 /* CoreGraphics.framework in Frameworks */,
 				4FF2B02C1992876F000BFE85 /* UIKit.framework in Frameworks */,
 				4FF2B0281992876F000BFE85 /* Foundation.framework in Frameworks */,
+				41E6DA8DACE94463A5EB74D3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +122,7 @@
 				4FF2B0461992876F000BFE85 /* MeliThinClientTests */,
 				4FF2B0261992876F000BFE85 /* Frameworks */,
 				4FF2B0251992876F000BFE85 /* Products */,
+				D7E87F6F256746BD8060E767 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +142,7 @@
 				4FF2B0291992876F000BFE85 /* CoreGraphics.framework */,
 				4FF2B02B1992876F000BFE85 /* UIKit.framework */,
 				4FF2B0401992876F000BFE85 /* XCTest.framework */,
+				5A337731D19444F29D529790 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,6 +150,7 @@
 		4FF2B02D1992876F000BFE85 /* MeliThinClient */ = {
 			isa = PBXGroup;
 			children = (
+				8BAD05E51992F96F00BE28C1 /* dao */,
 				4FF2B0881992D053000BFE85 /* images */,
 				4FF2B0871992BE1A000BFE85 /* controller */,
 				4FF2B0861992BC3F000BFE85 /* xib */,
@@ -185,10 +197,12 @@
 			isa = PBXGroup;
 			children = (
 				4FF2B0791992B190000BFE85 /* MTCMeliServiceApi.h */,
-				4FF2B07B1992B32F000BFE85 /* MTCMeliServiceApiImpl.h */,
-				4FF2B07C1992B32F000BFE85 /* MTCMeliServiceApiImpl.m */,
+				4FF2B07B1992B32F000BFE85 /* MTCMeliServiceApiMockImpl.h */,
+				4FF2B07C1992B32F000BFE85 /* MTCMeliServiceApiMockImpl.m */,
 				4FF2B0731992ADF7000BFE85 /* MTCItemDto.h */,
 				4FF2B0741992ADF7000BFE85 /* MTCItemDto.m */,
+				8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApiImpl.h */,
+				8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -236,6 +250,15 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		8BAD05E51992F96F00BE28C1 /* dao */ = {
+			isa = PBXGroup;
+			children = (
+				8BAD05E61992F99400BE28C1 /* MTCDao.h */,
+				8BAD05E71992F9A700BE28C1 /* MTCDaoFileImpl.h */,
+			);
+			name = dao;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,9 +266,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FF2B0501992876F000BFE85 /* Build configuration list for PBXNativeTarget "MeliThinClient" */;
 			buildPhases = (
+				C5EF53BCFC1D42358CBCC89C /* Check Pods Manifest.lock */,
 				4FF2B0201992876F000BFE85 /* Sources */,
 				4FF2B0211992876F000BFE85 /* Frameworks */,
 				4FF2B0221992876F000BFE85 /* Resources */,
+				4908FFE5F34C43C1880AA73E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,13 +357,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4908FFE5F34C43C1880AA73E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5EF53BCFC1D42358CBCC89C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4FF2B0201992876F000BFE85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BAD05EE1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m in Sources */,
 				4FF2B0781992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m in Sources */,
-				4FF2B07D1992B32F000BFE85 /* MTCMeliServiceApiImpl.m in Sources */,
+				4FF2B07D1992B32F000BFE85 /* MTCMeliServiceApiMockImpl.m in Sources */,
 				4FF2B0341992876F000BFE85 /* main.m in Sources */,
 				4FF2B0851992BAD6000BFE85 /* MTCPagerList.m in Sources */,
 				4FF2B05B19928994000BFE85 /* MTCItemsSearchResultsViewController.m in Sources */,
@@ -461,6 +520,7 @@
 		};
 		4FF2B0511992876F000BFE85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7E87F6F256746BD8060E767 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -475,6 +535,7 @@
 		};
 		4FF2B0521992876F000BFE85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7E87F6F256746BD8060E767 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -546,6 +607,7 @@
 				4FF2B0521992876F000BFE85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FF2B0531992876F000BFE85 /* Build configuration list for PBXNativeTarget "MeliThinClientTests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +616,7 @@
 				4FF2B0551992876F000BFE85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

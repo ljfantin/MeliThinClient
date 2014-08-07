@@ -8,6 +8,7 @@
 
 #import "MTCSearchViewController.h"
 #import "MTCItemsSearchResultsViewController.h"
+#import "MTCMeliServiceApiImpl.h"
 
 
 @interface MTCSearchViewController ()
@@ -40,7 +41,7 @@
 
 - (IBAction)searchItems:(id)sender {
     MTCItemsSearchResultsViewController * nextController = [[MTCItemsSearchResultsViewController alloc] init];
-    NSArray * values = [[MTCMeliServiceApiImpl sharedInstance] search:nil];
+    NSArray * values = [[MTCMeliServiceApiImpl sharedInstance] search:@"sarasa"];
     [nextController setValues:values];
     nextController.pager.countPages = 10;
     nextController.pager.numberPage = 1;

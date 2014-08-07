@@ -7,7 +7,8 @@
 //
 
 #import "MTCMeliServiceApiImpl.h"
-#import "MTCItemDto.h"
+#import "AFHTTPRequestOperationManager.h"
+
 
 @implementation MTCMeliServiceApiImpl
 
@@ -24,32 +25,58 @@
     return instance;
 }
 
--(NSArray*)search:(NSDictionary*)params {
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _url = @"https://api.mercadolibre.com/sites/MLA/search";
+    }
+    return self;
+}
 
-    NSMutableArray * results = [[NSMutableArray alloc] init];
-    UIImage * image = [UIImage imageNamed:@"image1.jpg"];
+//TODO Ver si puedo hacer un metodo generico que haga un GET y desde este llamarlo
+-(NSArray*)search:(NSString*)query {
     
-    [results addObject:[MTCItemDto initWithTitle:@"titulo 1" price:@"100" thumbnail:image]];
+    /*AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary * params = @{@"q":query};
     
-    [results addObject:[MTCItemDto initWithTitle:@"titulo 2" price:@"100" thumbnail:image]];
     
-    [results addObject:[MTCItemDto initWithTitle:@"titulo 3" price:@"100" thumbnail:image]];
+    NSMutableURLRequest * request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:self.url parameters:params error:nil];
+
+    [manager GET:self.url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Json Respuesta Meli: %@", responseObject);
+        [self parseResults:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    return nil;*/
     
-    [results addObject:[MTCItemDto initWithTitle:@"titulo 4" price:@"100" thumbnail:image]];
+    //NSURL *URL = [NSURL URLWithString:self.url];
+    //NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
-    [results addObject:[MTCItemDto initWithTitle:@"titulo 5" price:@"100" thumbnail:image]];
-    
-    [results addObject:[MTCItemDto initWithTitle:@"titulo 6" price:@"100" thumbnail:image]];
-    
-    [results addObject:[MTCItemDto initWithTitle:@"titulo 7" price:@"100" thumbnail:image]];
-    
-    [results addObject:[MTCItemDto initWithTitle:@"titulo 8" price:@"100" thumbnail:image]];
-    
-    [results addObject:[MTCItemDto initWithTitle:@"titulo 9" price:@"100" thumbnail:image]];
-    
-     [results addObject:[MTCItemDto initWithTitle:@"titulo 10" price:@"100" thumbnail:image]];
-    
+    NSDictionary * params = @{@"q":query};
+    NSMutableURLRequest * request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:self.url parameters:params error:nil];
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    [[NSOperationQueue mainQueue] addOperation:op];
+    return nil;
+}
+
+-(NSArray*) parseResults:(NSDictionary*)json
+{
+    NSArray * results = json[@"results"];
+    NSLog(results);
     return results;
 }
 
+- (void)dealloc
+{
+    [_url release];
+    [super dealloc];
+}
 @end

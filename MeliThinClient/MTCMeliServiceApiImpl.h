@@ -11,6 +11,6 @@
 
 @interface MTCMeliServiceApiImpl : NSObject<MTCServiceMeliApi>
 
-+ (instancetype)sharedInstance;
+@property (nonatomic, retain) NSString * url;
 
 @end
