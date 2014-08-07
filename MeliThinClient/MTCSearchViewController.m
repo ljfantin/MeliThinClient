@@ -41,11 +41,7 @@
 
 - (IBAction)searchItems:(id)sender {
     MTCItemsSearchResultsViewController * nextController = [[MTCItemsSearchResultsViewController alloc] init];
-    NSArray * values = [[MTCMeliServiceApiImpl sharedInstance] search:@"sarasa"];
-    [nextController setValues:values];
-    nextController.pager.countPages = 10;
-    nextController.pager.numberPage = 1;
-    
+    nextController.searchQuery = @"sarasa";
     //pusheo el controller
     [self.navigationController pushViewController:nextController animated:YES];
 }
@@ -53,4 +49,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return @"Resultados";
 }
+
+
+
 @end

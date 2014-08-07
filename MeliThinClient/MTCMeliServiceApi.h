@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MTCServiceApiDelegate.h"
 
-@protocol MTCServiceMeliApi <NSObject>
+@protocol MTCMeliServiceApi <NSObject>
 
-+ (instancetype)sharedInstance;
+-(void)search:(NSString*)query;
 
--(NSArray*)search:(NSString*)query;
+- (void) setDelegate:(id<MTCServiceApiDelegate>)delegate;
+
+- (id<MTCServiceApiDelegate>) getDelegate;
 
 @end

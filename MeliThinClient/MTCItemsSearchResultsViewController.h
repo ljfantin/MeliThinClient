@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MTCAbtractListItemTableViewViewController.h"
+#import "MTCServiceApiDelegate.h"
+#import "MTCMeliServiceApi.h"
 
 
-@interface MTCItemsSearchResultsViewController : MTCAbtractListItemTableViewViewController
+@interface MTCItemsSearchResultsViewController : MTCAbtractListItemTableViewViewController<MTCServiceApiDelegate>
+
+@property (nonatomic, retain) NSString * searchQuery;
+@property (nonatomic, retain) id<MTCMeliServiceApi> service;
 
 @end

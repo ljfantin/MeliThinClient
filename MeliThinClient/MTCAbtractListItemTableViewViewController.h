@@ -14,5 +14,7 @@
 
 @property (nonatomic,retain) MTCPagerList * pager;
 @property (nonatomic,retain) NSArray * values;
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end

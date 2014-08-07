@@ -10,7 +10,9 @@
 #import "MTCItemDto.h"
 #import "MTCMeliServiceApiMockImpl.h"
 #import "MTCPagerList.h"
+#import "MTCUIListItemResultTableViewCell.h"
 
+#define NUMBER_OF_SECCCIONS 1;
 
 @interface MTCAbtractListItemTableViewViewController ()
 
@@ -31,6 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.tableFooterView = [UIView new];
+
+    //http://stackoverflow.com/questions/7212859/how-to-set-an-uiactivityindicatorview-when-loading-a-uitableviewcell
     // Do any additional setup after loading the view.
 }
 
@@ -43,28 +48,34 @@
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return NUMBER_OF_SECCCIONS;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.values count];
+   return [self.values count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellDetail"];
+    MTCUIListItemResultTableViewCell *cell = (MTCUIListItemResultTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"cellItemFromSearch"];
+    
     if (cell == nil)
     {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cellDetail"] autorelease];
-        
-        MTCItemDto * item = [self.values objectAtIndex:indexPath.row];
-        
-        cell.textLabel.text = item.tittle;
-        cell.detailTextLabel.text = item.price;
-        cell.imageView.image = item.thumbnail;
-        
+        UINib * nib = [UINib nibWithNibName:@"MTCUIListItemResultTableViewCell" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:@"cellItemFromSearch"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"cellItemFromSearch"];
     }
+    
+    MTCItemDto * item = [self.values objectAtIndex:indexPath.row];
+   // cell.textLabel.text = item.tittle;
+    
+    //SE PODRIA FORMATEAR EL NUMERO POR LOCALE
+    cell.title.text = item.tittle;
+    cell.subtitle.text = item.subtitle;
+    cell.price.text = [item.price stringValue];
+    cell.thumbnail.image = item.thumbnail;
+    
     return cell;
 }
 
@@ -82,4 +93,15 @@
     return self.header;
 }*/
 
+/*
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}*/
+
+
+- (void)dealloc {
+    [_tableView release];
+    [super dealloc];
+}
 @end

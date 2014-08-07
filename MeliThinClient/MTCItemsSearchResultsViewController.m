@@ -7,6 +7,7 @@
 //
 
 #import "MTCItemsSearchResultsViewController.h"
+#import "MTCMeliServiceApiImpl.h"
 
 @interface MTCItemsSearchResultsViewController ()
 
@@ -18,7 +19,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.service = [[[MTCMeliServiceApiImpl alloc] init] autorelease];
+        [self.service setDelegate:self];
     }
     return self;
 }
@@ -27,6 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.service search:self.searchQuery];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,7 +38,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void) onPostExecute:(NSArray *) data;
+{
+    [self setValues:data];
+    self.pager.countPages = 10;
+    self.pager.numberPage = 1;
+    [self.tableView reloadData];
+}
 
 
 

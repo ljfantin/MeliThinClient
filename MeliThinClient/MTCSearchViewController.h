@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MTCServiceApiDelegate.h"
 
 @interface MTCSearchViewController : UIViewController
 - (IBAction)searchItems:(id)sender;
-
 @end

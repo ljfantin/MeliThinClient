@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		41E6DA8DACE94463A5EB74D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A337731D19444F29D529790 /* libPods.a */; };
+		4FE6006B1993B58100AF3DFE /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6006A1993B58100AF3DFE /* UIImage+Utils.m */; };
+		4FE6007319940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6007119940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m */; };
+		4FE6007419940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */; };
 		4FF2B0281992876F000BFE85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B0271992876F000BFE85 /* Foundation.framework */; };
 		4FF2B02A1992876F000BFE85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B0291992876F000BFE85 /* CoreGraphics.framework */; };
 		4FF2B02C1992876F000BFE85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B02B1992876F000BFE85 /* UIKit.framework */; };
@@ -26,7 +29,6 @@
 		4FF2B06119928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B05F19928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.xib */; };
 		4FF2B06A1992A341000BFE85 /* MTCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0681992A341000BFE85 /* MTCSearchViewController.m */; };
 		4FF2B06B1992A341000BFE85 /* MTCSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */; };
-		4FF2B0721992A7A1000BFE85 /* MTCUIListItemResult.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B0711992A7A1000BFE85 /* MTCUIListItemResult.xib */; };
 		4FF2B0751992ADF7000BFE85 /* MTCItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0741992ADF7000BFE85 /* MTCItemDto.m */; };
 		4FF2B0781992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0771992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m */; };
 		4FF2B07D1992B32F000BFE85 /* MTCMeliServiceApiMockImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B07C1992B32F000BFE85 /* MTCMeliServiceApiMockImpl.m */; };
@@ -46,6 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4FE600691993B58100AF3DFE /* UIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
+		4FE6006A1993B58100AF3DFE /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
+		4FE6006C1993CC1500AF3DFE /* MTCServiceApiDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCServiceApiDelegate.h; sourceTree = "<group>"; };
+		4FE6007019940A3200AF3DFE /* MTCUIListItemResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCUIListItemResultTableViewCell.h; sourceTree = "<group>"; };
+		4FE6007119940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCUIListItemResultTableViewCell.m; sourceTree = "<group>"; };
+		4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCUIListItemResultTableViewCell.xib; sourceTree = "<group>"; };
 		4FF2B0241992876F000BFE85 /* MeliThinClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliThinClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF2B0271992876F000BFE85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FF2B0291992876F000BFE85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,7 +79,6 @@
 		4FF2B0671992A341000BFE85 /* MTCSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCSearchViewController.h; sourceTree = "<group>"; };
 		4FF2B0681992A341000BFE85 /* MTCSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCSearchViewController.m; sourceTree = "<group>"; };
 		4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCSearchViewController.xib; sourceTree = "<group>"; };
-		4FF2B0711992A7A1000BFE85 /* MTCUIListItemResult.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCUIListItemResult.xib; sourceTree = "<group>"; };
 		4FF2B0731992ADF7000BFE85 /* MTCItemDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCItemDto.h; sourceTree = "<group>"; };
 		4FF2B0741992ADF7000BFE85 /* MTCItemDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemDto.m; sourceTree = "<group>"; };
 		4FF2B0761992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCAbtractListItemTableViewViewController.h; sourceTree = "<group>"; };
@@ -115,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FE600681993B54D00AF3DFE /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				4FE600691993B58100AF3DFE /* UIImage+Utils.h */,
+				4FE6006A1993B58100AF3DFE /* UIImage+Utils.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 		4FF2B01B1992876F000BFE85 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +166,7 @@
 		4FF2B02D1992876F000BFE85 /* MeliThinClient */ = {
 			isa = PBXGroup;
 			children = (
+				4FE600681993B54D00AF3DFE /* utils */,
 				8BAD05E51992F96F00BE28C1 /* dao */,
 				4FF2B0881992D053000BFE85 /* images */,
 				4FF2B0871992BE1A000BFE85 /* controller */,
@@ -203,6 +220,7 @@
 				4FF2B0741992ADF7000BFE85 /* MTCItemDto.m */,
 				8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApiImpl.h */,
 				8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */,
+				4FE6006C1993CC1500AF3DFE /* MTCServiceApiDelegate.h */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -212,6 +230,8 @@
 			children = (
 				4FF2B0831992BAD6000BFE85 /* MTCPagerList.h */,
 				4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */,
+				4FE6007019940A3200AF3DFE /* MTCUIListItemResultTableViewCell.h */,
+				4FE6007119940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -219,10 +239,10 @@
 		4FF2B0861992BC3F000BFE85 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */,
 				4FF2B05F19928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.xib */,
 				4FF2B05A19928994000BFE85 /* MTCItemsSearchResultsViewController.xib */,
 				4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */,
-				4FF2B0711992A7A1000BFE85 /* MTCUIListItemResult.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -340,9 +360,9 @@
 				4FF2B08A1992D0D8000BFE85 /* image1.jpg in Resources */,
 				4FF2B06B1992A341000BFE85 /* MTCSearchViewController.xib in Resources */,
 				4FF2B0321992876F000BFE85 /* InfoPlist.strings in Resources */,
-				4FF2B0721992A7A1000BFE85 /* MTCUIListItemResult.xib in Resources */,
 				4FF2B03A1992876F000BFE85 /* Images.xcassets in Resources */,
 				4FF2B05C19928994000BFE85 /* MTCItemsSearchResultsViewController.xib in Resources */,
+				4FE6007419940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib in Resources */,
 				4FF2B06119928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +422,8 @@
 				4FF2B0851992BAD6000BFE85 /* MTCPagerList.m in Sources */,
 				4FF2B05B19928994000BFE85 /* MTCItemsSearchResultsViewController.m in Sources */,
 				4FF2B0381992876F000BFE85 /* MTCAppDelegate.m in Sources */,
+				4FE6006B1993B58100AF3DFE /* UIImage+Utils.m in Sources */,
+				4FE6007319940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m in Sources */,
 				4FF2B0751992ADF7000BFE85 /* MTCItemDto.m in Sources */,
 				4FF2B06A1992A341000BFE85 /* MTCSearchViewController.m in Sources */,
 				4FF2B06019928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.m in Sources */,

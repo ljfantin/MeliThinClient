@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "MTCMeliServiceApi.h"
+#import "MTCServiceApiDelegate.h"
 
-@interface MTCMeliServiceApiImpl : NSObject<MTCServiceMeliApi>
+@interface MTCMeliServiceApiImpl : NSObject<MTCMeliServiceApi>{
+
+    id<MTCServiceApiDelegate> delegate;
+}
 
 @property (nonatomic, retain) NSString * url;
+
 
 @end

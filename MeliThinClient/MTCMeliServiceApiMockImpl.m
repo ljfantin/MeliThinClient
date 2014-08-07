@@ -12,21 +12,9 @@
 @implementation MTCMeliServiceApiMockImpl
 
 
-+ (instancetype)sharedInstance {
+- (void) search:(NSString*)query  {
     
-    static dispatch_once_t onceToken;
-    static id instance;
-    
-    dispatch_once(&onceToken,^{
-        instance = [[MTCMeliServiceApiMockImpl alloc] init];
-    });
-    
-    return instance;
-}
-
--(NSArray*)search:(NSString*)query  {
-    
-    NSMutableArray * results = [[[NSMutableArray alloc] init] autorelease];
+    /*NSMutableArray * results = [[[NSMutableArray alloc] init] autorelease];
     UIImage * image = [UIImage imageNamed:@"image1.jpg"];
     
     [results addObject:[MTCItemDto initWithTitle:@"titulo 1" price:@"100" thumbnail:image]];
@@ -47,9 +35,8 @@
     
     [results addObject:[MTCItemDto initWithTitle:@"titulo 9" price:@"100" thumbnail:image]];
     
-    [results addObject:[MTCItemDto initWithTitle:@"titulo 10" price:@"100" thumbnail:image]];
+    [results addObject:[MTCItemDto initWithTitle:@"titulo 10" price:@"100" thumbnail:image]];*/
     
-    return results;
 }
 
 @end
