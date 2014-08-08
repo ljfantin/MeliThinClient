@@ -8,9 +8,9 @@
 
 #import "MTCAbtractListItemTableViewViewController.h"
 #import "MTCItemDto.h"
-#import "MTCMeliServiceApiMockImpl.h"
 #import "MTCPagerList.h"
 #import "MTCUIListItemResultTableViewCell.h"
+#import "MTCVipItemViewController.h"
 
 #define NUMBER_OF_SECCCIONS 1;
 
@@ -34,9 +34,6 @@
 {
     [super viewDidLoad];
     self.tableView.tableFooterView = [UIView new];
-
-    //http://stackoverflow.com/questions/7212859/how-to-set-an-uiactivityindicatorview-when-loading-a-uitableviewcell
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,8 +65,6 @@
     }
     
     MTCItemDto * item = [self.values objectAtIndex:indexPath.row];
-   // cell.textLabel.text = item.tittle;
-    
     //SE PODRIA FORMATEAR EL NUMERO POR LOCALE
     cell.title.text = item.tittle;
     cell.subtitle.text = item.subtitle;
@@ -79,26 +74,21 @@
     return cell;
 }
 
-/*- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
- 
- return 100;
- 
- }*/
-
-/*- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    return self.footer;
-}*/
-
-/*- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    return self.header;
-}*/
-
-/*
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return 60;
-}*/
+    return self.titleHeaderTable;
+}
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MTCItemDto * itemDto = [self.values objectAtIndex:indexPath.row];
+    //creo el controller
+    MTCVipItemViewController * nextController = [[MTCVipItemViewController alloc] init];
+    //seteo la busqueda
+    nextController.item = itemDto;
+    //pusheo el controller
+    [self.navigationController pushViewController:nextController animated:YES];
+}
 
 - (void)dealloc {
     [_tableView release];
@@ -106,10 +96,5 @@
     [super dealloc];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    
-    return self.titleHeaderTable;
-    
-}
 
 @end

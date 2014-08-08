@@ -11,10 +11,10 @@
 
 @protocol MTCMeliServiceApi <NSObject>
 
--(void)search:(NSString*)query;
+- (void)search:(NSString*)query;
+- (void)pictures:(NSString*)idItem;
 
 - (void) setDelegate:(id<MTCServiceApiDelegate>)delegate;
-
 - (id<MTCServiceApiDelegate>) getDelegate;
 
 @end

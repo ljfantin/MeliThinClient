@@ -33,14 +33,8 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)searchItems:(id)sender
-{    
     //creo el controller
     MTCItemsSearchResultsViewController * nextController = [[MTCItemsSearchResultsViewController alloc] init];
     //seteo la busqueda
@@ -48,5 +42,12 @@
     //pusheo el controller
     [self.navigationController pushViewController:nextController animated:YES];
 }
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 
 @end

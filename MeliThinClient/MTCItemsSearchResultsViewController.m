@@ -62,7 +62,8 @@
 
 - (void) onPreExecute
 {
-    [self.spinner startAnimating];
+    NSLog(@"onPreExecute");
+    //[self.spinner startAnimating];
 }
 
 @end

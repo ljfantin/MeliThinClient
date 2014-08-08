@@ -10,11 +10,14 @@
 
 @implementation MTCItemDto
 
-+(instancetype) initWithTitle:(NSString *) tittle price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(NSString*)condition thumbnail:(UIImage*) image    {
++(instancetype) initWithId:(NSString*)id title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(NSString*)condition thumbnail:(UIImage*) image{
     
     MTCItemDto * item = [[[MTCItemDto alloc] init] autorelease];
-    if (tittle!=nil && ![tittle isEqual:[NSNull null]]) {
-        item.tittle = tittle;
+    if (item!=nil && ![title isEqual:[NSNull null]]) {
+        item.id = id;
+    }
+    if (title!=nil && ![title isEqual:[NSNull null]]) {
+        item.tittle = title;
     }
     if (price!=nil && ![price isEqual:[NSNull null]]) {
         item.price = price;

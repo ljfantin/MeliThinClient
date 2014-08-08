@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MTCPagerList.h"
-#import "MTCMeliServiceApiMockImpl.h"
 
 @interface MTCAbtractListItemTableViewViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
-@property (nonatomic,retain) MTCPagerList * pager;
-@property (nonatomic,retain) NSArray * values;
+@property (retain, nonatomic) MTCPagerList * pager;
+@property (retain, nonatomic) NSArray * values;
 @property (retain, nonatomic) NSString * titleHeaderTable;
 
 @property (retain, nonatomic) IBOutlet UITableView *tableView;

@@ -13,6 +13,7 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
