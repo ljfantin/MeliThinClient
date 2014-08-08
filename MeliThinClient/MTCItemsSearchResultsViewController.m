@@ -41,10 +41,20 @@
 - (void) onPostExecute:(NSArray *) data;
 {
     [self setValues:data];
-    self.pager.countPages = 10;
+    //validador
+    self.pager.countPages = ceil((double)[data count]/self.pager.longPage);
     self.pager.numberPage = 1;
+    //header tabla
+    NSMutableString * header = [NSMutableString stringWithString:self.searchQuery];
+    NSString * cantidad = [NSString stringWithFormat:@"%d",[data count]];
+    [header appendString:@"("];
+    [header appendString:cantidad];
+    [header appendString:@")"];
+    
+    self.titleHeaderTable = header;
     [self.tableView reloadData];
 }
+
 
 
 

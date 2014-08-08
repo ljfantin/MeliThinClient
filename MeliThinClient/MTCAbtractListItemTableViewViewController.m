@@ -104,4 +104,11 @@
     [_tableView release];
     [super dealloc];
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    return self.titleHeaderTable;
+    
+}
+
 @end
