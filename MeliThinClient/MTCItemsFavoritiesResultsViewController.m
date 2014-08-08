@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "MTCFavoritiesItemsResultsViewController.h"
+#import "MTCItemsFavoritiesResultsViewController.h"
 
-@interface MTCFavoritiesItemsResultsViewController ()
+@interface MTCItemsFavoritiesResultsViewController ()
 
 @end
 
-@implementation MTCFavoritiesItemsResultsViewController
+@implementation MTCItemsFavoritiesResultsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

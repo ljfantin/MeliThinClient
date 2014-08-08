@@ -29,7 +29,7 @@
 }
 */
 
-- (void)loadGallery:(NSArray*)images
+- (void)loadImages:(NSArray*)images
 {
     for (NSUInteger i = 0; i < [images count]; i++) {
         CGRect frame;

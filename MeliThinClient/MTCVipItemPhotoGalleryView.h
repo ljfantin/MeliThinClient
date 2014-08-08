@@ -10,8 +10,9 @@
 
 @interface MTCVipItemPhotoGalleryView : UIView
 
-- (void)loadGallery:(NSArray*)images;
 @property (retain, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollGallery;
+
+- (void)loadImages:(NSArray*)images;
 
 @end

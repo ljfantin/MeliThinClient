@@ -33,8 +33,8 @@
 		4FF2B04D1992876F000BFE85 /* MeliThinClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B04C1992876F000BFE85 /* MeliThinClientTests.m */; };
 		4FF2B05B19928994000BFE85 /* MTCItemsSearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B05919928994000BFE85 /* MTCItemsSearchResultsViewController.m */; };
 		4FF2B05C19928994000BFE85 /* MTCItemsSearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B05A19928994000BFE85 /* MTCItemsSearchResultsViewController.xib */; };
-		4FF2B06019928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B05E19928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.m */; };
-		4FF2B06119928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B05F19928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.xib */; };
+		4FF2B06019928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B05E19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m */; };
+		4FF2B06119928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */; };
 		4FF2B06A1992A341000BFE85 /* MTCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0681992A341000BFE85 /* MTCSearchViewController.m */; };
 		4FF2B06B1992A341000BFE85 /* MTCSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */; };
 		4FF2B0751992ADF7000BFE85 /* MTCItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0741992ADF7000BFE85 /* MTCItemDto.m */; };
@@ -94,9 +94,9 @@
 		4FF2B05819928994000BFE85 /* MTCItemsSearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCItemsSearchResultsViewController.h; sourceTree = "<group>"; };
 		4FF2B05919928994000BFE85 /* MTCItemsSearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemsSearchResultsViewController.m; sourceTree = "<group>"; };
 		4FF2B05A19928994000BFE85 /* MTCItemsSearchResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCItemsSearchResultsViewController.xib; sourceTree = "<group>"; };
-		4FF2B05D19928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCFavoritiesItemsResultsViewController.h; sourceTree = "<group>"; };
-		4FF2B05E19928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCFavoritiesItemsResultsViewController.m; sourceTree = "<group>"; };
-		4FF2B05F19928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCFavoritiesItemsResultsViewController.xib; sourceTree = "<group>"; };
+		4FF2B05D19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCItemsFavoritiesResultsViewController.h; sourceTree = "<group>"; };
+		4FF2B05E19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemsFavoritiesResultsViewController.m; sourceTree = "<group>"; };
+		4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCItemsFavoritiesResultsViewController.xib; sourceTree = "<group>"; };
 		4FF2B0671992A341000BFE85 /* MTCSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCSearchViewController.h; sourceTree = "<group>"; };
 		4FF2B0681992A341000BFE85 /* MTCSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCSearchViewController.m; sourceTree = "<group>"; };
 		4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCSearchViewController.xib; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 				4FDF17391995189C0004DCF3 /* MTCVipItemPhotoGalleryView.xib */,
 				4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */,
 				4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */,
-				4FF2B05F19928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.xib */,
+				4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */,
 				4FF2B05A19928994000BFE85 /* MTCItemsSearchResultsViewController.xib */,
 				4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */,
 			);
@@ -304,8 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				4FF2B05819928994000BFE85 /* MTCItemsSearchResultsViewController.h */,
-				4FF2B05D19928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.h */,
-				4FF2B05E19928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.m */,
+				4FF2B05D19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.h */,
+				4FF2B05E19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m */,
 				4FF2B05919928994000BFE85 /* MTCItemsSearchResultsViewController.m */,
 				4FF2B0671992A341000BFE85 /* MTCSearchViewController.h */,
 				4FF2B0681992A341000BFE85 /* MTCSearchViewController.m */,
@@ -420,7 +420,7 @@
 				4FF2B05C19928994000BFE85 /* MTCItemsSearchResultsViewController.xib in Resources */,
 				4FE6007419940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib in Resources */,
 				4FDF1732199501D70004DCF3 /* MTCVipItemViewController.xib in Resources */,
-				4FF2B06119928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.xib in Resources */,
+				4FF2B06119928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib in Resources */,
 				4FDF173519950DB10004DCF3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +488,7 @@
 				4FE6007319940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m in Sources */,
 				4FF2B0751992ADF7000BFE85 /* MTCItemDto.m in Sources */,
 				4FF2B06A1992A341000BFE85 /* MTCSearchViewController.m in Sources */,
-				4FF2B06019928A55000BFE85 /* MTCFavoritiesItemsResultsViewController.m in Sources */,
+				4FF2B06019928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

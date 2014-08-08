@@ -8,12 +8,15 @@
 
 #import "MTCVipItemViewController.h"
 #import "MTCVipItemPhotoGalleryView.h"
+#import "MTCMeliServiceApiImpl.h"
+#import "MTCPictureDto.h"
 
 @interface MTCVipItemViewController ()
+
 @property NSMutableArray * fieldsValues;
 @property NSMutableArray * fieldsNames;
-
 @property MTCVipItemPhotoGalleryView * gallery;
+
 @end
 
 @implementation MTCVipItemViewController
@@ -25,7 +28,8 @@
         // Custom initialization
         _fieldsValues = [NSMutableArray array];
         _fieldsNames = [NSMutableArray array];
-
+        _service = [[MTCMeliServiceApiImpl alloc] init];
+        [_service setDelegate:self];
     }
     return self;
 }
@@ -58,7 +62,10 @@
         [self.fieldsValues addObject:[self.item.availableQuantity stringValue]];
     }
 
-    //_gallery = [[[NSBundle mainBundle] loadNibNamed:@"MTCVipItemPhotoGalleryView" owner:self options:nil] firstObject];
+    _gallery = [[[NSBundle mainBundle] loadNibNamed:@"MTCVipItemPhotoGalleryView" owner:self options:nil] firstObject];
+    
+    [self.service pictures:self.item.id];
+    //self.detailItemTableview.tableHeaderView = _gallery;
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,6 +78,10 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     return self.gallery;
 }
+
+/*- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 200;
+}*/
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -101,6 +112,20 @@
     CGFloat pageWidth = sender.frame.size.width;
     int page = floor((sender.contentOffset.x - pageWidth / 2 ) / pageWidth) + 1;
     self.pageControl.currentPage = page;
+}
+
+- (void) onPostExecute:(NSArray *) data
+{
+    NSMutableArray * images = [NSMutableArray array];
+    for (MTCPictureDto * pictureDto in data) {
+        [images addObject:pictureDto.image];
+    }
+    [self.gallery loadImages:images];
+}
+
+- (void) onPreExecute
+{
+    
 }
 
 - (void)dealloc
