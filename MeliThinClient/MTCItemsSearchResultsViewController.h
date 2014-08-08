@@ -16,5 +16,4 @@
 
 @property (nonatomic, retain) NSString * searchQuery;
 @property (nonatomic, retain) id<MTCMeliServiceApi> service;
-
 @end

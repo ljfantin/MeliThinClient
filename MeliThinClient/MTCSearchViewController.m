@@ -39,17 +39,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)searchItems:(id)sender {
+- (IBAction)searchItems:(id)sender
+{    
+    //creo el controller
     MTCItemsSearchResultsViewController * nextController = [[MTCItemsSearchResultsViewController alloc] init];
+    //seteo la busqueda
     nextController.searchQuery = @"sarasa";
     //pusheo el controller
     [self.navigationController pushViewController:nextController animated:YES];
 }
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return @"Resultados";
-}
-
-
 
 @end

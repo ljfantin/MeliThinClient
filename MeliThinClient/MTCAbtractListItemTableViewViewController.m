@@ -102,6 +102,7 @@
 
 - (void)dealloc {
     [_tableView release];
+    [_spinner release];
     [super dealloc];
 }
 

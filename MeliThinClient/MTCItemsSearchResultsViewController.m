@@ -38,10 +38,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark Implementacion delegate MTCServiceApiDelegate
+
 - (void) onPostExecute:(NSArray *) data;
 {
+    //stop el spinner
+    [self.spinner stopAnimating];
+    //seteo los datos
     [self setValues:data];
-    //validador
+    //paginador
     self.pager.countPages = ceil((double)[data count]/self.pager.longPage);
     self.pager.numberPage = 1;
     //header tabla
@@ -50,13 +55,14 @@
     [header appendString:@"("];
     [header appendString:cantidad];
     [header appendString:@")"];
-    
     self.titleHeaderTable = header;
+    //cargo los datos
     [self.tableView reloadData];
 }
 
-
-
-
+- (void) onPreExecute
+{
+    [self.spinner startAnimating];
+}
 
 @end

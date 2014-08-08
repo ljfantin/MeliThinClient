@@ -26,6 +26,11 @@
 //TODO Ver si puedo hacer un metodo generico que haga un GET y desde este llamarlo
 -(void) search:(NSString*)query
 {
+    /*if ([[self getDelegate] respondsToSelector:@selector(onPreExecute)]) {
+        [[self getDelegate] onPreExecute];
+    }*/
+[[self getDelegate] onPreExecute];
+    
     NSDictionary * params = @{@"q":query};
     NSMutableURLRequest * request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:self.url parameters:params error:nil];
     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
