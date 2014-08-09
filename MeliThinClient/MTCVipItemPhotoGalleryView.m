@@ -8,28 +8,15 @@
 
 #import "MTCVipItemPhotoGalleryView.h"
 
+@interface MTCVipItemPhotoGalleryView ()
+
+@end
+
+
 @implementation MTCVipItemPhotoGalleryView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
 
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
-- (void)loadImages:(NSArray*)images
+- (void)loadImages:(NSArray*)images withTitle:(NSString*)title;
 {
     for (NSUInteger i = 0; i < [images count]; i++) {
         CGRect frame;
@@ -37,6 +24,7 @@
         frame.origin.y = 0;
         frame.size = self.scrollGallery.frame.size;
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+        imageView.contentMode=UIViewContentModeScaleAspectFit;
         imageView.image = [images objectAtIndex:i];
         [self.scrollGallery addSubview:imageView];
         [imageView release];
@@ -44,12 +32,15 @@
     self.scrollGallery.contentSize = CGSizeMake(self.frame.size.width * [images count], self.scrollGallery.frame.size.height);
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = [images count];
-    self.viewBorrar.layer.zPosition =1000;
+    self.labelItemTitle.text=title;
+    [self addSubview:self.viewTitleItem];
 }
 
 - (void)dealloc {
     [_pageControl release];
     [_scrollGallery release];
+    [_viewTitleItem release];
+    [_labelItemTitle release];
     [super dealloc];
 }
 @end

@@ -120,7 +120,7 @@
     for (MTCPictureDto * pictureDto in data) {
         [images addObject:pictureDto.image];
     }
-    [self.gallery loadImages:images];
+    [self.gallery loadImages:images withTitle:self.item.tittle];
 }
 
 - (void) onPreExecute
