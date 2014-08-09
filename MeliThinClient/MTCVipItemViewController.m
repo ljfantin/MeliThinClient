@@ -47,7 +47,7 @@
     if (self.item.subtitle!=nil)    {
         
         [self.fieldsNames addObject:@"Subtitulo"];
-         [self.fieldsValues addObject:self.item.subtitle];
+        [self.fieldsValues addObject:self.item.subtitle];
     }
     
     if (self.item.price!=nil)    {
@@ -62,10 +62,13 @@
         [self.fieldsValues addObject:[self.item.availableQuantity stringValue]];
     }
 
-    _gallery = [[[NSBundle mainBundle] loadNibNamed:@"MTCVipItemPhotoGalleryView" owner:self options:nil] firstObject];
+    _gallery= [[[NSBundle mainBundle] loadNibNamed:@"MTCVipItemPhotoGalleryView" owner:self options:nil] firstObject];
+
     
     [self.service pictures:self.item.id];
-    //self.detailItemTableview.tableHeaderView = _gallery;
+    self.detailItemTableview.tableHeaderView = _gallery;
+    //TODO SACAR ESTO
+    self.detailItemTableview.tableFooterView = [UIView new];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,13 +78,10 @@
 }
 
 #pragma mark - Implementacion de UITableViewDatasource
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+/*- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     return self.gallery;
-}
-
-/*- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 200;
 }*/
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

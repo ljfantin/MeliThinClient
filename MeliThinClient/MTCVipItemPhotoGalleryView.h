@@ -10,6 +10,7 @@
 
 @interface MTCVipItemPhotoGalleryView : UIView
 
+@property (retain, nonatomic) IBOutlet UIView *viewBorrar;
 @property (retain, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollGallery;
 

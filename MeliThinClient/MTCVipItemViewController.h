@@ -13,6 +13,8 @@
 
 @interface MTCVipItemViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,MTCServiceApiDelegate>
 
+
+
 @property (retain,nonatomic) MTCItemDto * item;
 @property (retain, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (retain, nonatomic) IBOutlet UITableView *detailItemTableview;

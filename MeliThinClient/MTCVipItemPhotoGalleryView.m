@@ -44,6 +44,7 @@
     self.scrollGallery.contentSize = CGSizeMake(self.frame.size.width * [images count], self.scrollGallery.frame.size.height);
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = [images count];
+    self.viewBorrar.layer.zPosition =1000;
 }
 
 - (void)dealloc {

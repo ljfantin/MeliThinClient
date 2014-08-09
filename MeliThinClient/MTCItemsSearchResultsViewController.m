@@ -52,7 +52,7 @@
     //header tabla
     NSMutableString * header = [NSMutableString stringWithString:self.searchQuery];
     NSString * cantidad = [NSString stringWithFormat:@"%d",[data count]];
-    [header appendString:@"("];
+    [header appendString:@" ("];
     [header appendString:cantidad];
     [header appendString:@")"];
     self.titleHeaderTable = header;

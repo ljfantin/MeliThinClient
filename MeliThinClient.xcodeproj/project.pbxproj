@@ -11,7 +11,6 @@
 		4FDF1731199501D70004DCF3 /* MTCVipItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF172F199501D70004DCF3 /* MTCVipItemViewController.m */; };
 		4FDF1732199501D70004DCF3 /* MTCVipItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */; };
 		4FDF173519950DB10004DCF3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FDF173419950DB10004DCF3 /* Localizable.strings */; };
-		4FDF173A1995189C0004DCF3 /* MTCVipItemPhotoGalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDF17391995189C0004DCF3 /* MTCVipItemPhotoGalleryView.xib */; };
 		4FDF173D199519080004DCF3 /* MTCVipItemPhotoGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF173C199519080004DCF3 /* MTCVipItemPhotoGalleryView.m */; };
 		4FDFF8A019954C280012C7D4 /* MTCSearchJsonTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFF89F19954C280012C7D4 /* MTCSearchJsonTranslator.m */; };
 		4FDFF8A3199550420012C7D4 /* MTCPicturesJsonTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFF8A2199550420012C7D4 /* MTCPicturesJsonTranslator.m */; };
@@ -41,6 +40,7 @@
 		4FF2B0781992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0771992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m */; };
 		4FF2B0851992BAD6000BFE85 /* MTCPagerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */; };
 		4FF2B08A1992D0D8000BFE85 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B0891992D0D8000BFE85 /* image1.jpg */; };
+		8B9A14FA19959D3C0066221B /* MTCVipItemPhotoGalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */; };
 		8BAD05EE1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,6 @@
 		4FDF172F199501D70004DCF3 /* MTCVipItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCVipItemViewController.m; sourceTree = "<group>"; };
 		4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemViewController.xib; sourceTree = "<group>"; };
 		4FDF173419950DB10004DCF3 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		4FDF17391995189C0004DCF3 /* MTCVipItemPhotoGalleryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemPhotoGalleryView.xib; sourceTree = "<group>"; };
 		4FDF173B199519080004DCF3 /* MTCVipItemPhotoGalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCVipItemPhotoGalleryView.h; sourceTree = "<group>"; };
 		4FDF173C199519080004DCF3 /* MTCVipItemPhotoGalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCVipItemPhotoGalleryView.m; sourceTree = "<group>"; };
 		4FDFF89D19954B8B0012C7D4 /* MTCJsonTranslator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCJsonTranslator.h; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCPagerList.m; sourceTree = "<group>"; };
 		4FF2B0891992D0D8000BFE85 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
 		5A337731D19444F29D529790 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemPhotoGalleryView.xib; sourceTree = "<group>"; };
 		8BAD05E61992F99400BE28C1 /* MTCDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCDao.h; sourceTree = "<group>"; };
 		8BAD05E71992F9A700BE28C1 /* MTCDaoFileImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCDaoFileImpl.h; sourceTree = "<group>"; };
 		8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApiImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiImpl.h; sourceTree = "<group>"; };
@@ -290,12 +290,12 @@
 		4FF2B0861992BC3F000BFE85 /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				4FDF17391995189C0004DCF3 /* MTCVipItemPhotoGalleryView.xib */,
 				4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */,
 				4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */,
 				4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */,
 				4FF2B05A19928994000BFE85 /* MTCItemsSearchResultsViewController.xib */,
 				4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */,
+				8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -415,12 +415,12 @@
 				4FF2B08A1992D0D8000BFE85 /* image1.jpg in Resources */,
 				4FF2B06B1992A341000BFE85 /* MTCSearchViewController.xib in Resources */,
 				4FF2B0321992876F000BFE85 /* InfoPlist.strings in Resources */,
-				4FDF173A1995189C0004DCF3 /* MTCVipItemPhotoGalleryView.xib in Resources */,
 				4FF2B03A1992876F000BFE85 /* Images.xcassets in Resources */,
 				4FF2B05C19928994000BFE85 /* MTCItemsSearchResultsViewController.xib in Resources */,
 				4FE6007419940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib in Resources */,
 				4FDF1732199501D70004DCF3 /* MTCVipItemViewController.xib in Resources */,
 				4FF2B06119928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib in Resources */,
+				8B9A14FA19959D3C0066221B /* MTCVipItemPhotoGalleryView.xib in Resources */,
 				4FDF173519950DB10004DCF3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
