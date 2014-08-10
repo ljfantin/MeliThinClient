@@ -7,17 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MTCConditiontTypeDto.h"
+#import "MTCBuyingModeTypeDto.h"
 
 @interface MTCItemDto : NSObject
+
+
 
 @property (nonatomic,retain) NSString * id;
 @property (nonatomic,retain) NSString * tittle;
 @property (nonatomic,retain) NSNumber * price;
 @property (nonatomic,retain) NSString * subtitle;
 @property (nonatomic,retain) NSNumber * availableQuantity;
-@property (nonatomic,retain) NSString * condition;
 @property (nonatomic,retain) UIImage * thumbnail;
+@property (nonatomic,retain) MTCBuyingModeTypeDto * buyingMode;
+@property (nonatomic,retain) MTCConditiontTypeDto * condition;
 
-+(instancetype) initWithId:(NSString*)id title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(NSString*)condition thumbnail:(UIImage*) image;
+
+
+
++(instancetype) initWithId:(NSString*)id title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(MTCConditiontTypeDto*)condition buyingMode:(MTCBuyingModeTypeDto*)buyingMode thumbnail:(UIImage*) image;
 
 @end

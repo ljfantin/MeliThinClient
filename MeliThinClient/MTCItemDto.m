@@ -10,9 +10,11 @@
 
 @implementation MTCItemDto
 
-+(instancetype) initWithId:(NSString*)id title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(NSString*)condition thumbnail:(UIImage*) image{
++(instancetype) initWithId:(NSString*)id title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(MTCConditiontTypeDto*)condition buyingMode:(MTCBuyingModeTypeDto*)buyingMode thumbnail:(UIImage*) image
+{
     
     MTCItemDto * item = [[[MTCItemDto alloc] init] autorelease];
+    //TODO VER ESTO
     if (item!=nil && ![title isEqual:[NSNull null]]) {
         item.id = id;
     }
@@ -28,8 +30,11 @@
     if (quantity!=nil && ![quantity isEqual:[NSNull null]]) {
         item.availableQuantity = quantity;
     }
-    if (condition!=nil && ![condition isEqual:[NSNull null]]) {
+    if (condition!=nil) {
         item.condition = condition;
+    }
+    if (buyingMode!=nil) {
+        item.buyingMode = buyingMode;
     }
     if (image!=nil && ![image isEqual:[NSNull null]]) {
         item.thumbnail = image;

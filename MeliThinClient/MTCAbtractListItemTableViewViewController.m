@@ -67,7 +67,6 @@
     MTCItemDto * item = [self.values objectAtIndex:indexPath.row];
     //SE PODRIA FORMATEAR EL NUMERO POR LOCALE
     cell.title.text = item.tittle;
-    cell.subtitle.text = item.subtitle;
     cell.price.text = [item.price stringValue];
     cell.thumbnail.image = item.thumbnail;
     

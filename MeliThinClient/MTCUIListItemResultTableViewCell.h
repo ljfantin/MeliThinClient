@@ -12,7 +12,6 @@
 
 @property (retain, nonatomic) IBOutlet UIImageView *thumbnail;
 @property (retain, nonatomic) IBOutlet UILabel *title;
-@property (retain, nonatomic) IBOutlet UILabel *subtitle;
 @property (retain, nonatomic) IBOutlet UILabel *price;
 
 @end

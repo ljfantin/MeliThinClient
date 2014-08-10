@@ -13,7 +13,6 @@
 - (void)awakeFromNib
 {
     // Initialization code
-    [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -26,7 +25,6 @@
 - (void)dealloc {
     [_thumbnail release];
     [_title release];
-    [_subtitle release];
     [_price release];
     [super dealloc];
 }
