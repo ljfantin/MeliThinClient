@@ -14,9 +14,9 @@
 {
     self = [super init];
     if (self) {
-        _longPage = 10;
-        _countPages = 0;
-        _numberPage = 0;
+        _total = 10;
+        _offset = 0;
+        _limit = 0;
     }
     return self;
 }

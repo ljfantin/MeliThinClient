@@ -10,8 +10,8 @@
 
 @interface MTCPagerList : NSObject
 
-@property (nonatomic) NSInteger countPages;
-@property (nonatomic) NSInteger longPage;
-@property (nonatomic) NSInteger numberPage;
+@property (nonatomic) NSInteger total;
+@property (nonatomic) NSInteger offset;
+@property (nonatomic) NSInteger limit;
 
 @end

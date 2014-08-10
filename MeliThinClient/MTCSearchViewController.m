@@ -38,7 +38,7 @@
     //creo el controller
     MTCItemsSearchResultsViewController * nextController = [[MTCItemsSearchResultsViewController alloc] init];
     //seteo la busqueda
-    nextController.searchQuery = @"sarasa";
+    nextController.searchQuery = @"peugeot";
     //pusheo el controller
     [self.navigationController pushViewController:nextController animated:YES];
 }

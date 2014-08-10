@@ -12,7 +12,7 @@
 @interface MTCAbtractListItemTableViewViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @property (retain, nonatomic) MTCPagerList * pager;
-@property (retain, nonatomic) NSArray * values;
+@property (retain, nonatomic) NSMutableArray * items;
 @property (retain, nonatomic) NSString * titleHeaderTable;
 
 @property (retain, nonatomic) IBOutlet UITableView *tableView;

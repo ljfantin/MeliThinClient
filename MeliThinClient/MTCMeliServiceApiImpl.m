@@ -12,6 +12,7 @@
 #import "UIImage+Utils.h"
 #import "MTCSearchJsonTranslator.h"
 #import "MTCPicturesJsonTranslator.h"
+#import "MTCPagerList.h"
 
 
 @implementation MTCMeliServiceApiImpl
@@ -29,7 +30,7 @@
 }
 
 //TODO Ver si puedo hacer un metodo generico que haga un GET y desde este llamarlo
--(void) search:(NSString*)query
+-(void) search:(NSString*)query pager:(MTCPagerList*)pager
 {
     ////Si el delegate tiene implementado onPreExecute
     if ([[self getDelegate] respondsToSelector:@selector(onPreExecute)]) {
@@ -40,7 +41,10 @@
     NSMutableString * urlSearch = [NSMutableString stringWithString:self.url];
     [urlSearch appendString:@"sites/MLA/search"];
     //agrego parametros
-    NSDictionary * params = @{@"q":query};
+    NSString * limitValue = [@(pager.limit) stringValue];
+    NSString * offSetValue = [@(pager.offset) stringValue];
+    NSDictionary * params = @{@"q":query,@"limit":limitValue,@"offset":offSetValue};
+    
     
     NSMutableURLRequest * request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlSearch parameters:params error:nil];
     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -52,6 +56,9 @@
         NSLog(@"Respuesta json search %@: %@", query, responseObject);
         NSArray * listItems = [weakSelf.searchJsonParser parse:responseObject];
         //onPostExecute
+        NSDictionary * paging = responseObject[@"paging"];
+        pager.total = [paging[@"total"] intValue];
+        pager.offset = [paging[@"offset"] intValue];
         [[weakSelf getDelegate] onPostExecute:listItems];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

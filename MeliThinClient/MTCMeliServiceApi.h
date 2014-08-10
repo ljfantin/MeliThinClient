@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "MTCServiceApiDelegate.h"
+#import "MTCPagerList.h"
 
 @protocol MTCMeliServiceApi <NSObject>
 
-- (void)search:(NSString*)query;
+- (void)search:(NSString*)query pager:(MTCPagerList*)pager;
 - (void)pictures:(NSString*)idItem;
 
 - (void) setDelegate:(id<MTCServiceApiDelegate>)delegate;

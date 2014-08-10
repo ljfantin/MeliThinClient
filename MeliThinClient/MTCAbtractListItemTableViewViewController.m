@@ -8,7 +8,6 @@
 
 #import "MTCAbtractListItemTableViewViewController.h"
 #import "MTCItemDto.h"
-#import "MTCPagerList.h"
 #import "MTCUIListItemResultTableViewCell.h"
 #import "MTCVipItemViewController.h"
 
@@ -26,6 +25,10 @@
     if (self) {
         // Custom initialization
         _pager = [[MTCPagerList alloc] init];
+        _pager.limit = 10;
+        _pager.offset = 0;
+        _pager.total = 0;
+        _items = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -50,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-   return [self.values count];
+   return [self.items count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,7 +67,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"cellItemFromSearch"];
     }
     
-    MTCItemDto * item = [self.values objectAtIndex:indexPath.row];
+    MTCItemDto * item = [self.items objectAtIndex:indexPath.row];
     //SE PODRIA FORMATEAR EL NUMERO POR LOCALE
     cell.title.text = item.tittle;
     cell.price.text = [item.price stringValue];
@@ -80,7 +83,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MTCItemDto * itemDto = [self.values objectAtIndex:indexPath.row];
+    MTCItemDto * itemDto = [self.items objectAtIndex:indexPath.row];
     //creo el controller
     MTCVipItemViewController * nextController = [[MTCVipItemViewController alloc] init];
     //seteo la busqueda
@@ -92,6 +95,7 @@
 - (void)dealloc {
     [_tableView release];
     [_spinner release];
+    [_pager release];
     [super dealloc];
 }
 
