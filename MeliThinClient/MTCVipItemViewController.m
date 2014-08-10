@@ -23,6 +23,7 @@
 
 
 
+
 @interface MTCVipItemViewController ()
 
 @property MTCVipItemPhotoGalleryView * gallery;
@@ -71,24 +72,29 @@
 {
     return COUNT_CELLS;
 }
-/*
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+
+/*- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    /*if (![self.item.buyingMode isBuyItNow]) {
+    if (![self.item.buyingMode isBuyItNow]) {
         return self.footer;
     }
     else
     {
         return nil;
     }
-    return self.footer;
-}*/
-/*
+    //return self.footer;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
 {
-    return 300;
+    if (![self.item.buyingMode isBuyItNow]) {
+        return self.footer.frame.size.height;
+    }
+    else
+    {
+        return 0;
+    }
 }*/
-
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
