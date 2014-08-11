@@ -83,9 +83,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MTCItemSearchResultDto * itemDto = [self.items objectAtIndex:indexPath.row];
+    MTCItemSearchResultDto * itemSearchDto = [self.items objectAtIndex:indexPath.row];
     //creo el controller
     MTCVipItemViewController * nextController = [[MTCVipItemViewController alloc] init];
+    //Creo el item
+    MTCItemDto * itemDto = [[MTCItemDto alloc] init];
+    //Copio los valos que ya tengo
+    itemDto.id = itemSearchDto.id;
+    itemDto.title = itemSearchDto.tittle;
+    itemDto.subtitle = itemSearchDto.subtitle;
+    itemDto.price = itemSearchDto.price;
+    itemDto.title = itemSearchDto.tittle;
+    itemDto.title = itemSearchDto.tittle;
+    itemDto.availableQuantity = itemSearchDto.availableQuantity;
+    itemDto.buyingMode = itemSearchDto.buyingMode;
+    itemDto.condition = itemSearchDto.condition;
     //seteo la busqueda
     nextController.item = itemDto;
     //pusheo el controller

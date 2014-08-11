@@ -12,6 +12,7 @@
 #import "MTCMeliServiceApi.h"
 #import "MTCItemDto.h"
 #import "MTCItemTranslator.h"
+#import "MTCPicturesJsonTranslator.h"
 
 @interface MTCVipItemViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,MTCServiceApiDelegate>
 
@@ -22,5 +23,7 @@
 @property (retain, nonatomic) id<MTCMeliServiceApi> service;
 
 @property (retain, nonatomic) MTCItemTranslator * itemTranslator;
+@property (retain, nonatomic) MTCPicturesJsonTranslator * picturesTranslator;
+
 
 @end

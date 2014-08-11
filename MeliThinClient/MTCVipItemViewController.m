@@ -42,6 +42,8 @@
     if (self) {
         _service = [[MTCMeliServiceApiImpl alloc] init];
         [_service setDelegate:self];
+        _itemTranslator = [[MTCItemTranslator alloc]init];
+        _picturesTranslator = [[MTCPicturesJsonTranslator alloc] init];
         _cells = [[NSMutableArray alloc] init];
         _cellsCount = 0;
         
@@ -57,24 +59,24 @@
     
     _footer= [[[NSBundle mainBundle] loadNibNamed:@"MTCVipItemTableViewFooter" owner:self options:nil] firstObject];
 
-    [self.service getItem:self.item.id attributes:@["pictures","descriptions"]];
+    [self.service getItem:self.item.id attributes:@[@"pictures",@"descriptions"]];
     if (self.item.price!=nil)  {
-        self.cells[self.cellsCount] = INDEX_PRICE_FAVORITE_CELL;
+        self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_PRICE_FAVORITE_CELL];
         self.cellsCount++;
     }
     if (self.item.subtitle!=nil)  {
-        self.cells[self.cellsCount] = INDEX_SUBTITLE_CELL;
+        self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_SUBTITLE_CELL];
         self.cellsCount++;
-
     }
     if (self.item.condition!=nil)  {
-        self.cells[self.cellsCount] = INDEX_CONDITION_CELL;
+        self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_CONDITION_CELL];
         self.cellsCount++;
     }
     if (self.item.availableQuantity!=nil)  {
-        self.cells[self.cellsCount] = INDEX_AVAILABLE_CELL;
+        self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_AVAILABLE_CELL];
         self.cellsCount++;
     }
+    //TODO ver que hacemos con esto
     /*if (self.item.!=nil) {
         self.cells[self.cellsCount] = INDEX_DESCRIPCION_CELL;
         self.cellsCount++;
@@ -275,6 +277,8 @@
 
 - (void)dealloc
 {
+    [_itemTranslator release];
+    [_picturesTranslator release];
     [_gallery release];
     [_pageControl release];
     [_detailItemTableview release];
