@@ -36,26 +36,6 @@
     return dto;
 }
 
-/*- (BOOL) save:(id)object    {
-    
-    NSString *error;
-
-    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile: self.pathFile];
-    //NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:data
-      //                                                             format:NSPropertyListXMLFormat_v1_0
-        //                                                 errorDescription:&error];
-    
-    MTCItemDto * dto = (MTCItemDto *) object;
-    [data setObject:dto forKey:dto.id];
-    
-    [data writeToFile:self.pathFile atomically:YES];
-    [data release];
-    
-    //TODO Pensado para indicar si se pudo guardar
-    return YES;
-    [self save2:object];
-    return YES;
-}*/
 
 - (NSEnumerator*) findAll {
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile: self.pathFile];
@@ -110,7 +90,7 @@
         [picturesPaths addObject:picValues];
     }*/
     
-   // [item.pictures];
+    //[item.pictures];
     NSDictionary * dictionary = @{@"id":item.id,@"title":item.title,@"subtitle":item.subtitle,@"price":item.price,@"available_quantity":item.availableQuantity,@"pictures":picturesPaths};
     
     NSString *error;
