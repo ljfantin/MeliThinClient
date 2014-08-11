@@ -45,7 +45,7 @@
 		8B7510C11998119400E03739 /* MTCPagerJsonTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7510C01998119400E03739 /* MTCPagerJsonTranslator.m */; };
 		8B7510C419984D9D00E03739 /* MTCItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7510C319984D9D00E03739 /* MTCItemDto.m */; };
 		8B7510C7199853F500E03739 /* MTCItemTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7510C6199853F500E03739 /* MTCItemTranslator.m */; };
-		8B9A14FA19959D3C0066221B /* MTCPhotoGalleryVipItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9A14F919959D3C0066221B /* MTCPhotoGalleryVipItemView.xib */; };
+		8B9A14FA19959D3C0066221B /* MTCVipItemPhotoGalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */; };
 		8BAD05EE1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */; };
 		8BAE6FDF19968D8700BD9B74 /* favoriteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FDE19968D8700BD9B74 /* favoriteIcon.png */; };
 		8BAE6FE119968E0200BD9B74 /* favoriteIcon32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE019968E0200BD9B74 /* favoriteIcon32.png */; };
@@ -131,7 +131,7 @@
 		8B7510C319984D9D00E03739 /* MTCItemDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemDto.m; sourceTree = "<group>"; };
 		8B7510C5199853F500E03739 /* MTCItemTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCItemTranslator.h; sourceTree = "<group>"; };
 		8B7510C6199853F500E03739 /* MTCItemTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemTranslator.m; sourceTree = "<group>"; };
-		8B9A14F919959D3C0066221B /* MTCPhotoGalleryVipItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCPhotoGalleryVipItemView.xib; sourceTree = "<group>"; };
+		8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemPhotoGalleryView.xib; sourceTree = "<group>"; };
 		8BAD05E61992F99400BE28C1 /* MTCDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCDao.h; sourceTree = "<group>"; };
 		8BAD05E71992F9A700BE28C1 /* MTCDaoFileImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCDaoFileImpl.h; sourceTree = "<group>"; };
 		8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApiImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiImpl.h; sourceTree = "<group>"; };
@@ -349,7 +349,7 @@
 				4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */,
 				4FF2B05A19928994000BFE85 /* MTCItemsSearchResultsViewController.xib */,
 				4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */,
-				8B9A14F919959D3C0066221B /* MTCPhotoGalleryVipItemView.xib */,
+				8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */,
 				8BAE6FE71996B67300BD9B74 /* MTCVipItemTableViewFooter.xib */,
 			);
 			name = xib;
@@ -481,7 +481,7 @@
 				4FE6007419940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib in Resources */,
 				4FDF1732199501D70004DCF3 /* MTCVipItemViewController.xib in Resources */,
 				4FF2B06119928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib in Resources */,
-				8B9A14FA19959D3C0066221B /* MTCPhotoGalleryVipItemView.xib in Resources */,
+				8B9A14FA19959D3C0066221B /* MTCVipItemPhotoGalleryView.xib in Resources */,
 				4FDF173519950DB10004DCF3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

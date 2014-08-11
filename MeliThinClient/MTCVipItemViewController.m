@@ -81,7 +81,7 @@
         self.cellsCount++;
     }*/
     
-    //self.detailItemTableview.tableHeaderView = _gallery;
+    self.detailItemTableview.tableHeaderView = _gallery;
     self.detailItemTableview.tableFooterView = _footer;
 }
 
