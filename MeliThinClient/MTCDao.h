@@ -10,10 +10,10 @@
 
 @protocol MTCDao <NSObject>
 
-- (NSString*)cacheDirectoryName;
+- (id) load:(NSString*)id;
+- (BOOL) save:(id)object;
+- (NSEnumerator*) findAll;
 
-- (void)cacheImage:(UIImage *)image inLocation:(NSString *)location
-(NSString*)cacheDirectoryName;
 
 /*
 - (void) saveItemSearchResult:(MTCItemSearchResultDto*)dto;
