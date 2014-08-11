@@ -10,5 +10,4 @@
 #import "MTCPicturesJsonTranslator.h"
 
 @interface MTCItemTranslator : NSObject<MTCJsonTranslator>
-@property (nonatomic,retain) MTCPicturesJsonTranslator * picturesTranslator;
 @end

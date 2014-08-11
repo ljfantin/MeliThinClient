@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		41E6DA8DACE94463A5EB74D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A337731D19444F29D529790 /* libPods.a */; };
+		4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BBB1998F96100E64B32 /* MTCBuyingModeTranslator.m */; };
+		4F816BBF1998FA9E00E64B32 /* MTCConditionTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */; };
 		4FDF1731199501D70004DCF3 /* MTCVipItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF172F199501D70004DCF3 /* MTCVipItemViewController.m */; };
 		4FDF1732199501D70004DCF3 /* MTCVipItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */; };
 		4FDF173519950DB10004DCF3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FDF173419950DB10004DCF3 /* Localizable.strings */; };
@@ -66,6 +68,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F816BBA1998F96100E64B32 /* MTCBuyingModeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCBuyingModeTranslator.h; sourceTree = "<group>"; };
+		4F816BBB1998F96100E64B32 /* MTCBuyingModeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCBuyingModeTranslator.m; sourceTree = "<group>"; };
+		4F816BBD1998FA9E00E64B32 /* MTCConditionTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCConditionTranslator.h; sourceTree = "<group>"; };
+		4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCConditionTranslator.m; sourceTree = "<group>"; };
 		4FDF172E199501D70004DCF3 /* MTCVipItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCVipItemViewController.h; sourceTree = "<group>"; };
 		4FDF172F199501D70004DCF3 /* MTCVipItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCVipItemViewController.m; sourceTree = "<group>"; };
 		4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemViewController.xib; sourceTree = "<group>"; };
@@ -190,6 +196,10 @@
 				8B7510C01998119400E03739 /* MTCPagerJsonTranslator.m */,
 				8B7510C5199853F500E03739 /* MTCItemTranslator.h */,
 				8B7510C6199853F500E03739 /* MTCItemTranslator.m */,
+				4F816BBA1998F96100E64B32 /* MTCBuyingModeTranslator.h */,
+				4F816BBB1998F96100E64B32 /* MTCBuyingModeTranslator.m */,
+				4F816BBD1998FA9E00E64B32 /* MTCConditionTranslator.h */,
+				4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */,
 			);
 			name = translators;
 			sourceTree = "<group>";
@@ -537,12 +547,14 @@
 				4FDF173D199519080004DCF3 /* MTCVipItemPhotoGalleryView.m in Sources */,
 				8B7510C419984D9D00E03739 /* MTCItemDto.m in Sources */,
 				4FF2B05B19928994000BFE85 /* MTCItemsSearchResultsViewController.m in Sources */,
+				4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */,
 				8B7510C7199853F500E03739 /* MTCItemTranslator.m in Sources */,
 				4FF2B0381992876F000BFE85 /* MTCAppDelegate.m in Sources */,
 				8BAE6FEB1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m in Sources */,
 				4FE6006B1993B58100AF3DFE /* UIImage+Utils.m in Sources */,
 				8B7510C11998119400E03739 /* MTCPagerJsonTranslator.m in Sources */,
 				4FE6007319940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m in Sources */,
+				4F816BBF1998FA9E00E64B32 /* MTCConditionTranslator.m in Sources */,
 				4FF2B0751992ADF7000BFE85 /* MTCItemSearchResultDto.m in Sources */,
 				8BAE6FF11996C5EB00BD9B74 /* MTCConditiontTypeDto.m in Sources */,
 				4FF2B06A1992A341000BFE85 /* MTCSearchViewController.m in Sources */,

@@ -9,14 +9,28 @@
 #import "MTCSearchJsonTranslator.h"
 #import "MTCItemSearchResultDto.h"
 #import "UIImage+Utils.h"
-#import "MTCPagerJsonTranslator.h"
+#import "MTCConditionTranslator.h"
+#import "MTCBuyingModeTranslator.h"
+
 
 @interface MTCSearchJsonTranslator ()
 
-@property (retain,nonatomic) MTCPagerJsonTranslator * pagerJsonTranslator;
+@property (retain,nonatomic) MTCConditionTranslator * conditionJsonTranslator;
+@property (retain,nonatomic) MTCBuyingModeTranslator * buyingModeJsonTranslator;
+
 @end
 
 @implementation MTCSearchJsonTranslator
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _conditionJsonTranslator = [[MTCConditionTranslator alloc] init];
+        _buyingModeJsonTranslator = [[MTCBuyingModeTranslator alloc] init];
+    }
+    return self;
+}
 
 - (NSArray *) translate:(NSDictionary *)json
 {
@@ -29,10 +43,9 @@
         NSString * subtitle = [item objectForKey:@"subtitle"];
         NSNumber * price = [item objectForKey:@"price"];
         NSNumber * quantity = [item objectForKey:@"available_quantity"];
-
-        MTCConditiontTypeDto * condition = [self translateCondition:[item objectForKey:@"condition"]];
-        MTCBuyingModeTypeDto * buyingMode = [self translateBuyingMode:[item objectForKey:@"buying_mode"]];
-
+        MTCConditiontTypeDto * condition = (MTCConditiontTypeDto *)[self.conditionJsonTranslator translateObject:item];
+        MTCBuyingModeTypeDto * buyingMode = (MTCBuyingModeTypeDto *)[self.buyingModeJsonTranslator translateObject:item];
+        
         NSString * urlThumbnail = [item objectForKey:@"thumbnail"];
         UIImage * image = [UIImage imageWithUrl:urlThumbnail];
         
@@ -46,38 +59,10 @@
     return listItems;
 }
 
--(MTCConditiontTypeDto *) translateCondition:(NSString *) conditionJsonValue
-{
-    MTCConditiontTypeDto * condition = nil;
-    if ([conditionJsonValue isEqual:@"new"])    {
-        condition = [MTCConditiontTypeDto initWithNew];
-    } else
-    if ([conditionJsonValue isEqual:@"used"])    {
-        condition = [MTCConditiontTypeDto initWithUsed];
-    }else
-    if ([conditionJsonValue isEqual:@"unespecified"])    {
-        condition = [MTCConditiontTypeDto initWithUnespecified];
-    }
-    return condition;
-}
-
--(MTCBuyingModeTypeDto *) translateBuyingMode:(NSString *) buyingModeJsonValue
-{
-    MTCBuyingModeTypeDto * buyingMode = nil;
-    if ([buyingModeJsonValue isEqual:@"auction"])    {
-        buyingMode = [MTCBuyingModeTypeDto initWithAuction];
-    } else
-    if ([buyingModeJsonValue isEqual:@"buy_it_now"])    {
-        buyingMode = [MTCBuyingModeTypeDto initWithBuyItNow];
-    }else
-    if ([buyingModeJsonValue isEqual:@"classified"])    {
-        buyingMode = [MTCBuyingModeTypeDto initWithClassified];
-    }
-    return buyingMode;
-}
 
 -(void)dealloc{
-    [_pagerJsonTranslator release];
+    [_conditionJsonTranslator release];
+    [_buyingModeJsonTranslator release];
     [super dealloc];
 }
 

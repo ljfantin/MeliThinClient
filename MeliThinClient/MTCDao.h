@@ -15,4 +15,13 @@
 - (void)cacheImage:(UIImage *)image inLocation:(NSString *)location
 (NSString*)cacheDirectoryName;
 
-@end
+/*
+- (void) saveItemSearchResult:(MTCItemSearchResultDto*)dto;
+- (void) saveItemVip:(MTCItemDto*)dto;
+
+- (void) saveItemSearchResult:(MTCItemSearchResultDto*)dto;
+- (void) loadItemVip:(MTCItemDto*)dto;
+*/
+
+ 
+ @end

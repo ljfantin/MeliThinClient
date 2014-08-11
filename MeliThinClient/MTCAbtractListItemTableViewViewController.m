@@ -93,8 +93,6 @@
     itemDto.title = itemSearchDto.tittle;
     itemDto.subtitle = itemSearchDto.subtitle;
     itemDto.price = itemSearchDto.price;
-    itemDto.title = itemSearchDto.tittle;
-    itemDto.title = itemSearchDto.tittle;
     itemDto.availableQuantity = itemSearchDto.availableQuantity;
     itemDto.buyingMode = itemSearchDto.buyingMode;
     itemDto.condition = itemSearchDto.condition;

@@ -28,7 +28,7 @@
         self.service = [[[MTCMeliServiceApiImpl alloc] init] autorelease];
         [self.service setDelegate:self];
         _searchJsonTranslator = [[MTCSearchJsonTranslator alloc] init];
-
+        _pagerJsonTranslator = [[MTCPagerJsonTranslator alloc] init];
     }
     return self;
 }
@@ -107,6 +107,7 @@
 
 - (void)dealloc
 {
+    [_pagerJsonTranslator release];
     [_searchJsonTranslator release];
     [_searchQuery release];
     [_service release];

@@ -46,7 +46,6 @@
         _picturesTranslator = [[MTCPicturesJsonTranslator alloc] init];
         _cells = [[NSMutableArray alloc] init];
         _cellsCount = 0;
-        
     }
     return self;
 }
@@ -82,7 +81,7 @@
         self.cellsCount++;
     }*/
     
-    self.detailItemTableview.tableHeaderView = _gallery;
+    //self.detailItemTableview.tableHeaderView = _gallery;
     self.detailItemTableview.tableFooterView = _footer;
 }
 
@@ -100,37 +99,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return COUNT_CELLS;
+    return _cellsCount;
 }
-
-/*- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    if (![self.item.buyingMode isBuyItNow]) {
-        return self.footer;
-    }
-    else
-    {
-        return nil;
-    }
-    //return self.footer;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
-{
-    if (![self.item.buyingMode isBuyItNow]) {
-        return self.footer.frame.size.height;
-    }
-    else
-    {
-        return 0;
-    }
-}*/
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    switch (indexPath.row) {
+    NSNumber * cellId =  self.cells[indexPath.row];
+    switch ([cellId intValue]) {
         case INDEX_PRICE_FAVORITE_CELL:
             cell = [self buildPriceFavoriteCell:tableView];
             break;
@@ -262,7 +239,10 @@
 - (void) onPostExecute:(NSDictionary *) data
 {
     //NSLog(@"Respuesta json search %@: %@", query, responseObject);
-    self.item = (MTCItemDto * ) [self.itemTranslator translateObject:data];
+    //TODO falta descriptions
+    //Si hago un translate entero piso los datos que ya tengo de item
+    //self.item = (MTCItemDto * ) [self.itemTranslator translateObject:data];
+    self.item.pictures = [self.picturesTranslator translate:data];
     NSMutableArray * images = [[NSMutableArray alloc] init];
     for (MTCPictureDto * pictureDto in self.item.pictures) {
         [images addObject:pictureDto.image];
