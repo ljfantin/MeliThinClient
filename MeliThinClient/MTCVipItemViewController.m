@@ -19,9 +19,7 @@
 #define INDEX_CONDITION_CELL 2
 #define INDEX_AVAILABLE_CELL 3
 #define INDEX_DESCRIPCION_CELL 4
-
-#define COUNT_CELLS 5
-
+// #define INDEX_BUY_BUTTON_CELL 5
 
 
 
@@ -76,10 +74,19 @@
         self.cellsCount++;
     }
     //TODO ver que hacemos con esto
+    self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_DESCRIPCION_CELL];
+    self.cellsCount++;
     /*if (self.item.!=nil) {
         self.cells[self.cellsCount] = INDEX_DESCRIPCION_CELL;
         self.cellsCount++;
     }*/
+    //EL BOTON VA SI O SI
+    //self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_BUY_BUTTON_CELL];
+    //self.cellsCount++;
+    /*if (self.item.!=nil) {
+     self.cells[self.cellsCount] = INDEX_DESCRIPCION_CELL;
+     self.cellsCount++;
+     }*/
     
     self.detailItemTableview.tableHeaderView = _gallery;
     self.detailItemTableview.tableFooterView = _footer;
@@ -102,6 +109,10 @@
     return _cellsCount;
 }
 
+/*- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return _footer;
+}*/
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -123,6 +134,9 @@
         case INDEX_DESCRIPCION_CELL:
             cell = [self buildDescriptionCell:tableView];
             break;
+        /*case INDEX_BUY_BUTTON_CELL:
+            cell = [self buildBuyButtonCell:tableView];
+            break;*/
         default:
             break;
     }
@@ -226,6 +240,20 @@
     cell.textLabel.numberOfLines = 12;
     return cell;
 }
+
+- (UITableViewCell*) buildBuyButtonCell:(UITableView *)tableView
+{
+    static NSString *idButtonCell = @"idBuyButtonCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idButtonCell];
+    if (cell == nil)
+    {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"MTCBuyButtonVipItemTableViewCell" owner:self options:nil] firstObject];
+    }
+    return cell;
+}
+
+
 
 
 #pragma mark - Implementacion de UIScrollViewDelegate

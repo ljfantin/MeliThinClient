@@ -10,6 +10,7 @@
 		41E6DA8DACE94463A5EB74D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A337731D19444F29D529790 /* libPods.a */; };
 		4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BBB1998F96100E64B32 /* MTCBuyingModeTranslator.m */; };
 		4F816BBF1998FA9E00E64B32 /* MTCConditionTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */; };
+		4F816BC3199911A100E64B32 /* MTCBuyButtonVipItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F816BC2199911A100E64B32 /* MTCBuyButtonVipItemTableViewCell.xib */; };
 		4FDF1731199501D70004DCF3 /* MTCVipItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF172F199501D70004DCF3 /* MTCVipItemViewController.m */; };
 		4FDF1732199501D70004DCF3 /* MTCVipItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */; };
 		4FDF173519950DB10004DCF3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FDF173419950DB10004DCF3 /* Localizable.strings */; };
@@ -50,7 +51,7 @@
 		8BAE6FDF19968D8700BD9B74 /* favoriteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FDE19968D8700BD9B74 /* favoriteIcon.png */; };
 		8BAE6FE119968E0200BD9B74 /* favoriteIcon32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE019968E0200BD9B74 /* favoriteIcon32.png */; };
 		8BAE6FE519968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE319968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.m */; };
-		8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.xib */; };
+		8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemTableViewCell.xib */; };
 		8BAE6FE81996B67300BD9B74 /* MTCVipItemTableViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE71996B67300BD9B74 /* MTCVipItemTableViewFooter.xib */; };
 		8BAE6FEB1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6FEA1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m */; };
 		8BAE6FEE1996C2E600BD9B74 /* MTCBuyingModeTypeDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6FED1996C2E600BD9B74 /* MTCBuyingModeTypeDto.m */; };
@@ -72,6 +73,7 @@
 		4F816BBB1998F96100E64B32 /* MTCBuyingModeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCBuyingModeTranslator.m; sourceTree = "<group>"; };
 		4F816BBD1998FA9E00E64B32 /* MTCConditionTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCConditionTranslator.h; sourceTree = "<group>"; };
 		4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCConditionTranslator.m; sourceTree = "<group>"; };
+		4F816BC2199911A100E64B32 /* MTCBuyButtonVipItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCBuyButtonVipItemTableViewCell.xib; sourceTree = "<group>"; };
 		4FDF172E199501D70004DCF3 /* MTCVipItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCVipItemViewController.h; sourceTree = "<group>"; };
 		4FDF172F199501D70004DCF3 /* MTCVipItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCVipItemViewController.m; sourceTree = "<group>"; };
 		4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemViewController.xib; sourceTree = "<group>"; };
@@ -140,7 +142,7 @@
 		8BAE6FE019968E0200BD9B74 /* favoriteIcon32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoriteIcon32.png; sourceTree = "<group>"; };
 		8BAE6FE219968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCPriceFavoriteButtonVipItemViewItemTableViewCell.h; sourceTree = "<group>"; };
 		8BAE6FE319968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCPriceFavoriteButtonVipItemViewItemTableViewCell.m; sourceTree = "<group>"; };
-		8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCPriceFavoriteButtonVipItemViewItemTableViewCell.xib; sourceTree = "<group>"; };
+		8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCPriceFavoriteButtonVipItemTableViewCell.xib; sourceTree = "<group>"; };
 		8BAE6FE71996B67300BD9B74 /* MTCVipItemTableViewFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemTableViewFooter.xib; sourceTree = "<group>"; };
 		8BAE6FE91996B76B00BD9B74 /* MTCVipItemTableViewFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCVipItemTableViewFooter.h; sourceTree = "<group>"; };
 		8BAE6FEA1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCVipItemTableViewFooter.m; sourceTree = "<group>"; };
@@ -343,7 +345,7 @@
 		4FF2B0861992BC3F000BFE85 /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.xib */,
+				8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemTableViewCell.xib */,
 				4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */,
 				4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */,
 				4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */,
@@ -351,6 +353,7 @@
 				4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */,
 				8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */,
 				8BAE6FE71996B67300BD9B74 /* MTCVipItemTableViewFooter.xib */,
+				4F816BC2199911A100E64B32 /* MTCBuyButtonVipItemTableViewCell.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -469,12 +472,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F816BC3199911A100E64B32 /* MTCBuyButtonVipItemTableViewCell.xib in Resources */,
 				4FF2B08A1992D0D8000BFE85 /* image1.jpg in Resources */,
 				4FF2B06B1992A341000BFE85 /* MTCSearchViewController.xib in Resources */,
 				8BAE6FE81996B67300BD9B74 /* MTCVipItemTableViewFooter.xib in Resources */,
 				4FF2B0321992876F000BFE85 /* InfoPlist.strings in Resources */,
 				8BAE6FDF19968D8700BD9B74 /* favoriteIcon.png in Resources */,
-				8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.xib in Resources */,
+				8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemTableViewCell.xib in Resources */,
 				8BAE6FE119968E0200BD9B74 /* favoriteIcon32.png in Resources */,
 				4FF2B03A1992876F000BFE85 /* Images.xcassets in Resources */,
 				4FF2B05C19928994000BFE85 /* MTCItemsSearchResultsViewController.xib in Resources */,
