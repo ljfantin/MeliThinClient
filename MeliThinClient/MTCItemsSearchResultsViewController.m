@@ -13,7 +13,7 @@
 #import "UIScrollView+SVPullToRefresh.h"
 #import "UIScrollView+SVInfiniteScrolling.h"
 #import "MTCPagerList.h"
-#import "MTCItemDto.h"
+#import "MTCItemSearchResultDto.h"
 
 
 @interface MTCItemsSearchResultsViewController ()
@@ -27,6 +27,8 @@
     if (self) {
         self.service = [[[MTCMeliServiceApiImpl alloc] init] autorelease];
         [self.service setDelegate:self];
+        _searchJsonTranslator = [[MTCSearchJsonTranslator alloc] init];
+
     }
     return self;
 }
@@ -36,10 +38,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.service search:self.searchQuery pager:self.pager];
+    
     // TODO __block ? agrego el infinito scrolling
     __block typeof(self) weakSelf = self;
     [self.tableView addInfiniteScrollingWithActionHandler:^{
-        [weakSelf addPageItemsToTableView];
+        [weakSelf addNewItemsToTableView];
     }];
 }
 
@@ -49,8 +52,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) addPageItemsToTableView{
-    if (self.pager.offset+self.pager.limit*2 < self.pager.total)  {
+- (void) addNewItemsToTableView{
+    if (self.pager.offset+self.pager.limit*2 <= self.pager.total)  {
         self.pager.offset += self.pager.limit;
         [self.service search:self.searchQuery pager:self.pager];
     }
@@ -59,8 +62,11 @@
 
 #pragma mark Implementacion delegate MTCServiceApiDelegate
 
-- (void) onPostExecute:(NSArray *) data;
+- (void) onPostExecute:(NSDictionary *) data;
 {
+    NSArray * listItems = [self.searchJsonTranslator translate:data];
+    self.pager = (MTCPagerList*)[self.pagerJsonTranslator translateObject:data];
+    
     //stop el spinner
     [self.spinner stopAnimating];
     
@@ -73,13 +79,19 @@
     
     //cargo los filas
     NSInteger startingRow = self.pager.offset;
-    NSMutableArray *indexPaths = [NSMutableArray array];
-    for (MTCItemDto *item in data) {
-        [self.items addObject:item];
-        [indexPaths addObject:[NSIndexPath indexPathForRow:startingRow inSection:0]];
-        startingRow++;
+    if ([self.items count]==0)   {
+        [self.items addObjectsFromArray:listItems];
+        [self.tableView reloadData];
     }
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+    else {
+        NSMutableArray *indexPaths = [NSMutableArray array];
+        for (MTCItemSearchResultDto *item in listItems) {
+            [self.items addObject:item];
+            [indexPaths addObject:[NSIndexPath indexPathForRow:startingRow inSection:0]];
+            startingRow++;
+        }
+        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+    }
 
     //stop el pull
     [self.tableView.pullToRefreshView stopAnimating];
@@ -92,8 +104,10 @@
     //[self.spinner startAnimating];
 }
 
+
 - (void)dealloc
 {
+    [_searchJsonTranslator release];
     [_searchQuery release];
     [_service release];
     [super dealloc];

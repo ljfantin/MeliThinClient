@@ -8,11 +8,12 @@
 
 #import "MTCMeliServiceApiImpl.h"
 #import "AFHTTPRequestOperationManager.h"
-#import "MTCItemDto.h"
+#import "MTCItemSearchResultDto.h"
 #import "UIImage+Utils.h"
 #import "MTCSearchJsonTranslator.h"
 #import "MTCPicturesJsonTranslator.h"
 #import "MTCPagerList.h"
+#import "MTCItemDto.h"
 
 
 @implementation MTCMeliServiceApiImpl
@@ -23,8 +24,9 @@
     if (self) {
         //TODO Hacer una clase que levante propiedades de un archivo
         _url = @"https://api.mercadolibre.com/";
-        _searchJsonParser = [[MTCSearchJsonTranslator alloc] init];
-        _picturesJsonParser = [[MTCPicturesJsonTranslator alloc] init];
+        _pathSearch = @"sites/MLA/search";
+        _pathItems = @"items/%@/";
+        _itemJsonTranslator  = [[MTCItemTranslator alloc] init];
     }
     return self;
 }
@@ -32,34 +34,20 @@
 //TODO Ver si puedo hacer un metodo generico que haga un GET y desde este llamarlo
 -(void) search:(NSString*)query pager:(MTCPagerList*)pager
 {
-    ////Si el delegate tiene implementado onPreExecute
-    if ([[self getDelegate] respondsToSelector:@selector(onPreExecute)]) {
-        [[self getDelegate] onPreExecute];
-    }
+    [self preExecute];
     
-    //construyo url
-    NSMutableString * urlSearch = [NSMutableString stringWithString:self.url];
-    [urlSearch appendString:@"sites/MLA/search"];
     //agrego parametros
     NSString * limitValue = [@(pager.limit) stringValue];
     NSString * offSetValue = [@(pager.offset) stringValue];
     NSDictionary * params = @{@"q":query,@"limit":limitValue,@"offset":offSetValue};
-    
-    
-    NSMutableURLRequest * request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlSearch parameters:params error:nil];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    //construyo el request
+    AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:self.pathSearch parameters:params];
     
     __block MTCMeliServiceApiImpl * weakSelf = self;
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"Respuesta json search %@: %@", query, responseObject);
-        NSArray * listItems = [weakSelf.searchJsonParser parse:responseObject];
-        //onPostExecute
-        NSDictionary * paging = responseObject[@"paging"];
-        pager.total = [paging[@"total"] intValue];
-        pager.offset = [paging[@"offset"] intValue];
-        [[weakSelf getDelegate] onPostExecute:listItems];
+        [[weakSelf getDelegate] onPostExecute:responseObject];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -71,32 +59,27 @@
     [[NSOperationQueue mainQueue] addOperation:op];
 }
 
--(void) pictures:(NSString *)idItem
-{
-    ////Si el delegate tiene implementado onPreExecute
-    if ([[self getDelegate] respondsToSelector:@selector(onPreExecute)]) {
-        [[self getDelegate] onPreExecute];
-    }
-    
-    //construyo url
-    NSMutableString * urlPictures = [NSMutableString stringWithString:self.url];
-    [urlPictures appendString:@"items/"];
-    [urlPictures appendString:idItem];
+
+- (void)getItem:(NSString*)idItem attributes:(NSArray*)atributes  {
+
+    [self preExecute];
     
     //agrego parametros
-    NSDictionary * params = @{@"attributes":@"pictures"};
+    NSDictionary * params =  nil;
+    if (atributes!=nil) {
+        NSString * attributesJoined = [atributes componentsJoinedByString:@","];
+        params = @{@"attributes":attributesJoined};
+    }
     
-    NSMutableURLRequest * request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlPictures parameters:params error:nil];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    NSString *pathPicturesWithId = [NSString stringWithFormat:self.pathItems,idItem];
+    
+    //construyo el request
+    AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:pathPicturesWithId parameters:params];
     
     __block MTCMeliServiceApiImpl * weakSelf = self;
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        //NSLog(@"Respuesta json search %@: %@", query, responseObject);
-        NSArray * pictures = [weakSelf.picturesJsonParser parse:responseObject];
-        //onPostExecute
-        [[weakSelf getDelegate] onPostExecute:pictures];
+        [[weakSelf getDelegate] onPostExecute:responseObject];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -107,6 +90,7 @@
     }];
     [[NSOperationQueue mainQueue] addOperation:op];
 }
+
 
 - (void) setDelegate:(id<MTCServiceApiDelegate>)newDelegate
 {
@@ -119,9 +103,32 @@
     return delegate;
 }
 
+- (AFHTTPRequestOperation*) buildRequest:(NSString*)httpMethod path:(NSString *)path parameters:(NSDictionary*)parameters;
+{
+    //construyo url
+    NSMutableString * urlSearch = [NSMutableString stringWithString:self.url];
+    [urlSearch appendString:path];
+    
+    NSMutableURLRequest * request = [[AFHTTPRequestSerializer serializer] requestWithMethod:httpMethod URLString:urlSearch parameters:parameters error:nil];
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    return op;
+}
+
+- (void) preExecute
+{
+    ////Si el delegate tiene implementado onPreExecute
+    if ([[self getDelegate] respondsToSelector:@selector(onPreExecute)]) {
+        [[self getDelegate] onPreExecute];
+    }
+}
 
 - (void)dealloc
 {
+    [_pathSearch release];
+    [_pathItems release];
+    [_itemJsonTranslator  release];
+    [_searchJsonTranslator release];
     [_url release];
     [delegate release];
     [super dealloc];

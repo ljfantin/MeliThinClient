@@ -12,6 +12,7 @@
 #import "MTCPictureDto.h"
 #import "MTCPriceFavoriteButtonVipItemViewItemTableViewCell.h"
 #import "MTCVipItemTableViewFooter.h"
+#import "MTCItemDto.h"
 
 #define INDEX_PRICE_FAVORITE_CELL 0
 #define INDEX_SUBTITLE_CELL 1
@@ -28,6 +29,8 @@
 
 @property MTCVipItemPhotoGalleryView * gallery;
 @property MTCVipItemTableViewFooter * footer;
+@property NSMutableArray * cells;
+@property NSInteger cellsCount;
 
 @end
 
@@ -39,6 +42,9 @@
     if (self) {
         _service = [[MTCMeliServiceApiImpl alloc] init];
         [_service setDelegate:self];
+        _cells = [[NSMutableArray alloc] init];
+        _cellsCount = 0;
+        
     }
     return self;
 }
@@ -51,7 +57,29 @@
     
     _footer= [[[NSBundle mainBundle] loadNibNamed:@"MTCVipItemTableViewFooter" owner:self options:nil] firstObject];
 
-    [self.service pictures:self.item.id];
+    [self.service getItem:self.item.id attributes:@["pictures","descriptions"]];
+    if (self.item.price!=nil)  {
+        self.cells[self.cellsCount] = INDEX_PRICE_FAVORITE_CELL;
+        self.cellsCount++;
+    }
+    if (self.item.subtitle!=nil)  {
+        self.cells[self.cellsCount] = INDEX_SUBTITLE_CELL;
+        self.cellsCount++;
+
+    }
+    if (self.item.condition!=nil)  {
+        self.cells[self.cellsCount] = INDEX_CONDITION_CELL;
+        self.cellsCount++;
+    }
+    if (self.item.availableQuantity!=nil)  {
+        self.cells[self.cellsCount] = INDEX_AVAILABLE_CELL;
+        self.cellsCount++;
+    }
+    /*if (self.item.!=nil) {
+        self.cells[self.cellsCount] = INDEX_DESCRIPCION_CELL;
+        self.cellsCount++;
+    }*/
+    
     self.detailItemTableview.tableHeaderView = _gallery;
     self.detailItemTableview.tableFooterView = _footer;
 }
@@ -148,7 +176,7 @@
     {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idSubtitleCell] autorelease];
     }
-    cell.textLabel.text = @"subtitulo";//self.item.subtitle;
+    cell.textLabel.text = self.item.subtitle;
     //Ver esto
     cell.textLabel.font = [UIFont systemFontOfSize:12];
     cell.textLabel.numberOfLines = 12;
@@ -229,13 +257,15 @@
     self.pageControl.currentPage = page;
 }
 
-- (void) onPostExecute:(NSArray *) data
+- (void) onPostExecute:(NSDictionary *) data
 {
-    NSMutableArray * images = [NSMutableArray array];
-    for (MTCPictureDto * pictureDto in data) {
+    //NSLog(@"Respuesta json search %@: %@", query, responseObject);
+    self.item = (MTCItemDto * ) [self.itemTranslator translateObject:data];
+    NSMutableArray * images = [[NSMutableArray alloc] init];
+    for (MTCPictureDto * pictureDto in self.item.pictures) {
         [images addObject:pictureDto.image];
     }
-    [self.gallery loadImages:images withTitle:self.item.tittle];
+    [self.gallery loadImages:images withTitle:self.item.title];
 }
 
 - (void) onPreExecute

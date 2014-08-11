@@ -12,7 +12,7 @@
 
 @implementation MTCPicturesJsonTranslator
 
-- (NSArray *) parse:(NSDictionary *)json
+- (NSArray *) translate:(NSDictionary *)json
 {
     NSArray * jsonResults = json[@"pictures"];
     NSMutableArray * listPictures = [NSMutableArray array];

@@ -13,7 +13,9 @@
 @protocol MTCMeliServiceApi <NSObject>
 
 - (void)search:(NSString*)query pager:(MTCPagerList*)pager;
-- (void)pictures:(NSString*)idItem;
+- (void)getItem:(NSString*)idItem attributes:(NSArray*)atributes;
+
+
 
 - (void) setDelegate:(id<MTCServiceApiDelegate>)delegate;
 - (id<MTCServiceApiDelegate>) getDelegate;

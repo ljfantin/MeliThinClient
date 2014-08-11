@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MTCItemDto.h"
+#import "MTCItemSearchResultDto.h"
 #import "MTCServiceApiDelegate.h"
 #import "MTCMeliServiceApi.h"
+#import "MTCItemDto.h"
+#import "MTCItemTranslator.h"
 
 @interface MTCVipItemViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,MTCServiceApiDelegate>
-
 
 
 @property (retain,nonatomic) MTCItemDto * item;
 @property (retain, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (retain, nonatomic) IBOutlet UITableView *detailItemTableview;
 @property (retain, nonatomic) id<MTCMeliServiceApi> service;
+
+@property (retain, nonatomic) MTCItemTranslator * itemTranslator;
 
 @end

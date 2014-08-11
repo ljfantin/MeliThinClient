@@ -7,7 +7,7 @@
 //
 
 #import "MTCAbtractListItemTableViewViewController.h"
-#import "MTCItemDto.h"
+#import "MTCItemSearchResultDto.h"
 #import "MTCUIListItemResultTableViewCell.h"
 #import "MTCVipItemViewController.h"
 
@@ -67,7 +67,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"cellItemFromSearch"];
     }
     
-    MTCItemDto * item = [self.items objectAtIndex:indexPath.row];
+    MTCItemSearchResultDto * item = [self.items objectAtIndex:indexPath.row];
     //SE PODRIA FORMATEAR EL NUMERO POR LOCALE
     cell.title.text = item.tittle;
     cell.price.text = [item.price stringValue];
@@ -83,7 +83,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MTCItemDto * itemDto = [self.items objectAtIndex:indexPath.row];
+    MTCItemSearchResultDto * itemDto = [self.items objectAtIndex:indexPath.row];
     //creo el controller
     MTCVipItemViewController * nextController = [[MTCVipItemViewController alloc] init];
     //seteo la busqueda

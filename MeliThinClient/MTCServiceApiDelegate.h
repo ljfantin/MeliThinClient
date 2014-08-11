@@ -10,7 +10,7 @@
 
 @protocol MTCServiceApiDelegate <NSObject>
 
-- (void) onPostExecute:(NSArray *) data;
+- (void) onPostExecute:(NSDictionary *) data;
 
 @optional
 

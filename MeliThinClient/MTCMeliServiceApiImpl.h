@@ -10,7 +10,7 @@
 #import "MTCMeliServiceApi.h"
 #import "MTCServiceApiDelegate.h"
 #import "MTCSearchJsonTranslator.h"
-#import "MTCPicturesJsonTranslator.h"
+#import "MTCItemTranslator.h"
 
 @interface MTCMeliServiceApiImpl : NSObject<MTCMeliServiceApi>{
 
@@ -18,7 +18,10 @@
 }
 
 @property (nonatomic, retain) NSString * url;
-@property (retain,nonatomic) MTCSearchJsonTranslator * searchJsonParser;
-@property (retain,nonatomic) MTCPicturesJsonTranslator * picturesJsonParser;
+@property (nonatomic, retain) NSString * pathSearch;
+@property (nonatomic, retain) NSString * pathItems;
+
+@property (retain,nonatomic) MTCSearchJsonTranslator * searchJsonTranslator;
+@property (retain,nonatomic) MTCItemTranslator * itemJsonTranslator;
 
 @end

@@ -7,12 +7,18 @@
 //
 
 #import "MTCSearchJsonTranslator.h"
-#import "MTCItemDto.h"
+#import "MTCItemSearchResultDto.h"
 #import "UIImage+Utils.h"
+#import "MTCPagerJsonTranslator.h"
+
+@interface MTCSearchJsonTranslator ()
+
+@property (retain,nonatomic) MTCPagerJsonTranslator * pagerJsonTranslator;
+@end
 
 @implementation MTCSearchJsonTranslator
 
-- (NSArray *) parse:(NSDictionary *)json
+- (NSArray *) translate:(NSDictionary *)json
 {
     NSArray * jsonResults = json[@"results"];
     NSMutableArray * listItems = [NSMutableArray array];
@@ -31,7 +37,7 @@
         UIImage * image = [UIImage imageWithUrl:urlThumbnail];
         
         //creo el dto
-        MTCItemDto * item = [MTCItemDto initWithId:id title:title price:price subtitle:subtitle availableQuantity:quantity condition:condition buyingMode:buyingMode thumbnail:image];
+        MTCItemSearchResultDto * item = [MTCItemSearchResultDto initWithId:id title:title price:price subtitle:subtitle availableQuantity:quantity condition:condition buyingMode:buyingMode thumbnail:image];
         
         //agrego el item
         [listItems addObject:item];
@@ -68,6 +74,11 @@
         buyingMode = [MTCBuyingModeTypeDto initWithClassified];
     }
     return buyingMode;
+}
+
+-(void)dealloc{
+    [_pagerJsonTranslator release];
+    [super dealloc];
 }
 
 @end
