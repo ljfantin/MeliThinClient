@@ -26,6 +26,7 @@
         _url = @"https://api.mercadolibre.com/";
         _pathSearch = @"sites/MLA/search";
         _pathItems = @"items/%@/";
+        _pathDescription =  @"items/%@/description";
         _itemJsonTranslator  = [[MTCItemTranslator alloc] init];
     }
     return self;
@@ -91,6 +92,31 @@
     [[NSOperationQueue mainQueue] addOperation:op];
 }
 
+- (void)getDescriptionFromItem:(NSString*)idIdem
+{
+    [self preExecute];
+    
+    NSString *pathPicturesWithId = [NSString stringWithFormat:self.pathDescription,idIdem];
+    
+    //construyo el request
+    AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:pathPicturesWithId parameters:nil];
+    
+    __block MTCMeliServiceApiImpl * weakSelf = self;
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [[weakSelf getDelegate] onPostExecute:responseObject];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        //Si el delegate tiene implementado el manejo de errores entonces lo invoco.
+        if ([[weakSelf getDelegate] respondsToSelector:@selector(handleError:)]) {
+            [[weakSelf getDelegate] handleError:error];
+        }
+    }];
+    [[NSOperationQueue mainQueue] addOperation:op];
+}
+
+
 
 - (void) setDelegate:(id<MTCServiceApiDelegate>)newDelegate
 {
@@ -127,6 +153,7 @@
 {
     [_pathSearch release];
     [_pathItems release];
+    [_pathDescription release];
     [_itemJsonTranslator  release];
     [_searchJsonTranslator release];
     [_url release];

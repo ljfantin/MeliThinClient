@@ -14,6 +14,7 @@
 
 - (void)search:(NSString*)query pager:(MTCPagerList*)pager;
 - (void)getItem:(NSString*)idItem attributes:(NSArray*)atributes;
+- (void)getDescriptionFromItem:(NSString*)idIdem;
 
 
 

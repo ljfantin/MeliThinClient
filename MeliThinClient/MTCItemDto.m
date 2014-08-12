@@ -11,4 +11,17 @@
 @implementation MTCItemDto
 
 
+- (void)dealloc
+{
+    [_id release];
+    [_title release];
+    [_subtitle release];
+    [_price release];
+    [_availableQuantity release];
+    [_buyingMode release];
+    [_condition release];
+    [_pictures release];
+    [_descriptions release];
+    [super dealloc];
+}
 @end

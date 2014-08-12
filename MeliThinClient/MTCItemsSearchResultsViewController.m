@@ -29,6 +29,8 @@
         [self.service setDelegate:self];
         _searchJsonTranslator = [[MTCSearchJsonTranslator alloc] init];
         _pagerJsonTranslator = [[MTCPagerJsonTranslator alloc] init];
+        //Titulo utilizado para tab bar
+        self.title = @"Buscar";
     }
     return self;
 }

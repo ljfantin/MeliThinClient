@@ -10,4 +10,5 @@
 #import "MTCServiceApiDelegate.h"
 
 @interface MTCSearchViewController : UIViewController
+@property (nonatomic, retain) UITabBarController *tab;
 @end

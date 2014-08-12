@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSString * pathSearch;
 @property (nonatomic, retain) NSString * pathItems;
+@property (nonatomic, retain) NSString * pathDescription;
+
 
 @property (retain,nonatomic) MTCSearchJsonTranslator * searchJsonTranslator;
 @property (retain,nonatomic) MTCItemTranslator * itemJsonTranslator;

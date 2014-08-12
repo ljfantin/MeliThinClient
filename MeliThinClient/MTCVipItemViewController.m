@@ -13,6 +13,7 @@
 #import "MTCPriceFavoriteButtonVipItemViewItemTableViewCell.h"
 #import "MTCVipItemTableViewFooter.h"
 #import "MTCItemDto.h"
+#import "MTCDescriptionVipItemViewController.h"
 
 #define INDEX_PRICE_FAVORITE_CELL 0
 #define INDEX_SUBTITLE_CELL 1
@@ -281,6 +282,16 @@
 - (void) onPreExecute
 {
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.cells[indexPath.row] intValue] == INDEX_DESCRIPCION_CELL) {
+    
+        MTCDescriptionVipItemViewController * descriptionViewController = [[MTCDescriptionVipItemViewController alloc] init];
+        descriptionViewController.idItem = self.item.id;
+        [self.navigationController pushViewController:descriptionViewController animated:YES];
+    }
 }
 
 - (void)dealloc
