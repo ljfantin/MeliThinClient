@@ -13,15 +13,5 @@
 - (id) load:(NSString*)id;
 - (BOOL) save:(id)object;
 - (NSEnumerator*) findAll;
-
-
-/*
-- (void) saveItemSearchResult:(MTCItemSearchResultDto*)dto;
-- (void) saveItemVip:(MTCItemDto*)dto;
-
-- (void) saveItemSearchResult:(MTCItemSearchResultDto*)dto;
-- (void) loadItemVip:(MTCItemDto*)dto;
-*/
-
  
  @end
