@@ -28,6 +28,7 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,12 +36,23 @@
     _tab = [[UITabBarController alloc] init];
     MTCItemsSearchResultsViewController * itemsSearchResultsController = [[MTCItemsSearchResultsViewController alloc] init];
     itemsSearchResultsController.searchQuery = @"peugeot";
+    UITabBarItem *tabBuscar = [[UITabBarItem alloc] initWithTitle:@"Buscar"
+                                                            image:[UIImage imageNamed:@"search32.png"] tag:1];
+    [itemsSearchResultsController setTabBarItem:tabBuscar];
+
 
     MTCItemsFavoritiesResultsViewController * favoritesController = [[MTCItemsFavoritiesResultsViewController alloc] init];
-    
-    //[itemsSearchResultsController setFinishedSelectedImage:[UIImage imageNamed:@"search32.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"search32.png"]];
-    //[favoritesController setFinishedSelectedImage:[UIImage imageNamed:@"favoriteIcon32.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"favoriteIcon32.png"]];
+    UITabBarItem *tabFavorites = [[UITabBarItem alloc] initWithTitle:@"Favoritos"
+                                                            image:[UIImage imageNamed:@"favoriteIcon32.png"] tag:1];
+    [favoritesController setTabBarItem:tabFavorites];
 
+    /*
+    UIImage* tabBarBackground = [UIImage imageNamed:@"tabbar.png"];
+    [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"selection-tab.png"]];
+     */
+    
     _tab.viewControllers = [NSArray arrayWithObjects:itemsSearchResultsController,favoritesController,nil];
     //[self.view addSubview:self.tab.view];
     [self.navigationController pushViewController:_tab animated:YES];
