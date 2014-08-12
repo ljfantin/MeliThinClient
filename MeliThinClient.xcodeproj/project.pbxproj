@@ -11,7 +11,6 @@
 		4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BBB1998F96100E64B32 /* MTCBuyingModeTranslator.m */; };
 		4F816BBF1998FA9E00E64B32 /* MTCConditionTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */; };
 		4F816BC3199911A100E64B32 /* MTCBuyButtonVipItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F816BC2199911A100E64B32 /* MTCBuyButtonVipItemTableViewCell.xib */; };
-		4F816BC61999201F00E64B32 /* MTCItemDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BC51999201F00E64B32 /* MTCItemDao.m */; };
 		4F816BC819993A0B00E64B32 /* MTCFavoriteDaoTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BC719993A0B00E64B32 /* MTCFavoriteDaoTest.m */; };
 		4F816BCA19994ABD00E64B32 /* favorites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F816BC919994ABD00E64B32 /* favorites.plist */; };
 		4FDF1731199501D70004DCF3 /* MTCVipItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF172F199501D70004DCF3 /* MTCVipItemViewController.m */; };
@@ -86,8 +85,6 @@
 		4F816BBD1998FA9E00E64B32 /* MTCConditionTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCConditionTranslator.h; sourceTree = "<group>"; };
 		4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCConditionTranslator.m; sourceTree = "<group>"; };
 		4F816BC2199911A100E64B32 /* MTCBuyButtonVipItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCBuyButtonVipItemTableViewCell.xib; sourceTree = "<group>"; };
-		4F816BC41999201F00E64B32 /* MTCItemDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCItemDao.h; sourceTree = "<group>"; };
-		4F816BC51999201F00E64B32 /* MTCItemDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemDao.m; sourceTree = "<group>"; };
 		4F816BC719993A0B00E64B32 /* MTCFavoriteDaoTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCFavoriteDaoTest.m; sourceTree = "<group>"; };
 		4F816BC919994ABD00E64B32 /* favorites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = favorites.plist; sourceTree = "<group>"; };
 		4FDF172E199501D70004DCF3 /* MTCVipItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCVipItemViewController.h; sourceTree = "<group>"; };
@@ -153,8 +150,6 @@
 		8B7510C5199853F500E03739 /* MTCItemTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCItemTranslator.h; sourceTree = "<group>"; };
 		8B7510C6199853F500E03739 /* MTCItemTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemTranslator.m; sourceTree = "<group>"; };
 		8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemPhotoGalleryView.xib; sourceTree = "<group>"; };
-		8BAD05E61992F99400BE28C1 /* MTCDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCDao.h; sourceTree = "<group>"; };
-		8BAD05E71992F9A700BE28C1 /* MTCDaoFileImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCDaoFileImpl.h; sourceTree = "<group>"; };
 		8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApiImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiImpl.h; sourceTree = "<group>"; };
 		8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceApiImpl.m; sourceTree = "<group>"; };
 		8BAE6FDE19968D8700BD9B74 /* favoriteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoriteIcon.png; sourceTree = "<group>"; };
@@ -431,10 +426,6 @@
 		8BAD05E51992F96F00BE28C1 /* dao */ = {
 			isa = PBXGroup;
 			children = (
-				8BAD05E61992F99400BE28C1 /* MTCDao.h */,
-				8BAD05E71992F9A700BE28C1 /* MTCDaoFileImpl.h */,
-				4F816BC41999201F00E64B32 /* MTCItemDao.h */,
-				4F816BC51999201F00E64B32 /* MTCItemDao.m */,
 				4FE10163199A400200354A13 /* MTCFavoriteDao.h */,
 				4FE10164199A409800354A13 /* MTCFavoriteDaoImpl.h */,
 				4FE10165199A409800354A13 /* MTCFavoriteDaoImpl.m */,
@@ -612,7 +603,6 @@
 				8BAE6FEB1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m in Sources */,
 				4FE6006B1993B58100AF3DFE /* UIImage+Utils.m in Sources */,
 				4FE10166199A409800354A13 /* MTCFavoriteDaoImpl.m in Sources */,
-				4F816BC61999201F00E64B32 /* MTCItemDao.m in Sources */,
 				8B7510C11998119400E03739 /* MTCPagerJsonTranslator.m in Sources */,
 				4FE6007319940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m in Sources */,
 				4F816BBF1998FA9E00E64B32 /* MTCConditionTranslator.m in Sources */,
