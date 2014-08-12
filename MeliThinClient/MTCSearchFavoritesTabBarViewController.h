@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MTCServiceApiDelegate.h"
 
-@interface MTCSearchViewController : UIViewController
+@interface MTCSearchFavoritesTabBarViewController: UIViewController
 @property (nonatomic, retain) UITabBarController *tab;
 @end

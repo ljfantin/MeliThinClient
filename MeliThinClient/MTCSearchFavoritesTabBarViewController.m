@@ -6,17 +6,17 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "MTCSearchViewController.h"
+#import "MTCSearchFavoritesTabBarViewController.h"
 #import "MTCItemsSearchResultsViewController.h"
 #import "MTCMeliServiceApiImpl.h"
 #import "MTCItemsFavoritiesResultsViewController.h"
 
 
-@interface MTCSearchViewController ()
+@interface MTCSearchFavoritesTabBarViewController ()
 
 @end
 
-@implementation MTCSearchViewController
+@implementation MTCSearchFavoritesTabBarViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

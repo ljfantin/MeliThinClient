@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MTCPagerList.h"
+#import "MTCMeliServiceApiImpl.h"
+#import "UIScrollView+SVPullToRefresh.h"
+#import "UIScrollView+SVInfiniteScrolling.h"
+#import "MTCServiceApiDelegate.h"
 
 @interface MTCAbtractListItemTableViewViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
@@ -18,4 +22,5 @@
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
+- (void) requestNewItems;
 @end

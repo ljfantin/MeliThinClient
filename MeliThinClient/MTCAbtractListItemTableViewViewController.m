@@ -11,6 +11,7 @@
 #import "MTCUIListItemResultTableViewCell.h"
 #import "MTCVipItemViewController.h"
 
+
 #define NUMBER_OF_SECCCIONS 1;
 
 @interface MTCAbtractListItemTableViewViewController ()
@@ -36,13 +37,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.tableView.tableFooterView = [UIView new];
+
+    [self requestNewItems];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) requestNewItems
+{
 }
 
 #pragma mark - Table view data source

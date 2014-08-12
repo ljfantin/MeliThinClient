@@ -21,6 +21,10 @@
 		4FDFF8A3199550420012C7D4 /* MTCPicturesJsonTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFF8A2199550420012C7D4 /* MTCPicturesJsonTranslator.m */; };
 		4FDFF8A6199555B00012C7D4 /* MTCPictureDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFF8A5199555B00012C7D4 /* MTCPictureDto.m */; };
 		4FE10166199A409800354A13 /* MTCFavoriteDaoImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE10165199A409800354A13 /* MTCFavoriteDaoImpl.m */; };
+		4FE10169199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE10168199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.m */; };
+		4FE1016C199A85FC00354A13 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1016B199A85FC00354A13 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.m */; };
+		4FE1016F199AA7DF00354A13 /* MTCSearchResultJsonTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1016E199AA7DF00354A13 /* MTCSearchResultJsonTranslator.m */; };
+		4FE10172199AB0AB00354A13 /* MTCFavoritesJsonTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE10171199AB0AB00354A13 /* MTCFavoritesJsonTranslator.m */; };
 		4FE6006B1993B58100AF3DFE /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6006A1993B58100AF3DFE /* UIImage+Utils.m */; };
 		4FE6007319940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6007119940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m */; };
 		4FE6007419940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */; };
@@ -40,7 +44,7 @@
 		4FF2B05C19928994000BFE85 /* MTCItemsSearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B05A19928994000BFE85 /* MTCItemsSearchResultsViewController.xib */; };
 		4FF2B06019928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B05E19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m */; };
 		4FF2B06119928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */; };
-		4FF2B06A1992A341000BFE85 /* MTCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0681992A341000BFE85 /* MTCSearchViewController.m */; };
+		4FF2B06A1992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0681992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.m */; };
 		4FF2B06B1992A341000BFE85 /* MTCSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */; };
 		4FF2B0751992ADF7000BFE85 /* MTCItemSearchResultDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0741992ADF7000BFE85 /* MTCItemSearchResultDto.m */; };
 		4FF2B0781992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0771992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m */; };
@@ -53,8 +57,7 @@
 		8BAD05EE1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */; };
 		8BAE6FDF19968D8700BD9B74 /* favoriteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FDE19968D8700BD9B74 /* favoriteIcon.png */; };
 		8BAE6FE119968E0200BD9B74 /* favoriteIcon32-OLD.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE019968E0200BD9B74 /* favoriteIcon32-OLD.png */; };
-		8BAE6FE519968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE319968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.m */; };
-		8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemTableViewCell.xib */; };
+		8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib */; };
 		8BAE6FE81996B67300BD9B74 /* MTCVipItemTableViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE71996B67300BD9B74 /* MTCVipItemTableViewFooter.xib */; };
 		8BAE6FEB1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6FEA1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m */; };
 		8BAE6FEE1996C2E600BD9B74 /* MTCBuyingModeTypeDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6FED1996C2E600BD9B74 /* MTCBuyingModeTypeDto.m */; };
@@ -103,6 +106,14 @@
 		4FE10163199A400200354A13 /* MTCFavoriteDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCFavoriteDao.h; sourceTree = "<group>"; };
 		4FE10164199A409800354A13 /* MTCFavoriteDaoImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCFavoriteDaoImpl.h; sourceTree = "<group>"; };
 		4FE10165199A409800354A13 /* MTCFavoriteDaoImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCFavoriteDaoImpl.m; sourceTree = "<group>"; };
+		4FE10167199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MTCMeliServiceApiImpl+SecureMethods.h"; sourceTree = "<group>"; };
+		4FE10168199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MTCMeliServiceApiImpl+SecureMethods.m"; sourceTree = "<group>"; };
+		4FE1016A199A85FC00354A13 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCPriceFavoriteButtonVipItemViewTableViewCell.h; sourceTree = "<group>"; };
+		4FE1016B199A85FC00354A13 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCPriceFavoriteButtonVipItemViewTableViewCell.m; sourceTree = "<group>"; };
+		4FE1016D199AA7DF00354A13 /* MTCSearchResultJsonTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCSearchResultJsonTranslator.h; sourceTree = "<group>"; };
+		4FE1016E199AA7DF00354A13 /* MTCSearchResultJsonTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCSearchResultJsonTranslator.m; sourceTree = "<group>"; };
+		4FE10170199AB0AB00354A13 /* MTCFavoritesJsonTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCFavoritesJsonTranslator.h; sourceTree = "<group>"; };
+		4FE10171199AB0AB00354A13 /* MTCFavoritesJsonTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCFavoritesJsonTranslator.m; sourceTree = "<group>"; };
 		4FE600691993B58100AF3DFE /* UIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
 		4FE6006A1993B58100AF3DFE /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
 		4FE6006C1993CC1500AF3DFE /* MTCServiceApiDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCServiceApiDelegate.h; sourceTree = "<group>"; };
@@ -131,8 +142,8 @@
 		4FF2B05D19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCItemsFavoritiesResultsViewController.h; sourceTree = "<group>"; };
 		4FF2B05E19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemsFavoritiesResultsViewController.m; sourceTree = "<group>"; };
 		4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCItemsFavoritiesResultsViewController.xib; sourceTree = "<group>"; };
-		4FF2B0671992A341000BFE85 /* MTCSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCSearchViewController.h; sourceTree = "<group>"; };
-		4FF2B0681992A341000BFE85 /* MTCSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCSearchViewController.m; sourceTree = "<group>"; };
+		4FF2B0671992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCSearchFavoritesTabBarViewController.h; sourceTree = "<group>"; };
+		4FF2B0681992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCSearchFavoritesTabBarViewController.m; sourceTree = "<group>"; };
 		4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCSearchViewController.xib; sourceTree = "<group>"; };
 		4FF2B0731992ADF7000BFE85 /* MTCItemSearchResultDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCItemSearchResultDto.h; sourceTree = "<group>"; };
 		4FF2B0741992ADF7000BFE85 /* MTCItemSearchResultDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemSearchResultDto.m; sourceTree = "<group>"; };
@@ -154,9 +165,7 @@
 		8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceApiImpl.m; sourceTree = "<group>"; };
 		8BAE6FDE19968D8700BD9B74 /* favoriteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoriteIcon.png; sourceTree = "<group>"; };
 		8BAE6FE019968E0200BD9B74 /* favoriteIcon32-OLD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favoriteIcon32-OLD.png"; sourceTree = "<group>"; };
-		8BAE6FE219968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCPriceFavoriteButtonVipItemViewItemTableViewCell.h; sourceTree = "<group>"; };
-		8BAE6FE319968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCPriceFavoriteButtonVipItemViewItemTableViewCell.m; sourceTree = "<group>"; };
-		8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCPriceFavoriteButtonVipItemTableViewCell.xib; sourceTree = "<group>"; };
+		8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCPriceFavoriteButtonVipItemViewTableViewCell.xib; sourceTree = "<group>"; };
 		8BAE6FE71996B67300BD9B74 /* MTCVipItemTableViewFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemTableViewFooter.xib; sourceTree = "<group>"; };
 		8BAE6FE91996B76B00BD9B74 /* MTCVipItemTableViewFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCVipItemTableViewFooter.h; sourceTree = "<group>"; };
 		8BAE6FEA1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCVipItemTableViewFooter.m; sourceTree = "<group>"; };
@@ -229,6 +238,10 @@
 				4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */,
 				8BB0753719998AFF0008F581 /* MTCDescriptionJsonTranslator.h */,
 				8BB0753819998AFF0008F581 /* MTCDescriptionJsonTranslator.m */,
+				4FE1016D199AA7DF00354A13 /* MTCSearchResultJsonTranslator.h */,
+				4FE1016E199AA7DF00354A13 /* MTCSearchResultJsonTranslator.m */,
+				4FE10170199AB0AB00354A13 /* MTCFavoritesJsonTranslator.h */,
+				4FE10171199AB0AB00354A13 /* MTCFavoritesJsonTranslator.m */,
 			);
 			name = translators;
 			sourceTree = "<group>";
@@ -352,6 +365,8 @@
 				8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApiImpl.h */,
 				8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */,
 				4FE6006C1993CC1500AF3DFE /* MTCServiceApiDelegate.h */,
+				4FE10167199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.h */,
+				4FE10168199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.m */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -359,14 +374,14 @@
 		4FF2B0811992BA68000BFE85 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				4FE1016A199A85FC00354A13 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.h */,
+				4FE1016B199A85FC00354A13 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.m */,
 				4FF2B0831992BAD6000BFE85 /* MTCPagerList.h */,
 				4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */,
 				4FE6007019940A3200AF3DFE /* MTCUIListItemResultTableViewCell.h */,
 				4FE6007119940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m */,
 				4FDF173B199519080004DCF3 /* MTCVipItemPhotoGalleryView.h */,
 				4FDF173C199519080004DCF3 /* MTCVipItemPhotoGalleryView.m */,
-				8BAE6FE219968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.h */,
-				8BAE6FE319968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.m */,
 				8BAE6FE91996B76B00BD9B74 /* MTCVipItemTableViewFooter.h */,
 				8BAE6FEA1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m */,
 			);
@@ -377,7 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				8BB0753419998A3A0008F581 /* MTCDescriptionVipItemViewController.xib */,
-				8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemTableViewCell.xib */,
+				8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib */,
 				4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */,
 				4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */,
 				4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */,
@@ -397,10 +412,10 @@
 				4FF2B05D19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.h */,
 				4FF2B05E19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m */,
 				4FF2B05919928994000BFE85 /* MTCItemsSearchResultsViewController.m */,
-				4FF2B0671992A341000BFE85 /* MTCSearchViewController.h */,
-				4FF2B0681992A341000BFE85 /* MTCSearchViewController.m */,
 				4FF2B0761992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.h */,
 				4FF2B0771992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m */,
+				4FF2B0671992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.h */,
+				4FF2B0681992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.m */,
 				4FDF172E199501D70004DCF3 /* MTCVipItemViewController.h */,
 				4FDF172F199501D70004DCF3 /* MTCVipItemViewController.m */,
 				8BB0753219998A3A0008F581 /* MTCDescriptionVipItemViewController.h */,
@@ -518,7 +533,7 @@
 				8BAE6FE81996B67300BD9B74 /* MTCVipItemTableViewFooter.xib in Resources */,
 				4FF2B0321992876F000BFE85 /* InfoPlist.strings in Resources */,
 				8BAE6FDF19968D8700BD9B74 /* favoriteIcon.png in Resources */,
-				8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemTableViewCell.xib in Resources */,
+				8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib in Resources */,
 				8BB075441999ADC40008F581 /* search32.png in Resources */,
 				8BAE6FE119968E0200BD9B74 /* favoriteIcon32-OLD.png in Resources */,
 				4FF2B03A1992876F000BFE85 /* Images.xcassets in Resources */,
@@ -584,9 +599,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BAD05EE1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m in Sources */,
+				4FE1016F199AA7DF00354A13 /* MTCSearchResultJsonTranslator.m in Sources */,
 				4FDFF8A6199555B00012C7D4 /* MTCPictureDto.m in Sources */,
 				4FDFF8A019954C280012C7D4 /* MTCSearchJsonTranslator.m in Sources */,
-				8BAE6FE519968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewItemTableViewCell.m in Sources */,
 				8BAE6FEE1996C2E600BD9B74 /* MTCBuyingModeTypeDto.m in Sources */,
 				4FDF1731199501D70004DCF3 /* MTCVipItemViewController.m in Sources */,
 				4FF2B0781992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m in Sources */,
@@ -599,8 +614,11 @@
 				4FF2B05B19928994000BFE85 /* MTCItemsSearchResultsViewController.m in Sources */,
 				4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */,
 				8B7510C7199853F500E03739 /* MTCItemTranslator.m in Sources */,
+				4FE10169199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.m in Sources */,
 				4FF2B0381992876F000BFE85 /* MTCAppDelegate.m in Sources */,
+				4FE10172199AB0AB00354A13 /* MTCFavoritesJsonTranslator.m in Sources */,
 				8BAE6FEB1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m in Sources */,
+				4FE1016C199A85FC00354A13 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.m in Sources */,
 				4FE6006B1993B58100AF3DFE /* UIImage+Utils.m in Sources */,
 				4FE10166199A409800354A13 /* MTCFavoriteDaoImpl.m in Sources */,
 				8B7510C11998119400E03739 /* MTCPagerJsonTranslator.m in Sources */,
@@ -610,7 +628,7 @@
 				8BB0753C19998B860008F581 /* MTCDescriptionDto.m in Sources */,
 				8BAE6FF11996C5EB00BD9B74 /* MTCConditiontTypeDto.m in Sources */,
 				8BB0753919998AFF0008F581 /* MTCDescriptionJsonTranslator.m in Sources */,
-				4FF2B06A1992A341000BFE85 /* MTCSearchViewController.m in Sources */,
+				4FF2B06A1992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.m in Sources */,
 				4FF2B06019928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,9 +9,6 @@
 
 #import "MTCItemsSearchResultsViewController.h"
 #import "MTCMeliServiceApiImpl.h"
-
-#import "UIScrollView+SVPullToRefresh.h"
-#import "UIScrollView+SVInfiniteScrolling.h"
 #import "MTCPagerList.h"
 #import "MTCItemSearchResultDto.h"
 
@@ -38,9 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    [self.service search:self.searchQuery pager:self.pager];
-    
+
     // TODO __block ? agrego el infinito scrolling
     __block typeof(self) weakSelf = self;
     [self.tableView addInfiniteScrollingWithActionHandler:^{
@@ -48,22 +43,20 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void) addNewItemsToTableView{
     if (self.pager.offset+self.pager.limit*2 <= self.pager.total)  {
         self.pager.offset += self.pager.limit;
-        [self.service search:self.searchQuery pager:self.pager];
+        [self requestNewItems];
     }
+}
+
+- (void) requestNewItems
+{
+    [self.service search:self.searchQuery pager:self.pager];
 }
 
 
 #pragma mark Implementacion delegate MTCServiceApiDelegate
-
 - (void) onPostExecute:(NSDictionary *) data;
 {
     NSArray * listItems = [self.searchJsonTranslator translate:data];
@@ -103,7 +96,7 @@
 - (void) onPreExecute
 {
     NSLog(@"onPreExecute");
-    //[self.spinner startAnimating];
+    [self.spinner startAnimating];
 }
 
 
@@ -113,6 +106,7 @@
     [_searchJsonTranslator release];
     [_searchQuery release];
     [_service release];
+
     [super dealloc];
 }
 @end

@@ -26,8 +26,8 @@
         _url = @"https://api.mercadolibre.com/";
         _pathSearch = @"sites/MLA/search";
         _pathItems = @"items/%@/";
+        _pathMultiGetsItems = @"items";
         _pathDescription =  @"items/%@/description";
-        _itemJsonTranslator  = [[MTCItemTranslator alloc] init];
     }
     return self;
 }
@@ -92,6 +92,37 @@
     [[NSOperationQueue mainQueue] addOperation:op];
 }
 
+- (void)getItems:(NSArray*)idsItem{
+    
+    [self preExecute];
+    
+    //agrego parametros
+    NSDictionary * params =  nil;
+    if (idsItem!=nil) {
+        NSString * attributesJoined = [idsItem componentsJoinedByString:@","];
+        params = @{@"ids":attributesJoined};
+    }
+    
+    NSString *pathMultigetItems = [NSString stringWithFormat:self.pathMultiGetsItems,params];
+    
+    //construyo el request
+    AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:pathMultigetItems parameters:params];
+    
+    __block MTCMeliServiceApiImpl * weakSelf = self;
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [[weakSelf getDelegate] onPostExecute:responseObject];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        //Si el delegate tiene implementado el manejo de errores entonces lo invoco.
+        if ([[weakSelf getDelegate] respondsToSelector:@selector(handleError:)]) {
+            [[weakSelf getDelegate] handleError:error];
+        }
+    }];
+    [[NSOperationQueue mainQueue] addOperation:op];
+}
+
 - (void)getDescriptionFromItem:(NSString*)idIdem
 {
     [self preExecute];
@@ -115,6 +146,8 @@
     }];
     [[NSOperationQueue mainQueue] addOperation:op];
 }
+
+
 
 
 
@@ -154,8 +187,6 @@
     [_pathSearch release];
     [_pathItems release];
     [_pathDescription release];
-    [_itemJsonTranslator  release];
-    [_searchJsonTranslator release];
     [_url release];
     [delegate release];
     [super dealloc];

@@ -7,7 +7,7 @@
 //
 
 #import "MTCAppDelegate.h"
-#import "MTCSearchViewController.h"
+#import "MTCSearchFavoritesTabBarViewController.h"
 
 @implementation MTCAppDelegate
 
@@ -15,10 +15,10 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
-    //Creo el MainviewController
-    MTCSearchViewController * mainViewController = [[MTCSearchViewController alloc] initWithNibName:nil bundle:nil];
+    //Creo el controller
+    MTCSearchFavoritesTabBarViewController * mainViewController = [[MTCSearchFavoritesTabBarViewController alloc] initWithNibName:nil bundle:nil];
     
-    //Creo un navigationcontrolles con el MainController
+    //Creo un navigationcontroller
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     
     //[self customizeNavigationBarAppearance];
@@ -29,13 +29,9 @@
     [mainViewController release];
     //[navigationController release];
     
-    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    return YES;
-    
-    
     return YES;
 }
 

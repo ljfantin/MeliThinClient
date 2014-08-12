@@ -85,6 +85,10 @@
     if(![fileManager fileExistsAtPath:self.pathFile]) {
         [fileManager createFileAtPath:self.pathFile contents:nil attributes:nil];
     }
+    else
+    {
+        self.data = [[NSMutableDictionary alloc] initWithContentsOfFile:self.pathFile];
+    }
 }
 
 - (NSString*)buildPathFile {

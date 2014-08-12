@@ -10,10 +10,11 @@
 #import "MTCVipItemPhotoGalleryView.h"
 #import "MTCMeliServiceApiImpl.h"
 #import "MTCPictureDto.h"
-#import "MTCPriceFavoriteButtonVipItemViewItemTableViewCell.h"
+#import "MTCPriceFavoriteButtonVipItemViewTableViewCell.h"
 #import "MTCVipItemTableViewFooter.h"
 #import "MTCItemDto.h"
 #import "MTCDescriptionVipItemViewController.h"
+#import "MTCMeliServiceApiImpl+SecureMethods.h"
 
 #define INDEX_PRICE_FAVORITE_CELL 0
 #define INDEX_SUBTITLE_CELL 1
@@ -41,7 +42,6 @@
     if (self) {
         _service = [[MTCMeliServiceApiImpl alloc] init];
         [_service setDelegate:self];
-        _itemTranslator = [[MTCItemTranslator alloc]init];
         _picturesTranslator = [[MTCPicturesJsonTranslator alloc] init];
         _cells = [[NSMutableArray alloc] init];
         _cellsCount = 0;
@@ -149,15 +149,17 @@
 {
     static NSString *idPriceFavoriteCell = @"idPriceFavoriteCell";
 
-    MTCPriceFavoriteButtonVipItemViewItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idPriceFavoriteCell];
+    MTCPriceFavoriteButtonVipItemViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idPriceFavoriteCell];
     if (cell == nil)
     {
-        cell = [[[MTCPriceFavoriteButtonVipItemViewItemTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idPriceFavoriteCell] autorelease];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MTCPriceFavoriteButtonVipItemViewTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+        //cell = [[[MTCPriceFavoriteButtonVipItemViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idPriceFavoriteCell] autorelease];
     }
     NSMutableString * price = [NSMutableString string];
     [price appendString:@"$ "];
     [price appendString:[self.item.price stringValue]];
-    cell.labelPrice.text = price;
+    cell.priceLabel.text = price;
     return cell;
 }
 
@@ -265,6 +267,22 @@
     self.pageControl.currentPage = page;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.cells[indexPath.row] intValue] == INDEX_DESCRIPCION_CELL) {
+    
+        MTCDescriptionVipItemViewController * descriptionViewController = [[MTCDescriptionVipItemViewController alloc] init];
+        descriptionViewController.idItem = self.item.id;
+        [self.navigationController pushViewController:descriptionViewController animated:YES];
+    }
+}
+
+- (IBAction)addFavoritePushButton:(id)sender {
+    //[self.service addBookmark:self.item withToken:nil];
+    [self.service addBookmark:_item withToken:nil];
+}
+
+#pragma mark implementacion delegate MTCServiceApiDelegate
 - (void) onPostExecute:(NSDictionary *) data
 {
     //NSLog(@"Respuesta json search %@: %@", query, responseObject);
@@ -284,23 +302,13 @@
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([self.cells[indexPath.row] intValue] == INDEX_DESCRIPCION_CELL) {
-    
-        MTCDescriptionVipItemViewController * descriptionViewController = [[MTCDescriptionVipItemViewController alloc] init];
-        descriptionViewController.idItem = self.item.id;
-        [self.navigationController pushViewController:descriptionViewController animated:YES];
-    }
-}
-
 - (void)dealloc
 {
-    [_itemTranslator release];
     [_picturesTranslator release];
     [_gallery release];
     [_pageControl release];
     [_detailItemTableview release];
+    [_addFavoriteButton release];
     [super dealloc];
 }
 @end

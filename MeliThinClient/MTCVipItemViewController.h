@@ -13,16 +13,19 @@
 #import "MTCItemDto.h"
 #import "MTCItemTranslator.h"
 #import "MTCPicturesJsonTranslator.h"
+#import "MTCMeliServiceApiImpl.h"
 
 @interface MTCVipItemViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,MTCServiceApiDelegate>
+
+@property (retain, nonatomic) IBOutlet UIButton *addFavoriteButton;
+- (IBAction)addFavoritePushButton:(id)sender;
 
 
 @property (retain,nonatomic) MTCItemDto * item;
 @property (retain, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (retain, nonatomic) IBOutlet UITableView *detailItemTableview;
-@property (retain, nonatomic) id<MTCMeliServiceApi> service;
+@property (retain, nonatomic) MTCMeliServiceApiImpl * service;
 
-@property (retain, nonatomic) MTCItemTranslator * itemTranslator;
 @property (retain, nonatomic) MTCPicturesJsonTranslator * picturesTranslator;
 
 

@@ -1,16 +1,14 @@
 //
-//  MTCSearchJsonTranslator.m
+//  MTCFavoritesJsonTranslator.m
 //  MeliThinClient
 //
-//  Created by Leandro Fantin on 08/08/14.
+//  Created by Leandro Fantin on 12/08/14.
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "MTCSearchJsonTranslator.h"
-#import "MTCItemSearchResultDto.h"
+#import "MTCFavoritesJsonTranslator.h"
 
-
-@implementation MTCSearchJsonTranslator
+@implementation MTCFavoritesJsonTranslator
 
 - (instancetype)init
 {
@@ -23,15 +21,12 @@
 
 - (NSArray *) translate:(NSDictionary *)json
 {
-    NSArray * jsonResults = json[@"results"];
     NSMutableArray * listItems = [NSMutableArray array];
-    for (NSDictionary * item in jsonResults) {
+    for (NSDictionary * item in json) {
         //agrego el item
         [listItems addObject:[self.resultJsonTranslator translateObject:item]];
-    }    
+    }
     return listItems;
 }
-
-
 
 @end
