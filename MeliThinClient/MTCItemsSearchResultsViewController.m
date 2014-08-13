@@ -45,6 +45,8 @@
     [self.tableView addInfiniteScrollingWithActionHandler:^{
         [weakSelf addNewItemsToTableView];
     }];
+    
+    [self requestNewItems];
 }
 
 
@@ -109,6 +111,7 @@
     self.searchQuery = searchBar.text;
     [self.pager reset];
     [self.items removeAllObjects];
+    [self.spinner startAnimating];
     [self requestNewItems];
     [searchBar resignFirstResponder];
 }
@@ -158,7 +161,7 @@
 
 - (void) onPreExecute
 {
-    [self.spinner startAnimating];
+    //
 }
 
 

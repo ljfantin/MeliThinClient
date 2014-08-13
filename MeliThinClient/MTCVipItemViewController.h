@@ -27,6 +27,8 @@
 @property (retain, nonatomic) MTCMeliServiceApiImpl * service;
 
 @property (retain, nonatomic) MTCPicturesJsonTranslator * picturesTranslator;
+@property (retain, nonatomic) UIImage * imageIsFavorite;
+@property (retain, nonatomic) UIImage * imageIsNotFavorite;
 
 
 @end

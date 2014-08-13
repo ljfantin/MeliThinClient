@@ -29,10 +29,16 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [self requestNewItems];
+}
+
 - (void) requestNewItems
 {
     [self.service getAllBookmarks:nil];
 }
+
 
 #pragma mark Implementacion delegate MTCServiceApiDelegate
 - (void) onPostExecute:(NSDictionary *) data;
@@ -45,13 +51,12 @@
     //actualizo el header de la tabla
     [self updateTitle:@"Favoritos" withCount:[listItems count]];
     
-    //cargo los filas
-    NSInteger startingRow = self.pager.offset;
-    if ([self.items count]==0)   {
-        [self.items addObjectsFromArray:listItems];
-        [self.tableView reloadData];
-    }
-    else {
+    //if ([self.items count]==0)   {
+    [self.items removeAllObjects];
+    [self.items addObjectsFromArray:listItems];
+    [self.tableView reloadData];
+    //}
+    /*else {
         NSMutableArray *indexPaths = [NSMutableArray array];
         for (MTCItemSearchResultDto *item in listItems) {
             [self.items addObject:item];
@@ -59,7 +64,7 @@
             startingRow++;
         }
         [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
-    }
+    }*/
 }
 
 - (void) onPreExecute

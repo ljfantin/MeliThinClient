@@ -35,10 +35,14 @@
 {
     [super viewDidLoad];
     
-    self.tableView.tableFooterView = [UIView new];
+    //self.tableView.tableFooterView = [UIView new];
+    //[self requestNewItems];
+    //[self requestNewItems];
 
-    [self requestNewItems];
 }
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

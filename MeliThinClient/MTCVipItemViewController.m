@@ -21,7 +21,6 @@
 #define INDEX_CONDITION_CELL 2
 #define INDEX_AVAILABLE_CELL 3
 #define INDEX_DESCRIPCION_CELL 4
-// #define INDEX_BUY_BUTTON_CELL 5
 
 
 
@@ -55,7 +54,10 @@
     
     _gallery= [[[NSBundle mainBundle] loadNibNamed:@"MTCVipItemPhotoGalleryView" owner:self options:nil] firstObject];
     
-    _footer= [[[NSBundle mainBundle] loadNibNamed:@"MTCVipItemTableViewFooter" owner:self options:nil] firstObject];
+    if ([self.item.buyingMode isBuyItNow])  {
+        _footer= [[[NSBundle mainBundle] loadNibNamed:@"MTCVipItemTableViewFooter" owner:self options:nil] firstObject];
+        self.detailItemTableview.tableFooterView = _footer;
+    }
 
     [self.service getItem:self.item.id attributes:@[@"pictures",@"descriptions"]];
     if (self.item.price!=nil)  {
@@ -79,7 +81,10 @@
     self.cellsCount++;
     
     self.detailItemTableview.tableHeaderView = _gallery;
-    self.detailItemTableview.tableFooterView = _footer;
+    _imageIsFavorite = [UIImage imageNamed:@"ExitButton.png"];
+    _imageIsNotFavorite = [UIImage imageNamed:@"ExitButton.png"];
+    //if (
+    //[self.addFavoriteButton setImage:buttonImage forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,9 +125,6 @@
         case INDEX_DESCRIPCION_CELL:
             cell = [self buildDescriptionCell:tableView];
             break;
-        /*case INDEX_BUY_BUTTON_CELL:
-            cell = [self buildBuyButtonCell:tableView];
-            break;*/
         default:
             break;
     }
@@ -139,7 +141,6 @@
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MTCPriceFavoriteButtonVipItemViewTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
-        //cell = [[[MTCPriceFavoriteButtonVipItemViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idPriceFavoriteCell] autorelease];
     }
     NSMutableString * price = [NSMutableString string];
     [price appendString:@"$ "];
