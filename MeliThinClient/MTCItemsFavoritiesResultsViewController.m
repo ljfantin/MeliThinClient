@@ -42,6 +42,12 @@
     //stop el spinner
     [self.spinner stopAnimating];
     
+    //actualizo el header de la tabla
+    NSMutableString * header = [NSMutableString stringWithString:@"Favoritos ("];
+    [header appendString:[@([listItems count]) stringValue]];
+    [header appendString:@")"];
+    self.titleHeaderTable = header;
+
     //cargo los filas
     NSInteger startingRow = self.pager.offset;
     if ([self.items count]==0)   {

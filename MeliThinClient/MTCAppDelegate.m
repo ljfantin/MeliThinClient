@@ -8,6 +8,8 @@
 
 #import "MTCAppDelegate.h"
 #import "MTCSearchFavoritesTabBarViewController.h"
+#import "MTCItemsSearchResultsViewController.h"
+#import "MTCItemsFavoritiesResultsViewController.h"
 
 @implementation MTCAppDelegate
 
@@ -16,17 +18,31 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
     //Creo el controller
-    MTCSearchFavoritesTabBarViewController * mainViewController = [[MTCSearchFavoritesTabBarViewController alloc] initWithNibName:nil bundle:nil];
+    self.tabBarController = [[UITabBarController alloc] init];
+    
+    MTCItemsSearchResultsViewController * itemsSearchResultsController = [[MTCItemsSearchResultsViewController alloc] init];
+    itemsSearchResultsController.searchQuery = @"peugeot";
+    UITabBarItem *tabBuscar = [[UITabBarItem alloc] initWithTitle:@"Buscar"
+                                                            image:[UIImage imageNamed:@"search32.png"] tag:1];
+    [itemsSearchResultsController setTabBarItem:tabBuscar];
+    
+    
+    MTCItemsFavoritiesResultsViewController * favoritesController = [[MTCItemsFavoritiesResultsViewController alloc] init];
+    UITabBarItem *tabFavorites = [[UITabBarItem alloc] initWithTitle:@"Favoritos"
+                                                               image:[UIImage imageNamed:@"favoriteIcon32.png"] tag:1];
+    [favoritesController setTabBarItem:tabFavorites];
     
     //Creo un navigationcontroller
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    UINavigationController *navigationControllerItemSearch = [[UINavigationController alloc] initWithRootViewController:itemsSearchResultsController];
     
-    //[self customizeNavigationBarAppearance];
+    UINavigationController *navigationControllerItemFavorities = [[UINavigationController alloc] initWithRootViewController:favoritesController];
+    
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationControllerItemSearch,navigationControllerItemFavorities,nil];
+
     
     //le seteo el navigation controller
-    [self.window setRootViewController:navigationController];
+    [self.window setRootViewController:self.tabBarController];
     
-    [mainViewController release];
     //[navigationController release];
     
     // Override point for customization after application launch.
