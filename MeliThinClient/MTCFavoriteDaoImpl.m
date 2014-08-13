@@ -44,27 +44,29 @@
 
 - (void) save:(NSString*)id
 {
-    NSMutableArray * ids = (NSMutableArray *)self.data[self.keyCollectionId];
+    NSMutableArray * ids = [(NSMutableArray *)self.data[self.keyCollectionId] retain];
     [ids addObject:id];
+    [ids release];
     // self.data[self.keyCollectionId]=ids;
 }
 
 - (void) delete:(NSString*)id
 {
-    NSMutableArray * ids = (NSMutableArray *)self.data[self.keyCollectionId];
+    NSMutableArray * ids = [(NSMutableArray *)self.data[self.keyCollectionId] retain];
     [ids removeObject:id];
+    [ids release];
 }
 
 - (void) deleteAll
 {
-    NSMutableArray * ids = (NSMutableArray *)self.data[self.keyCollectionId];
+    NSMutableArray * ids = [(NSMutableArray *)self.data[self.keyCollectionId] retain];
     [ids removeAllObjects];
+    [ids release];
 }
 
 - (NSArray*) getAll
 {
-    NSMutableArray * ids = (NSMutableArray *)self.data[self.keyCollectionId];
-    return ids;
+    return [(NSMutableArray *)self.data[self.keyCollectionId] autorelease];
 }
 
 
