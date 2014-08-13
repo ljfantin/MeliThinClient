@@ -77,17 +77,6 @@
     //TODO ver que hacemos con esto
     self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_DESCRIPCION_CELL];
     self.cellsCount++;
-    /*if (self.item.!=nil) {
-        self.cells[self.cellsCount] = INDEX_DESCRIPCION_CELL;
-        self.cellsCount++;
-    }*/
-    //EL BOTON VA SI O SI
-    //self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_BUY_BUTTON_CELL];
-    //self.cellsCount++;
-    /*if (self.item.!=nil) {
-     self.cells[self.cellsCount] = INDEX_DESCRIPCION_CELL;
-     self.cellsCount++;
-     }*/
     
     self.detailItemTableview.tableHeaderView = _gallery;
     self.detailItemTableview.tableFooterView = _footer;
@@ -109,10 +98,6 @@
 {
     return _cellsCount;
 }
-
-/*- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return _footer;
-}*/
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

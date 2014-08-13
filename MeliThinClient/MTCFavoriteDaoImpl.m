@@ -19,7 +19,8 @@
 
 @implementation MTCFavoriteDaoImpl
 
-+ (MTCFavoriteDaoImpl*)sharedInstance
+/*
+ + (MTCFavoriteDaoImpl*)sharedInstance
 {
     static MTCFavoriteDaoImpl *_sharedInstance = nil;
     static dispatch_once_t oncePredicate;
@@ -27,7 +28,7 @@
         _sharedInstance = [[MTCFavoriteDaoImpl alloc] init];
     });
     return _sharedInstance;
-}
+}*/
 
 - (instancetype)init
 {
@@ -36,7 +37,7 @@
         _fileName = @"favorites.plist";
         _keyCollectionId = @"favoritesIds";
         _pathFile = [self buildPathFile];
-        _data = [[NSMutableDictionary alloc] initWithDictionary:@{_keyCollectionId: [NSMutableArray array]}];
+        
         [self createFile];
     }
     return self;
@@ -44,40 +45,38 @@
 
 - (void) save:(NSString*)id
 {
-    NSMutableArray * ids = [(NSMutableArray *)self.data[self.keyCollectionId] retain];
+    NSMutableArray * ids = (NSMutableArray *)self.data[self.keyCollectionId];
     [ids addObject:id];
-    [ids release];
     // self.data[self.keyCollectionId]=ids;
 }
 
 - (void) delete:(NSString*)id
 {
-    NSMutableArray * ids = [(NSMutableArray *)self.data[self.keyCollectionId] retain];
+    NSMutableArray * ids = (NSMutableArray *)self.data[self.keyCollectionId];
     [ids removeObject:id];
-    [ids release];
 }
 
 - (void) deleteAll
 {
-    NSMutableArray * ids = [(NSMutableArray *)self.data[self.keyCollectionId] retain];
+    NSMutableArray * ids = (NSMutableArray *)self.data[self.keyCollectionId];
     [ids removeAllObjects];
-    [ids release];
 }
 
 - (NSArray*) getAll
 {
-    return [(NSMutableArray *)self.data[self.keyCollectionId] autorelease];
+    return (NSMutableArray *)self.data[self.keyCollectionId];
 }
 
 
 - (BOOL) commit
 {
     NSString *error;
-    NSData *data = [NSPropertyListSerialization dataFromPropertyList:self.data
-                                                              format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
-    [data writeToFile:self.pathFile atomically:YES];
+    /*NSData *data = [NSPropertyListSerialization dataFromPropertyList:self.data
+                                                              format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];*/
+    [self.data writeToFile:self.pathFile atomically:YES];
     //si no tengo errores entonces comiteo bien
-    return (error==nil);
+    //return (error==nil);
+    return YES;
 }
 
 - (void)createFile {
@@ -86,10 +85,13 @@
     NSFileManager * fileManager = [NSFileManager defaultManager];
     if(![fileManager fileExistsAtPath:self.pathFile]) {
         [fileManager createFileAtPath:self.pathFile contents:nil attributes:nil];
+        _data = [[NSMutableDictionary alloc] initWithDictionary:@{_keyCollectionId: [NSMutableArray array]}];
     }
     else
     {
-        self.data = [[NSMutableDictionary alloc] initWithContentsOfFile:self.pathFile];
+        _data = [[NSMutableDictionary alloc] initWithContentsOfFile:self.pathFile];
+        if (_data == nil)
+            _data = [[NSMutableDictionary alloc] initWithDictionary:@{_keyCollectionId: [NSMutableArray array]}];
     }
 }
 
@@ -99,6 +101,14 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *pathFile = [documentsDirectory stringByAppendingPathComponent:self.fileName];
     return pathFile;
+}
+
+- (void)dealloc
+{
+    [_data release];
+    [_fileName release];
+    [_keyCollectionId release];
+    [super dealloc];
 }
 
 @end

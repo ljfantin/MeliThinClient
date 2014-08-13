@@ -10,6 +10,6 @@
 #import "MTCFavoriteDao.h"
 
 @interface MTCFavoriteDaoImpl : NSObject<MTCFavoriteDao>
-+ (MTCFavoriteDaoImpl*) sharedInstance;
+//+ (MTCFavoriteDaoImpl*) sharedInstance;
 
 @end
