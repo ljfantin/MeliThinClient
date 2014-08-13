@@ -43,11 +43,8 @@
     [self.spinner stopAnimating];
     
     //actualizo el header de la tabla
-    NSMutableString * header = [NSMutableString stringWithString:@"Favoritos ("];
-    [header appendString:[@([listItems count]) stringValue]];
-    [header appendString:@")"];
-    self.titleHeaderTable = header;
-
+    [self updateTitle:@"Favoritos" withCount:[listItems count]];
+    
     //cargo los filas
     NSInteger startingRow = self.pager.offset;
     if ([self.items count]==0)   {
@@ -63,10 +60,6 @@
         }
         [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
     }
-    
-    //stop el pull
-    //[self.tableView.pullToRefreshView stopAnimating];
-    //[self.tableView.infiniteScrollingView stopAnimating];
 }
 
 - (void) onPreExecute

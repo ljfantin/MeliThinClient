@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTCItemsSearchResultsViewController">
             <connections>
+                <outlet property="searchDisplayController" destination="ReO-yg-qPE" id="Lhm-Sl-Fny"/>
                 <outlet property="spinner" destination="3Ul-jt-f3z" id="tvb-ZY-Kam"/>
                 <outlet property="tableView" destination="BDD-ma-NQZ" id="eUr-qH-2N7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -35,5 +36,13 @@
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <searchDisplayController id="ReO-yg-qPE">
+            <connections>
+                <outlet property="delegate" destination="-1" id="ih7-hW-NpT"/>
+                <outlet property="searchContentsController" destination="-1" id="jxI-7Q-zAd"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="dl6-2i-FaF"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="H9a-Vt-1Fs"/>
+            </connections>
+        </searchDisplayController>
     </objects>
 </document>

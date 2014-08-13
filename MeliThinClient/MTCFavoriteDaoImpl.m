@@ -70,8 +70,8 @@
 
 - (BOOL) commit
 {
-    NSString *error;
-    /*NSData *data = [NSPropertyListSerialization dataFromPropertyList:self.data
+    /*NSString *error;
+    NSData *data = [NSPropertyListSerialization dataFromPropertyList:self.data
                                                               format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];*/
     [self.data writeToFile:self.pathFile atomically:YES];
     //si no tengo errores entonces comiteo bien

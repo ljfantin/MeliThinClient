@@ -14,10 +14,15 @@
 {
     self = [super init];
     if (self) {
-        _total = 10;
-        _offset = 0;
-        _limit = 0;
+        [self reset];
     }
     return self;
+}
+
+- (void) reset
+{
+    _limit = 10;
+    _offset = 0;
+    _total = 0;
 }
 @end

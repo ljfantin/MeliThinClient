@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		41E6DA8DACE94463A5EB74D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A337731D19444F29D529790 /* libPods.a */; };
+		4F107003199BB5FB002C5A75 /* MTCSearchHistoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F107002199BB5FB002C5A75 /* MTCSearchHistoryDto.m */; };
+		4F107006199BB9C0002C5A75 /* MTCSearchHistoryDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F107005199BB9C0002C5A75 /* MTCSearchHistoryDao.m */; };
 		4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BBB1998F96100E64B32 /* MTCBuyingModeTranslator.m */; };
 		4F816BBF1998FA9E00E64B32 /* MTCConditionTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */; };
 		4F816BC3199911A100E64B32 /* MTCBuyButtonVipItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F816BC2199911A100E64B32 /* MTCBuyButtonVipItemTableViewCell.xib */; };
@@ -83,6 +85,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F107001199BB5FB002C5A75 /* MTCSearchHistoryDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCSearchHistoryDto.h; sourceTree = "<group>"; };
+		4F107002199BB5FB002C5A75 /* MTCSearchHistoryDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCSearchHistoryDto.m; sourceTree = "<group>"; };
+		4F107004199BB9C0002C5A75 /* MTCSearchHistoryDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCSearchHistoryDao.h; sourceTree = "<group>"; };
+		4F107005199BB9C0002C5A75 /* MTCSearchHistoryDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCSearchHistoryDao.m; sourceTree = "<group>"; };
 		4F816BBA1998F96100E64B32 /* MTCBuyingModeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCBuyingModeTranslator.h; sourceTree = "<group>"; };
 		4F816BBB1998F96100E64B32 /* MTCBuyingModeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCBuyingModeTranslator.m; sourceTree = "<group>"; };
 		4F816BBD1998FA9E00E64B32 /* MTCConditionTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCConditionTranslator.h; sourceTree = "<group>"; };
@@ -261,6 +267,8 @@
 				8B7510C319984D9D00E03739 /* MTCItemDto.m */,
 				8BB0753A19998B860008F581 /* MTCDescriptionDto.h */,
 				8BB0753B19998B860008F581 /* MTCDescriptionDto.m */,
+				4F107001199BB5FB002C5A75 /* MTCSearchHistoryDto.h */,
+				4F107002199BB5FB002C5A75 /* MTCSearchHistoryDto.m */,
 			);
 			name = dto;
 			sourceTree = "<group>";
@@ -444,6 +452,8 @@
 				4FE10163199A400200354A13 /* MTCFavoriteDao.h */,
 				4FE10164199A409800354A13 /* MTCFavoriteDaoImpl.h */,
 				4FE10165199A409800354A13 /* MTCFavoriteDaoImpl.m */,
+				4F107004199BB9C0002C5A75 /* MTCSearchHistoryDao.h */,
+				4F107005199BB9C0002C5A75 /* MTCSearchHistoryDao.m */,
 			);
 			name = dao;
 			sourceTree = "<group>";
@@ -623,6 +633,7 @@
 				4FE10166199A409800354A13 /* MTCFavoriteDaoImpl.m in Sources */,
 				8B7510C11998119400E03739 /* MTCPagerJsonTranslator.m in Sources */,
 				4FE6007319940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m in Sources */,
+				4F107003199BB5FB002C5A75 /* MTCSearchHistoryDto.m in Sources */,
 				4F816BBF1998FA9E00E64B32 /* MTCConditionTranslator.m in Sources */,
 				4FF2B0751992ADF7000BFE85 /* MTCItemSearchResultDto.m in Sources */,
 				8BB0753C19998B860008F581 /* MTCDescriptionDto.m in Sources */,
@@ -630,6 +641,7 @@
 				8BB0753919998AFF0008F581 /* MTCDescriptionJsonTranslator.m in Sources */,
 				4FF2B06A1992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.m in Sources */,
 				4FF2B06019928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m in Sources */,
+				4F107006199BB9C0002C5A75 /* MTCSearchHistoryDao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

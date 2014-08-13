@@ -11,6 +11,7 @@
 #import "MTCMeliServiceApiImpl.h"
 #import "MTCPagerList.h"
 #import "MTCItemSearchResultDto.h"
+#import "MTCSearchHistoryDto.h"
 
 
 @interface MTCItemsSearchResultsViewController ()
@@ -26,6 +27,7 @@
         [self.service setDelegate:self];
         _searchJsonTranslator = [[MTCSearchJsonTranslator alloc] init];
         _pagerJsonTranslator = [[MTCPagerJsonTranslator alloc] init];
+        [self buildQueryHistorial];
         //Titulo utilizado para tab bar
         self.title = @"Buscar";
     }
@@ -35,6 +37,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //creo search bar
+    [self buildSearchBar];
 
     // TODO __block ? agrego el infinito scrolling
     __block typeof(self) weakSelf = self;
@@ -43,6 +47,14 @@
     }];
 }
 
+
+- (void) buildQueryHistorial
+{
+    _searchHistoryDao = [[MTCSearchHistoryDao alloc] init];
+    _queryHistorial = [_searchHistoryDao getAll];
+}
+
+
 - (void) addNewItemsToTableView{
     if (self.pager.offset+self.pager.limit*2 <= self.pager.total)  {
         self.pager.offset += self.pager.limit;
@@ -50,10 +62,64 @@
     }
 }
 
+
 - (void) requestNewItems
 {
     [self.service search:self.searchQuery pager:self.pager];
 }
+
+
+- (void) buildSearchBar
+{
+    _searchBar = [UISearchBar new];
+    self.searchBar.showsCancelButton = YES;
+    self.searchBar.delegate = self;
+    [_searchBar sizeToFit];
+    self.tableView.tableHeaderView = self.searchBar;
+
+}
+
+/*- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (tableView != self.searchBarDisplayController.searchResultsTableView) {
+        return [super tableView:tableView numberOfRowsInSection:section];
+    } else {
+        return [self.queryHistorial count];
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView != self.searchBarDisplayController.searchResultsTableView) {
+        return [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"queryCell"];
+        if ( cell == nil ) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"queryCell"];
+        }
+        MTCSearchHistoryDto * dto = self.queryHistorial[indexPath.row];
+        cell.textLabel.text = dto.query;
+        return cell;
+    }
+}
+*/
+
+#pragma mark UISearchBarDelegate implementation
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;  {                    // called when keyboard search button pressed
+    self.searchQuery = searchBar.text;
+    [self.pager reset];
+    [self.items removeAllObjects];
+    [self requestNewItems];
+    [searchBar resignFirstResponder];
+}
+
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar;  {                    // called when keyboard search button pressed
+    [searchBar resignFirstResponder];
+    searchBar.text = self.searchQuery;
+    
+}
+
 
 
 #pragma mark Implementacion delegate MTCServiceApiDelegate
@@ -65,20 +131,18 @@
     //stop el spinner
     [self.spinner stopAnimating];
     
-    //actualizo el header de la tabla
-    NSMutableString * header = [NSMutableString stringWithString:self.searchQuery];
-    [header appendString:@" ("];
-    [header appendString:[@(self.pager.total) stringValue]];
-    [header appendString:@")"];
-    self.titleHeaderTable = header;
+    //updeteo el title de la tabla
+    [self updateTitle:self.searchQuery withCount:self.pager.total];
     
-    //cargo los filas
+    //Si no tengo data cargada hago un reload
     NSInteger startingRow = self.pager.offset;
     if ([self.items count]==0)   {
         [self.items addObjectsFromArray:listItems];
         [self.tableView reloadData];
     }
-    else {
+    else
+    {
+        //Caso contrario agrego los datos al final de la tabla
         NSMutableArray *indexPaths = [NSMutableArray array];
         for (MTCItemSearchResultDto *item in listItems) {
             [self.items addObject:item];
@@ -86,16 +150,14 @@
             startingRow++;
         }
         [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+        //stop el pull
+        [self.tableView.pullToRefreshView stopAnimating];
+        [self.tableView.infiniteScrollingView stopAnimating];
     }
-
-    //stop el pull
-    [self.tableView.pullToRefreshView stopAnimating];
-    [self.tableView.infiniteScrollingView stopAnimating];
 }
 
 - (void) onPreExecute
 {
-    NSLog(@"onPreExecute");
     [self.spinner startAnimating];
 }
 
@@ -106,7 +168,8 @@
     [_searchJsonTranslator release];
     [_searchQuery release];
     [_service release];
-
+    [_queryHistorial release];
+    [_searchHistoryDao release];
     [super dealloc];
 }
 @end

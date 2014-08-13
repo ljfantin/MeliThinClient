@@ -13,16 +13,19 @@
 #import "MTCPagerList.h"
 #import "MTCSearchJsonTranslator.h"
 #import "MTCPagerJsonTranslator.h"
+#import "MTCSearchHistoryDao.h"
 
 
-@interface MTCItemsSearchResultsViewController : MTCAbtractListItemTableViewViewController<MTCServiceApiDelegate>
+@interface MTCItemsSearchResultsViewController : MTCAbtractListItemTableViewViewController<MTCServiceApiDelegate, UISearchBarDelegate>
 
 @property (nonatomic, retain) NSString * searchQuery;
 @property (nonatomic, retain) MTCSearchJsonTranslator * searchJsonTranslator;
 @property (nonatomic, retain) MTCPagerJsonTranslator * pagerJsonTranslator;
 @property (nonatomic, retain) MTCMeliServiceApiImpl * service;
 
+@property (nonatomic, retain) UISearchBar *searchBar;
 
-
+@property (nonatomic, retain) NSArray * queryHistorial;
+@property (nonatomic, retain) MTCSearchHistoryDao * searchHistoryDao;
 
 @end

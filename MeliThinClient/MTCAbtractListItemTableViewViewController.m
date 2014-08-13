@@ -26,9 +26,6 @@
     if (self) {
         // Custom initialization
         _pager = [[MTCPagerList alloc] init];
-        _pager.limit = 10;
-        _pager.offset = 0;
-        _pager.total = 0;
         _items = [[NSMutableArray alloc] init];
     }
     return self;
@@ -108,6 +105,15 @@
     nextController.item = itemDto;
     //pusheo el controller
     [self.navigationController pushViewController:nextController animated:YES];
+}
+
+- (void) updateTitle:(NSString *)title withCount:(NSInteger)countResults{
+
+    NSMutableString * header = [NSMutableString stringWithString:title];
+    [header appendString:@" ("];
+    [header appendString:[@(countResults) stringValue]];
+    [header appendString:@")"];
+    self.titleHeaderTable = header;
 }
 
 - (void)dealloc {

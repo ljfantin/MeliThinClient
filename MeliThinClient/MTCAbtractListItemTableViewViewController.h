@@ -23,4 +23,5 @@
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 - (void) requestNewItems;
+- (void) updateTitle:(NSString *)title withCount:(NSInteger)countResults;
 @end
