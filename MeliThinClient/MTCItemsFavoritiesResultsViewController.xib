@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="64" width="320" height="504"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="30" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="LJG-Mr-7Cg">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="30" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="LJG-Mr-7Cg">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -25,12 +25,20 @@
                         <outlet property="delegate" destination="-1" id="CHP-Fz-mQs"/>
                     </connections>
                 </tableView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mJ5-rP-p2h">
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mJ5-rP-p2h">
                     <rect key="frame" x="150" y="242" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="LJG-Mr-7Cg" firstAttribute="centerX" secondItem="mJ5-rP-p2h" secondAttribute="centerX" id="HYe-KI-GIf"/>
+                <constraint firstItem="LJG-Mr-7Cg" firstAttribute="centerY" secondItem="mJ5-rP-p2h" secondAttribute="centerY" id="Tl7-xW-OCN"/>
+                <constraint firstAttribute="trailing" secondItem="LJG-Mr-7Cg" secondAttribute="trailing" id="Xzk-mu-UeF"/>
+                <constraint firstItem="LJG-Mr-7Cg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="exK-8q-bwT"/>
+                <constraint firstAttribute="bottom" secondItem="LJG-Mr-7Cg" secondAttribute="bottom" id="oUp-fP-Eqe"/>
+                <constraint firstItem="LJG-Mr-7Cg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pZr-Du-EMj"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

@@ -14,11 +14,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <rect key="frame" x="0.0" y="64" width="320" height="455"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BDD-ma-NQZ">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BDD-ma-NQZ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -26,14 +26,23 @@
                         <outlet property="delegate" destination="-1" id="MOb-De-8jP"/>
                     </connections>
                 </tableView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3Ul-jt-f3z">
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3Ul-jt-f3z">
                     <rect key="frame" x="150" y="242" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="BDD-ma-NQZ" secondAttribute="trailing" id="7Qg-q5-pkh"/>
+                <constraint firstAttribute="bottom" secondItem="3Ul-jt-f3z" secondAttribute="bottom" constant="193" id="Gxg-EC-NFR"/>
+                <constraint firstItem="BDD-ma-NQZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Kja-rO-AxQ"/>
+                <constraint firstItem="BDD-ma-NQZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oon-Ic-dUm"/>
+                <constraint firstAttribute="bottom" secondItem="BDD-ma-NQZ" secondAttribute="bottom" id="RQa-Ho-UhD"/>
+                <constraint firstItem="BDD-ma-NQZ" firstAttribute="centerX" secondItem="3Ul-jt-f3z" secondAttribute="centerX" id="Ufn-nG-VpT"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
         <searchDisplayController id="ReO-yg-qPE">
