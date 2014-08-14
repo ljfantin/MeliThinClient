@@ -95,7 +95,10 @@
     MTCItemSearchResultDto * item = [self.items objectAtIndex:indexPath.row];
     //SE PODRIA FORMATEAR EL NUMERO POR LOCALE
     cell.title.text = item.tittle;
-    cell.price.text = [item.price stringValue];
+    NSMutableString * price = [NSMutableString string];
+    [price appendString:item.currency.symbol];
+    [price appendString:[item.price stringValue]];
+    cell.price.text = price;
     cell.thumbnail.image = item.thumbnail;
     
     return cell;
@@ -121,6 +124,7 @@
     itemDto.availableQuantity = itemSearchDto.availableQuantity;
     itemDto.buyingMode = itemSearchDto.buyingMode;
     itemDto.condition = itemSearchDto.condition;
+    itemDto.currency = itemSearchDto.currency;
     //seteo la busqueda
     vipItemViewController.item = itemDto;
     //pusheo el controller

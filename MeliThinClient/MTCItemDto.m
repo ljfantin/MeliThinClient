@@ -22,6 +22,7 @@
     [_condition release];
     [_pictures release];
     [_descriptions release];
+    [_currency release];
     [super dealloc];
 }
 @end

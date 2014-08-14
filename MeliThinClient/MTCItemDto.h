@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MTCBuyingModeTypeDto.h"
 #import "MTCConditiontTypeDto.h"
+#import "MTCCurrencyTypeDto.h"
 
 
 @interface MTCItemDto : NSObject
@@ -25,7 +26,9 @@
 
 @property (retain,nonatomic) NSArray * pictures;
 @property (retain,nonatomic) NSArray * descriptions;
+@property (retain,nonatomic) MTCCurrencyTypeDto * currency;
 
 @property BOOL isFavorite;
+
 
 @end

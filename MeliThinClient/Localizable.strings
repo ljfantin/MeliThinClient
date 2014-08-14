@@ -6,4 +6,16 @@
   Copyright (c) 2014 mercadolibre. All rights reserved.
 */
 
-"";
+"ARS"="$";
+"BRL"="R$";
+"CLP"="$";
+"COP"="$";
+"CRC"="¢";
+"DOP"="$";
+"EUR"="€";
+"MXN"="$";
+"PAB"="B/.";
+"PEN"="S/.";
+"USD"="U$S";
+"UYU"="$";
+"VEF"="BsF";

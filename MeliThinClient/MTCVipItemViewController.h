@@ -16,10 +16,12 @@
 #import "MTCMeliServiceApiImpl.h"
 #import "MTCFavoriteDaoImpl.h"
 
-@interface MTCVipItemViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,MTCServiceApiDelegate>
+
+@interface MTCVipItemViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,MTCServiceApiDelegate,UIAlertViewDelegate>
 
 @property (retain, nonatomic) IBOutlet UIButton *addFavoriteButton;
 - (IBAction)addFavoritePushButton:(id)sender;
+- (IBAction)pushBuyButton:(id)sender;
 
 
 @property (retain,nonatomic) MTCItemDto * item;

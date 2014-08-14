@@ -13,6 +13,7 @@
 #import "MTCBuyingModeTypeDto.h"
 #import "UIImage+Utils.h"
 #import "MTCItemSearchResultDto.h"
+#import "MTCCurrencyTypeDto.h"
 
 
 @interface MTCSearchResultJsonTranslator ()
@@ -42,14 +43,17 @@
     NSString * subtitle = [json objectForKey:@"subtitle"];
     NSNumber * price = [json objectForKey:@"price"];
     NSNumber * quantity = [json objectForKey:@"available_quantity"];
+    NSString * currencyId = [json objectForKey:@"currency_id"];
+    
     MTCConditiontTypeDto * condition = (MTCConditiontTypeDto *)[self.conditionJsonTranslator translateObject:json];
     MTCBuyingModeTypeDto * buyingMode = (MTCBuyingModeTypeDto *)[self.buyingModeJsonTranslator translateObject:json];
+    MTCCurrencyTypeDto * currency = [MTCCurrencyTypeDto initWith:currencyId];
     
     NSString * urlThumbnail = [json objectForKey:@"thumbnail"];
     UIImage * image = [UIImage imageWithUrl:urlThumbnail];
     
     //creo el dto
-    MTCItemSearchResultDto * item = [MTCItemSearchResultDto initWithId:id title:title price:price subtitle:subtitle availableQuantity:quantity condition:condition buyingMode:buyingMode thumbnail:image];
+    MTCItemSearchResultDto * item = [MTCItemSearchResultDto initWithId:id title:title price:price subtitle:subtitle availableQuantity:quantity condition:condition buyingMode:buyingMode currency:currency thumbnail:image];
     return item;
 }
 

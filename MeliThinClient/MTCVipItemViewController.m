@@ -158,7 +158,7 @@
         cell = [nib objectAtIndex:0];
     }
     NSMutableString * price = [NSMutableString string];
-    [price appendString:@"$ "];
+    [price appendString:self.item.currency.symbol];
     [price appendString:[self.item.price stringValue]];
     cell.priceLabel.text = price;
     [self initStateFavoriteButton];
@@ -259,13 +259,7 @@
 }
 
 
-#pragma mark - Implementacion de UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)sender
-{
-    CGFloat pageWidth = sender.frame.size.width;
-    int page = floor((sender.contentOffset.x - pageWidth / 2 ) / pageWidth) + 1;
-    self.pageControl.currentPage = page;
-}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -290,6 +284,31 @@
         [self.addFavoriteButton setImage:_imageIsFavorite forState:UIControlStateNormal];
     }
     self.item.isFavorite = !self.item.isFavorite;
+}
+
+- (IBAction)pushBuyButton:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirmacion de compra"
+                                                    message:@"¿Esta seguro que desea concretar la compra?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancelar"
+                                          otherButtonTitles:@"Confirmar",nil];
+    [alert show];
+    [alert release];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        
+    }
+}
+
+
+#pragma mark - Implementacion de UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)sender
+{
+    CGFloat pageWidth = sender.frame.size.width;
+    int page = floor((sender.contentOffset.x - pageWidth / 2 ) / pageWidth) + 1;
+    self.pageControl.currentPage = page;
 }
 
 #pragma mark implementacion delegate MTCServiceApiDelegate

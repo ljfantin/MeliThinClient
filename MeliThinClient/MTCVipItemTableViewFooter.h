@@ -10,6 +10,5 @@
 
 @interface MTCVipItemTableViewFooter : UIView
 @property (retain, nonatomic) IBOutlet UIButton *buttonBuy;
-@property (retain, nonatomic) IBOutlet UILabel *labelAvailable;
 
 @end
