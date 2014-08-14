@@ -19,3 +19,7 @@
 "USD"="U$S";
 "UYU"="$";
 "VEF"="BsF";
+
+"searchBar.tittle" = "Buscar en Mercadolibre";
+"history.TableView.title" = "Ultimas busquedas";
+"history.title" = "Mercadolibre";

@@ -42,8 +42,6 @@
 }
 
 
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -67,13 +65,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return NUMBER_OF_SECCCIONS;
-}
-
-- (void)dealloc {
-    [_tableView release];
-    [_spinner release];
-    [_pager release];
-    [super dealloc];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -134,8 +125,12 @@
 }
 
 
-
-
+- (void)dealloc {
+    [_tableView release];
+    [_spinner release];
+    [_pager release];
+    [super dealloc];
+}
 
 
 @end

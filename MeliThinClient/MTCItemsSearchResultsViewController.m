@@ -37,9 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //creo search bar
-    [self buildSearchBar];
-
+    self.searchBar.text = self.searchQuery;
     // TODO __block ? agrego el infinito scrolling
     __block typeof(self) weakSelf = self;
     [self.tableView addInfiniteScrollingWithActionHandler:^{
@@ -70,16 +68,6 @@
     [self.service search:self.searchQuery pager:self.pager];
 }
 
-
-- (void) buildSearchBar
-{
-    _searchBar = [UISearchBar new];
-    self.searchBar.showsCancelButton = YES;
-    self.searchBar.delegate = self;
-    [_searchBar sizeToFit];
-    self.tableView.tableHeaderView = self.searchBar;
-
-}
 
 /*- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -173,6 +161,7 @@
     [_service release];
     [_queryHistorial release];
     [_searchHistoryDao release];
+    [_searchBar release];
     [super dealloc];
 }
 @end

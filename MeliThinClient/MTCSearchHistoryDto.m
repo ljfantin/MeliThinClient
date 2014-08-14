@@ -19,6 +19,16 @@
     return instace;
 }
 
++ (instancetype) initWith:(NSString*)query
+{
+    MTCSearchHistoryDto * instace = [[[MTCSearchHistoryDto alloc] init] autorelease];
+    instace.query = query;
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy/MM/dd"];
+    instace.date = [dateFormatter stringFromDate:[[NSDate alloc] init]];
+    [dateFormatter release];
+    return instace;
+}
 
 - (void)dealloc
 {

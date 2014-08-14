@@ -10,6 +10,8 @@
 		41E6DA8DACE94463A5EB74D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A337731D19444F29D529790 /* libPods.a */; };
 		4F107003199BB5FB002C5A75 /* MTCSearchHistoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F107002199BB5FB002C5A75 /* MTCSearchHistoryDto.m */; };
 		4F107006199BB9C0002C5A75 /* MTCSearchHistoryDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F107005199BB9C0002C5A75 /* MTCSearchHistoryDao.m */; };
+		4F47B82E199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F47B82C199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.m */; };
+		4F47B82F199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F47B82D199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.xib */; };
 		4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BBB1998F96100E64B32 /* MTCBuyingModeTranslator.m */; };
 		4F816BBF1998FA9E00E64B32 /* MTCConditionTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */; };
 		4F816BC819993A0B00E64B32 /* MTCFavoriteDaoTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BC719993A0B00E64B32 /* MTCFavoriteDaoTest.m */; };
@@ -45,8 +47,6 @@
 		4FF2B05C19928994000BFE85 /* MTCItemsSearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B05A19928994000BFE85 /* MTCItemsSearchResultsViewController.xib */; };
 		4FF2B06019928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B05E19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m */; };
 		4FF2B06119928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */; };
-		4FF2B06A1992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0681992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.m */; };
-		4FF2B06B1992A341000BFE85 /* MTCSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */; };
 		4FF2B0751992ADF7000BFE85 /* MTCItemSearchResultDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0741992ADF7000BFE85 /* MTCItemSearchResultDto.m */; };
 		4FF2B0781992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0771992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m */; };
 		4FF2B0851992BAD6000BFE85 /* MTCPagerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */; };
@@ -89,6 +89,9 @@
 		4F107002199BB5FB002C5A75 /* MTCSearchHistoryDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCSearchHistoryDto.m; sourceTree = "<group>"; };
 		4F107004199BB9C0002C5A75 /* MTCSearchHistoryDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCSearchHistoryDao.h; sourceTree = "<group>"; };
 		4F107005199BB9C0002C5A75 /* MTCSearchHistoryDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCSearchHistoryDao.m; sourceTree = "<group>"; };
+		4F47B82B199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCSearchWithHistorialSearchViewController.h; sourceTree = "<group>"; };
+		4F47B82C199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCSearchWithHistorialSearchViewController.m; sourceTree = "<group>"; };
+		4F47B82D199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCSearchWithHistorialSearchViewController.xib; sourceTree = "<group>"; };
 		4F816BBA1998F96100E64B32 /* MTCBuyingModeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCBuyingModeTranslator.h; sourceTree = "<group>"; };
 		4F816BBB1998F96100E64B32 /* MTCBuyingModeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCBuyingModeTranslator.m; sourceTree = "<group>"; };
 		4F816BBD1998FA9E00E64B32 /* MTCConditionTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCConditionTranslator.h; sourceTree = "<group>"; };
@@ -147,9 +150,6 @@
 		4FF2B05D19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCItemsFavoritiesResultsViewController.h; sourceTree = "<group>"; };
 		4FF2B05E19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemsFavoritiesResultsViewController.m; sourceTree = "<group>"; };
 		4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCItemsFavoritiesResultsViewController.xib; sourceTree = "<group>"; };
-		4FF2B0671992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCSearchFavoritesTabBarViewController.h; sourceTree = "<group>"; };
-		4FF2B0681992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCSearchFavoritesTabBarViewController.m; sourceTree = "<group>"; };
-		4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCSearchViewController.xib; sourceTree = "<group>"; };
 		4FF2B0731992ADF7000BFE85 /* MTCItemSearchResultDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCItemSearchResultDto.h; sourceTree = "<group>"; };
 		4FF2B0741992ADF7000BFE85 /* MTCItemSearchResultDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemSearchResultDto.m; sourceTree = "<group>"; };
 		4FF2B0761992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCAbtractListItemTableViewViewController.h; sourceTree = "<group>"; };
@@ -402,13 +402,13 @@
 		4FF2B0861992BC3F000BFE85 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				4F47B82D199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.xib */,
 				8BB0753419998A3A0008F581 /* MTCDescriptionVipItemViewController.xib */,
 				8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib */,
 				4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */,
 				4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */,
 				4FF2B05F19928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib */,
 				4FF2B05A19928994000BFE85 /* MTCItemsSearchResultsViewController.xib */,
-				4FF2B0691992A341000BFE85 /* MTCSearchViewController.xib */,
 				8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */,
 				8BAE6FE71996B67300BD9B74 /* MTCVipItemTableViewFooter.xib */,
 			);
@@ -424,12 +424,12 @@
 				4FF2B05919928994000BFE85 /* MTCItemsSearchResultsViewController.m */,
 				4FF2B0761992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.h */,
 				4FF2B0771992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m */,
-				4FF2B0671992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.h */,
-				4FF2B0681992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.m */,
 				4FDF172E199501D70004DCF3 /* MTCVipItemViewController.h */,
 				4FDF172F199501D70004DCF3 /* MTCVipItemViewController.m */,
 				8BB0753219998A3A0008F581 /* MTCDescriptionVipItemViewController.h */,
 				8BB0753319998A3A0008F581 /* MTCDescriptionVipItemViewController.m */,
+				4F47B82B199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.h */,
+				4F47B82C199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -539,8 +539,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FF2B08A1992D0D8000BFE85 /* image1.jpg in Resources */,
+				4F47B82F199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.xib in Resources */,
 				8BB0753E1999AD0F0008F581 /* favoriteIcon32.png in Resources */,
-				4FF2B06B1992A341000BFE85 /* MTCSearchViewController.xib in Resources */,
 				8BAE6FE81996B67300BD9B74 /* MTCVipItemTableViewFooter.xib in Resources */,
 				4FF2B0321992876F000BFE85 /* InfoPlist.strings in Resources */,
 				8BAE6FDF19968D8700BD9B74 /* favoriteIcon.png in Resources */,
@@ -622,6 +622,7 @@
 				4FF2B0851992BAD6000BFE85 /* MTCPagerList.m in Sources */,
 				4FDF173D199519080004DCF3 /* MTCVipItemPhotoGalleryView.m in Sources */,
 				8B7510C419984D9D00E03739 /* MTCItemDto.m in Sources */,
+				4F47B82E199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.m in Sources */,
 				4FF2B05B19928994000BFE85 /* MTCItemsSearchResultsViewController.m in Sources */,
 				4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */,
 				8B7510C7199853F500E03739 /* MTCItemTranslator.m in Sources */,
@@ -641,7 +642,6 @@
 				8BB0753C19998B860008F581 /* MTCDescriptionDto.m in Sources */,
 				8BAE6FF11996C5EB00BD9B74 /* MTCConditiontTypeDto.m in Sources */,
 				8BB0753919998AFF0008F581 /* MTCDescriptionJsonTranslator.m in Sources */,
-				4FF2B06A1992A341000BFE85 /* MTCSearchFavoritesTabBarViewController.m in Sources */,
 				4FF2B06019928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m in Sources */,
 				4F107006199BB9C0002C5A75 /* MTCSearchHistoryDao.m in Sources */,
 			);

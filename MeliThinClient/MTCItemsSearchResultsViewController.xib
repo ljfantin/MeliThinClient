@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTCItemsSearchResultsViewController">
             <connections>
-                <outlet property="searchDisplayController" destination="ReO-yg-qPE" id="Lhm-Sl-Fny"/>
+                <outlet property="searchBar" destination="DGl-y1-HdO" id="LDI-if-gLF"/>
                 <outlet property="spinner" destination="3Ul-jt-f3z" id="tvb-ZY-Kam"/>
                 <outlet property="tableView" destination="BDD-ma-NQZ" id="eUr-qH-2N7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -14,44 +14,45 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BDD-ma-NQZ">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" text="Buscar en Mercadolibre" id="DGl-y1-HdO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="PBH-KT-jF6"/>
+                        </connections>
+                    </searchBar>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="4Ur-jq-cSV"/>
                         <outlet property="delegate" destination="-1" id="MOb-De-8jP"/>
                     </connections>
                 </tableView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3Ul-jt-f3z">
-                    <rect key="frame" x="150" y="242" width="20" height="20"/>
+                    <rect key="frame" x="150" y="355" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="BDD-ma-NQZ" secondAttribute="trailing" id="4oJ-bS-c1a"/>
                 <constraint firstAttribute="trailing" secondItem="BDD-ma-NQZ" secondAttribute="trailing" id="7Qg-q5-pkh"/>
+                <constraint firstItem="BDD-ma-NQZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Exc-4k-1Gn"/>
                 <constraint firstAttribute="bottom" secondItem="3Ul-jt-f3z" secondAttribute="bottom" constant="193" id="Gxg-EC-NFR"/>
                 <constraint firstItem="BDD-ma-NQZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Kja-rO-AxQ"/>
                 <constraint firstItem="BDD-ma-NQZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oon-Ic-dUm"/>
                 <constraint firstAttribute="bottom" secondItem="BDD-ma-NQZ" secondAttribute="bottom" id="RQa-Ho-UhD"/>
                 <constraint firstItem="BDD-ma-NQZ" firstAttribute="centerX" secondItem="3Ul-jt-f3z" secondAttribute="centerX" id="Ufn-nG-VpT"/>
+                <constraint firstItem="BDD-ma-NQZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wVk-zf-OLV"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
-        <searchDisplayController id="ReO-yg-qPE">
-            <connections>
-                <outlet property="delegate" destination="-1" id="ih7-hW-NpT"/>
-                <outlet property="searchContentsController" destination="-1" id="jxI-7Q-zAd"/>
-                <outlet property="searchResultsDataSource" destination="-1" id="dl6-2i-FaF"/>
-                <outlet property="searchResultsDelegate" destination="-1" id="H9a-Vt-1Fs"/>
-            </connections>
-        </searchDisplayController>
     </objects>
 </document>

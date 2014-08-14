@@ -296,11 +296,11 @@
     [alert release];
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+/*- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
         
     }
-}
+}*/
 
 
 #pragma mark - Implementacion de UIScrollViewDelegate

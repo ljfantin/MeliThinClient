@@ -12,11 +12,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2d-46-ybm">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
@@ -27,10 +27,11 @@
                 <constraint firstAttribute="bottom" secondItem="o2d-46-ybm" secondAttribute="bottom" id="312-ox-n3t"/>
                 <constraint firstItem="o2d-46-ybm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DYO-D6-zg8"/>
                 <constraint firstItem="o2d-46-ybm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OBH-8D-Tb7"/>
+                <constraint firstItem="o2d-46-ybm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WwR-sA-6KI"/>
+                <constraint firstAttribute="trailing" secondItem="o2d-46-ybm" secondAttribute="trailing" id="aAM-LG-zBT"/>
                 <constraint firstAttribute="trailing" secondItem="o2d-46-ybm" secondAttribute="trailing" id="lbl-og-lGB"/>
+                <constraint firstItem="o2d-46-ybm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qwr-XQ-XWV"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

@@ -14,5 +14,6 @@
 @property (nonatomic,retain) NSString * date;
 
 + (instancetype) initWith:(NSString*)query data:(NSString*)date;
++ (instancetype) initWith:(NSString*)query;
 
 @end

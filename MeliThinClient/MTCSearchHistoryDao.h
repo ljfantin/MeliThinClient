@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MTCSearchHistoryDto.h"
 
 @interface MTCSearchHistoryDao : NSObject
 
++ (MTCSearchHistoryDao*)sharedInstance;
 -(NSArray*) getAll;
-
+-(void) deleteAll;
+-(void) save:(MTCSearchHistoryDto*)dto;
+- (BOOL) commit;
 @end

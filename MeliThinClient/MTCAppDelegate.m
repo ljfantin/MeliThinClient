@@ -7,9 +7,9 @@
 //
 
 #import "MTCAppDelegate.h"
-#import "MTCSearchFavoritesTabBarViewController.h"
 #import "MTCItemsSearchResultsViewController.h"
 #import "MTCItemsFavoritiesResultsViewController.h"
+#import "MTCSearchWithHistorialSearchViewController.h"
 
 @implementation MTCAppDelegate
 
@@ -17,22 +17,24 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
-    //Creo el controller
+    //Creo el tabbar controller
     self.tabBarController = [[UITabBarController alloc] init];
     
-    MTCItemsSearchResultsViewController * itemsSearchResultsController = [[MTCItemsSearchResultsViewController alloc] init];
-    itemsSearchResultsController.searchQuery = @"peugeot";
+    //creo los view controller, cada uno con su propio navigation controller
+    MTCSearchWithHistorialSearchViewController *itemsSearchResultsController = [[MTCSearchWithHistorialSearchViewController alloc] initWithNibName:@"MTCSearchWithHistorialSearchViewController" bundle:nil];
+
     UITabBarItem *tabBuscar = [[UITabBarItem alloc] initWithTitle:@"Buscar"
                                                             image:[UIImage imageNamed:@"search32.png"] tag:1];
     [itemsSearchResultsController setTabBarItem:tabBuscar];
     
     
-    MTCItemsFavoritiesResultsViewController * favoritesController = [[MTCItemsFavoritiesResultsViewController alloc] init];
+    MTCItemsFavoritiesResultsViewController * favoritesController = [[MTCItemsFavoritiesResultsViewController alloc] initWithNibName:@"MTCItemsFavoritiesResultsViewController" bundle:nil];
+    
     UITabBarItem *tabFavorites = [[UITabBarItem alloc] initWithTitle:@"Favoritos"
                                                                image:[UIImage imageNamed:@"favoriteIcon32.png"] tag:1];
     [favoritesController setTabBarItem:tabFavorites];
     
-    //Creo un navigationcontroller
+    //Creo un navigationcontroller para cada viewcontroller
     UINavigationController *navigationControllerItemSearch = [[UINavigationController alloc] initWithRootViewController:itemsSearchResultsController];
     
     UINavigationController *navigationControllerItemFavorities = [[UINavigationController alloc] initWithRootViewController:favoritesController];
@@ -40,10 +42,13 @@
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationControllerItemSearch,navigationControllerItemFavorities,nil];
 
     
-    //le seteo el navigation controller
+    //le seteo el tabbar controller como root
     [self.window setRootViewController:self.tabBarController];
     
-    //[navigationController release];
+    [navigationControllerItemSearch release];
+    [navigationControllerItemFavorities release];
+    [itemsSearchResultsController release];
+    [favoritesController release];
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
