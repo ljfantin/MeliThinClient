@@ -33,6 +33,7 @@
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = [images count];
     self.labelItemTitle.text=title;
+    [self.viewTitleItem setBackgroundColor:[UIColor darkGrayColor]];
     [self addSubview:self.viewTitleItem];
 }
 

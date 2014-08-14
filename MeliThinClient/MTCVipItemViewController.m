@@ -300,12 +300,13 @@
     for (MTCPictureDto * pictureDto in self.item.pictures) {
         [images addObject:pictureDto.image];
     }
+    [self.spinnerGallery stopAnimating];
     [self.gallery loadImages:images withTitle:self.item.title];
 }
 
 - (void) onPreExecute
 {
-    
+    [self.spinnerGallery startAnimating];
 }
 
 - (void)dealloc
@@ -315,6 +316,7 @@
     [_pageControl release];
     [_detailItemTableview release];
     [_addFavoriteButton release];
+    [_spinnerGallery release];
     [super dealloc];
 }
 @end
