@@ -43,7 +43,10 @@
         [_service setDelegate:self];
         _picturesTranslator = [[MTCPicturesJsonTranslator alloc] init];
         _cells = [[NSMutableArray alloc] init];
+        _dao = [[MTCFavoriteDaoImpl alloc] init];
         _cellsCount = 0;
+        _imageIsFavorite = [UIImage imageNamed:@"favoriteIcon.png"];
+        _imageIsNotFavorite = [UIImage imageNamed:@"favoriteIcon32.png"];
     }
     return self;
 }
@@ -76,16 +79,28 @@
         self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_AVAILABLE_CELL];
         self.cellsCount++;
     }
-    //TODO ver que hacemos con esto
+    //TODO ver
     self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_DESCRIPCION_CELL];
     self.cellsCount++;
-    
     self.detailItemTableview.tableHeaderView = _gallery;
-    _imageIsFavorite = [UIImage imageNamed:@"ExitButton.png"];
-    _imageIsNotFavorite = [UIImage imageNamed:@"ExitButton.png"];
-    //if (
-    //[self.addFavoriteButton setImage:buttonImage forState:UIControlStateNormal];
 }
+
+- (void) initStateFavoriteButton
+{
+    NSArray * idsFavorites = [self.dao getAll];
+    
+    self.item.isFavorite = [idsFavorites containsObject:self.item.id];
+    if (self.item.isFavorite) {
+        
+        [self.addFavoriteButton setImage:_imageIsFavorite forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.addFavoriteButton setImage:_imageIsNotFavorite forState:UIControlStateNormal];
+    }
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -146,6 +161,7 @@
     [price appendString:@"$ "];
     [price appendString:[self.item.price stringValue]];
     cell.priceLabel.text = price;
+    [self initStateFavoriteButton];
     return cell;
 }
 
@@ -243,8 +259,6 @@
 }
 
 
-
-
 #pragma mark - Implementacion de UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
@@ -264,17 +278,23 @@
 }
 
 - (IBAction)addFavoritePushButton:(id)sender {
-    //[self.service addBookmark:self.item withToken:nil];
-    [self.service addBookmark:_item withToken:nil];
+    
+    if (self.item.isFavorite)
+    {
+        [self.service removeBookmark:_item withToken:nil];
+        [self.addFavoriteButton setImage:_imageIsNotFavorite forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.service addBookmark:_item withToken:nil];
+        [self.addFavoriteButton setImage:_imageIsFavorite forState:UIControlStateNormal];
+    }
+    self.item.isFavorite = !self.item.isFavorite;
 }
 
 #pragma mark implementacion delegate MTCServiceApiDelegate
 - (void) onPostExecute:(NSDictionary *) data
 {
-    //NSLog(@"Respuesta json search %@: %@", query, responseObject);
-    //TODO falta descriptions
-    //Si hago un translate entero piso los datos que ya tengo de item
-    //self.item = (MTCItemDto * ) [self.itemTranslator translateObject:data];
     self.item.pictures = [self.picturesTranslator translate:data];
     NSMutableArray * images = [[NSMutableArray alloc] init];
     for (MTCPictureDto * pictureDto in self.item.pictures) {

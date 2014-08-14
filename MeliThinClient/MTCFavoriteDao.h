@@ -10,7 +10,6 @@
 
 @protocol MTCFavoriteDao <NSObject>
 
-
 - (void) save:(NSString*)id;
 - (void) delete:(NSString*)id;
 - (void) deleteAll;

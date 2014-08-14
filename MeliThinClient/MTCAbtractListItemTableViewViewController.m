@@ -54,10 +54,26 @@
 {
 }
 
+- (void) updateTitle:(NSString *)title withCount:(NSInteger)countResults{
+    
+    NSMutableString * header = [NSMutableString stringWithString:title];
+    [header appendString:@" ("];
+    [header appendString:[@(countResults) stringValue]];
+    [header appendString:@")"];
+    self.titleHeaderTable = header;
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return NUMBER_OF_SECCCIONS;
+}
+
+- (void)dealloc {
+    [_tableView release];
+    [_spinner release];
+    [_pager release];
+    [super dealloc];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -94,7 +110,7 @@
 {
     MTCItemSearchResultDto * itemSearchDto = [self.items objectAtIndex:indexPath.row];
     //creo el controller
-    MTCVipItemViewController * nextController = [[MTCVipItemViewController alloc] init];
+    MTCVipItemViewController * vipItemViewController = [[MTCVipItemViewController alloc] init];
     //Creo el item
     MTCItemDto * itemDto = [[MTCItemDto alloc] init];
     //Copio los valos que ya tengo
@@ -106,26 +122,16 @@
     itemDto.buyingMode = itemSearchDto.buyingMode;
     itemDto.condition = itemSearchDto.condition;
     //seteo la busqueda
-    nextController.item = itemDto;
+    vipItemViewController.item = itemDto;
     //pusheo el controller
-    [self.navigationController pushViewController:nextController animated:YES];
+    
+    vipItemViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vipItemViewController animated:YES];
 }
 
-- (void) updateTitle:(NSString *)title withCount:(NSInteger)countResults{
 
-    NSMutableString * header = [NSMutableString stringWithString:title];
-    [header appendString:@" ("];
-    [header appendString:[@(countResults) stringValue]];
-    [header appendString:@")"];
-    self.titleHeaderTable = header;
-}
 
-- (void)dealloc {
-    [_tableView release];
-    [_spinner release];
-    [_pager release];
-    [super dealloc];
-}
+
 
 
 @end

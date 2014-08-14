@@ -14,6 +14,7 @@
 #import "MTCItemTranslator.h"
 #import "MTCPicturesJsonTranslator.h"
 #import "MTCMeliServiceApiImpl.h"
+#import "MTCFavoriteDaoImpl.h"
 
 @interface MTCVipItemViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,MTCServiceApiDelegate>
 
@@ -29,6 +30,8 @@
 @property (retain, nonatomic) MTCPicturesJsonTranslator * picturesTranslator;
 @property (retain, nonatomic) UIImage * imageIsFavorite;
 @property (retain, nonatomic) UIImage * imageIsNotFavorite;
+
+@property (retain, nonatomic) MTCFavoriteDaoImpl * dao;
 
 
 @end

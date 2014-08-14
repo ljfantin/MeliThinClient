@@ -37,8 +37,6 @@
     [dao delete:item.id];
     [dao commit];
     [dao release];
-
-
 }
 
 - (void) removeAllBookmark:(NSString*)token
@@ -48,7 +46,7 @@
     [dao deleteAll];
     [dao commit];
     [dao release];
-
 }
+
 
 @end

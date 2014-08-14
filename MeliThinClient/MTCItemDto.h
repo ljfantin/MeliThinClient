@@ -26,4 +26,6 @@
 @property (retain,nonatomic) NSArray * pictures;
 @property (retain,nonatomic) NSArray * descriptions;
 
+@property BOOL isFavorite;
+
 @end
