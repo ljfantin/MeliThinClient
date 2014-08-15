@@ -14,6 +14,7 @@
 #import "MTCSearchHistoryDto.h"
 
 
+
 @interface MTCItemsSearchResultsViewController ()
 @end
 
@@ -70,6 +71,9 @@
     [self.spinner startAnimating];
     [self requestNewItems];
     [searchBar resignFirstResponder];
+    MTCSearchHistoryManager * searchHistoryManager = [MTCSearchHistoryManager sharedInstance];
+    [searchHistoryManager saveSearchHistory:[MTCSearchHistoryDto mtcSearchHistoryDtoWithQuery:self.searchQuery]];
+    [searchHistoryManager commit];
 }
 
 
@@ -115,10 +119,6 @@
     }
 }
 
-- (void) onPreExecute
-{
-    //
-}
 
 
 - (void)dealloc
