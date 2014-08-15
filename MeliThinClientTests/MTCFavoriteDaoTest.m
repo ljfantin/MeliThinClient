@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "MTCFavoriteDaoImpl.h"
+#import "MTCFavoriteManager.h"
 
 @interface MTCFavoriteDaoTest : XCTestCase
 
@@ -27,19 +27,19 @@
 
 - (void)testExample
 {
-    [[MTCFavoriteDaoImpl sharedInstance] commit];
+    [[MTCFavoriteManager sharedInstance] commit];
 
-    [[MTCFavoriteDaoImpl sharedInstance] save:@"1"];
-    [[MTCFavoriteDaoImpl sharedInstance] save:@"2"];
-    [[MTCFavoriteDaoImpl sharedInstance] commit];
-    NSArray * idsSaved = [[MTCFavoriteDaoImpl sharedInstance] getAll];
+    [[MTCFavoriteManager sharedInstance] saveFavoriteIdentifier:@"1"];
+    [[MTCFavoriteManager sharedInstance] saveFavoriteIdentifier:@"2"];
+    [[MTCFavoriteManager sharedInstance] commit];
+    NSArray * idsSaved = [[MTCFavoriteManager sharedInstance] getAll];
     XCTAssertEqual([idsSaved count], 2, @"No es la misma longitud");
     XCTAssertEqualObjects(idsSaved[0], @"1", @"No es el mismo id");
     XCTAssertEqualObjects(idsSaved[1], @"2", @"No es el mismo id");
     
-    [[MTCFavoriteDaoImpl sharedInstance] delete:@"1"];
-    [[MTCFavoriteDaoImpl sharedInstance] commit];
-    idsSaved = [[MTCFavoriteDaoImpl sharedInstance] getAll];
+    [[MTCFavoriteManager sharedInstance] deleteFavoriteIdentifier:@"1"];
+    [[MTCFavoriteManager sharedInstance] commit];
+    idsSaved = [[MTCFavoriteManager sharedInstance] getAll];
     XCTAssertEqual([idsSaved count], 1, @"No es la misma longitud");
     XCTAssertEqualObjects(idsSaved[0], @"2", @"No es el mismo id");
 }

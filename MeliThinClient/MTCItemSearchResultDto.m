@@ -10,7 +10,7 @@
 
 @implementation MTCItemSearchResultDto
 
-+(instancetype) initWithId:(NSString*)id title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(MTCConditiontTypeDto*)condition buyingMode:(MTCBuyingModeTypeDto*)buyingMode currency:(MTCCurrencyTypeDto*)currency thumbnail:(UIImage*) image
++(instancetype) mtcItemSearchResultDtoWithId:(NSString*)id title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(MTCConditiontTypeDto*)condition buyingMode:(MTCBuyingModeTypeDto*)buyingMode currency:(MTCCurrencyTypeDto*)currency thumbnail:(UIImage*) image
 {
     
     MTCItemSearchResultDto * item = [[[MTCItemSearchResultDto alloc] init] autorelease];
@@ -48,11 +48,23 @@
 - (void)dealloc
 {
     [_id release];
-    [_subtitle release];
-    [_availableQuantity release];
+    _id = nil;
     [_tittle release];
+    _tittle = nil;
     [_price release];
+    _price = nil;
+    [_subtitle release];
+    _subtitle = nil;
+    [_availableQuantity release];
+    _availableQuantity = nil;
     [_thumbnail release];
+    _thumbnail = nil;
+    [_currency release];
+    _currency = nil;
+    [_buyingMode release];
+    _buyingMode = nil;
+    [_condition release];
+    _condition = nil;
     [super dealloc];
 }
 

@@ -35,7 +35,7 @@
     return self;
 }
 
-- (NSObject*) translateObject:(NSDictionary *)json
+- (NSObject*) objectFromDictionaryWithJson:(NSDictionary *)json
 {
     //mapeo json
     NSString * id = [json objectForKey:@"id"];
@@ -45,21 +45,23 @@
     NSNumber * quantity = [json objectForKey:@"available_quantity"];
     NSString * currencyId = [json objectForKey:@"currency_id"];
     
-    MTCConditiontTypeDto * condition = (MTCConditiontTypeDto *)[self.conditionJsonTranslator translateObject:json];
-    MTCBuyingModeTypeDto * buyingMode = (MTCBuyingModeTypeDto *)[self.buyingModeJsonTranslator translateObject:json];
-    MTCCurrencyTypeDto * currency = [MTCCurrencyTypeDto initWith:currencyId];
+    MTCConditiontTypeDto * condition = (MTCConditiontTypeDto *)[self.conditionJsonTranslator objectFromDictionaryWithJson:json];
+    MTCBuyingModeTypeDto * buyingMode = (MTCBuyingModeTypeDto *)[self.buyingModeJsonTranslator objectFromDictionaryWithJson:json];
+    MTCCurrencyTypeDto * currency = [MTCCurrencyTypeDto mtcCurrencyTypeDtoWithIdentifier:currencyId];
     
     NSString * urlThumbnail = [json objectForKey:@"thumbnail"];
     UIImage * image = [UIImage imageWithUrl:urlThumbnail];
     
     //creo el dto
-    MTCItemSearchResultDto * item = [MTCItemSearchResultDto initWithId:id title:title price:price subtitle:subtitle availableQuantity:quantity condition:condition buyingMode:buyingMode currency:currency thumbnail:image];
+    MTCItemSearchResultDto * item = [MTCItemSearchResultDto mtcItemSearchResultDtoWithId:id title:title price:price subtitle:subtitle availableQuantity:quantity condition:condition buyingMode:buyingMode currency:currency thumbnail:image];
     return item;
 }
 
 -(void)dealloc{
     [_conditionJsonTranslator release];
+    _conditionJsonTranslator = nil;
     [_buyingModeJsonTranslator release];
+    _buyingModeJsonTranslator = nil;
     [super dealloc];
 }
 

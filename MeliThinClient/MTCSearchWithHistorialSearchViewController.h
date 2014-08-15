@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MTCSearchHistoryDao.h"
+#import "MTCSearchHistoryManager.h"
 
 
 @interface MTCSearchWithHistorialSearchViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate, UISearchBarDelegate>
@@ -15,7 +15,6 @@
 @property (retain, nonatomic) IBOutlet UITableView *historialTableView;
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-//@property (retain, nonatomic) MTCSearchHistoryDao * searchHistoryDao;
 @property (retain, nonatomic) NSArray * listHistorial;
 
 @end

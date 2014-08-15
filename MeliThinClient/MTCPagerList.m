@@ -14,12 +14,12 @@
 {
     self = [super init];
     if (self) {
-        [self reset];
+        [self resetToValuesDefault];
     }
     return self;
 }
 
-- (void) reset
+- (void) resetToValuesDefault
 {
     _limit = 10;
     _offset = 0;

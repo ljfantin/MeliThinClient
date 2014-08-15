@@ -13,6 +13,6 @@
 @property (nonatomic,retain) NSString * text;
 @property (nonatomic,retain) NSString * plainText;
 
-+(instancetype) initWith:(NSString*)text plainText:(NSString*)plainText;
++(instancetype) mtcDescriptionDtoWithText:(NSString*)text plainText:(NSString*)plainText;
 
 @end

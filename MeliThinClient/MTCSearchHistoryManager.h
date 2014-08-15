@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "MTCSearchHistoryDto.h"
 
-@interface MTCSearchHistoryDao : NSObject
+@interface MTCSearchHistoryManager : NSObject
 
-+ (MTCSearchHistoryDao*)sharedInstance;
--(NSArray*) getAll;
--(void) deleteAll;
--(void) save:(MTCSearchHistoryDto*)dto;
++ (MTCSearchHistoryManager*)sharedInstance;
+-(NSArray*) arrayWithObjects;
+-(void) deleteAllSearchHistory;
+-(void) saveSearchHistory:(MTCSearchHistoryDto*)dto;
 - (BOOL) commit;
 @end

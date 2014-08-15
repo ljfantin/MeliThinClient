@@ -15,20 +15,20 @@
 
 @implementation MTCBuyingModeTypeDto
 
-+ (instancetype) initWithBuyItNow   {
++ (instancetype) mtcBuyingModeTypeDtoWithBuyItNow   {
 
     MTCBuyingModeTypeDto * instance = [[[MTCBuyingModeTypeDto alloc] init] autorelease];
     instance.type = BUY_IT_NOW;
     return instance;
 }
 
-+ (instancetype) initWithAuction    {
++ (instancetype) mtcBuyingModeTypeDtoWithAuction    {
     MTCBuyingModeTypeDto * instance = [[[MTCBuyingModeTypeDto alloc] init] autorelease];
     instance.type = AUCTION;
     return instance;
 }
 
-+ (instancetype) initWithClassified {
++ (instancetype) mtcBuyingModeTypeDtoWithClassified {
     MTCBuyingModeTypeDto * instance = [[[MTCBuyingModeTypeDto alloc] init] autorelease];
     instance.type = CLASSIFIED;
     return instance;

@@ -30,15 +30,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    MTCSearchHistoryDao * searchHistoryDao = [MTCSearchHistoryDao sharedInstance];
-    self.listHistorial = searchHistoryDao.getAll;
+    MTCSearchHistoryManager * searchHistoryManager = [MTCSearchHistoryManager sharedInstance];
+    self.listHistorial = [searchHistoryManager arrayWithObjects];
     [self.historialTableView reloadData];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark 
@@ -66,15 +60,15 @@
 }
 
 #pragma mark UISearchBarDelegate implementation
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;  {
-
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
     [searchBar resignFirstResponder];
     [self search:self.searchBar.text];
 }
 
 
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar;  {
-    // called when keyboard search button pressed
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
     [searchBar resignFirstResponder];
 }
 
@@ -91,18 +85,26 @@
     MTCItemsSearchResultsViewController * itemsSearchResult = [[MTCItemsSearchResultsViewController alloc] init];
     itemsSearchResult.searchQuery = query;
     
-    MTCSearchHistoryDao * searchHistoryDao = [MTCSearchHistoryDao sharedInstance];
-    [searchHistoryDao save:[MTCSearchHistoryDto initWith:query]];
+    MTCSearchHistoryManager * searchHistoryDao = [MTCSearchHistoryManager sharedInstance];
+    [searchHistoryDao saveSearchHistory:[MTCSearchHistoryDto mtcSearchHistoryDtoWithQuery:query]];
     [searchHistoryDao commit];
     
     [self.navigationController pushViewController:itemsSearchResult animated:YES];
     [itemsSearchResult release];
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
+    _historialTableView.delegate = nil;
+    _historialTableView.dataSource = nil;
     [_historialTableView release];
+    _historialTableView = nil;
     [_searchBar release];
+    _searchBar = nil;
     [_spinner release];
+    _spinner = nil;
+    [_listHistorial release];
+    _listHistorial = nil;
     [super dealloc];
 }
 @end

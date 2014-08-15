@@ -34,16 +34,16 @@
     [self requestNewItems];
 }
 
-- (void) requestNewItems
+- (void)requestNewItems
 {
     [self.service getAllBookmarks:nil];
 }
 
 
 #pragma mark Implementacion delegate MTCServiceApiDelegate
-- (void) onPostExecute:(NSDictionary *) data;
+- (void)onPostExecute:(NSDictionary *)data;
 {
-    NSArray * listItems = [self.favoritesJsonTranslator translate:data];
+    NSArray * listItems = [self.favoritesJsonTranslator arrayFromDictionaryWithJson:data];
 
     //stop el spinner
     [self.spinner stopAnimating];
@@ -51,23 +51,12 @@
     //actualizo el header de la tabla
     [self updateTitle:@"Favoritos" withCount:[listItems count]];
     
-    //if ([self.items count]==0)   {
     [self.items removeAllObjects];
     [self.items addObjectsFromArray:listItems];
     [self.tableView reloadData];
-    //}
-    /*else {
-        NSMutableArray *indexPaths = [NSMutableArray array];
-        for (MTCItemSearchResultDto *item in listItems) {
-            [self.items addObject:item];
-            [indexPaths addObject:[NSIndexPath indexPathForRow:startingRow inSection:0]];
-            startingRow++;
-        }
-        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
-    }*/
 }
 
-- (void) onPreExecute
+- (void)onPreExecute
 {
     [self.spinner startAnimating];
 }
@@ -75,6 +64,9 @@
 - (void)dealloc
 {
     [_service release];
+    _service = nil;
+    [_favoritesJsonTranslator release];
+    _favoritesJsonTranslator = nil;
     [super dealloc];
 }
 

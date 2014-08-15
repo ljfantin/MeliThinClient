@@ -10,9 +10,9 @@
 
 @interface MTCConditiontTypeDto : NSObject
 
-+ (instancetype) initWithNew;
-+ (instancetype) initWithUsed;
-+ (instancetype) initWithUnespecified;
++ (instancetype) mtcConditiontTypeDtoWithNew;
++ (instancetype) mtcConditiontTypeDtoWithUsed;
++ (instancetype) mtcConditiontTypeDtoWithUnespecified;
 
 - (BOOL) isNew;
 - (BOOL) isUsed;

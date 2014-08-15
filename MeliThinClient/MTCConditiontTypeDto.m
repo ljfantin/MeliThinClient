@@ -17,21 +17,21 @@ typedef NS_ENUM(NSInteger, CONDITION_TYPE) {NEW, USED, UNESPECIFIED};
 
 @implementation MTCConditiontTypeDto
 
-+ (instancetype) initWithNew
++ (instancetype) mtcConditiontTypeDtoWithNew
 {
     MTCConditiontTypeDto * instance = [[[MTCConditiontTypeDto alloc] init] autorelease];
     instance.type = NEW;
     return instance;
 }
 
-+ (instancetype) initWithUsed
++ (instancetype) mtcConditiontTypeDtoWithUsed
 {
     MTCConditiontTypeDto * instance = [[[MTCConditiontTypeDto alloc] init] autorelease];
     instance.type = USED;
     return instance;
 }
 
-+ (instancetype) initWithUnespecified
++ (instancetype) mtcConditiontTypeDtoWithUnespecified
 {
     MTCConditiontTypeDto * instance = [[[MTCConditiontTypeDto alloc] init] autorelease];
     instance.type = UNESPECIFIED;

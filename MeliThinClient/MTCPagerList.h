@@ -14,5 +14,5 @@
 @property (nonatomic) NSInteger offset;
 @property (nonatomic) NSInteger limit;
 
-- (void) reset;
+- (void) resetToValuesDefault;
 @end

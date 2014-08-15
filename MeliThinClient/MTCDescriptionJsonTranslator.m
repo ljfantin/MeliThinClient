@@ -11,11 +11,11 @@
 
 @implementation MTCDescriptionJsonTranslator
 
-- (NSObject *) translateObject:(NSDictionary *)json
+- (NSObject *) objectFromDictionaryWithJson:(NSDictionary *)json
 {
     NSString * text = [json objectForKey:@"text"];
     NSString * plainText = [json objectForKey:@"plain_text"];
-    return [MTCDescriptionDto initWith:text plainText:plainText];
+    return [MTCDescriptionDto mtcDescriptionDtoWithText:text plainText:plainText];
 }
 
 @end

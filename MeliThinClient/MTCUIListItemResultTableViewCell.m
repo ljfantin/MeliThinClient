@@ -10,22 +10,13 @@
 
 @implementation MTCUIListItemResultTableViewCell
 
-- (void)awakeFromNib
-{
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 - (void)dealloc {
     [_thumbnail release];
+    _thumbnail = nil;
     [_title release];
+    _title = nil;
     [_price release];
+    _price = nil;
     [super dealloc];
 }
 @end

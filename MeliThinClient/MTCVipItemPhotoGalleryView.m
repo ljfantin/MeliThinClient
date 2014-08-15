@@ -39,9 +39,14 @@
 
 - (void)dealloc {
     [_pageControl release];
+    _pageControl = nil;
+    _scrollGallery.delegate = nil;
     [_scrollGallery release];
+    _scrollGallery = nil;
     [_viewTitleItem release];
+    _viewTitleItem = nil;
     [_labelItemTitle release];
+    _labelItemTitle = nil;
     [super dealloc];
 }
 @end

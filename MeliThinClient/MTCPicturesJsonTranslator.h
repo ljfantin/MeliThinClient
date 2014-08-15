@@ -11,6 +11,6 @@
 
 @interface MTCPicturesJsonTranslator : NSObject<MTCJsonTranslator>
 
-- (NSArray *) translate:(NSDictionary *)json;
+- (NSArray *) arrayFromDictionaryWithJson:(NSDictionary *)json;
 
 @end

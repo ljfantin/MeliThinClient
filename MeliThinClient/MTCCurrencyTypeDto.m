@@ -10,7 +10,7 @@
 
 @implementation MTCCurrencyTypeDto
 
-+ (instancetype) initWith:(NSString*)id
++ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)id
 {
     MTCCurrencyTypeDto * instance = [[[MTCCurrencyTypeDto alloc] init] autorelease];
     if (self) {
@@ -23,7 +23,7 @@
     return instance;
 }
 
-+ (instancetype) initWith:(NSString*)id description:(NSString*)description symbol:(NSString*)symbol decimalPlaces:(NSString*)decimalPlaces
++ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)id description:(NSString*)description symbol:(NSString*)symbol decimalPlaces:(NSString*)decimalPlaces
 {
     MTCCurrencyTypeDto * instance = [[MTCCurrencyTypeDto alloc] init];
     if (self) {
@@ -100,9 +100,13 @@
 - (void)dealloc
 {
     [_id release];
+    _id = nil;
     [_decimalPlaces release];
+    _decimalPlaces = nil;
     [_description release];
+    _description = nil;
     [_symbol release];
+    _symbol = nil;
     [super dealloc];
 }
 

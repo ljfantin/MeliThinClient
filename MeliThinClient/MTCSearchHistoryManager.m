@@ -6,25 +6,24 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "MTCSearchHistoryDao.h"
+#import "MTCSearchHistoryManager.h"
 #import "MTCSearchHistoryDto.h"
 
-@interface MTCSearchHistoryDao ()
+@interface MTCSearchHistoryManager ()
 @property (nonatomic,retain) NSString * pathFile;
 @property (nonatomic,retain) NSString * fileName;
 @property (nonatomic,retain) NSString * keyCollectionId;
-
 @property (nonatomic,retain) NSMutableDictionary *data;
 @end
 
-@implementation MTCSearchHistoryDao
+@implementation MTCSearchHistoryManager
 
-+ (MTCSearchHistoryDao*)sharedInstance
++ (MTCSearchHistoryManager*)sharedInstance
 {
-    static MTCSearchHistoryDao *_sharedInstance = nil;
+    static MTCSearchHistoryManager *_sharedInstance = nil;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
-        _sharedInstance = [[MTCSearchHistoryDao alloc] init];
+        _sharedInstance = [[MTCSearchHistoryManager alloc] init];
     });
     return _sharedInstance;
 }
@@ -41,25 +40,26 @@
     return self;
 }
 
--(NSArray*) getAll{
+-(NSArray*) arrayWithObjects
+{
     //TODO Si le pongo autorelease pincha
     NSMutableArray * result = [NSMutableArray array];
     
     NSDictionary * history = (NSDictionary *)self.data[self.keyCollectionId];
     for( NSString * key in [history allKeys])
     {
-        [result addObject:[MTCSearchHistoryDto initWith:key data:[history objectForKey:key]]];
+        [result addObject:[MTCSearchHistoryDto mtcSearchHistoryDtoWithQuery:key data:[history objectForKey:key]]];
     }
     return result;
 }
 
-- (void) deleteAll
+- (void) deleteAllSearchHistory
 {
     NSMutableDictionary * history = (NSMutableDictionary *)self.data[self.keyCollectionId];
     [history removeAllObjects];
 }
 
-- (void) save:(MTCSearchHistoryDto*)dto
+- (void) saveSearchHistory:(MTCSearchHistoryDto*)dto
 {
     NSMutableDictionary * history = (NSMutableDictionary *)self.data[self.keyCollectionId];
     [history setValue:dto.date forKey:dto.query];
@@ -75,8 +75,8 @@
 }
 
 
-- (void)createFile {
-    
+- (void)createFile
+{
     //NSError * error;
     NSFileManager * fileManager = [NSFileManager defaultManager];
     if(![fileManager fileExistsAtPath:self.pathFile]) {
@@ -91,12 +91,22 @@
     }
 }
 
-- (void)buildPathFile {
-    
+- (void)buildPathFile
+{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     self.pathFile = [documentsDirectory stringByAppendingPathComponent:self.fileName];
 }
 
-
+- (void)dealloc
+{
+    [_pathFile release];
+    _pathFile = nil;
+    [_fileName release];
+    _fileName = nil;
+    [_keyCollectionId release];
+    _keyCollectionId = nil;
+    [_data release];
+    [super dealloc];
+}
 @end

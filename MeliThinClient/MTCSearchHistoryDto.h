@@ -13,7 +13,7 @@
 @property (nonatomic,retain) NSString * query;
 @property (nonatomic,retain) NSString * date;
 
-+ (instancetype) initWith:(NSString*)query data:(NSString*)date;
-+ (instancetype) initWith:(NSString*)query;
++ (instancetype) mtcSearchHistoryDtoWithQuery:(NSString*)query data:(NSString*)date;
++ (instancetype) mtcSearchHistoryDtoWithQuery:(NSString*)query;
 
 @end

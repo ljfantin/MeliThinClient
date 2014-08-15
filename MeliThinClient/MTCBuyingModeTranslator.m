@@ -11,23 +11,21 @@
 
 @implementation MTCBuyingModeTranslator
 
-- (NSObject *) translateObject:(NSDictionary *)json
+- (NSObject *) objectFromDictionaryWithJson:(NSDictionary *)json
 {
     NSString * buyingModeJsonValue = json[@"buying_mode"];
     MTCBuyingModeTypeDto * buyingMode = nil;
-    if ([buyingModeJsonValue isEqual:@"auction"])
-    {
-        buyingMode = [MTCBuyingModeTypeDto initWithAuction];
+    if ([buyingModeJsonValue isEqual:@"auction"])   {
+        buyingMode = [MTCBuyingModeTypeDto mtcBuyingModeTypeDtoWithAuction];
     }
     else
-    if ([buyingModeJsonValue isEqual:@"buy_it_now"])
-    {
-        buyingMode = [MTCBuyingModeTypeDto initWithBuyItNow];
+    if ([buyingModeJsonValue isEqual:@"buy_it_now"])    {
+        buyingMode = [MTCBuyingModeTypeDto mtcBuyingModeTypeDtoWithBuyItNow];
     }
     else
     if ([buyingModeJsonValue isEqual:@"classified"])
     {
-        buyingMode = [MTCBuyingModeTypeDto initWithClassified];
+        buyingMode = [MTCBuyingModeTypeDto mtcBuyingModeTypeDtoWithClassified];
     }
     return buyingMode;
 }

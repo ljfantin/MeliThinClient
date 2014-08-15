@@ -14,9 +14,6 @@
 
 #define NUMBER_OF_SECCCIONS 1;
 
-@interface MTCAbtractListItemTableViewViewController ()
-
-@end
 
 @implementation MTCAbtractListItemTableViewViewController
 
@@ -34,18 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //self.tableView.tableFooterView = [UIView new];
-    //[self requestNewItems];
-    //[self requestNewItems];
-
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void) requestNewItems
@@ -125,10 +110,20 @@
 }
 
 
-- (void)dealloc {
-    [_tableView release];
-    [_spinner release];
+- (void)dealloc
+{
     [_pager release];
+    _pager = nil;
+    [_items release];
+    _items = nil;
+    [_titleHeaderTable release];
+    _titleHeaderTable = nil;
+    _tableView.delegate = nil;
+    _tableView.dataSource = nil;
+    [_tableView release];
+    _tableView = nil;
+    [_spinner release];
+    _spinner = nil;
     [super dealloc];
 }
 

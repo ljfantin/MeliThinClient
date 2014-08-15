@@ -11,6 +11,6 @@
 @protocol MTCJsonTranslator <NSObject>
 
 @optional
-- (NSObject*) translateObject:(NSDictionary *)json;
-- (NSArray *) translate:(NSDictionary *)json;
+- (NSObject*) objectFromDictionaryWithJson:(NSDictionary *)json;
+- (NSArray *) arrayFromDictionaryWithJson:(NSDictionary *)json;
 @end

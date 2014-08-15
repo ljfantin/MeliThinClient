@@ -32,7 +32,7 @@
     return self;
 }
 
-- (NSObject*) translateObject:(NSDictionary *)json
+- (NSObject*) objectFromDictionaryWithJson:(NSDictionary *)json
 {
     MTCItemDto * item = [[MTCItemDto alloc] init];
     item.id = json[@"id"];
@@ -41,10 +41,10 @@
     item.price = [json objectForKey:@"price"];
     item.availableQuantity = [json objectForKey:@"available_quantity"];
     
-    item.condition = (MTCConditiontTypeDto *)[self.conditionJsonTranslator translateObject:json];
-    item.buyingMode = (MTCBuyingModeTypeDto *)[self.buyingModeJsonTranslator translateObject:json];
+    item.condition = (MTCConditiontTypeDto *)[self.conditionJsonTranslator objectFromDictionaryWithJson:json];
+    item.buyingMode = (MTCBuyingModeTypeDto *)[self.buyingModeJsonTranslator objectFromDictionaryWithJson:json];
     
-    item.pictures = [self.picturesTranslator translate:json];
+    item.pictures = [self.picturesTranslator arrayFromDictionaryWithJson:json];
     item.descriptions = json[@"descriptions"];
     return item;
 }
@@ -52,8 +52,11 @@
 - (void)dealloc
 {
     [_buyingModeJsonTranslator release];
+    _buyingModeJsonTranslator = nil;
     [_conditionJsonTranslator release];
+    _conditionJsonTranslator = nil;
     [_picturesTranslator release];
+    _picturesTranslator =  nil;
     [super dealloc];
 }
 @end

@@ -13,5 +13,5 @@
 @property (retain, nonatomic) NSString * url;
 @property (retain, nonatomic) UIImage * image;
 
-+(instancetype) initWithId:(NSString*)id url:(NSString *) url image:(UIImage*) image;
++(instancetype) mtcPictureDtoWithId:(NSString*)id url:(NSString *) url image:(UIImage*) image;
 @end

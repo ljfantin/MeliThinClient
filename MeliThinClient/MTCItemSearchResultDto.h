@@ -15,7 +15,6 @@
 @interface MTCItemSearchResultDto : NSObject
 
 
-
 @property (nonatomic,retain) NSString * id;
 @property (nonatomic,retain) NSString * tittle;
 @property (nonatomic,retain) NSNumber * price;
@@ -23,11 +22,10 @@
 @property (nonatomic,retain) NSNumber * availableQuantity;
 @property (nonatomic,retain) UIImage * thumbnail;
 @property (nonatomic,retain) MTCCurrencyTypeDto* currency;
-
 @property (nonatomic,retain) MTCBuyingModeTypeDto * buyingMode;
 @property (nonatomic,retain) MTCConditiontTypeDto * condition;
 
 
-+(instancetype) initWithId:(NSString*)id title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(MTCConditiontTypeDto*)condition buyingMode:(MTCBuyingModeTypeDto*)buyingMode currency:(MTCCurrencyTypeDto*)currency thumbnail:(UIImage*) image;
++(instancetype) mtcItemSearchResultDtoWithId:(NSString*)id title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(MTCConditiontTypeDto*)condition buyingMode:(MTCBuyingModeTypeDto*)buyingMode currency:(MTCCurrencyTypeDto*)currency thumbnail:(UIImage*) image;
 
 @end

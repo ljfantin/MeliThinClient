@@ -10,7 +10,7 @@
 
 @implementation MTCDescriptionDto
 
-+(instancetype) initWith:(NSString*)text plainText:(NSString*)plainText{
++(instancetype) mtcDescriptionDtoWithText:(NSString*)text plainText:(NSString*)plainText{
     MTCDescriptionDto * instance = [[[MTCDescriptionDto alloc] init] autorelease];
     instance.text = text;
     instance.plainText = plainText;

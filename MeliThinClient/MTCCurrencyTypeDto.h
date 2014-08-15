@@ -15,9 +15,9 @@
 @property (nonatomic,retain) NSString * symbol;
 @property (nonatomic,retain) NSString * decimalPlaces;
 
-+ (instancetype) initWith:(NSString*)id;
++ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)id;
 
-+ (instancetype) initWith:(NSString*)id description:(NSString*)description symbol:(NSString*)symbol decimalPlaces:(NSString*)decimalPlaces;
++ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)id description:(NSString*)description symbol:(NSString*)symbol decimalPlaces:(NSString*)decimalPlaces;
 
 - (BOOL) isArs;
 - (BOOL) isBrl;

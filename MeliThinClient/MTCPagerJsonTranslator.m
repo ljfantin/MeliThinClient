@@ -11,7 +11,7 @@
 
 @implementation MTCPagerJsonTranslator
 
-- (NSObject *) translateObject:(NSDictionary *)json    {
+- (NSObject *) objectFromDictionaryWithJson:(NSDictionary *)json    {
     NSDictionary * paging = json[@"paging"];
     MTCPagerList * pager = [[[MTCPagerList alloc] init] autorelease];
     pager.total = [paging[@"total"] intValue];

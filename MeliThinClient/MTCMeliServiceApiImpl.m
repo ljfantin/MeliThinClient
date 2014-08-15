@@ -61,7 +61,7 @@
 }
 
 
-- (void)getItem:(NSString*)idItem attributes:(NSArray*)atributes  {
+- (void)itemWithIdentifier:(NSString*)idItem attributes:(NSArray*)atributes  {
 
     [self preExecute];
     
@@ -92,7 +92,7 @@
     [[NSOperationQueue mainQueue] addOperation:op];
 }
 
-- (void)getItems:(NSArray*)idsItem{
+- (void)itemsWithIdentifiers:(NSArray*)idsItem{
     
     [self preExecute];
     
@@ -123,7 +123,7 @@
     [[NSOperationQueue mainQueue] addOperation:op];
 }
 
-- (void)getDescriptionFromItem:(NSString*)idIdem
+- (void)descriptionFromItemWithIdentifier:(NSString*)idIdem
 {
     [self preExecute];
     
@@ -146,10 +146,6 @@
     }];
     [[NSOperationQueue mainQueue] addOperation:op];
 }
-
-
-
-
 
 - (void) setDelegate:(id<MTCServiceApiDelegate>)newDelegate
 {

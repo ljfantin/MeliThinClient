@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "MTCFavoriteDaoImpl.h"
+#import "MTCFavoriteManager.h"
 
-@interface MTCFavoriteDaoImpl ()
+@interface MTCFavoriteManager ()
 @property (nonatomic,retain) NSString * pathFile;
 @property (nonatomic,retain) NSString * fileName;
 @property (nonatomic,retain) NSString * keyCollectionId;
@@ -17,15 +17,15 @@
 
 @end
 
-@implementation MTCFavoriteDaoImpl
+@implementation MTCFavoriteManager
 
 
-+ (MTCFavoriteDaoImpl*)sharedInstance
++ (MTCFavoriteManager*)sharedInstance
 {
-    static MTCFavoriteDaoImpl *_sharedInstance = nil;
+    static MTCFavoriteManager *_sharedInstance = nil;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
-        _sharedInstance = [[MTCFavoriteDaoImpl alloc] init];
+        _sharedInstance = [[MTCFavoriteManager alloc] init];
     });
     return _sharedInstance;
 }
@@ -42,32 +42,32 @@
     return self;
 }
 
-- (void) save:(NSString*)id
+- (void)saveFavoriteIdentifier:(NSString*)identifier
 {
     NSMutableArray * ids = (NSMutableArray *)self.data[self.keyCollectionId];
-    [ids addObject:id];
+    [ids addObject:identifier];
     // self.data[self.keyCollectionId]=ids;
 }
 
-- (void) delete:(NSString*)id
+- (void)deleteFavoriteIdentifier:(NSString*)identifier
 {
     NSMutableArray * ids = (NSMutableArray *)self.data[self.keyCollectionId];
-    [ids removeObject:id];
+    [ids removeObject:identifier];
 }
 
-- (void) deleteAll
+- (void)deleteAllFavoritesIdentifiers
 {
     NSMutableArray * ids = (NSMutableArray *)self.data[self.keyCollectionId];
     [ids removeAllObjects];
 }
 
-- (NSArray*) getAll
+- (NSArray*)arrayWithObjectsWithId
 {
-    return (NSMutableArray *)self.data[self.keyCollectionId];
+    return [NSArray arrayWithArray: self.data[self.keyCollectionId]];
 }
 
 
-- (BOOL) commit
+- (BOOL)commit
 {
     NSString *error;
     NSData *dataToSave = [NSPropertyListSerialization dataFromPropertyList:self.data
@@ -103,8 +103,11 @@
 - (void)dealloc
 {
     [_data release];
+    _data = nil;
     [_fileName release];
+    _fileName = nil;
     [_keyCollectionId release];
+    _keyCollectionId = nil;
     [super dealloc];
 }
 

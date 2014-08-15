@@ -12,7 +12,7 @@
 
 @implementation MTCPicturesJsonTranslator
 
-- (NSArray *) translate:(NSDictionary *)json
+- (NSArray *) arrayFromDictionaryWithJson:(NSDictionary *)json
 {
     NSArray * jsonResults = json[@"pictures"];
     NSMutableArray * listPictures = [NSMutableArray array];
@@ -25,7 +25,7 @@
         UIImage * image = [UIImage imageWithUrl:url];
         
         //creo el dto para la picture
-        MTCPictureDto * item = [MTCPictureDto initWithId:id url:url image:image];
+        MTCPictureDto * item = [MTCPictureDto mtcPictureDtoWithId:id url:url image:image];
         
         //agrego la picture
         [listPictures addObject:item];

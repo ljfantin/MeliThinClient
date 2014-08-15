@@ -16,7 +16,6 @@
 
 - (void) onPreExecute;
 
-- (void) doInBackground:(NSDictionary *) data;
-
 - (void) handleError:(NSError*)error;
+
 @end

@@ -31,29 +31,29 @@
 {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"descripcion.title", nil);
-    [self.service getDescriptionFromItem:self.idItem];
+    [self.service descriptionFromItemWithIdentifier:self.idItem];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark Implementacion delegate MTCServiceApiDelegate
 
 - (void) onPostExecute:(NSDictionary *) data;
 {
-    MTCDescriptionDto * dto = (MTCDescriptionDto *) [self.descriptionJsonTranslator translateObject:data];
+    MTCDescriptionDto * dto = (MTCDescriptionDto *) [self.descriptionJsonTranslator objectFromDictionaryWithJson:data];
     [self.descriptionWebView loadHTMLString:dto.text baseURL:nil];
 }
 
 - (void)dealloc
 {
     [_service release];
+    _service = nil;
     [_descriptionJsonTranslator release];
-    [_descriptionWebView release];
+    _descriptionJsonTranslator = nil;
     [_idItem release];
+    _idItem = nil;
+    _descriptionWebView.delegate = nil;
+    [_descriptionWebView release];
+    _descriptionWebView = nil;
     [super dealloc];
 }
 

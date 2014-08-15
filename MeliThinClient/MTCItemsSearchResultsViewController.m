@@ -27,7 +27,8 @@
         [self.service setDelegate:self];
         _searchJsonTranslator = [[MTCSearchJsonTranslator alloc] init];
         _pagerJsonTranslator = [[MTCPagerJsonTranslator alloc] init];
-        [self buildQueryHistorial];
+        _searchHistoryDao = [[MTCSearchHistoryManager alloc] init];
+        _queryHistorial = [_searchHistoryDao arrayWithObjects];
         //Titulo utilizado para tab bar
         self.title = @"Buscar";
     }
@@ -48,13 +49,6 @@
 }
 
 
-- (void) buildQueryHistorial
-{
-    _searchHistoryDao = [[MTCSearchHistoryDao alloc] init];
-    _queryHistorial = [_searchHistoryDao getAll];
-}
-
-
 - (void) addNewItemsToTableView{
     if (self.pager.offset+self.pager.limit*2 <= self.pager.total)  {
         self.pager.offset += self.pager.limit;
@@ -68,36 +62,10 @@
     [self.service search:self.searchQuery pager:self.pager];
 }
 
-
-/*- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if (tableView != self.searchBarDisplayController.searchResultsTableView) {
-        return [super tableView:tableView numberOfRowsInSection:section];
-    } else {
-        return [self.queryHistorial count];
-    }
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (tableView != self.searchBarDisplayController.searchResultsTableView) {
-        return [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    } else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"queryCell"];
-        if ( cell == nil ) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"queryCell"];
-        }
-        MTCSearchHistoryDto * dto = self.queryHistorial[indexPath.row];
-        cell.textLabel.text = dto.query;
-        return cell;
-    }
-}
-*/
-
 #pragma mark UISearchBarDelegate implementation
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;  {                    // called when keyboard search button pressed
     self.searchQuery = searchBar.text;
-    [self.pager reset];
+    [self.pager resetToValuesDefault];
     [self.items removeAllObjects];
     [self.spinner startAnimating];
     [self requestNewItems];
@@ -116,8 +84,8 @@
 #pragma mark Implementacion delegate MTCServiceApiDelegate
 - (void) onPostExecute:(NSDictionary *) data;
 {
-    NSArray * listItems = [self.searchJsonTranslator translate:data];
-    self.pager = (MTCPagerList*)[self.pagerJsonTranslator translateObject:data];
+    NSArray * listItems = [self.searchJsonTranslator arrayFromDictionaryWithJson:data];
+    self.pager = (MTCPagerList*)[self.pagerJsonTranslator objectFromDictionaryWithJson:data];
     
     //stop el spinner
     [self.spinner stopAnimating];
@@ -156,12 +124,18 @@
 - (void)dealloc
 {
     [_pagerJsonTranslator release];
-    [_searchJsonTranslator release];
-    [_searchQuery release];
-    [_service release];
-    [_queryHistorial release];
-    [_searchHistoryDao release];
+    _pagerJsonTranslator = nil;
+    _searchBar.delegate = nil;
     [_searchBar release];
+    _searchBar = nil;
+    [_searchQuery release];
+    _searchQuery = nil;
+    [_service release];
+    _service = nil;
+    [_queryHistorial release];
+    _queryHistorial = nil;
+    [_searchHistoryDao release];
+    _searchHistoryDao = nil;
     [super dealloc];
 }
 @end

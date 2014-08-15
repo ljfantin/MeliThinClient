@@ -11,19 +11,19 @@
 
 @implementation MTCConditionTranslator
 
-- (NSObject *) translateObject:(NSDictionary *)json
+- (NSObject *) objectFromDictionaryWithJson:(NSDictionary *)json
 {
     NSString * conditionJsonValue = [json objectForKey:@"condition"];
     MTCConditiontTypeDto * condition = nil;
     if ([conditionJsonValue isEqual:@"new"])    {
-        condition = [MTCConditiontTypeDto initWithNew];
+        condition = [MTCConditiontTypeDto mtcConditiontTypeDtoWithNew];
     } else
     if ([conditionJsonValue isEqual:@"used"])    {
-        condition = [MTCConditiontTypeDto initWithUsed];
+        condition = [MTCConditiontTypeDto mtcConditiontTypeDtoWithUsed];
     }
     else
     if ([conditionJsonValue isEqual:@"unespecified"])    {
-        condition = [MTCConditiontTypeDto initWithUnespecified];
+        condition = [MTCConditiontTypeDto mtcConditiontTypeDtoWithUnespecified];
     }
     return condition;
 }

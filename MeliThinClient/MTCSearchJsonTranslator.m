@@ -21,15 +21,22 @@
     return self;
 }
 
-- (NSArray *) translate:(NSDictionary *)json
+- (NSArray *) arrayFromDictionaryWithJson:(NSDictionary *)json
 {
     NSArray * jsonResults = json[@"results"];
     NSMutableArray * listItems = [NSMutableArray array];
     for (NSDictionary * item in jsonResults) {
         //agrego el item
-        [listItems addObject:[self.resultJsonTranslator translateObject:item]];
+        [listItems addObject:[self.resultJsonTranslator objectFromDictionaryWithJson:item]];
     }    
     return listItems;
+}
+
+- (void)dealloc
+{
+    [_resultJsonTranslator release];
+    _resultJsonTranslator = nil;
+    [super dealloc];
 }
 
 

@@ -18,7 +18,6 @@
 @property (retain, nonatomic) MTCPagerList * pager;
 @property (retain, nonatomic) NSMutableArray * items;
 @property (retain, nonatomic) NSString * titleHeaderTable;
-
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 

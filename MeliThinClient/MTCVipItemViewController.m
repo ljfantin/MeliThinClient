@@ -61,7 +61,7 @@
         self.detailItemTableview.tableFooterView = _footer;
     }
 
-    [self.service getItem:self.item.id attributes:@[@"pictures",@"descriptions"]];
+    [self.service itemWithIdentifier:self.item.id attributes:@[@"pictures",@"descriptions"]];
     if (self.item.price!=nil)  {
         self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_PRICE_FAVORITE_CELL];
         self.cellsCount++;
@@ -86,8 +86,8 @@
 
 - (void) initStateFavoriteButton
 {
-    MTCFavoriteDaoImpl * favoriteDao = [MTCFavoriteDaoImpl sharedInstance];
-    NSArray * idsFavorites = [favoriteDao getAll];
+    MTCFavoriteManager * favoriteManager = [MTCFavoriteManager sharedInstance];
+    NSArray * idsFavorites = [favoriteManager arrayWithObjectsWithId];
     
     self.item.isFavorite = [idsFavorites containsObject:self.item.id];
     if (self.item.isFavorite) {
@@ -100,13 +100,6 @@
     }
 }
 
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Implementacion de UITableViewDatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -258,9 +251,6 @@
     return cell;
 }
 
-
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.cells[indexPath.row] intValue] == INDEX_DESCRIPCION_CELL) {
@@ -314,7 +304,7 @@
 #pragma mark implementacion delegate MTCServiceApiDelegate
 - (void) onPostExecute:(NSDictionary *) data
 {
-    self.item.pictures = [self.picturesTranslator translate:data];
+    self.item.pictures = [self.picturesTranslator arrayFromDictionaryWithJson:data];
     NSMutableArray * images = [[NSMutableArray alloc] init];
     for (MTCPictureDto * pictureDto in self.item.pictures) {
         [images addObject:pictureDto.image];
@@ -330,12 +320,30 @@
 
 - (void)dealloc
 {
-    [_picturesTranslator release];
-    [_gallery release];
+    [_item release];
+    _item = nil;
     [_pageControl release];
+    _pageControl = nil;
+    _detailItemTableview.dataSource = nil;
+    _detailItemTableview.delegate = nil;
     [_detailItemTableview release];
-    [_addFavoriteButton release];
+    _detailItemTableview = nil;
+    [_service release];
+    _service = nil;
+    [_picturesTranslator release];
+    _picturesTranslator = nil;
+    [_imageIsFavorite release];
+    _imageIsFavorite = nil;
+    [_imageIsNotFavorite release];
+    _imageIsNotFavorite = nil;
     [_spinnerGallery release];
+    _spinnerGallery = nil;
+    [_gallery release];
+    _gallery = nil;
+    [_footer release];
+    _footer = nil;
+    [_cells release];
+    _cells = nil;
     [super dealloc];
 }
 @end

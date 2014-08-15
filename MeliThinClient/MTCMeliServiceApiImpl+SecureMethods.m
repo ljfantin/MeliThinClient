@@ -8,38 +8,38 @@
 
 #import "MTCMeliServiceApiImpl+SecureMethods.h"
 #import "MTCItemDto.h"
-#import "MTCFavoriteDaoImpl.h"
+#import "MTCFavoriteManager.h"
 
 
 @implementation MTCMeliServiceApiImpl (SecureMethods)
 
 - (void) getAllBookmarks:(NSString*)token{
-    MTCFavoriteDaoImpl * dao = [MTCFavoriteDaoImpl sharedInstance];
-    NSArray * idFavorites = [dao getAll];
-    [self getItems:idFavorites];
+    MTCFavoriteManager * favoriteManager = [MTCFavoriteManager sharedInstance];
+    NSArray * idFavorites = [favoriteManager arrayWithObjectsWithId];
+    [self itemsWithIdentifiers:idFavorites];
     //prodria verificar si alguno no existe mas
 }
 
 - (void) addBookmark:(MTCItemDto*)item withToken:(NSString*)token
 {
-    MTCFavoriteDaoImpl * dao = [MTCFavoriteDaoImpl sharedInstance];
-    [dao save:item.id];
+    MTCFavoriteManager * dao = [MTCFavoriteManager sharedInstance];
+    [dao saveFavoriteIdentifier:item.id];
     [dao commit];
 }
 
 - (void) removeBookmark:(MTCItemDto*)item withToken:(NSString*)token
 {
-    MTCFavoriteDaoImpl * dao = [MTCFavoriteDaoImpl sharedInstance];
+    MTCFavoriteManager * dao = [MTCFavoriteManager sharedInstance];
 
-    [dao delete:item.id];
+    [dao deleteFavoriteIdentifier:item.id];
     [dao commit];
 }
 
 - (void) removeAllBookmark:(NSString*)token
 {
-    MTCFavoriteDaoImpl * dao = [MTCFavoriteDaoImpl sharedInstance];
+    MTCFavoriteManager * dao = [MTCFavoriteManager sharedInstance];
 
-    [dao deleteAll];
+    [dao deleteAllFavoritesIdentifiers];
     [dao commit];
 }
 

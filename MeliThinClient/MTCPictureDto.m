@@ -10,7 +10,7 @@
 
 @implementation MTCPictureDto
 
-+(instancetype) initWithId:(NSString*)id url:(NSString *) url image:(UIImage*) image
++(instancetype) mtcPictureDtoWithId:(NSString*)id url:(NSString *) url image:(UIImage*) image
 {
     MTCPictureDto * picture = [[[MTCPictureDto alloc] init] autorelease];
     if (id!=nil && ![id isEqual:[NSNull null]]) {
@@ -24,5 +24,17 @@
     }
     
     return picture;
+}
+
+- (void)dealloc
+{
+    [_id release];
+    _id = nil;
+    [_url release];
+    _url = nil;
+    [_image release];
+    _image = nil;
+    [super dealloc];
+
 }
 @end

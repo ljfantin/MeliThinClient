@@ -11,7 +11,7 @@
 @implementation MTCSearchHistoryDto
 
 
-+ (instancetype) initWith:(NSString*)query data:(NSString*)date
++ (instancetype) mtcSearchHistoryDtoWithQuery:(NSString*)query data:(NSString*)date
 {
     MTCSearchHistoryDto * instace = [[[MTCSearchHistoryDto alloc] init] autorelease];
     instace.query = query;
@@ -19,7 +19,7 @@
     return instace;
 }
 
-+ (instancetype) initWith:(NSString*)query
++ (instancetype) mtcSearchHistoryDtoWithQuery:(NSString*)query
 {
     MTCSearchHistoryDto * instace = [[[MTCSearchHistoryDto alloc] init] autorelease];
     instace.query = query;
@@ -33,7 +33,9 @@
 - (void)dealloc
 {
     [_query release];
+    _query = nil;
     [_date release];
+    _date = nil;
     [super dealloc];
 }
 @end

@@ -10,9 +10,9 @@
 
 @interface MTCBuyingModeTypeDto : NSObject
 
-+ (instancetype) initWithBuyItNow;
-+ (instancetype) initWithAuction;
-+ (instancetype) initWithClassified;
++ (instancetype) mtcBuyingModeTypeDtoWithBuyItNow;
++ (instancetype) mtcBuyingModeTypeDtoWithAuction;
++ (instancetype) mtcBuyingModeTypeDtoWithClassified;
 
 
 - (BOOL) isBuyItNow;
