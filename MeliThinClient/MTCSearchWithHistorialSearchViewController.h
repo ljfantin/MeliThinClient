@@ -16,5 +16,6 @@
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (retain, nonatomic) NSArray * listHistorial;
-
+@property (retain, nonatomic) NSMutableArray * listHistorialFiltered;
+@property BOOL isFiltered;
 @end

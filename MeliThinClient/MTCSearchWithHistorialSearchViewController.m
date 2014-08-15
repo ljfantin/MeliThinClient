@@ -17,6 +17,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"history.title", nil);
+        _isFiltered = NO;
     }
     return self;
 }
@@ -26,7 +27,6 @@
     [self.searchBar sizeToFit];
 }
 
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -35,22 +35,30 @@
     [self.historialTableView reloadData];
 }
 
-#pragma mark 
+#pragma mark UITableViewDataSource delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return[self.listHistorial count];
+    if (self.isFiltered) {
+        return[self.listHistorialFiltered count];
+    } else {
+        return[self.listHistorial count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"queryCell"];
     if ( cell == nil ) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1  reuseIdentifier:@"queryCell"];
     }
-    MTCSearchHistoryDto * dto = self.listHistorial[indexPath.row];
-    cell.textLabel.text = dto.query;
-    cell.detailTextLabel.text = dto.date;
+    MTCSearchHistoryDto * searchHistoryDto = nil;
+    if (self.isFiltered) {
+        searchHistoryDto = self.listHistorialFiltered[indexPath.row];
+    } else {
+        searchHistoryDto = self.listHistorial[indexPath.row];
+    }
+    cell.textLabel.text = searchHistoryDto.query;
+    cell.detailTextLabel.text = searchHistoryDto.date;
     return cell;
 }
 
@@ -59,11 +67,43 @@
     return NSLocalizedString(@"history.TableView.title", nil);
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MTCSearchHistoryDto * dto = self.listHistorial[indexPath.row];
+    NSString * query = dto.query;
+    [self search:query];
+}
+
+
 #pragma mark UISearchBarDelegate implementation
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [searchBar resignFirstResponder];
     [self search:self.searchBar.text];
+}
+
+-(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
+{
+    if(text.length == 0)
+    {
+        self.isFiltered = FALSE;
+    }
+    else
+    {
+        self.isFiltered = true;
+        self.listHistorialFiltered = [[[NSMutableArray alloc] init] autorelease];
+        
+        for (MTCSearchHistoryDto * searchHistoryDto in self.listHistorial)
+        {
+            NSRange queryRange = [searchHistoryDto.query rangeOfString:text options:NSCaseInsensitiveSearch];
+            if(queryRange.location != NSNotFound)
+            {
+                [self.listHistorialFiltered addObject:searchHistoryDto];
+            }
+        }
+    }
+    
+    [self.historialTableView reloadData];
 }
 
 
@@ -72,12 +112,6 @@
     [searchBar resignFirstResponder];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    MTCSearchHistoryDto * dto = self.listHistorial[indexPath.row];
-    NSString * query = dto.query;
-    [self search:query];
-}
 
 - (void)search:(NSString*)query
 {
@@ -105,6 +139,8 @@
     _spinner = nil;
     [_listHistorial release];
     _listHistorial = nil;
+    [_listHistorialFiltered release];
+    _listHistorialFiltered = nil;
     [super dealloc];
 }
 @end
