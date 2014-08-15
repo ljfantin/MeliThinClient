@@ -276,12 +276,13 @@
     self.item.isFavorite = !self.item.isFavorite;
 }
 
-- (IBAction)pushBuyButton:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirmacion de compra"
-                                                    message:@"¿Esta seguro que desea concretar la compra?"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Cancelar"
-                                          otherButtonTitles:@"Confirmar",nil];
+- (IBAction)pushBuyButton:(id)sender
+{
+    NSString * title = NSLocalizedString(@"view.confirmation.title", nil);
+    NSString * message = NSLocalizedString(@"view.confirmation.message",nil);
+    NSString * buttonOkTitle = NSLocalizedString(@"view.confirmation.buttonOk",nil);
+    NSString * buttonCancelTitle = NSLocalizedString(@"view.confirmation.buttonCancel",nil);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title  message:message delegate:self cancelButtonTitle:buttonCancelTitle otherButtonTitles:buttonOkTitle, nil];
     [alert show];
     [alert release];
 }
@@ -298,8 +299,26 @@
 {
     CGFloat pageWidth = sender.frame.size.width;
     int page = floor((sender.contentOffset.x - pageWidth / 2 ) / pageWidth) + 1;
-    self.pageControl.currentPage = page;
+    if (self.pageControl.currentPage!=page) {
+        self.pageControl.currentPage = page;
+        [self changePage];
+    }
 }
+
+- (void) changePage
+{
+    CGRect frame;
+    frame.origin.x = self.galleryScrollView.frame.size.width * self.pageControl.currentPage;
+    frame.origin.y = 0;
+    frame.size = self.galleryScrollView.frame.size;
+    [self.galleryScrollView scrollRectToVisible:frame animated:YES];
+}
+
+- (IBAction)valueChanged:(id)sender
+{
+    [self changePage];
+}
+
 
 #pragma mark implementacion delegate MTCServiceApiDelegate
 - (void) onPostExecute:(NSDictionary *) data
@@ -344,6 +363,9 @@
     _footer = nil;
     [_cells release];
     _cells = nil;
+    [_galleryScrollView release];
+    _galleryScrollView = nil;
     [super dealloc];
 }
+
 @end

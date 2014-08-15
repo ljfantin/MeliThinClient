@@ -24,3 +24,8 @@
 "history.TableView.title" = "Ultimas busquedas";
 "history.title" = "Mercadolibre";
 "descripcion.title" = "Descripcion";
+"view.confirmation.title"="Confirmacion de compra";
+"view.confirmation.message"="¿Esta seguro que desea concretar la compra?";
+"view.confirmation.buttonOk"="Confirmar";
+"view.confirmation.buttonCancel"="Cancelar";
+

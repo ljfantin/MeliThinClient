@@ -22,6 +22,8 @@
 @property (retain, nonatomic) IBOutlet UIButton *addFavoriteButton;
 - (IBAction)addFavoritePushButton:(id)sender;
 - (IBAction)pushBuyButton:(id)sender;
+@property (retain, nonatomic) IBOutlet UIScrollView *galleryScrollView;
+- (IBAction)valueChanged:(id)sender;
 
 
 @property (retain, nonatomic) MTCItemDto * item;

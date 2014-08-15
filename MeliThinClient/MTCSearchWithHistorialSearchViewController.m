@@ -69,8 +69,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MTCSearchHistoryDto * dto = self.listHistorial[indexPath.row];
-    NSString * query = dto.query;
+    MTCSearchHistoryDto * searchHistoryDto;
+    if (self.isFiltered) {
+        searchHistoryDto = self.listHistorialFiltered[indexPath.row];
+    } else {
+        searchHistoryDto = self.listHistorial[indexPath.row];
+    }
+    NSString * query = searchHistoryDto.query;
     [self search:query];
 }
 
