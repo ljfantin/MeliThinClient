@@ -51,6 +51,7 @@
 		4FF2B0781992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0771992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m */; };
 		4FF2B0851992BAD6000BFE85 /* MTCPagerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */; };
 		4FF2B08A1992D0D8000BFE85 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B0891992D0D8000BFE85 /* image1.jpg */; };
+		4FF8A96C199EA9BE003ECFB5 /* UIColor+MTCColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8A96B199EA9BE003ECFB5 /* UIColor+MTCColorPalette.m */; };
 		8B7510C11998119400E03739 /* MTCPagerJsonTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7510C01998119400E03739 /* MTCPagerJsonTranslator.m */; };
 		8B7510C419984D9D00E03739 /* MTCItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7510C319984D9D00E03739 /* MTCItemDto.m */; };
 		8B7510C7199853F500E03739 /* MTCItemTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7510C6199853F500E03739 /* MTCItemTranslator.m */; };
@@ -157,6 +158,8 @@
 		4FF2B0831992BAD6000BFE85 /* MTCPagerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCPagerList.h; sourceTree = "<group>"; };
 		4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCPagerList.m; sourceTree = "<group>"; };
 		4FF2B0891992D0D8000BFE85 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
+		4FF8A96A199EA9BE003ECFB5 /* UIColor+MTCColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MTCColorPalette.h"; sourceTree = "<group>"; };
+		4FF8A96B199EA9BE003ECFB5 /* UIColor+MTCColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MTCColorPalette.m"; sourceTree = "<group>"; };
 		5A337731D19444F29D529790 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7510BF1998119400E03739 /* MTCPagerJsonTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCPagerJsonTranslator.h; sourceTree = "<group>"; };
 		8B7510C01998119400E03739 /* MTCPagerJsonTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCPagerJsonTranslator.m; sourceTree = "<group>"; };
@@ -278,6 +281,8 @@
 		4FE600681993B54D00AF3DFE /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				4FF8A96A199EA9BE003ECFB5 /* UIColor+MTCColorPalette.h */,
+				4FF8A96B199EA9BE003ECFB5 /* UIColor+MTCColorPalette.m */,
 				4FE600691993B58100AF3DFE /* UIImage+Utils.h */,
 				4FE6006A1993B58100AF3DFE /* UIImage+Utils.m */,
 			);
@@ -623,6 +628,7 @@
 				4F47B82E199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.m in Sources */,
 				4FF2B05B19928994000BFE85 /* MTCItemsSearchResultsViewController.m in Sources */,
 				4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */,
+				4FF8A96C199EA9BE003ECFB5 /* UIColor+MTCColorPalette.m in Sources */,
 				8B7510C7199853F500E03739 /* MTCItemTranslator.m in Sources */,
 				4FE10169199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.m in Sources */,
 				4FF2B0381992876F000BFE85 /* MTCAppDelegate.m in Sources */,

@@ -10,6 +10,8 @@
 #import "MTCItemsSearchResultsViewController.h"
 #import "MTCItemsFavoritiesResultsViewController.h"
 #import "MTCSearchWithHistorialSearchViewController.h"
+#import "UIColor+MTCColorPalette.h"
+
 
 @implementation MTCAppDelegate
 
@@ -41,7 +43,7 @@
     
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationControllerItemSearch,navigationControllerItemFavorities,nil];
 
-    
+    [self customizeNavigationBarAppearance];
     //le seteo el tabbar controller como root
     [self.window setRootViewController:self.tabBarController];
     
@@ -98,7 +100,7 @@
                                        forBarMetrics:UIBarMetricsLandscapePhone];*/
     
     // Customize the title text for *all* UINavigationBars
-    NSShadow *shadow = [NSShadow new];
+    /*NSShadow *shadow = [NSShadow new];
     [shadow setShadowColor: [UIColor colorWithWhite:0.0f alpha:0.750f]];
     [shadow setShadowOffset: CGSizeMake(0.0f, 1.0f)];
     
@@ -111,6 +113,16 @@
       [UIFont fontWithName:@"Arial-Bold" size:0.0],
       NSFontAttributeName,
       nil]];
+     */
+    [[UINavigationBar appearance] setBarTintColor:[UIColor meliYellowColor]];
+
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor blackColor], NSForegroundColorAttributeName,
+                                                           shadow, NSShadowAttributeName,
+                                                           [UIFont fontWithName:@"Comic Sans MS" size:21.0], NSFontAttributeName, nil]];
 }
 
 @end
