@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = NSLocalizedString(@"descripcion.title", nil);
     [self.service getDescriptionFromItem:self.idItem];
 }
 

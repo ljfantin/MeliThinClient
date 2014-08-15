@@ -27,7 +27,6 @@
 
 - (void)testExample
 {
-    xdeleteAll];
     [[MTCFavoriteDaoImpl sharedInstance] commit];
 
     [[MTCFavoriteDaoImpl sharedInstance] save:@"1"];

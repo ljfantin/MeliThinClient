@@ -43,7 +43,6 @@
         [_service setDelegate:self];
         _picturesTranslator = [[MTCPicturesJsonTranslator alloc] init];
         _cells = [[NSMutableArray alloc] init];
-        _dao = [[MTCFavoriteDaoImpl alloc] init];
         _cellsCount = 0;
         _imageIsFavorite = [UIImage imageNamed:@"favoriteIcon.png"];
         _imageIsNotFavorite = [UIImage imageNamed:@"favoriteIcon32.png"];
@@ -54,7 +53,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     _gallery= [[[NSBundle mainBundle] loadNibNamed:@"MTCVipItemPhotoGalleryView" owner:self options:nil] firstObject];
     
     if ([self.item.buyingMode isBuyItNow])  {
@@ -87,7 +86,8 @@
 
 - (void) initStateFavoriteButton
 {
-    NSArray * idsFavorites = [self.dao getAll];
+    MTCFavoriteDaoImpl * favoriteDao = [MTCFavoriteDaoImpl sharedInstance];
+    NSArray * idsFavorites = [favoriteDao getAll];
     
     self.item.isFavorite = [idsFavorites containsObject:self.item.id];
     if (self.item.isFavorite) {

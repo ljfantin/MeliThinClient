@@ -19,8 +19,8 @@
 
 @implementation MTCFavoriteDaoImpl
 
-/*
- + (MTCFavoriteDaoImpl*)sharedInstance
+
++ (MTCFavoriteDaoImpl*)sharedInstance
 {
     static MTCFavoriteDaoImpl *_sharedInstance = nil;
     static dispatch_once_t oncePredicate;
@@ -28,7 +28,7 @@
         _sharedInstance = [[MTCFavoriteDaoImpl alloc] init];
     });
     return _sharedInstance;
-}*/
+}
 
 - (instancetype)init
 {
@@ -36,8 +36,7 @@
     if (self) {
         _fileName = @"favorites.plist";
         _keyCollectionId = @"favoritesIds";
-        _pathFile = [self buildPathFile];
-        
+        [self buildPathFile];
         [self createFile];
     }
     return self;
@@ -70,12 +69,10 @@
 
 - (BOOL) commit
 {
-    /*NSString *error;
-    NSData *data = [NSPropertyListSerialization dataFromPropertyList:self.data
-                                                              format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];*/
-    [self.data writeToFile:self.pathFile atomically:YES];
-    //si no tengo errores entonces comiteo bien
-    //return (error==nil);
+    NSString *error;
+    NSData *dataToSave = [NSPropertyListSerialization dataFromPropertyList:self.data
+                                                                    format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
+    [dataToSave writeToFile:self.pathFile atomically:YES];
     return YES;
 }
 
@@ -95,13 +92,13 @@
     }
 }
 
-- (NSString*)buildPathFile {
+- (void)buildPathFile {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *pathFile = [documentsDirectory stringByAppendingPathComponent:self.fileName];
-    return pathFile;
+    self.pathFile = [documentsDirectory stringByAppendingPathComponent:self.fileName];
 }
+
 
 - (void)dealloc
 {

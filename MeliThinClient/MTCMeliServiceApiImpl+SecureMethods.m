@@ -14,38 +14,33 @@
 @implementation MTCMeliServiceApiImpl (SecureMethods)
 
 - (void) getAllBookmarks:(NSString*)token{
-    MTCFavoriteDaoImpl * dao = [[MTCFavoriteDaoImpl alloc] init];
+    MTCFavoriteDaoImpl * dao = [MTCFavoriteDaoImpl sharedInstance];
     NSArray * idFavorites = [dao getAll];
     [self getItems:idFavorites];
-    [dao release];
     //prodria verificar si alguno no existe mas
 }
 
 - (void) addBookmark:(MTCItemDto*)item withToken:(NSString*)token
 {
-    MTCFavoriteDaoImpl * dao = [[MTCFavoriteDaoImpl alloc] init];
+    MTCFavoriteDaoImpl * dao = [MTCFavoriteDaoImpl sharedInstance];
     [dao save:item.id];
     [dao commit];
-    [dao release];
-
 }
 
 - (void) removeBookmark:(MTCItemDto*)item withToken:(NSString*)token
 {
-    MTCFavoriteDaoImpl * dao = [[MTCFavoriteDaoImpl alloc] init];
+    MTCFavoriteDaoImpl * dao = [MTCFavoriteDaoImpl sharedInstance];
 
     [dao delete:item.id];
     [dao commit];
-    [dao release];
 }
 
 - (void) removeAllBookmark:(NSString*)token
 {
-    MTCFavoriteDaoImpl * dao = [[MTCFavoriteDaoImpl alloc] init];
+    MTCFavoriteDaoImpl * dao = [MTCFavoriteDaoImpl sharedInstance];
 
     [dao deleteAll];
     [dao commit];
-    [dao release];
 }
 
 

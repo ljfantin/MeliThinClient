@@ -33,7 +33,6 @@
 @property (retain, nonatomic) UIImage * imageIsFavorite;
 @property (retain, nonatomic) UIImage * imageIsNotFavorite;
 
-@property (retain, nonatomic) MTCFavoriteDaoImpl * dao;
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *spinnerGallery;
 
 
