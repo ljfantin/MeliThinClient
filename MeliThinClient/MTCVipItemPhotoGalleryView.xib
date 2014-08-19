@@ -56,7 +56,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="KMz-Gc-YSf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0hC-Dd-s6r"/>
+                <constraint firstAttribute="trailing" secondItem="bPt-Un-r97" secondAttribute="trailing" id="6ou-jg-aDh"/>
                 <constraint firstAttribute="centerX" secondItem="jZz-Sk-cPx" secondAttribute="centerX" id="7aa-wV-GZi"/>
+                <constraint firstItem="bPt-Un-r97" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7kj-eW-Dg3"/>
+                <constraint firstItem="YX2-aa-MCY" firstAttribute="top" secondItem="bPt-Un-r97" secondAttribute="bottom" constant="8" id="F0I-bf-1OT"/>
+                <constraint firstItem="bPt-Un-r97" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RdP-sh-48i"/>
                 <constraint firstItem="bPt-Un-r97" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Vg9-CK-Q2u"/>
                 <constraint firstAttribute="trailing" secondItem="bPt-Un-r97" secondAttribute="trailing" id="cup-Ks-JIu"/>
                 <constraint firstAttribute="centerX" secondItem="YX2-aa-MCY" secondAttribute="centerX" id="d3e-qd-tES"/>
