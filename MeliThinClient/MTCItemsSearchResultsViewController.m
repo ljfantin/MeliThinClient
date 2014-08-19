@@ -12,7 +12,8 @@
 #import "MTCPagerList.h"
 #import "MTCItemSearchResultDto.h"
 #import "MTCSearchHistoryDto.h"
-
+#import "AFNetworkReachabilityManager.h"
+#import "UIAlertView+MTCMessage.h"
 
 
 @interface MTCItemsSearchResultsViewController ()
@@ -64,11 +65,11 @@
 }
 
 #pragma mark UISearchBarDelegate implementation
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;  {                    // called when keyboard search button pressed
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
     self.searchQuery = searchBar.text;
     [self.pager resetToValuesDefault];
     [self.items removeAllObjects];
-    [self.spinner startAnimating];
     [self requestNewItems];
     [searchBar resignFirstResponder];
     MTCSearchHistoryManager * searchHistoryManager = [MTCSearchHistoryManager sharedInstance];
@@ -77,10 +78,10 @@
 }
 
 
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar;  {                    // called when keyboard search button pressed
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
     [searchBar resignFirstResponder];
     searchBar.text = self.searchQuery;
-    
 }
 
 
@@ -88,11 +89,9 @@
 #pragma mark Implementacion delegate MTCServiceApiDelegate
 - (void) onPostExecute:(NSDictionary *) data;
 {
+    [super onPostExecute:data];
     NSArray * listItems = [self.searchJsonTranslator arrayFromDictionaryWithJson:data];
     self.pager = (MTCPagerList*)[self.pagerJsonTranslator objectFromDictionaryWithJson:data];
-    
-    //stop el spinner
-    [self.spinner stopAnimating];
     
     //updeteo el title de la tabla
     [self updateTitle:self.searchQuery withCount:self.pager.total];
@@ -118,7 +117,6 @@
         [self.tableView.infiniteScrollingView stopAnimating];
     }
 }
-
 
 
 - (void)dealloc

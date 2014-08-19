@@ -16,6 +16,7 @@
 
 - (void) onPreExecute;
 
-- (void) handleError:(NSError*)error;
+- (void) onHandleError:(NSError*)error;
 
+- (void) onHandleErrorWithOutConnection;
 @end

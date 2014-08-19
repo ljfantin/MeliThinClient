@@ -34,6 +34,15 @@
     [self.service descriptionFromItemWithIdentifier:self.idItem];
 }
 
+/*- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Volver" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWith                                                                   style:UIBarButtonItemStyleBordered
+                                                                  target:self
+                                                                  action:@selector(backAction)];
+}*/
+
 
 #pragma mark Implementacion delegate MTCServiceApiDelegate
 

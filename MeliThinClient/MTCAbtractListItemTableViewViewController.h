@@ -13,7 +13,7 @@
 #import "UIScrollView+SVInfiniteScrolling.h"
 #import "MTCServiceApiDelegate.h"
 
-@interface MTCAbtractListItemTableViewViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface MTCAbtractListItemTableViewViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,MTCServiceApiDelegate>
 
 @property (retain, nonatomic) MTCPagerList * pager;
 @property (retain, nonatomic) NSMutableArray * items;

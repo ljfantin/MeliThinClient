@@ -11,6 +11,7 @@
 #import "MTCUIListItemResultTableViewCell.h"
 #import "MTCVipItemViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "UIAlertView+MTCMessage.h"
 
 
 
@@ -37,6 +38,7 @@
 
 - (void) requestNewItems
 {
+    //metodo abstracto
 }
 
 - (void) updateTitle:(NSString *)title withCount:(NSInteger)countResults{
@@ -125,6 +127,36 @@
     vipItemViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vipItemViewController animated:YES];
 }
+
+#pragma mark Implementacion delegate MTCServiceApiDelegate
+- (void) onPostExecute:(NSDictionary *)data
+{
+    //stop el spinner
+    [self.spinner stopAnimating];
+}
+
+- (void) onHandleError:(NSError*)error
+{
+    //stop el spinner
+    [self.spinner stopAnimating];
+    UIAlertView * alert = [UIAlertView alertViewWithErrorGenericMessageWithDelegate:self];
+    [alert show];
+}
+
+- (void) onHandleErrorWithOutConnection
+{
+    //stop el spinner
+    [self.spinner stopAnimating];
+    UIAlertView * alert = [UIAlertView alertViewWithErrorConectionMessageWithDelegate:self];
+    [alert show];
+}
+
+- (void)onPreExecute
+{
+    [self.spinner startAnimating];
+}
+
+
 
 
 - (void)dealloc

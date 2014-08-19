@@ -10,7 +10,7 @@
 #import "MTCAbtractListItemTableViewViewController.h"
 #import "MTCFavoritesJsonTranslator.h"
 
-@interface MTCItemsFavoritiesResultsViewController : MTCAbtractListItemTableViewViewController<MTCServiceApiDelegate>
+@interface MTCItemsFavoritiesResultsViewController : MTCAbtractListItemTableViewViewController
 @property (nonatomic, retain) MTCMeliServiceApiImpl * service;
 @property (nonatomic, retain) MTCFavoritesJsonTranslator * favoritesJsonTranslator;
 @end

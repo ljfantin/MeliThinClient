@@ -16,7 +16,7 @@
 #import "MTCSearchHistoryManager.h"
 
 
-@interface MTCItemsSearchResultsViewController : MTCAbtractListItemTableViewViewController<MTCServiceApiDelegate, UISearchBarDelegate>
+@interface MTCItemsSearchResultsViewController : MTCAbtractListItemTableViewViewController<UISearchBarDelegate>
 
 @property (nonatomic, retain) NSString * searchQuery;
 @property (nonatomic, retain) MTCSearchJsonTranslator * searchJsonTranslator;

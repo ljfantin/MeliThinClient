@@ -36,115 +36,119 @@
 -(void) search:(NSString*)query pager:(MTCPagerList*)pager
 {
     [self preExecute];
+    if (![self hasConecction]) {
+        [self handleErrorWithOutConnection];
+    } else {
+
+        //agrego parametros
+        NSString * limitValue = [@(pager.limit) stringValue];
+        NSString * offSetValue = [@(pager.offset) stringValue];
+        NSDictionary * params = @{@"q":query,@"limit":limitValue,@"offset":offSetValue};
+        //construyo el request
+        AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:self.pathSearch parameters:params];
     
-    //agrego parametros
-    NSString * limitValue = [@(pager.limit) stringValue];
-    NSString * offSetValue = [@(pager.offset) stringValue];
-    NSDictionary * params = @{@"q":query,@"limit":limitValue,@"offset":offSetValue};
-    //construyo el request
-    AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:self.pathSearch parameters:params];
-    
-    __block MTCMeliServiceApiImpl * weakSelf = self;
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        __block MTCMeliServiceApiImpl * weakSelf = self;
+        [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSLog(@"Respuesta json search %@: %@", query, responseObject);
-        [[weakSelf getDelegate] onPostExecute:responseObject];
+            NSLog(@"Respuesta json search %@: %@", query, responseObject);
+            [[weakSelf getDelegate] onPostExecute:responseObject];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        //Si el delegate tiene implementado el manejo de errores entonces lo invoco.
-        if ([[weakSelf getDelegate] respondsToSelector:@selector(handleError:)]) {
-            [[weakSelf getDelegate] handleError:error];
-        }
-    }];
-    [[NSOperationQueue mainQueue] addOperation:op];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+            [weakSelf handleError:error];
+        }];
+        [[NSOperationQueue mainQueue] addOperation:op];
+    }
 }
 
 
 - (void)itemWithIdentifier:(NSString*)idItem attributes:(NSArray*)atributes  {
 
     [self preExecute];
-    
-    //agrego parametros
-    NSDictionary * params =  nil;
-    if (atributes!=nil) {
-        NSString * attributesJoined = [atributes componentsJoinedByString:@","];
-        params = @{@"attributes":attributesJoined};
-    }
-    
-    NSString *pathPicturesWithId = [NSString stringWithFormat:self.pathItems,idItem];
-    
-    //construyo el request
-    AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:pathPicturesWithId parameters:params];
-    
-    __block MTCMeliServiceApiImpl * weakSelf = self;
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        [[weakSelf getDelegate] onPostExecute:responseObject];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        //Si el delegate tiene implementado el manejo de errores entonces lo invoco.
-        if ([[weakSelf getDelegate] respondsToSelector:@selector(handleError:)]) {
-            [[weakSelf getDelegate] handleError:error];
+    if (![self hasConecction]) {
+        [self handleErrorWithOutConnection];
+    } else {
+        //agrego parametros
+        NSDictionary * params =  nil;
+        if (atributes!=nil) {
+            NSString * attributesJoined = [atributes componentsJoinedByString:@","];
+            params = @{@"attributes":attributesJoined};
         }
-    }];
-    [[NSOperationQueue mainQueue] addOperation:op];
+    
+        NSString *pathPicturesWithId = [NSString stringWithFormat:self.pathItems,idItem];
+    
+        //construyo el request
+        AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:pathPicturesWithId parameters:params];
+    
+        __block MTCMeliServiceApiImpl * weakSelf = self;
+        [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+            [[weakSelf getDelegate] onPostExecute:responseObject];
+        
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [weakSelf handleError:error];
+        }];
+        [[NSOperationQueue mainQueue] addOperation:op];
+    }
 }
 
 - (void)itemsWithIdentifiers:(NSArray*)idsItem{
     
     [self preExecute];
-    
-    //agrego parametros
-    NSDictionary * params =  nil;
-    if (idsItem!=nil) {
-        NSString * attributesJoined = [idsItem componentsJoinedByString:@","];
-        params = @{@"ids":attributesJoined};
-    }
-    
-    NSString *pathMultigetItems = [NSString stringWithFormat:self.pathMultiGetsItems,params];
-    
-    //construyo el request
-    AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:pathMultigetItems parameters:params];
-    
-    __block MTCMeliServiceApiImpl * weakSelf = self;
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        [[weakSelf getDelegate] onPostExecute:responseObject];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        //Si el delegate tiene implementado el manejo de errores entonces lo invoco.
-        if ([[weakSelf getDelegate] respondsToSelector:@selector(handleError:)]) {
-            [[weakSelf getDelegate] handleError:error];
+    if (![self hasConecction]) {
+        [self handleErrorWithOutConnection];
+    } else {
+
+        //agrego parametros
+        NSDictionary * params =  nil;
+        if (idsItem!=nil) {
+            NSString * attributesJoined = [idsItem componentsJoinedByString:@","];
+            params = @{@"ids":attributesJoined};
         }
-    }];
-    [[NSOperationQueue mainQueue] addOperation:op];
+    
+        NSString *pathMultigetItems = [NSString stringWithFormat:self.pathMultiGetsItems,params];
+    
+        //construyo el request
+        AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:pathMultigetItems parameters:params];
+    
+        __block MTCMeliServiceApiImpl * weakSelf = self;
+        [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+            [[weakSelf getDelegate] onPostExecute:responseObject];
+        
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+            [weakSelf handleError:error];
+    
+        }];
+        [[NSOperationQueue mainQueue] addOperation:op];
+    }
 }
 
 - (void)descriptionFromItemWithIdentifier:(NSString*)idIdem
 {
     [self preExecute];
+    if (![self hasConecction]) {
+        [self handleErrorWithOutConnection];
+    } else {
+
+        NSString *pathPicturesWithId = [NSString stringWithFormat:self.pathDescription,idIdem];
     
-    NSString *pathPicturesWithId = [NSString stringWithFormat:self.pathDescription,idIdem];
+        //construyo el request
+        AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:pathPicturesWithId parameters:nil];
     
-    //construyo el request
-    AFHTTPRequestOperation * op = [self buildRequest:@"GET" path:pathPicturesWithId parameters:nil];
-    
-    __block MTCMeliServiceApiImpl * weakSelf = self;
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        __block MTCMeliServiceApiImpl * weakSelf = self;
+        [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        [[weakSelf getDelegate] onPostExecute:responseObject];
+            [[weakSelf getDelegate] onPostExecute:responseObject];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        //Si el delegate tiene implementado el manejo de errores entonces lo invoco.
-        if ([[weakSelf getDelegate] respondsToSelector:@selector(handleError:)]) {
-            [[weakSelf getDelegate] handleError:error];
-        }
-    }];
-    [[NSOperationQueue mainQueue] addOperation:op];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+            [weakSelf handleError:error];
+
+        }];
+        [[NSOperationQueue mainQueue] addOperation:op];
+    }
 }
 
 - (void) setDelegate:(id<MTCServiceApiDelegate>)newDelegate
@@ -175,6 +179,29 @@
     ////Si el delegate tiene implementado onPreExecute
     if ([[self getDelegate] respondsToSelector:@selector(onPreExecute)]) {
         [[self getDelegate] onPreExecute];
+    }
+}
+
+- (BOOL) hasConecction
+{
+    return ([[AFNetworkReachabilityManager sharedManager] isReachable]);
+}
+
+- (void) handleError:(NSError*)error
+{
+    NSLog(@"Error: %@", error);
+    //Si el delegate tiene implementado el manejo de errores genericos entonces lo invoco.
+    if ([[self getDelegate] respondsToSelector:@selector(onHandleError:)]) {
+        [[self getDelegate] onHandleError:error];
+    }
+}
+
+- (void) handleErrorWithOutConnection
+{
+    NSLog(@"Error: Se corto la conexion");
+    //Si el delegate tiene implementado el manejo de errores para cuando se corta la conexion
+    if ([[self getDelegate] respondsToSelector:@selector(onHandleErrorWithOutConnection)]) {
+        [[self getDelegate] onHandleErrorWithOutConnection];
     }
 }
 

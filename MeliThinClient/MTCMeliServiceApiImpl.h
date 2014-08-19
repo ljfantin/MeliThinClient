@@ -24,5 +24,4 @@
 @property (nonatomic, retain) NSString * pathMultiGetsItems;
 
 
-
 @end

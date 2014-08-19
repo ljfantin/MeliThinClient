@@ -15,6 +15,7 @@
 #import "MTCItemDto.h"
 #import "MTCDescriptionVipItemViewController.h"
 #import "MTCMeliServiceApiImpl+SecureMethods.h"
+#import "UIAlertView+MTCMessage.h"
 
 #define INDEX_PRICE_FAVORITE_CELL 0
 #define INDEX_SUBTITLE_CELL 1
@@ -205,8 +206,7 @@
     static NSString *idSubtitleCell = @"idDescriptionCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idSubtitleCell];
-    if (cell == nil)
-    {
+    if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idSubtitleCell] autorelease];
     }
     cell.textLabel.text = NSLocalizedString(@"descripcion.title",nil);
@@ -224,8 +224,7 @@
     static NSString *idSubtitleCell = @"idAvailableCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idSubtitleCell];
-    if (cell == nil)
-    {
+    if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:idSubtitleCell] autorelease];
     }
     cell.textLabel.text = NSLocalizedString(@"cantidad.title",nil);
@@ -240,8 +239,7 @@
     static NSString *idButtonCell = @"idBuyButtonCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idButtonCell];
-    if (cell == nil)
-    {
+    if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"MTCBuyButtonVipItemTableViewCell" owner:self options:nil] firstObject];
     }
     return cell;
@@ -259,13 +257,10 @@
 
 - (IBAction)addFavoritePushButton:(id)sender {
     
-    if (self.item.isFavorite)
-    {
+    if (self.item.isFavorite) {
         [self.service removeBookmark:_item withToken:nil];
         [self.addFavoriteButton setImage:_imageIsNotFavorite forState:UIControlStateNormal];
-    }
-    else
-    {
+    } else {
         [self.service addBookmark:_item withToken:nil];
         [self.addFavoriteButton setImage:_imageIsFavorite forState:UIControlStateNormal];
     }
@@ -274,13 +269,8 @@
 
 - (IBAction)pushBuyButton:(id)sender
 {
-    NSString * title = NSLocalizedString(@"view.confirmation.title", nil);
-    NSString * message = NSLocalizedString(@"view.confirmation.message",nil);
-    NSString * buttonOkTitle = NSLocalizedString(@"view.confirmation.buttonOk",nil);
-    NSString * buttonCancelTitle = NSLocalizedString(@"view.confirmation.buttonCancel",nil);
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title  message:message delegate:self cancelButtonTitle:buttonCancelTitle otherButtonTitles:buttonOkTitle, nil];
+    UIAlertView * alert = [UIAlertView alertViewWithBuyConfirmationMessageWithDelegate:self];
     [alert show];
-    [alert release];
 }
 
 

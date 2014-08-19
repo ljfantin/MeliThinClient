@@ -26,10 +26,15 @@
 "descripcion.title" = "Descripción";
 "cantidad.title" = "Cantidad disponible";
 
+"view.errorgeneric.title"="Ocurrió un problema";
+"view.errorgeneric.message"="Por favor vuelva a intentarlo mas tarde";
+"view.errorconection.title"="Ocurrió un problema";
+"view.errorconection.message"="Por favor verifique su conexión a internet";
 "view.confirmation.title"="Confirmación de compra";
 "view.confirmation.message"="¿Está seguro que desea concretar la compra?";
-"view.confirmation.buttonOk"="Confirmar";
+"view.confirmation.buttonConfirm"="Confirmar";
 "view.confirmation.buttonCancel"="Cancelar";
+"view.confirmation.buttonOk"="Aceptar";
 "sinprecio"="A convenir";
 
 "item.condition.new" = "Artículo nuevo";
@@ -38,7 +43,4 @@
 
 "tab.search.title" = "Buscar";
 "tab.bookmark.title" = "Favoritos";
-
-
-
 

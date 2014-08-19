@@ -9,6 +9,8 @@
 #import "MTCItemsFavoritiesResultsViewController.h"
 #import "MTCMeliServiceApiImpl+SecureMethods.h"
 #import "MTCItemSearchResultDto.h"
+#import "AFNetworkReachabilityManager.h"
+#import "UIAlertView+MTCMessage.h"
 
 @interface MTCItemsFavoritiesResultsViewController ()
 
@@ -36,17 +38,20 @@
 
 - (void)requestNewItems
 {
-    [self.service getAllBookmarks:nil];
+    //if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
+        [self.service getAllBookmarks:nil];
+    /*} else {
+        UIAlertView * alert = [UIAlertView alertViewWithErrorConectionWithDelegate:self];
+        [alert show];
+    }*/
 }
 
 
 #pragma mark Implementacion delegate MTCServiceApiDelegate
 - (void)onPostExecute:(NSDictionary *)data;
 {
+    [super onPostExecute:data];
     NSArray * listItems = [self.favoritesJsonTranslator arrayFromDictionaryWithJson:data];
-
-    //stop el spinner
-    [self.spinner stopAnimating];
     
     //actualizo el header de la tabla
     [self updateTitle:@"Favoritos" withCount:[listItems count]];
@@ -56,10 +61,6 @@
     [self.tableView reloadData];
 }
 
-- (void)onPreExecute
-{
-    [self.spinner startAnimating];
-}
 
 - (void)dealloc
 {
