@@ -35,7 +35,7 @@
                     </connections>
                 </tableView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3Ul-jt-f3z">
-                    <rect key="frame" x="150" y="355" width="20" height="20"/>
+                    <rect key="frame" x="150" y="274" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
             </subviews>
@@ -44,11 +44,11 @@
                 <constraint firstAttribute="trailing" secondItem="BDD-ma-NQZ" secondAttribute="trailing" id="4oJ-bS-c1a"/>
                 <constraint firstAttribute="trailing" secondItem="BDD-ma-NQZ" secondAttribute="trailing" id="7Qg-q5-pkh"/>
                 <constraint firstItem="BDD-ma-NQZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Exc-4k-1Gn"/>
-                <constraint firstAttribute="bottom" secondItem="3Ul-jt-f3z" secondAttribute="bottom" constant="193" id="Gxg-EC-NFR"/>
                 <constraint firstItem="BDD-ma-NQZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Kja-rO-AxQ"/>
                 <constraint firstItem="BDD-ma-NQZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oon-Ic-dUm"/>
                 <constraint firstAttribute="bottom" secondItem="BDD-ma-NQZ" secondAttribute="bottom" id="RQa-Ho-UhD"/>
-                <constraint firstItem="BDD-ma-NQZ" firstAttribute="centerX" secondItem="3Ul-jt-f3z" secondAttribute="centerX" id="Ufn-nG-VpT"/>
+                <constraint firstAttribute="centerY" secondItem="3Ul-jt-f3z" secondAttribute="centerY" id="WYs-hL-yhY"/>
+                <constraint firstAttribute="centerX" secondItem="3Ul-jt-f3z" secondAttribute="centerX" id="uCJ-IC-D1a"/>
                 <constraint firstItem="BDD-ma-NQZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wVk-zf-OLV"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

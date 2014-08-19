@@ -66,8 +66,6 @@
 		8BB0753619998A3A0008F581 /* MTCDescriptionVipItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB0753419998A3A0008F581 /* MTCDescriptionVipItemViewController.xib */; };
 		8BB0753919998AFF0008F581 /* MTCDescriptionJsonTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB0753819998AFF0008F581 /* MTCDescriptionJsonTranslator.m */; };
 		8BB0753C19998B860008F581 /* MTCDescriptionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB0753B19998B860008F581 /* MTCDescriptionDto.m */; };
-		8BB075421999ADA40008F581 /* search-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB075411999ADA40008F581 /* search-50.png */; };
-		8BB075441999ADC40008F581 /* search32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB075431999ADC40008F581 /* search32.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,8 +179,6 @@
 		8BB0753819998AFF0008F581 /* MTCDescriptionJsonTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCDescriptionJsonTranslator.m; sourceTree = "<group>"; };
 		8BB0753A19998B860008F581 /* MTCDescriptionDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCDescriptionDto.h; sourceTree = "<group>"; };
 		8BB0753B19998B860008F581 /* MTCDescriptionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCDescriptionDto.m; sourceTree = "<group>"; };
-		8BB075411999ADA40008F581 /* search-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-50.png"; sourceTree = "<group>"; };
-		8BB075431999ADC40008F581 /* search32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search32.png; sourceTree = "<group>"; };
 		D7E87F6F256746BD8060E767 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -317,7 +313,6 @@
 				4FDF173619950DB90004DCF3 /* resources */,
 				4FE600681993B54D00AF3DFE /* utils */,
 				8BAD05E51992F96F00BE28C1 /* dao */,
-				4FF2B0881992D053000BFE85 /* images */,
 				4FF2B0871992BE1A000BFE85 /* controller */,
 				4FF2B0861992BC3F000BFE85 /* xib */,
 				4FF2B0811992BA68000BFE85 /* ui */,
@@ -428,15 +423,6 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
-		4FF2B0881992D053000BFE85 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				8BB075431999ADC40008F581 /* search32.png */,
-				8BB075411999ADA40008F581 /* search-50.png */,
-			);
-			name = images;
-			sourceTree = "<group>";
-		};
 		8BAD05E51992F96F00BE28C1 /* dao */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,10 +516,8 @@
 				8BAE6FE81996B67300BD9B74 /* MTCVipItemTableViewFooter.xib in Resources */,
 				4FF2B0321992876F000BFE85 /* InfoPlist.strings in Resources */,
 				8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib in Resources */,
-				8BB075441999ADC40008F581 /* search32.png in Resources */,
 				4FF2B03A1992876F000BFE85 /* Images.xcassets in Resources */,
 				4FF2B05C19928994000BFE85 /* MTCItemsSearchResultsViewController.xib in Resources */,
-				8BB075421999ADA40008F581 /* search-50.png in Resources */,
 				4FE6007419940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib in Resources */,
 				4FDF1732199501D70004DCF3 /* MTCVipItemViewController.xib in Resources */,
 				4FF2B06119928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib in Resources */,

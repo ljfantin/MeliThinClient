@@ -25,14 +25,14 @@
     //creo los view controller, cada uno con su propio navigation controller
     MTCSearchWithHistorialSearchViewController *itemsSearchResultsController = [[MTCSearchWithHistorialSearchViewController alloc] initWithNibName:@"MTCSearchWithHistorialSearchViewController" bundle:nil];
 
-    UITabBarItem *tabBuscar = [[UITabBarItem alloc] initWithTitle:@"Buscar"
+    UITabBarItem *tabBuscar = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tab.search.title",nil)
                                                             image:[UIImage imageNamed:@"search.png"] tag:1];
     [itemsSearchResultsController setTabBarItem:tabBuscar];
     
     
     MTCItemsFavoritiesResultsViewController * favoritesController = [[MTCItemsFavoritiesResultsViewController alloc] initWithNibName:@"MTCItemsFavoritiesResultsViewController" bundle:nil];
     
-    UITabBarItem *tabFavorites = [[UITabBarItem alloc] initWithTitle:@"Favoritos"
+    UITabBarItem *tabFavorites = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tab.bookmark.title",nil)
                                                                image:[UIImage imageNamed:@"heart-vacio.png"] tag:1];
     [favoritesController setTabBarItem:tabFavorites];
     
@@ -44,6 +44,7 @@
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationControllerItemSearch,navigationControllerItemFavorities,nil];
 
     [self customizeNavigationBarAppearance];
+    
     //le seteo el tabbar controller como root
     [self.window setRootViewController:self.tabBarController];
     
@@ -96,7 +97,6 @@
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"Arial" size:21.0], NSFontAttributeName, nil]];
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
-
 }
 
 @end

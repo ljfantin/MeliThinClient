@@ -36,4 +36,9 @@
 "item.condition.used" = "Artículo usado";
 "item.condition.unespecified" = "Condición no especificada";
 
+"tab.search.title" = "Buscar";
+"tab.bookmark.title" = "Favoritos";
+
+
+
 
