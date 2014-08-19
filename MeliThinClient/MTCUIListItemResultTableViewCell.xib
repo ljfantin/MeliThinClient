@@ -17,8 +17,8 @@
                         <rect key="frame" x="10" y="3" width="56" height="53"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Titulo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfD-eC-rRj">
-                        <rect key="frame" x="74" y="0.0" width="229" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Titulo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfD-eC-rRj">
+                        <rect key="frame" x="74" y="10" width="229" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,6 +38,7 @@
                     <constraint firstAttribute="bottom" secondItem="Mqh-BZ-Uoh" secondAttribute="bottom" constant="9" id="AkR-IC-l0Z"/>
                     <constraint firstAttribute="trailing" secondItem="dfD-eC-rRj" secondAttribute="trailing" constant="-16" id="f35-fi-ZG0"/>
                     <constraint firstItem="23k-6n-OqK" firstAttribute="leading" secondItem="dfD-eC-rRj" secondAttribute="leading" constant="-64" id="ihw-V2-a5i"/>
+                    <constraint firstItem="dfD-eC-rRj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="mh0-Lu-d6h"/>
                     <constraint firstItem="23k-6n-OqK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="uFZ-1p-zAv"/>
                 </constraints>
             </tableViewCellContentView>
