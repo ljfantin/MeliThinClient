@@ -92,9 +92,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "-onPostExecute:"
-            landmarkType = "5">
+            endingLineNumber = "150">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -109,7 +107,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
-            landmarkName = "-onPostExecute:"
+            landmarkName = "-dealloc"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -171,7 +169,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
-            landmarkName = "+initWithBuyItNow"
+            landmarkName = "+mtcBuyingModeTypeDtoWithBuyItNow"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -182,13 +180,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCItemSearchResultDto.m"
-            timestampString = "429315682.344529"
+            timestampString = "429911990.842374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "@implementation MTCItemSearchResultDto"
-            landmarkType = "3">
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "+mtcItemSearchResultDtoWithIdentifier:title:price:subtitle:availableQuantity:condition:buyingMode:currency:urlThumbnail:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -202,9 +200,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-translateCondition:"
-            landmarkType = "5">
+            endingLineNumber = "51">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -214,13 +210,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCItemSearchResultDto.m"
-            timestampString = "429318066.156996"
+            timestampString = "429911990.842374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "@implementation MTCItemSearchResultDto"
-            landmarkType = "3">
+            landmarkName = "+mtcItemSearchResultDtoWithIdentifier:title:price:subtitle:availableQuantity:condition:buyingMode:currency:urlThumbnail:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -234,25 +230,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "-translateBuyingMode:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCVipItemViewController.m"
-            timestampString = "429756029.008843"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            endingLineNumber = "66">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -267,8 +245,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "@implementation MTCItemsSearchResultsViewController"
-            landmarkType = "3">
+            landmarkName = "-addNewItemsToTableView"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -283,7 +261,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
-            landmarkName = "-requestNewItems"
+            landmarkName = "-searchBarSearchButtonClicked:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -299,7 +277,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "-getItem:attributes:"
+            landmarkName = "-itemWithIdentifier:attributes:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -315,7 +293,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
             endingLineNumber = "75"
-            landmarkName = "-getItem:attributes:"
+            landmarkName = "-itemWithIdentifier:attributes:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -331,7 +309,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "-getItem:attributes:"
+            landmarkName = "-itemWithIdentifier:attributes:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -347,7 +325,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
             endingLineNumber = "69"
-            landmarkName = "-getItem:attributes:"
+            landmarkName = "-itemWithIdentifier:attributes:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -363,7 +341,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
-            landmarkName = "-getItem:attributes:"
+            landmarkName = "-itemWithIdentifier:attributes:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -379,7 +357,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
             endingLineNumber = "67"
-            landmarkName = "-getItem:attributes:"
+            landmarkName = "-itemWithIdentifier:attributes:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -390,12 +368,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCDescriptionVipItemViewController.m"
-            timestampString = "429756029.008843"
+            timestampString = "429908692.120124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-onPostExecute:"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-dealloc"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -470,11 +448,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCItemsFavoritiesResultsViewController.m"
-            timestampString = "429587870.632636"
+            timestampString = "429983876.047132"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "-onPostExecute:"
             landmarkType = "5">
          </BreakpointContent>
@@ -486,13 +464,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCItemsFavoritiesResultsViewController.m"
-            timestampString = "429579099.290885"
+            timestampString = "429983876.047132"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-requestNewItems"
-            landmarkType = "5">
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "@implementation MTCItemsFavoritiesResultsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -646,11 +624,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCAbtractListItemTableViewViewController.m"
-            timestampString = "429663593.956275"
+            timestampString = "429996135.438448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -662,11 +640,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCAbtractListItemTableViewViewController.m"
-            timestampString = "429663593.956275"
+            timestampString = "429996135.438448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeliThinClient/MTCAbtractListItemTableViewViewController.m"
+            timestampString = "429996135.438448"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "-tableView:titleForHeaderInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -678,11 +672,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCAbtractListItemTableViewViewController.m"
-            timestampString = "429663593.956275"
+            timestampString = "429996135.438448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -694,28 +688,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCAbtractListItemTableViewViewController.m"
-            timestampString = "429663593.956275"
+            timestampString = "429996135.438448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-tableView:numberOfRowsInSection:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCAbtractListItemTableViewViewController.m"
-            timestampString = "429663593.956275"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-numberOfSectionsInTableView:"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -726,11 +704,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCItemsFavoritiesResultsViewController.m"
-            timestampString = "429585905.400342"
+            timestampString = "429983876.047132"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "-requestNewItems"
             landmarkType = "5">
          </BreakpointContent>
@@ -786,7 +764,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCVipItemViewController.m"
-            timestampString = "429756029.008843"
+            timestampString = "430093365.193108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -799,22 +777,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCVipItemViewController.m"
-            timestampString = "429756029.008843"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeliThinClient/MTCMeliServiceApiImpl+SecureMethods.m"
@@ -888,6 +850,70 @@
             startingLineNumber = "26"
             endingLineNumber = "26"
             landmarkName = "+sharedInstance"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeliThinClient/MTCSearchWithHistorialSearchViewController.m"
+            timestampString = "429907389.783197"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeliThinClient/MTCSearchJsonTranslator.m"
+            timestampString = "429910208.385913"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-arrayFromDictionaryWithJson:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeliThinClient/MTCSearchResultJsonTranslator.m"
+            timestampString = "429996135.438448"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-objectFromDictionaryWithJson:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeliThinClient/MTCVipItemViewController.m"
+            timestampString = "430093764.98284"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -10,45 +10,26 @@
 
 @implementation MTCItemSearchResultDto
 
-+(instancetype) mtcItemSearchResultDtoWithId:(NSString*)id title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(MTCConditiontTypeDto*)condition buyingMode:(MTCBuyingModeTypeDto*)buyingMode currency:(MTCCurrencyTypeDto*)currency thumbnail:(UIImage*) image
++(instancetype) mtcItemSearchResultDtoWithIdentifier:(NSString*)identifier title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(MTCConditiontTypeDto*)condition buyingMode:(MTCBuyingModeTypeDto*)buyingMode currency:(MTCCurrencyTypeDto*)currency urlThumbnail:(NSString*) urlThumbnail
 {
     
     MTCItemSearchResultDto * item = [[[MTCItemSearchResultDto alloc] init] autorelease];
-
-    if (item!=nil && ![title isEqual:[NSNull null]]) {
-        item.id = id;
-    }
-    if (title!=nil && ![title isEqual:[NSNull null]]) {
-        item.tittle = title;
-    }
-    if (price!=nil && ![price isEqual:[NSNull null]]) {
-        item.price = price;
-    }
-    if (subtitle!=nil && ![subtitle isEqual:[NSNull null]]) {
-        item.subtitle = subtitle;
-    }
-    if (quantity!=nil && ![quantity isEqual:[NSNull null]]) {
-        item.availableQuantity = quantity;
-    }
-    if (condition!=nil) {
-        item.condition = condition;
-    }
-    if (buyingMode!=nil) {
-        item.buyingMode = buyingMode;
-    }
-    if (image!=nil && ![image isEqual:[NSNull null]]) {
-        item.thumbnail = image;
-    }
-    if (currency!=nil) {
-        item.currency = currency;
-    }
+    item.identifier = identifier;
+    item.tittle = title;
+    item.price = price;
+    item.subtitle = subtitle;
+    item.availableQuantity = quantity;
+    item.condition = condition;
+    item.buyingMode = buyingMode;
+    item.currency = currency;
+    item.urlThumbnail = urlThumbnail;
     return item;
 }
 
 - (void)dealloc
 {
-    [_id release];
-    _id = nil;
+    [_identifier release];
+    _identifier = nil;
     [_tittle release];
     _tittle = nil;
     [_price release];
@@ -57,8 +38,8 @@
     _subtitle = nil;
     [_availableQuantity release];
     _availableQuantity = nil;
-    [_thumbnail release];
-    _thumbnail = nil;
+    [_urlThumbnail release];
+    _urlThumbnail = nil;
     [_currency release];
     _currency = nil;
     [_buyingMode release];

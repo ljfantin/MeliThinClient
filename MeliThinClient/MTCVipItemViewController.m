@@ -44,8 +44,8 @@
         _picturesTranslator = [[MTCPicturesJsonTranslator alloc] init];
         _cells = [[NSMutableArray alloc] init];
         _cellsCount = 0;
-        _imageIsFavorite = [UIImage imageNamed:@"favoriteIcon.png"];
-        _imageIsNotFavorite = [UIImage imageNamed:@"favoriteIcon32.png"];
+        _imageIsFavorite = [UIImage imageNamed:@"heart-rojo.png"];
+        _imageIsNotFavorite = [UIImage imageNamed:@"heart-gris.png"];
     }
     return self;
 }
@@ -61,7 +61,7 @@
         self.detailItemTableview.tableFooterView = _footer;
     }
 
-    [self.service itemWithIdentifier:self.item.id attributes:@[@"pictures",@"descriptions"]];
+    [self.service itemWithIdentifier:self.item.identifier attributes:@[@"pictures",@"descriptions"]];
     if (self.item.price!=nil)  {
         self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_PRICE_FAVORITE_CELL];
         self.cellsCount++;
@@ -78,9 +78,10 @@
         self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_AVAILABLE_CELL];
         self.cellsCount++;
     }
-    //TODO ver
-    self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_DESCRIPCION_CELL];
-    self.cellsCount++;
+    //if (self.item.descriptions!=nil && [self.item.descriptions count]>0) {
+        self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_DESCRIPCION_CELL];
+        self.cellsCount++;
+    //}
     self.detailItemTableview.tableHeaderView = _gallery;
 }
 
@@ -89,7 +90,7 @@
     MTCFavoriteManager * favoriteManager = [MTCFavoriteManager sharedInstance];
     NSArray * idsFavorites = [favoriteManager arrayWithObjectsWithId];
     
-    self.item.isFavorite = [idsFavorites containsObject:self.item.id];
+    self.item.isFavorite = [idsFavorites containsObject:self.item.identifier];
     if (self.item.isFavorite) {
         
         [self.addFavoriteButton setImage:_imageIsFavorite forState:UIControlStateNormal];
@@ -179,21 +180,20 @@
     static NSString *idConditionCell = @"idConditionCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idConditionCell];
-    if (cell == nil)
-    {
+    if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idConditionCell] autorelease];
     }
     
     if ([self.item.condition isNew]) {
-        cell.textLabel.text = @"Articulo nuevo";
+        cell.textLabel.text = NSLocalizedString(@"item.condition.new", nil);
+    
+    } else if ([self.item.condition isUsed]) {
+        cell.textLabel.text = NSLocalizedString(@"item.condition.used", nil);
+    
+    } else if ([self.item.condition isUnespecified]) {
+        cell.textLabel.text = NSLocalizedString(@"item.condition.unespecified", nil);
     }
-    else
-    if ([self.item.condition isUsed]) {
-        cell.textLabel.text = @"Articulo usado";
-    }
-    if ([self.item.condition isUnespecified]) {
-        cell.textLabel.text = @"Condicion no especificada";
-    }
+    
     cell.textLabel.font = [UIFont systemFontOfSize:12];
     cell.textLabel.numberOfLines = 12;
     return cell;
@@ -209,7 +209,7 @@
     {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idSubtitleCell] autorelease];
     }
-    cell.textLabel.text = @"Descripcion";
+    cell.textLabel.text = NSLocalizedString(@"descripcion.title",nil);
     //Ver esto
     cell.textLabel.font = [UIFont systemFontOfSize:12];
     cell.textLabel.numberOfLines = 12;
@@ -226,16 +226,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idSubtitleCell];
     if (cell == nil)
     {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idSubtitleCell] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:idSubtitleCell] autorelease];
     }
-    NSMutableString * available = [NSMutableString string];
-    [available appendString:@"Cantidad disponible: "];
-    [available appendString:[self.item.availableQuantity stringValue]];
-    
-    cell.textLabel.text = available;
+    cell.textLabel.text = NSLocalizedString(@"cantidad.title",nil);
     //Ver esto
     cell.textLabel.font = [UIFont systemFontOfSize:12];
-    cell.textLabel.numberOfLines = 12;
+    cell.detailTextLabel.text = [self.item.availableQuantity stringValue];
     return cell;
 }
 
@@ -256,7 +252,7 @@
     if ([self.cells[indexPath.row] intValue] == INDEX_DESCRIPCION_CELL) {
     
         MTCDescriptionVipItemViewController * descriptionViewController = [[MTCDescriptionVipItemViewController alloc] init];
-        descriptionViewController.idItem = self.item.id;
+        descriptionViewController.idItem = self.item.identifier;
         [self.navigationController pushViewController:descriptionViewController animated:YES];
     }
 }
@@ -286,12 +282,6 @@
     [alert show];
     [alert release];
 }
-
-/*- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        
-    }
-}*/
 
 
 #pragma mark - Implementacion de UIScrollViewDelegate

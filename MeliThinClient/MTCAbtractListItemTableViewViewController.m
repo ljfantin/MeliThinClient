@@ -10,6 +10,8 @@
 #import "MTCItemSearchResultDto.h"
 #import "MTCUIListItemResultTableViewCell.h"
 #import "MTCVipItemViewController.h"
+#import "UIImageView+AFNetworking.h"
+
 
 
 #define NUMBER_OF_SECCCIONS 1;
@@ -71,12 +73,27 @@
     MTCItemSearchResultDto * item = [self.items objectAtIndex:indexPath.row];
     //SE PODRIA FORMATEAR EL NUMERO POR LOCALE
     cell.title.text = item.tittle;
-    NSMutableString * price = [NSMutableString string];
-    [price appendString:item.currency.symbol];
-    [price appendString:[item.price stringValue]];
-    cell.price.text = price;
-    cell.thumbnail.image = item.thumbnail;
+    if (item.currency!=nil && item.price!=nil) {
+        NSMutableString * price = [NSMutableString string];
+        [price appendString:item.currency.symbol];
+        [price appendString:[item.price stringValue]];
+        cell.price.text = price;
+    } else {
+        cell.price.text = NSLocalizedString(@"sinprecio", nil);
+    }
     
+    NSURL *url = [NSURL URLWithString:item.urlThumbnail];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    UIImage *placeholderImage = [UIImage imageNamed:@"placeholder"];
+    __block UITableViewCell *weakCell = cell;
+    [cell.imageView setImageWithURLRequest:request
+                          placeholderImage:placeholderImage
+                                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                       weakCell.imageView.image = image;
+                                       [weakCell setNeedsLayout];
+                                       
+                                   } failure:nil];
+
     return cell;
 }
 
@@ -93,7 +110,7 @@
     //Creo el item
     MTCItemDto * itemDto = [[MTCItemDto alloc] init];
     //Copio los valos que ya tengo
-    itemDto.id = itemSearchDto.id;
+    itemDto.identifier = itemSearchDto.identifier;
     itemDto.title = itemSearchDto.tittle;
     itemDto.subtitle = itemSearchDto.subtitle;
     itemDto.price = itemSearchDto.price;
@@ -104,7 +121,7 @@
     //seteo la busqueda
     vipItemViewController.item = itemDto;
     //pusheo el controller
-    
+    //oculta tabbar
     vipItemViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vipItemViewController animated:YES];
 }

@@ -37,10 +37,16 @@
 
 #pragma mark Implementacion delegate MTCServiceApiDelegate
 
-- (void) onPostExecute:(NSDictionary *) data;
+- (void)onPostExecute:(NSDictionary *) data;
 {
     MTCDescriptionDto * dto = (MTCDescriptionDto *) [self.descriptionJsonTranslator objectFromDictionaryWithJson:data];
+    [self.spinner stopAnimating];
     [self.descriptionWebView loadHTMLString:dto.text baseURL:nil];
+}
+
+- (void)onPreExecute
+{
+    [self.spinner startAnimating];
 }
 
 - (void)dealloc
@@ -54,6 +60,7 @@
     _descriptionWebView.delegate = nil;
     [_descriptionWebView release];
     _descriptionWebView = nil;
+    [_spinner release];
     [super dealloc];
 }
 

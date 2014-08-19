@@ -10,14 +10,14 @@
 
 @interface MTCCurrencyTypeDto : NSObject
 
-@property (nonatomic,retain) NSString * id;
+@property (nonatomic,retain) NSString * identifier;
 @property (nonatomic,retain) NSString * description;
 @property (nonatomic,retain) NSString * symbol;
 @property (nonatomic,retain) NSString * decimalPlaces;
 
-+ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)id;
++ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)identifier;
 
-+ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)id description:(NSString*)description symbol:(NSString*)symbol decimalPlaces:(NSString*)decimalPlaces;
++ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)identifier description:(NSString*)description symbol:(NSString*)symbol decimalPlaces:(NSString*)decimalPlaces;
 
 - (BOOL) isArs;
 - (BOOL) isBrl;

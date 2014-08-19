@@ -10,24 +10,24 @@
 
 @implementation MTCCurrencyTypeDto
 
-+ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)id
++ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)identifier
 {
     MTCCurrencyTypeDto * instance = [[[MTCCurrencyTypeDto alloc] init] autorelease];
     if (self) {
-        instance.id = id;
+        instance.identifier = identifier;
         instance.description = @"Default";
         //Como no consulto el servicio de currencies entonces uso el archivo i18n para poner el simbolo correcto
-        instance.symbol = NSLocalizedString(instance.id, nil);
+        instance.symbol = NSLocalizedString(instance.identifier, nil);
         instance.decimalPlaces = @"2";
     }
     return instance;
 }
 
-+ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)id description:(NSString*)description symbol:(NSString*)symbol decimalPlaces:(NSString*)decimalPlaces
++ (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)identifier description:(NSString*)description symbol:(NSString*)symbol decimalPlaces:(NSString*)decimalPlaces
 {
     MTCCurrencyTypeDto * instance = [[MTCCurrencyTypeDto alloc] init];
     if (self) {
-        instance.id = id;
+        instance.identifier = identifier;
         instance.description = description;
         instance.symbol = symbol;
         instance.decimalPlaces = decimalPlaces;
@@ -37,70 +37,70 @@
 
 - (BOOL) isArs
 {
-    return ([self.id isEqual:@"ARS"]);
+    return ([self.identifier isEqual:@"ARS"]);
 }
 
 - (BOOL) isBrl
 {
-    return ([self.id isEqual:@"BRL"]);
+    return ([self.identifier isEqual:@"BRL"]);
 
 }
 
 - (BOOL) isClp
 {
-    return ([self.id isEqual:@"CLP"]);
+    return ([self.identifier isEqual:@"CLP"]);
 
 }
 
 - (BOOL) isCop
 {
-    return ([self.id isEqual:@"COP"]);
+    return ([self.identifier isEqual:@"COP"]);
 
 }
 - (BOOL) isCrc
 {
-    return ([self.id isEqual:@"CRC"]);
+    return ([self.identifier isEqual:@"CRC"]);
 }
 - (BOOL) isEur
 {
-    return ([self.id isEqual:@"DOP"]);
+    return ([self.identifier isEqual:@"DOP"]);
 
 }
 - (BOOL) isMxn
 {
-    return ([self.id isEqual:@"EUR"]);
+    return ([self.identifier isEqual:@"EUR"]);
 
 }
 - (BOOL) isPab
 {
-    return ([self.id isEqual:@"MXN"]);
+    return ([self.identifier isEqual:@"MXN"]);
 
 }
 - (BOOL) isPen
 {
-    return ([self.id isEqual:@"PAB"]);
+    return ([self.identifier isEqual:@"PAB"]);
 
 }
 - (BOOL) isUsd
 {
-    return ([self.id isEqual:@"PEN"]);
+    return ([self.identifier isEqual:@"PEN"]);
 
 }
 - (BOOL) isUyu
 {
-    return ([self.id isEqual:@"USD"]);
+    return ([self.identifier isEqual:@"USD"]);
 
 }
 - (BOOL) isVef
 {
-    return ([self.id isEqual:@"VEF"]);
+    return ([self.identifier isEqual:@"VEF"]);
 
 }
 
 - (void)dealloc
 {
-    [_id release];
-    _id = nil;
+    [_identifier release];
+    _identifier = nil;
     [_decimalPlaces release];
     _decimalPlaces = nil;
     [_description release];

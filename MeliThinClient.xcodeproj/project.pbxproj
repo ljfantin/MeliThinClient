@@ -50,15 +50,12 @@
 		4FF2B0751992ADF7000BFE85 /* MTCItemSearchResultDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0741992ADF7000BFE85 /* MTCItemSearchResultDto.m */; };
 		4FF2B0781992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0771992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m */; };
 		4FF2B0851992BAD6000BFE85 /* MTCPagerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */; };
-		4FF2B08A1992D0D8000BFE85 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4FF2B0891992D0D8000BFE85 /* image1.jpg */; };
 		4FF8A96C199EA9BE003ECFB5 /* UIColor+MTCColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8A96B199EA9BE003ECFB5 /* UIColor+MTCColorPalette.m */; };
 		8B7510C11998119400E03739 /* MTCPagerJsonTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7510C01998119400E03739 /* MTCPagerJsonTranslator.m */; };
 		8B7510C419984D9D00E03739 /* MTCItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7510C319984D9D00E03739 /* MTCItemDto.m */; };
 		8B7510C7199853F500E03739 /* MTCItemTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7510C6199853F500E03739 /* MTCItemTranslator.m */; };
 		8B9A14FA19959D3C0066221B /* MTCVipItemPhotoGalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */; };
 		8BAD05EE1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */; };
-		8BAE6FDF19968D8700BD9B74 /* favoriteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FDE19968D8700BD9B74 /* favoriteIcon.png */; };
-		8BAE6FE119968E0200BD9B74 /* favoriteIcon32-OLD.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE019968E0200BD9B74 /* favoriteIcon32-OLD.png */; };
 		8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib */; };
 		8BAE6FE81996B67300BD9B74 /* MTCVipItemTableViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE71996B67300BD9B74 /* MTCVipItemTableViewFooter.xib */; };
 		8BAE6FEB1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6FEA1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m */; };
@@ -69,8 +66,6 @@
 		8BB0753619998A3A0008F581 /* MTCDescriptionVipItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB0753419998A3A0008F581 /* MTCDescriptionVipItemViewController.xib */; };
 		8BB0753919998AFF0008F581 /* MTCDescriptionJsonTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB0753819998AFF0008F581 /* MTCDescriptionJsonTranslator.m */; };
 		8BB0753C19998B860008F581 /* MTCDescriptionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB0753B19998B860008F581 /* MTCDescriptionDto.m */; };
-		8BB0753E1999AD0F0008F581 /* favoriteIcon32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB0753D1999AD0F0008F581 /* favoriteIcon32.png */; };
-		8BB075401999AD400008F581 /* favoriteIcon50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB0753F1999AD400008F581 /* favoriteIcon50.png */; };
 		8BB075421999ADA40008F581 /* search-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB075411999ADA40008F581 /* search-50.png */; };
 		8BB075441999ADC40008F581 /* search32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB075431999ADC40008F581 /* search32.png */; };
 /* End PBXBuildFile section */
@@ -157,7 +152,6 @@
 		4FF2B0791992B190000BFE85 /* MTCMeliServiceApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApi.h; sourceTree = "<group>"; };
 		4FF2B0831992BAD6000BFE85 /* MTCPagerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCPagerList.h; sourceTree = "<group>"; };
 		4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCPagerList.m; sourceTree = "<group>"; };
-		4FF2B0891992D0D8000BFE85 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
 		4FF8A96A199EA9BE003ECFB5 /* UIColor+MTCColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MTCColorPalette.h"; sourceTree = "<group>"; };
 		4FF8A96B199EA9BE003ECFB5 /* UIColor+MTCColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MTCColorPalette.m"; sourceTree = "<group>"; };
 		5A337731D19444F29D529790 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,8 +164,6 @@
 		8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemPhotoGalleryView.xib; sourceTree = "<group>"; };
 		8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApiImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiImpl.h; sourceTree = "<group>"; };
 		8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceApiImpl.m; sourceTree = "<group>"; };
-		8BAE6FDE19968D8700BD9B74 /* favoriteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoriteIcon.png; sourceTree = "<group>"; };
-		8BAE6FE019968E0200BD9B74 /* favoriteIcon32-OLD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favoriteIcon32-OLD.png"; sourceTree = "<group>"; };
 		8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCPriceFavoriteButtonVipItemViewTableViewCell.xib; sourceTree = "<group>"; };
 		8BAE6FE71996B67300BD9B74 /* MTCVipItemTableViewFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemTableViewFooter.xib; sourceTree = "<group>"; };
 		8BAE6FE91996B76B00BD9B74 /* MTCVipItemTableViewFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCVipItemTableViewFooter.h; sourceTree = "<group>"; };
@@ -189,8 +181,6 @@
 		8BB0753819998AFF0008F581 /* MTCDescriptionJsonTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCDescriptionJsonTranslator.m; sourceTree = "<group>"; };
 		8BB0753A19998B860008F581 /* MTCDescriptionDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCDescriptionDto.h; sourceTree = "<group>"; };
 		8BB0753B19998B860008F581 /* MTCDescriptionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCDescriptionDto.m; sourceTree = "<group>"; };
-		8BB0753D1999AD0F0008F581 /* favoriteIcon32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoriteIcon32.png; sourceTree = "<group>"; };
-		8BB0753F1999AD400008F581 /* favoriteIcon50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoriteIcon50.png; sourceTree = "<group>"; };
 		8BB075411999ADA40008F581 /* search-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-50.png"; sourceTree = "<group>"; };
 		8BB075431999ADC40008F581 /* search32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search32.png; sourceTree = "<group>"; };
 		D7E87F6F256746BD8060E767 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -443,11 +433,6 @@
 			children = (
 				8BB075431999ADC40008F581 /* search32.png */,
 				8BB075411999ADA40008F581 /* search-50.png */,
-				8BB0753F1999AD400008F581 /* favoriteIcon50.png */,
-				8BB0753D1999AD0F0008F581 /* favoriteIcon32.png */,
-				8BAE6FE019968E0200BD9B74 /* favoriteIcon32-OLD.png */,
-				8BAE6FDE19968D8700BD9B74 /* favoriteIcon.png */,
-				4FF2B0891992D0D8000BFE85 /* image1.jpg */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -541,15 +526,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FF2B08A1992D0D8000BFE85 /* image1.jpg in Resources */,
 				4F47B82F199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.xib in Resources */,
-				8BB0753E1999AD0F0008F581 /* favoriteIcon32.png in Resources */,
 				8BAE6FE81996B67300BD9B74 /* MTCVipItemTableViewFooter.xib in Resources */,
 				4FF2B0321992876F000BFE85 /* InfoPlist.strings in Resources */,
-				8BAE6FDF19968D8700BD9B74 /* favoriteIcon.png in Resources */,
 				8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib in Resources */,
 				8BB075441999ADC40008F581 /* search32.png in Resources */,
-				8BAE6FE119968E0200BD9B74 /* favoriteIcon32-OLD.png in Resources */,
 				4FF2B03A1992876F000BFE85 /* Images.xcassets in Resources */,
 				4FF2B05C19928994000BFE85 /* MTCItemsSearchResultsViewController.xib in Resources */,
 				8BB075421999ADA40008F581 /* search-50.png in Resources */,
@@ -558,7 +539,6 @@
 				4FF2B06119928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.xib in Resources */,
 				8BB0753619998A3A0008F581 /* MTCDescriptionVipItemViewController.xib in Resources */,
 				8B9A14FA19959D3C0066221B /* MTCVipItemPhotoGalleryView.xib in Resources */,
-				8BB075401999AD400008F581 /* favoriteIcon50.png in Resources */,
 				4FDF173519950DB10004DCF3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,5 +17,6 @@
 @property (nonatomic, retain) MTCDescriptionJsonTranslator * descriptionJsonTranslator;
 @property (retain, nonatomic) IBOutlet UIWebView *descriptionWebView;
 @property (retain, nonatomic) NSString * idItem;
+@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end

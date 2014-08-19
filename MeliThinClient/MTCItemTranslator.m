@@ -35,7 +35,7 @@
 - (NSObject*) objectFromDictionaryWithJson:(NSDictionary *)json
 {
     MTCItemDto * item = [[MTCItemDto alloc] init];
-    item.id = json[@"id"];
+    item.identifier = json[@"id"];
     item.title = [json objectForKey:@"title"];
     item.subtitle = [json objectForKey:@"subtitle"];
     item.price = [json objectForKey:@"price"];

@@ -14,7 +14,7 @@
 
 @interface MTCItemDto : NSObject
 
-@property (retain,nonatomic) NSString * id;
+@property (retain,nonatomic) NSString * identifier;
 @property (nonatomic,retain) NSString * title;
 @property (nonatomic,retain) NSString * subtitle;
 @property (nonatomic,retain) NSNumber * price;

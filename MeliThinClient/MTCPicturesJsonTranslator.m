@@ -18,14 +18,14 @@
     NSMutableArray * listPictures = [NSMutableArray array];
     for (NSDictionary * item in jsonResults) {
         //mapeo json
-        NSString * id = [item objectForKey:@"id"];
+        NSString * identifier = [item objectForKey:@"id"];
         NSString * url = [item objectForKey:@"url"];
         
         //TODO esto debo tirarlo afuera
         UIImage * image = [UIImage imageWithUrl:url];
         
         //creo el dto para la picture
-        MTCPictureDto * item = [MTCPictureDto mtcPictureDtoWithId:id url:url image:image];
+        MTCPictureDto * item = [MTCPictureDto mtcPictureDtoWithIdentifier:identifier url:url image:image];
         
         //agrego la picture
         [listPictures addObject:item];

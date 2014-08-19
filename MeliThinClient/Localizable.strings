@@ -21,11 +21,19 @@
 "VEF"="BsF";
 
 "searchBar.tittle" = "Buscar en Mercadolibre";
-"history.TableView.title" = "Ultimas busquedas";
+"history.TableView.title" = "Ultimas búsquedas";
 "history.title" = "Mercadolibre";
-"descripcion.title" = "Descripcion";
-"view.confirmation.title"="Confirmacion de compra";
-"view.confirmation.message"="¿Esta seguro que desea concretar la compra?";
+"descripcion.title" = "Descripción";
+"cantidad.title" = "Cantidad disponible";
+
+"view.confirmation.title"="Confirmación de compra";
+"view.confirmation.message"="¿Está seguro que desea concretar la compra?";
 "view.confirmation.buttonOk"="Confirmar";
 "view.confirmation.buttonCancel"="Cancelar";
+"sinprecio"="A convenir";
+
+"item.condition.new" = "Artículo nuevo";
+"item.condition.used" = "Artículo usado";
+"item.condition.unespecified" = "Condición no especificada";
+
 

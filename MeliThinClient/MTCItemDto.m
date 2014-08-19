@@ -13,8 +13,8 @@
 
 - (void)dealloc
 {
-    [_id release];
-    _id = nil;
+    [_identifier release];
+    _identifier = nil;
     [_title release];
     _title = nil;
     [_subtitle release];

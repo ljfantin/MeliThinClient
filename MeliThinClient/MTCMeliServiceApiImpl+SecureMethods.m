@@ -23,7 +23,7 @@
 - (void) addBookmark:(MTCItemDto*)item withToken:(NSString*)token
 {
     MTCFavoriteManager * dao = [MTCFavoriteManager sharedInstance];
-    [dao saveFavoriteIdentifier:item.id];
+    [dao saveFavoriteIdentifier:item.identifier];
     [dao commit];
 }
 
@@ -31,7 +31,7 @@
 {
     MTCFavoriteManager * dao = [MTCFavoriteManager sharedInstance];
 
-    [dao deleteFavoriteIdentifier:item.id];
+    [dao deleteFavoriteIdentifier:item.identifier];
     [dao commit];
 }
 

@@ -17,7 +17,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"history.title", nil);
-        _isFiltered = NO;
+        self.listHistorial = [[NSArray alloc] init];
+        self.listHistorialFiltered = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -32,6 +33,8 @@
     [super viewWillAppear:animated];
     MTCSearchHistoryManager * searchHistoryManager = [MTCSearchHistoryManager sharedInstance];
     self.listHistorial = [searchHistoryManager arrayWithObjects];
+    [self.listHistorialFiltered removeAllObjects];
+    _isFiltered = NO;
     [self.historialTableView reloadData];
 }
 

@@ -26,14 +26,14 @@
     MTCSearchWithHistorialSearchViewController *itemsSearchResultsController = [[MTCSearchWithHistorialSearchViewController alloc] initWithNibName:@"MTCSearchWithHistorialSearchViewController" bundle:nil];
 
     UITabBarItem *tabBuscar = [[UITabBarItem alloc] initWithTitle:@"Buscar"
-                                                            image:[UIImage imageNamed:@"search32.png"] tag:1];
+                                                            image:[UIImage imageNamed:@"search.png"] tag:1];
     [itemsSearchResultsController setTabBarItem:tabBuscar];
     
     
     MTCItemsFavoritiesResultsViewController * favoritesController = [[MTCItemsFavoritiesResultsViewController alloc] initWithNibName:@"MTCItemsFavoritiesResultsViewController" bundle:nil];
     
     UITabBarItem *tabFavorites = [[UITabBarItem alloc] initWithTitle:@"Favoritos"
-                                                               image:[UIImage imageNamed:@"favoriteIcon32.png"] tag:1];
+                                                               image:[UIImage imageNamed:@"heart-vacio.png"] tag:1];
     [favoritesController setTabBarItem:tabFavorites];
     
     //Creo un navigationcontroller para cada viewcontroller
@@ -87,42 +87,16 @@
 
 - (void)customizeNavigationBarAppearance
 {
-    /*// Create resizable images
-    UIImage *gradientImage44 = [[UIImage imageNamed:@"surf_gradient_textured_44"]
-                                resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    UIImage *gradientImage32 = [[UIImage imageNamed:@"surf_gradient_textured_32"]
-                                resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    
-    // Set the background image for *all* UINavigationBars
-    [[UINavigationBar appearance] setBackgroundImage:gradientImage44
-                                       forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setBackgroundImage:gradientImage32
-                                       forBarMetrics:UIBarMetricsLandscapePhone];*/
-    
-    // Customize the title text for *all* UINavigationBars
-    /*NSShadow *shadow = [NSShadow new];
-    [shadow setShadowColor: [UIColor colorWithWhite:0.0f alpha:0.750f]];
-    [shadow setShadowOffset: CGSizeMake(0.0f, 1.0f)];
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0],
-      NSForegroundColorAttributeName,
-      [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8],
-                          NSShadowAttributeName, shadow,
-      [UIFont fontWithName:@"Arial-Bold" size:0.0],
-      NSFontAttributeName,
-      nil]];
-     */
     [[UINavigationBar appearance] setBarTintColor:[UIColor meliYellowColor]];
-
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 1);
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor blackColor], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
-                                                           [UIFont fontWithName:@"Comic Sans MS" size:21.0], NSFontAttributeName, nil]];
+                                                           [UIFont fontWithName:@"Arial" size:21.0], NSFontAttributeName, nil]];
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+
 }
 
 @end
