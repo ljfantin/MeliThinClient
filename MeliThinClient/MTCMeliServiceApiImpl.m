@@ -169,7 +169,7 @@
     [urlSearch appendString:path];
     
     NSMutableURLRequest * request = [[AFHTTPRequestSerializer serializer] requestWithMethod:httpMethod URLString:urlSearch parameters:parameters error:nil];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    AFHTTPRequestOperation *op = [[[AFHTTPRequestOperation alloc] initWithRequest:request] autorelease];
     op.responseSerializer = [AFJSONResponseSerializer serializer];
     return op;
 }

@@ -34,7 +34,7 @@
 
 - (NSObject*) objectFromDictionaryWithJson:(NSDictionary *)json
 {
-    MTCItemDto * item = [[MTCItemDto alloc] init];
+    MTCItemDto * item = [[[MTCItemDto alloc] init] autorelease];
     item.identifier = json[@"id"];
     item.title = [json objectForKey:@"title"];
     item.subtitle = [json objectForKey:@"subtitle"];

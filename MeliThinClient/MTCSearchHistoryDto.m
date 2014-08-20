@@ -25,8 +25,10 @@
     instace.query = query;
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy/MM/dd"];
-    instace.date = [dateFormatter stringFromDate:[[NSDate alloc] init]];
+    NSDate * now = [[NSDate alloc] init];
+    instace.date = [dateFormatter stringFromDate:now];
     [dateFormatter release];
+    [now release];
     return instace;
 }
 

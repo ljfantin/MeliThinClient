@@ -55,6 +55,10 @@
     if (self.pager.offset+self.pager.limit*2 <= self.pager.total)  {
         self.pager.offset += self.pager.limit;
         [self requestNewItems];
+    } else {
+        //stop el pull
+        [self.tableView.pullToRefreshView stopAnimating];
+        [self.tableView.infiniteScrollingView stopAnimating];
     }
 }
 
@@ -70,6 +74,8 @@
     self.searchQuery = searchBar.text;
     [self.pager resetToValuesDefault];
     [self.items removeAllObjects];
+    //start el spinner
+    [self.spinner startAnimating];
     [self requestNewItems];
     [searchBar resignFirstResponder];
     MTCSearchHistoryManager * searchHistoryManager = [MTCSearchHistoryManager sharedInstance];
@@ -92,7 +98,6 @@
     [super onPostExecute:data];
     NSArray * listItems = [self.searchJsonTranslator arrayFromDictionaryWithJson:data];
     self.pager = (MTCPagerList*)[self.pagerJsonTranslator objectFromDictionaryWithJson:data];
-    
     //updeteo el title de la tabla
     [self updateTitle:self.searchQuery withCount:self.pager.total];
     
@@ -100,6 +105,7 @@
     NSInteger startingRow = self.pager.offset;
     if ([self.items count]==0)   {
         [self.items addObjectsFromArray:listItems];
+        [self.spinner stopAnimating];
         [self.tableView reloadData];
     }
     else

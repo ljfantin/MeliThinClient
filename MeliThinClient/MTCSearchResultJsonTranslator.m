@@ -39,7 +39,7 @@
 - (NSObject*) objectFromDictionaryWithJson:(NSDictionary *)json
 {
     //creo el dto
-    MTCItemSearchResultDto * item = [[MTCItemSearchResultDto alloc] init];
+    MTCItemSearchResultDto * item = [[[MTCItemSearchResultDto alloc] init] autorelease];
 
     //mapeo json
     NSString * identifier = [json objectForKey:@"id"];

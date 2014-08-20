@@ -38,12 +38,8 @@
 
 - (void)requestNewItems
 {
-    //if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
-        [self.service getAllBookmarks:nil];
-    /*} else {
-        UIAlertView * alert = [UIAlertView alertViewWithErrorConectionWithDelegate:self];
-        [alert show];
-    }*/
+    [self.spinner startAnimating];
+    [self.service getAllBookmarks:nil];
 }
 
 
@@ -58,6 +54,7 @@
     
     [self.items removeAllObjects];
     [self.items addObjectsFromArray:listItems];
+    [self.spinner stopAnimating];
     [self.tableView reloadData];
 }
 

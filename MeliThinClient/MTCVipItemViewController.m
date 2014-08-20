@@ -173,7 +173,8 @@
     //Ver esto
     cell.textLabel.font = [UIFont systemFontOfSize:12];
     cell.textLabel.numberOfLines = 12;
-     return cell;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 - (UITableViewCell*) buildConditionCell:(UITableView *)tableView
@@ -197,6 +198,7 @@
     
     cell.textLabel.font = [UIFont systemFontOfSize:12];
     cell.textLabel.numberOfLines = 12;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -231,6 +233,7 @@
     //Ver esto
     cell.textLabel.font = [UIFont systemFontOfSize:12];
     cell.detailTextLabel.text = [self.item.availableQuantity stringValue];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -252,6 +255,7 @@
         MTCDescriptionVipItemViewController * descriptionViewController = [[MTCDescriptionVipItemViewController alloc] init];
         descriptionViewController.idItem = self.item.identifier;
         [self.navigationController pushViewController:descriptionViewController animated:YES];
+        [descriptionViewController release];
     }
 }
 
@@ -310,6 +314,7 @@
     }
     [self.spinnerGallery stopAnimating];
     [self.gallery loadImages:images withTitle:self.item.title];
+    [images release];
 }
 
 - (void) onPreExecute

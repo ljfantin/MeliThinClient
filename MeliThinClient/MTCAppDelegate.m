@@ -21,7 +21,7 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
     //Creo el tabbar controller
-    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     
     //creo los view controller, cada uno con su propio navigation controller
     MTCSearchWithHistorialSearchViewController *itemsSearchResultsController = [[MTCSearchWithHistorialSearchViewController alloc] initWithNibName:@"MTCSearchWithHistorialSearchViewController" bundle:nil];
@@ -53,10 +53,13 @@
     [navigationControllerItemFavorities release];
     [itemsSearchResultsController release];
     [favoritesController release];
+    [tabBuscar release];
+    [tabFavorites release];
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -86,6 +89,7 @@
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"Arial" size:21.0], NSFontAttributeName, nil]];
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    [shadow release];
 }
 
 @end

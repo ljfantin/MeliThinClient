@@ -13,7 +13,7 @@
 + (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)identifier
 {
     MTCCurrencyTypeDto * instance = [[[MTCCurrencyTypeDto alloc] init] autorelease];
-    if (self) {
+    if (instance) {
         instance.identifier = identifier;
         instance.description = @"Default";
         //Como no consulto el servicio de currencies entonces uso el archivo i18n para poner el simbolo correcto
@@ -25,8 +25,8 @@
 
 + (instancetype) mtcCurrencyTypeDtoWithIdentifier:(NSString*)identifier description:(NSString*)description symbol:(NSString*)symbol decimalPlaces:(NSString*)decimalPlaces
 {
-    MTCCurrencyTypeDto * instance = [[MTCCurrencyTypeDto alloc] init];
-    if (self) {
+    MTCCurrencyTypeDto * instance = [[[MTCCurrencyTypeDto alloc] init] autorelease];
+    if (instance) {
         instance.identifier = identifier;
         instance.description = description;
         instance.symbol = symbol;

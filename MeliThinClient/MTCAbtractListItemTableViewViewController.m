@@ -34,6 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void) requestNewItems
@@ -126,13 +127,14 @@
     //oculta tabbar
     vipItemViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vipItemViewController animated:YES];
+    [vipItemViewController release];
+    [itemDto release];
 }
 
 #pragma mark Implementacion delegate MTCServiceApiDelegate
 - (void) onPostExecute:(NSDictionary *)data
 {
-    //stop el spinner
-    [self.spinner stopAnimating];
+    //abstract method
 }
 
 - (void) onHandleError:(NSError*)error
@@ -150,13 +152,6 @@
     UIAlertView * alert = [UIAlertView alertViewWithErrorConectionMessageWithDelegate:self];
     [alert show];
 }
-
-- (void)onPreExecute
-{
-    [self.spinner startAnimating];
-}
-
-
 
 
 - (void)dealloc

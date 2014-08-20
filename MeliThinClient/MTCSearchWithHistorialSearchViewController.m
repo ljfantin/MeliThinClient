@@ -17,8 +17,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"history.title", nil);
-        self.listHistorial = [[NSArray alloc] init];
-        self.listHistorialFiltered = [[NSMutableArray alloc] init];
+        _listHistorial = [[NSArray alloc] init];
+        _listHistorialFiltered = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -52,7 +52,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"queryCell"];
     if ( cell == nil ) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1  reuseIdentifier:@"queryCell"];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1  reuseIdentifier:@"queryCell"] autorelease];
     }
     MTCSearchHistoryDto * searchHistoryDto = nil;
     if (self.isFiltered) {
