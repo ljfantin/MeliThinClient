@@ -11,7 +11,7 @@
 @implementation MTCSearchHistoryDto
 
 
-+ (instancetype) mtcSearchHistoryDtoWithQuery:(NSString*)query data:(NSString*)date
++ (instancetype) mtcSearchHistoryDtoWithQuery:(NSString*)query data:(NSDate*)date
 {
     MTCSearchHistoryDto * instace = [[[MTCSearchHistoryDto alloc] init] autorelease];
     instace.query = query;
@@ -24,9 +24,9 @@
     MTCSearchHistoryDto * instace = [[[MTCSearchHistoryDto alloc] init] autorelease];
     instace.query = query;
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy/MM/dd"];
+    [dateFormatter setDateFormat:@"yyyy/MM/dd hh:mm"];
     NSDate * now = [[NSDate alloc] init];
-    instace.date = [dateFormatter stringFromDate:now];
+    instace.date = now;
     [dateFormatter release];
     [now release];
     return instace;

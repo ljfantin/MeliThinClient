@@ -17,6 +17,7 @@
 		4F816BBF1998FA9E00E64B32 /* MTCConditionTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */; };
 		4F816BC819993A0B00E64B32 /* MTCFavoriteDaoTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F816BC719993A0B00E64B32 /* MTCFavoriteDaoTest.m */; };
 		4F816BCA19994ABD00E64B32 /* favorites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F816BC919994ABD00E64B32 /* favorites.plist */; };
+		4F86382819A4EFD3002E1045 /* NSDateFormatter+MTCDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F86382719A4EFD3002E1045 /* NSDateFormatter+MTCDateFormatter.m */; };
 		4FDF1731199501D70004DCF3 /* MTCVipItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF172F199501D70004DCF3 /* MTCVipItemViewController.m */; };
 		4FDF1732199501D70004DCF3 /* MTCVipItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */; };
 		4FDF173519950DB10004DCF3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FDF173419950DB10004DCF3 /* Localizable.strings */; };
@@ -95,6 +96,8 @@
 		4F816BBE1998FA9E00E64B32 /* MTCConditionTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCConditionTranslator.m; sourceTree = "<group>"; };
 		4F816BC719993A0B00E64B32 /* MTCFavoriteDaoTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCFavoriteDaoTest.m; sourceTree = "<group>"; };
 		4F816BC919994ABD00E64B32 /* favorites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = favorites.plist; sourceTree = "<group>"; };
+		4F86382619A4EFD3002E1045 /* NSDateFormatter+MTCDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+MTCDateFormatter.h"; sourceTree = "<group>"; };
+		4F86382719A4EFD3002E1045 /* NSDateFormatter+MTCDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+MTCDateFormatter.m"; sourceTree = "<group>"; };
 		4FDF172E199501D70004DCF3 /* MTCVipItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCVipItemViewController.h; sourceTree = "<group>"; };
 		4FDF172F199501D70004DCF3 /* MTCVipItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCVipItemViewController.m; sourceTree = "<group>"; };
 		4FDF1730199501D70004DCF3 /* MTCVipItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemViewController.xib; sourceTree = "<group>"; };
@@ -276,6 +279,8 @@
 				4FE6006A1993B58100AF3DFE /* UIImage+Utils.m */,
 				4F7691DD19A3C76D0055945B /* UIAlertView+MTCMessage.h */,
 				4F7691DE19A3C76D0055945B /* UIAlertView+MTCMessage.m */,
+				4F86382619A4EFD3002E1045 /* NSDateFormatter+MTCDateFormatter.h */,
+				4F86382719A4EFD3002E1045 /* NSDateFormatter+MTCDateFormatter.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -598,6 +603,7 @@
 				4F47B82E199D000F00E0AA53 /* MTCSearchWithHistorialSearchViewController.m in Sources */,
 				4FF2B05B19928994000BFE85 /* MTCItemsSearchResultsViewController.m in Sources */,
 				4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */,
+				4F86382819A4EFD3002E1045 /* NSDateFormatter+MTCDateFormatter.m in Sources */,
 				4FF8A96C199EA9BE003ECFB5 /* UIColor+MTCColorPalette.m in Sources */,
 				8B7510C7199853F500E03739 /* MTCItemTranslator.m in Sources */,
 				4FE10169199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.m in Sources */,

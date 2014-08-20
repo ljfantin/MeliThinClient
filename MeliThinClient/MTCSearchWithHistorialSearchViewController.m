@@ -9,6 +9,7 @@
 #import "MTCSearchWithHistorialSearchViewController.h"
 #import "MTCSearchHistoryDto.h"
 #import "MTCItemsSearchResultsViewController.h"
+#import "NSDateFormatter+MTCDateFormatter.h"
 
 @implementation MTCSearchWithHistorialSearchViewController
 
@@ -68,7 +69,8 @@
         searchHistoryDto = self.listHistorial[indexPath.row];
     }
     cell.textLabel.text = searchHistoryDto.query;
-    cell.detailTextLabel.text = searchHistoryDto.date;
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    cell.detailTextLabel.text = [formatter stringFromDateWithMTCFormat:searchHistoryDto.date];
     return cell;
 }
 

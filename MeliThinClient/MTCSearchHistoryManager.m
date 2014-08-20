@@ -42,13 +42,15 @@
 
 -(NSArray*) arrayWithObjects
 {
-    //TODO Si le pongo autorelease pincha
     NSMutableArray * result = [NSMutableArray array];
-    
-    NSDictionary * history = (NSDictionary *)self.data[self.keyCollectionId];
-    for( NSString * key in [history allKeys])
+    NSDictionary * history = self.data[self.keyCollectionId] ;
+    //obtengo el diccionario ordenado por sus valores.
+    //no es la mejor manera, ver como cambiar el compare
+    NSArray* keywords = [[(NSArray *) [history keysSortedByValueUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
+    for( NSString * key in keywords)
     {
-        [result addObject:[MTCSearchHistoryDto mtcSearchHistoryDtoWithQuery:key data:[history objectForKey:key]]];
+        NSDate * date = [history objectForKey:key];
+        [result addObject:[MTCSearchHistoryDto mtcSearchHistoryDtoWithQuery:key data:date]];
     }
     return result;
 }
