@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTCItemsFavoritiesResultsViewController">
             <connections>
+                <outlet property="labelMessageFavorites" destination="y24-Kw-Sgy" id="FhE-Zu-F8H"/>
                 <outlet property="spinner" destination="mJ5-rP-p2h" id="13b-tA-BAT"/>
                 <outlet property="tableView" destination="LJG-Mr-7Cg" id="b9b-DJ-FHN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -25,19 +26,28 @@
                         <outlet property="delegate" destination="-1" id="CHP-Fz-mQs"/>
                     </connections>
                 </tableView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mJ5-rP-p2h">
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mJ5-rP-p2h">
                     <rect key="frame" x="150" y="274" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="y24-Kw-Sgy">
+                    <rect key="frame" x="35" y="274" width="250" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="LJG-Mr-7Cg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0LZ-y1-8mX"/>
+                <constraint firstAttribute="centerY" secondItem="y24-Kw-Sgy" secondAttribute="centerY" id="1ec-c0-cGV"/>
                 <constraint firstItem="LJG-Mr-7Cg" firstAttribute="centerX" secondItem="mJ5-rP-p2h" secondAttribute="centerX" id="HYe-KI-GIf"/>
                 <constraint firstAttribute="trailing" secondItem="LJG-Mr-7Cg" secondAttribute="trailing" id="Lbk-9R-hqh"/>
                 <constraint firstItem="LJG-Mr-7Cg" firstAttribute="centerY" secondItem="mJ5-rP-p2h" secondAttribute="centerY" id="Tl7-xW-OCN"/>
                 <constraint firstAttribute="trailing" secondItem="LJG-Mr-7Cg" secondAttribute="trailing" id="Xzk-mu-UeF"/>
                 <constraint firstItem="LJG-Mr-7Cg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="exK-8q-bwT"/>
+                <constraint firstAttribute="centerX" secondItem="y24-Kw-Sgy" secondAttribute="centerX" id="kpC-If-RQd"/>
                 <constraint firstAttribute="bottom" secondItem="LJG-Mr-7Cg" secondAttribute="bottom" id="oUp-fP-Eqe"/>
                 <constraint firstItem="LJG-Mr-7Cg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oly-tR-6lX"/>
                 <constraint firstItem="LJG-Mr-7Cg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pZr-Du-EMj"/>

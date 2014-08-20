@@ -17,5 +17,6 @@
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (retain, nonatomic) NSArray * listHistorial;
 @property (retain, nonatomic) NSMutableArray * listHistorialFiltered;
+@property (retain, nonatomic) IBOutlet UIImageView *imageLogo;
 @property BOOL isFiltered;
 @end

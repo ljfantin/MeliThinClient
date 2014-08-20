@@ -13,4 +13,5 @@
 @interface MTCItemsFavoritiesResultsViewController : MTCAbtractListItemTableViewViewController
 @property (nonatomic, retain) MTCMeliServiceApiImpl * service;
 @property (nonatomic, retain) MTCFavoritesJsonTranslator * favoritesJsonTranslator;
+@property (retain, nonatomic) IBOutlet UILabel *labelMessageFavorites;
 @end

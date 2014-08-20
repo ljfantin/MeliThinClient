@@ -14,33 +14,32 @@
 @implementation MTCMeliServiceApiImpl (SecureMethods)
 
 - (void) getAllBookmarks:(NSString*)token{
-    MTCFavoriteManager * favoriteManager = [MTCFavoriteManager sharedInstance];
-    NSArray * idFavorites = [favoriteManager arrayWithObjectsWithId];
+    MTCFavoriteManager * manager = [MTCFavoriteManager sharedInstance];
+    NSArray * idFavorites = [manager arrayWithObjectsWithId];
     [self itemsWithIdentifiers:idFavorites];
-    //prodria verificar si alguno no existe mas
 }
 
 - (void) addBookmark:(MTCItemDto*)item withToken:(NSString*)token
 {
-    MTCFavoriteManager * dao = [MTCFavoriteManager sharedInstance];
-    [dao saveFavoriteIdentifier:item.identifier];
-    [dao commit];
+    MTCFavoriteManager * manager = [MTCFavoriteManager sharedInstance];
+    [manager saveFavoriteIdentifier:item.identifier];
+    [manager commit];
 }
 
 - (void) removeBookmark:(MTCItemDto*)item withToken:(NSString*)token
 {
-    MTCFavoriteManager * dao = [MTCFavoriteManager sharedInstance];
+    MTCFavoriteManager * manager = [MTCFavoriteManager sharedInstance];
 
-    [dao deleteFavoriteIdentifier:item.identifier];
-    [dao commit];
+    [manager deleteFavoriteIdentifier:item.identifier];
+    [manager commit];
 }
 
 - (void) removeAllBookmark:(NSString*)token
 {
-    MTCFavoriteManager * dao = [MTCFavoriteManager sharedInstance];
+    MTCFavoriteManager * manager = [MTCFavoriteManager sharedInstance];
 
-    [dao deleteAllFavoritesIdentifiers];
-    [dao commit];
+    [manager deleteAllFavoritesIdentifiers];
+    [manager commit];
 }
 
 

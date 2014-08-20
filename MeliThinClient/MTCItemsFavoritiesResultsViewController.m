@@ -11,6 +11,7 @@
 #import "MTCItemSearchResultDto.h"
 #import "AFNetworkReachabilityManager.h"
 #import "UIAlertView+MTCMessage.h"
+#import "MTCFavoriteManager.h"
 
 @interface MTCItemsFavoritiesResultsViewController ()
 
@@ -38,8 +39,16 @@
 
 - (void)requestNewItems
 {
-    [self.spinner startAnimating];
-    [self.service getAllBookmarks:nil];
+    MTCFavoriteManager * manager = [MTCFavoriteManager sharedInstance];
+    NSArray * idFavorites = [manager arrayWithObjectsWithId];
+    if (idFavorites!=nil && [idFavorites count]>0)  {
+        self.labelMessageFavorites.hidden = YES;
+        [self.spinner startAnimating];
+        [self.service getAllBookmarks:nil];
+    } else{
+        self.labelMessageFavorites.text = NSLocalizedString(@"view.message.sinfavoritos",nil);
+        self.labelMessageFavorites.hidden = NO;
+    }
 }
 
 
@@ -65,6 +74,7 @@
     _service = nil;
     [_favoritesJsonTranslator release];
     _favoritesJsonTranslator = nil;
+    [_labelMessageFavorites release];
     [super dealloc];
 }
 

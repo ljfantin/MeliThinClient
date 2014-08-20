@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTCSearchWithHistorialSearchViewController">
             <connections>
                 <outlet property="historialTableView" destination="8PF-fp-sNo" id="UPF-Sn-1Lo"/>
+                <outlet property="imageLogo" destination="hNU-56-M1d" id="1kF-YT-kXf"/>
                 <outlet property="searchBar" destination="3DW-ju-hcg" id="62w-ae-vYC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,16 +34,28 @@
                         <outlet property="delegate" destination="-1" id="iHH-eF-LFK"/>
                     </connections>
                 </tableView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mercadolibreIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hNU-56-M1d">
+                    <rect key="frame" x="60" y="195" width="200" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="hNU-56-M1d" secondAttribute="trailing" constant="60" id="4Kx-YC-KpS"/>
                 <constraint firstAttribute="bottom" secondItem="8PF-fp-sNo" secondAttribute="bottom" id="7jW-ud-0b5"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hNU-56-M1d" secondAttribute="trailing" constant="60" id="9b2-y9-ByX"/>
                 <constraint firstItem="8PF-fp-sNo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="NxV-Cv-0Ky"/>
+                <constraint firstAttribute="bottom" secondItem="hNU-56-M1d" secondAttribute="bottom" constant="173" id="QfI-bK-vkm"/>
                 <constraint firstAttribute="trailing" secondItem="8PF-fp-sNo" secondAttribute="trailing" id="b0s-Z5-zHv"/>
                 <constraint firstItem="8PF-fp-sNo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ccC-f4-uoW"/>
+                <constraint firstItem="hNU-56-M1d" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="jLW-ww-FcI"/>
+                <constraint firstItem="hNU-56-M1d" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="195" id="pd9-gj-5Rm"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="mercadolibreIcon" width="640" height="960"/>
+    </resources>
 </document>

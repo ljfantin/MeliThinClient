@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [self.searchBar sizeToFit];
+    self.historialTableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -35,7 +36,13 @@
     self.listHistorial = [searchHistoryManager arrayWithObjects];
     [self.listHistorialFiltered removeAllObjects];
     _isFiltered = NO;
-    [self.historialTableView reloadData];
+    if (self.listHistorial!=nil && [self.listHistorial count]>0)    {
+        self.imageLogo.hidden = YES;
+        //[self.historialTableView reloadData];
+        [self.historialTableView reloadData];
+    } else  {
+        self.imageLogo.hidden = NO;
+    }
 }
 
 #pragma mark UITableViewDataSource delegate
@@ -67,7 +74,12 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return NSLocalizedString(@"history.TableView.title", nil);
+    if (self.listHistorial!=nil && [self.listHistorial count]>0)    {
+
+        return NSLocalizedString(@"history.TableView.title", nil);
+    } else  {
+        return nil;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -149,6 +161,7 @@
     _listHistorial = nil;
     [_listHistorialFiltered release];
     _listHistorialFiltered = nil;
+    [_imageLogo release];
     [super dealloc];
 }
 @end

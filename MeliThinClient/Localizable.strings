@@ -35,6 +35,7 @@
 "view.confirmation.buttonConfirm"="Confirmar";
 "view.confirmation.buttonCancel"="Cancelar";
 "view.confirmation.buttonOk"="Aceptar";
+"view.message.sinfavoritos"="Aún no agregaste favoritos. ¿Qué esperas?";
 "sinprecio"="A convenir";
 
 "item.condition.new" = "Artículo nuevo";

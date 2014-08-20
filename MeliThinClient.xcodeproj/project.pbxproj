@@ -317,7 +317,7 @@
 			children = (
 				4FDF173619950DB90004DCF3 /* resources */,
 				4FE600681993B54D00AF3DFE /* utils */,
-				8BAD05E51992F96F00BE28C1 /* dao */,
+				8BAD05E51992F96F00BE28C1 /* manager */,
 				4FF2B0871992BE1A000BFE85 /* controller */,
 				4FF2B0861992BC3F000BFE85 /* xib */,
 				4FF2B0811992BA68000BFE85 /* ui */,
@@ -428,7 +428,7 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
-		8BAD05E51992F96F00BE28C1 /* dao */ = {
+		8BAD05E51992F96F00BE28C1 /* manager */ = {
 			isa = PBXGroup;
 			children = (
 				4FE10164199A409800354A13 /* MTCFavoriteManager.h */,
@@ -436,7 +436,7 @@
 				4F107004199BB9C0002C5A75 /* MTCSearchHistoryManager.h */,
 				4F107005199BB9C0002C5A75 /* MTCSearchHistoryManager.m */,
 			);
-			name = dao;
+			name = manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
