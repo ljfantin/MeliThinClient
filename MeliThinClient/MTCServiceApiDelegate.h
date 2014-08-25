@@ -10,13 +10,11 @@
 
 @protocol MTCServiceApiDelegate <NSObject>
 
-- (void) onPostExecute:(NSDictionary *) data;
-
 @optional
 
-- (void) onPreExecute;
+- (void)onPreExecute;
 
-- (void) onHandleError:(NSError*)error;
+- (void)onHandleError:(NSError *)error;
 
-- (void) onHandleErrorWithOutConnection;
+- (void)onHandleErrorWithOutConnection;
 @end

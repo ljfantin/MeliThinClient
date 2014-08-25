@@ -7,21 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MTCMeliServiceApi.h"
-#import "MTCServiceApiDelegate.h"
 #import "MTCSearchJsonTranslator.h"
 #import "MTCItemTranslator.h"
+#import "AFHTTPRequestOperation.h"
 
-@interface MTCMeliServiceApiImpl : NSObject<MTCMeliServiceApi>{
+@interface MTCMeliServiceApiImpl : NSObject
 
-    id<MTCServiceApiDelegate> delegate;
-}
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, retain) AFHTTPRequestOperation *operation;
 
-@property (nonatomic, retain) NSString * url;
-@property (nonatomic, retain) NSString * pathSearch;
-@property (nonatomic, retain) NSString * pathItems;
-@property (nonatomic, retain) NSString * pathDescription;
-@property (nonatomic, retain) NSString * pathMultiGetsItems;
-
+/*
+   - (void)handleErrorWithOutConnection;
+   - (void)handleError:(NSError *)error;
+   - (BOOL)hasConecction;
+ */
+- (void)buildRequest:(NSString *)httpMethod path:(NSString *)path parameters:(NSDictionary *)parameters;
+- (void)cancelOperation;
 
 @end

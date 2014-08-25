@@ -33,6 +33,9 @@
 		4FE6006B1993B58100AF3DFE /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6006A1993B58100AF3DFE /* UIImage+Utils.m */; };
 		4FE6007319940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6007119940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m */; };
 		4FE6007419940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */; };
+		4FEB147A19ABBC36008702E6 /* MTCMeliItemService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB147919ABBC36008702E6 /* MTCMeliItemService.m */; };
+		4FEB147D19ABC274008702E6 /* MTCMeliSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB147C19ABC274008702E6 /* MTCMeliSearchService.m */; };
+		4FEB148019ABC3F2008702E6 /* MTCMeliDescriptionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB147F19ABC3F2008702E6 /* MTCMeliDescriptionService.m */; };
 		4FF2B0281992876F000BFE85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B0271992876F000BFE85 /* Foundation.framework */; };
 		4FF2B02A1992876F000BFE85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B0291992876F000BFE85 /* CoreGraphics.framework */; };
 		4FF2B02C1992876F000BFE85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B02B1992876F000BFE85 /* UIKit.framework */; };
@@ -127,6 +130,15 @@
 		4FE6007019940A3200AF3DFE /* MTCUIListItemResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCUIListItemResultTableViewCell.h; sourceTree = "<group>"; };
 		4FE6007119940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCUIListItemResultTableViewCell.m; sourceTree = "<group>"; };
 		4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCUIListItemResultTableViewCell.xib; sourceTree = "<group>"; };
+		4FEB147819ABBC36008702E6 /* MTCMeliItemService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliItemService.h; sourceTree = "<group>"; };
+		4FEB147919ABBC36008702E6 /* MTCMeliItemService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliItemService.m; sourceTree = "<group>"; };
+		4FEB147B19ABC274008702E6 /* MTCMeliSearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliSearchService.h; sourceTree = "<group>"; };
+		4FEB147C19ABC274008702E6 /* MTCMeliSearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliSearchService.m; sourceTree = "<group>"; };
+		4FEB147E19ABC3F2008702E6 /* MTCMeliDescriptionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliDescriptionService.h; sourceTree = "<group>"; };
+		4FEB147F19ABC3F2008702E6 /* MTCMeliDescriptionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliDescriptionService.m; sourceTree = "<group>"; };
+		4FEB148119ABC83D008702E6 /* MTCMeliServiceApiItemDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiItemDelegate.h; sourceTree = "<group>"; };
+		4FEB148219ABC94B008702E6 /* MTCMeliDescriptionServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliDescriptionServiceDelegate.h; sourceTree = "<group>"; };
+		4FEB148319ABD6E0008702E6 /* MTCMeliSearchServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliSearchServiceDelegate.h; sourceTree = "<group>"; };
 		4FF2B0241992876F000BFE85 /* MeliThinClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliThinClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF2B0271992876F000BFE85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FF2B0291992876F000BFE85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -153,7 +165,6 @@
 		4FF2B0741992ADF7000BFE85 /* MTCItemSearchResultDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemSearchResultDto.m; sourceTree = "<group>"; };
 		4FF2B0761992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCAbtractListItemTableViewViewController.h; sourceTree = "<group>"; };
 		4FF2B0771992AF11000BFE85 /* MTCAbtractListItemTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCAbtractListItemTableViewViewController.m; sourceTree = "<group>"; };
-		4FF2B0791992B190000BFE85 /* MTCMeliServiceApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApi.h; sourceTree = "<group>"; };
 		4FF2B0831992BAD6000BFE85 /* MTCPagerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCPagerList.h; sourceTree = "<group>"; };
 		4FF2B0841992BAD6000BFE85 /* MTCPagerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCPagerList.m; sourceTree = "<group>"; };
 		4FF8A96A199EA9BE003ECFB5 /* UIColor+MTCColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MTCColorPalette.h"; sourceTree = "<group>"; };
@@ -371,12 +382,20 @@
 			children = (
 				4FDFF8A819955AF40012C7D4 /* dto */,
 				4FDFF8A719955AB90012C7D4 /* translators */,
-				4FF2B0791992B190000BFE85 /* MTCMeliServiceApi.h */,
 				8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApiImpl.h */,
 				8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */,
 				4FE6006C1993CC1500AF3DFE /* MTCServiceApiDelegate.h */,
 				4FE10167199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.h */,
 				4FE10168199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.m */,
+				4FEB147819ABBC36008702E6 /* MTCMeliItemService.h */,
+				4FEB147919ABBC36008702E6 /* MTCMeliItemService.m */,
+				4FEB147B19ABC274008702E6 /* MTCMeliSearchService.h */,
+				4FEB147C19ABC274008702E6 /* MTCMeliSearchService.m */,
+				4FEB147E19ABC3F2008702E6 /* MTCMeliDescriptionService.h */,
+				4FEB147F19ABC3F2008702E6 /* MTCMeliDescriptionService.m */,
+				4FEB148119ABC83D008702E6 /* MTCMeliServiceApiItemDelegate.h */,
+				4FEB148219ABC94B008702E6 /* MTCMeliDescriptionServiceDelegate.h */,
+				4FEB148319ABD6E0008702E6 /* MTCMeliSearchServiceDelegate.h */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -605,6 +624,7 @@
 				4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */,
 				4F86382819A4EFD3002E1045 /* NSDateFormatter+MTCDateFormatter.m in Sources */,
 				4FF8A96C199EA9BE003ECFB5 /* UIColor+MTCColorPalette.m in Sources */,
+				4FEB147D19ABC274008702E6 /* MTCMeliSearchService.m in Sources */,
 				8B7510C7199853F500E03739 /* MTCItemTranslator.m in Sources */,
 				4FE10169199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.m in Sources */,
 				4FF2B0381992876F000BFE85 /* MTCAppDelegate.m in Sources */,
@@ -623,6 +643,8 @@
 				8BAE6FF11996C5EB00BD9B74 /* MTCConditiontTypeDto.m in Sources */,
 				8BB0753919998AFF0008F581 /* MTCDescriptionJsonTranslator.m in Sources */,
 				4FF2B06019928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m in Sources */,
+				4FEB147A19ABBC36008702E6 /* MTCMeliItemService.m in Sources */,
+				4FEB148019ABC3F2008702E6 /* MTCMeliDescriptionService.m in Sources */,
 				4F107006199BB9C0002C5A75 /* MTCSearchHistoryManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
