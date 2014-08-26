@@ -11,12 +11,12 @@
 #import "MTCDescriptionJsonTranslator.h"
 #import "MTCMeliServiceApi.h"
 
-@interface MTCDescriptionVipItemViewController : UIViewController<MTCServiceApiDelegate>
+@interface MTCDescriptionVipItemViewController : UIViewController <MTCServiceApiDelegate>
 
-@property (nonatomic, retain) id<MTCMeliServiceApi> service;
-@property (nonatomic, retain) MTCDescriptionJsonTranslator * descriptionJsonTranslator;
-@property (retain, nonatomic) IBOutlet UIWebView *descriptionWebView;
-@property (retain, nonatomic) NSString * idItem;
-@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (nonatomic, strong) id <MTCMeliServiceApi> service;
+@property (nonatomic, strong) MTCDescriptionJsonTranslator *descriptionJsonTranslator;
+@property (strong, nonatomic) IBOutlet UIWebView *descriptionWebView;
+@property (strong, nonatomic) NSString *idItem;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end

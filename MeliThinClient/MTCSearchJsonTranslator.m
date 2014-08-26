@@ -12,33 +12,22 @@
 
 @implementation MTCSearchJsonTranslator
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _resultJsonTranslator = [[MTCSearchResultJsonTranslator alloc] init];
-    }
-    return self;
+- (instancetype)init {
+	self = [super init];
+	if (self) {
+		_resultJsonTranslator = [[MTCSearchResultJsonTranslator alloc] init];
+	}
+	return self;
 }
 
-- (NSArray *) arrayFromDictionaryWithJson:(NSDictionary *)json
-{
-    NSArray * jsonResults = json[@"results"];
-    NSMutableArray * listItems = [NSMutableArray array];
-    for (NSDictionary * item in jsonResults) {
-        //agrego el item
-        [listItems addObject:[self.resultJsonTranslator objectFromDictionaryWithJson:item]];
-    }    
-    return listItems;
+- (NSArray *)arrayFromDictionaryWithJson:(NSDictionary *)json {
+	NSArray *jsonResults = json[@"results"];
+	NSMutableArray *listItems = [NSMutableArray array];
+	for (NSDictionary *item in jsonResults) {
+		//agrego el item
+		[listItems addObject:[self.resultJsonTranslator objectFromDictionaryWithJson:item]];
+	}
+	return listItems;
 }
-
-- (void)dealloc
-{
-    [_resultJsonTranslator release];
-    _resultJsonTranslator = nil;
-    [super dealloc];
-}
-
-
 
 @end

@@ -10,12 +10,11 @@
 
 @implementation UIImage (Utils)
 
-+ (UIImage *)imageWithUrl:(NSString *)url
-{
-    NSURL *urlImage = [NSURL URLWithString:url];
-    NSData *data = [NSData dataWithContentsOfURL:urlImage];
-    UIImage *img = [[[UIImage alloc] initWithData:data] autorelease];
-    return img;
++ (UIImage *)imageWithUrl:(NSString *)url {
+	NSURL *urlImage = [NSURL URLWithString:url];
+	NSData *data = [NSData dataWithContentsOfURL:urlImage];
+	UIImage *img = [[UIImage alloc] initWithData:data];
+	return img;
 }
 
 @end

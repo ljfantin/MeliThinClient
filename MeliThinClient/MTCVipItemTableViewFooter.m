@@ -11,9 +11,4 @@
 @implementation MTCVipItemTableViewFooter
 
 
-- (void)dealloc {
-    [_buttonBuy release];
-    _buttonBuy = nil;
-    [super dealloc];
-}
 @end

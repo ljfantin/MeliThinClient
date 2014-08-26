@@ -11,11 +11,4 @@
 @implementation MTCPriceFavoriteButtonVipItemViewTableViewCell
 
 
-- (void)dealloc {
-    [_priceLabel release];
-    _priceLabel = nil;
-    [_addFavoritesButton release];
-    _addFavoritesButton = nil;
-    [super dealloc];
-}
 @end

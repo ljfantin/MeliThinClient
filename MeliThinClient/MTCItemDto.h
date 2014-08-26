@@ -14,19 +14,19 @@
 
 @interface MTCItemDto : NSObject
 
-@property (retain,nonatomic) NSString * identifier;
-@property (nonatomic,retain) NSString * title;
-@property (nonatomic,retain) NSString * subtitle;
-@property (nonatomic,retain) NSNumber * price;
+@property (strong, nonatomic) NSString *identifier;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *subtitle;
+@property (nonatomic, strong) NSNumber *price;
 
-@property (nonatomic,retain) NSNumber * availableQuantity;
+@property (nonatomic, strong) NSNumber *availableQuantity;
 
-@property (nonatomic,retain) MTCBuyingModeTypeDto * buyingMode;
-@property (nonatomic,retain) MTCConditiontTypeDto * condition;
+@property (nonatomic, strong) MTCBuyingModeTypeDto *buyingMode;
+@property (nonatomic, strong) MTCConditiontTypeDto *condition;
 
-@property (retain,nonatomic) NSArray * pictures;
-@property (retain,nonatomic) NSArray * descriptions;
-@property (retain,nonatomic) MTCCurrencyTypeDto * currency;
+@property (strong, nonatomic) NSArray *pictures;
+@property (strong, nonatomic) NSArray *descriptions;
+@property (strong, nonatomic) MTCCurrencyTypeDto *currency;
 
 @property BOOL isFavorite;
 

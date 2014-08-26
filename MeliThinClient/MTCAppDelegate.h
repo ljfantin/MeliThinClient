@@ -11,6 +11,6 @@
 @interface MTCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, retain) UITabBarController *tabBarController;
+@property (nonatomic, strong) UITabBarController *tabBarController;
 
 @end

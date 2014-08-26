@@ -16,14 +16,14 @@
 #import "MTCSearchHistoryManager.h"
 
 
-@interface MTCItemsSearchResultsViewController : MTCAbtractListItemTableViewViewController<UISearchBarDelegate>
+@interface MTCItemsSearchResultsViewController : MTCAbtractListItemTableViewViewController <UISearchBarDelegate>
 
-@property (nonatomic, retain) NSString * searchQuery;
-@property (nonatomic, retain) MTCSearchJsonTranslator * searchJsonTranslator;
-@property (nonatomic, retain) MTCPagerJsonTranslator * pagerJsonTranslator;
-@property (nonatomic, retain) MTCMeliServiceApiImpl * service;
-@property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, retain) NSArray * queryHistorial;
-@property (nonatomic, retain) MTCSearchHistoryManager * searchHistoryDao;
+@property (nonatomic, strong) NSString *searchQuery;
+@property (nonatomic, strong) MTCSearchJsonTranslator *searchJsonTranslator;
+@property (nonatomic, strong) MTCPagerJsonTranslator *pagerJsonTranslator;
+@property (nonatomic, strong) MTCMeliServiceApiImpl *service;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) NSArray *queryHistorial;
+@property (nonatomic, strong) MTCSearchHistoryManager *searchHistoryDao;
 
 @end

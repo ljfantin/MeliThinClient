@@ -10,8 +10,8 @@
 
 @interface MTCUIListItemResultTableViewCell : UITableViewCell
 
-@property (retain, nonatomic) IBOutlet UIImageView *thumbnail;
-@property (retain, nonatomic) IBOutlet UILabel *title;
-@property (retain, nonatomic) IBOutlet UILabel *price;
+@property (strong, nonatomic) IBOutlet UIImageView *thumbnail;
+@property (strong, nonatomic) IBOutlet UILabel *title;
+@property (strong, nonatomic) IBOutlet UILabel *price;
 
 @end

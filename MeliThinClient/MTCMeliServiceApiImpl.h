@@ -12,16 +12,15 @@
 #import "MTCSearchJsonTranslator.h"
 #import "MTCItemTranslator.h"
 
-@interface MTCMeliServiceApiImpl : NSObject<MTCMeliServiceApi>{
-
-    id<MTCServiceApiDelegate> delegate;
+@interface MTCMeliServiceApiImpl : NSObject <MTCMeliServiceApi> {
+	id <MTCServiceApiDelegate> delegate;
 }
 
-@property (nonatomic, retain) NSString * url;
-@property (nonatomic, retain) NSString * pathSearch;
-@property (nonatomic, retain) NSString * pathItems;
-@property (nonatomic, retain) NSString * pathDescription;
-@property (nonatomic, retain) NSString * pathMultiGetsItems;
+@property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) NSString *pathSearch;
+@property (nonatomic, strong) NSString *pathItems;
+@property (nonatomic, strong) NSString *pathDescription;
+@property (nonatomic, strong) NSString *pathMultiGetsItems;
 
 
 @end

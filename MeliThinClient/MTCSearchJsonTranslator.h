@@ -10,6 +10,6 @@
 #import "MTCJsonTranslator.h"
 #import "MTCSearchResultJsonTranslator.h"
 
-@interface MTCSearchJsonTranslator : NSObject<MTCJsonTranslator>
-@property (nonatomic,retain)MTCSearchResultJsonTranslator * resultJsonTranslator;
+@interface MTCSearchJsonTranslator : NSObject <MTCJsonTranslator>
+@property (nonatomic, strong) MTCSearchResultJsonTranslator *resultJsonTranslator;
 @end

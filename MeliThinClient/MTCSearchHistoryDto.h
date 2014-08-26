@@ -10,10 +10,10 @@
 
 @interface MTCSearchHistoryDto : NSObject
 
-@property (nonatomic,retain) NSString * query;
-@property (nonatomic,retain) NSDate * date;
+@property (nonatomic, strong) NSString *query;
+@property (nonatomic, strong) NSDate *date;
 
-+ (instancetype) mtcSearchHistoryDtoWithQuery:(NSString*)query data:(NSDate*)date;
-+ (instancetype) mtcSearchHistoryDtoWithQuery:(NSString*)query;
++ (instancetype)mtcSearchHistoryDtoWithQuery:(NSString *)query data:(NSDate *)date;
++ (instancetype)mtcSearchHistoryDtoWithQuery:(NSString *)query;
 
 @end

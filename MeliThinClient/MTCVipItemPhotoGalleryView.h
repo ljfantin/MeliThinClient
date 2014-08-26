@@ -10,12 +10,12 @@
 
 @interface MTCVipItemPhotoGalleryView : UIView
 
-@property (retain, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (retain, nonatomic) IBOutlet UIScrollView *scrollGallery;
-@property (retain, nonatomic) IBOutlet UIView *viewTitleItem;
-@property (retain, nonatomic) IBOutlet UILabel *labelItemTitle;
+@property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollGallery;
+@property (strong, nonatomic) IBOutlet UIView *viewTitleItem;
+@property (strong, nonatomic) IBOutlet UILabel *labelItemTitle;
 
 
-- (void)loadImages:(NSArray*)images withTitle:(NSString*)title;
+- (void)loadImages:(NSArray *)images withTitle:(NSString *)title;
 
 @end

@@ -16,61 +16,47 @@
 
 @implementation MTCDescriptionVipItemViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.service = [[[MTCMeliServiceApiImpl alloc] init] autorelease];
-        [_service setDelegate:self];
-        _descriptionJsonTranslator = [[MTCDescriptionJsonTranslator alloc] init];
-    }
-    return self;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {
+		self.service = [[MTCMeliServiceApiImpl alloc] init];
+		[_service setDelegate:self];
+		_descriptionJsonTranslator = [[MTCDescriptionJsonTranslator alloc] init];
+	}
+	return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.title = NSLocalizedString(@"descripcion.title", nil);
-    [self.service descriptionFromItemWithIdentifier:self.idItem];
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	self.title = NSLocalizedString(@"descripcion.title", nil);
+	[self.service descriptionFromItemWithIdentifier:self.idItem];
 }
 
 /*- (void)viewWillAppear:(BOOL)animated
-{
+   {
     [super viewWillAppear:animated];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Volver" style:UIBarButtonItemStyleBordered target:nil action:nil];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWith                                                                   style:UIBarButtonItemStyleBordered
                                                                   target:self
                                                                   action:@selector(backAction)];
-}*/
+   }*/
 
 
 #pragma mark Implementacion delegate MTCServiceApiDelegate
 
-- (void)onPostExecute:(NSDictionary *) data;
+- (void)onPostExecute:(NSDictionary *)data;
 {
-    MTCDescriptionDto * dto = (MTCDescriptionDto *) [self.descriptionJsonTranslator objectFromDictionaryWithJson:data];
-    [self.spinner stopAnimating];
-    [self.descriptionWebView loadHTMLString:dto.text baseURL:nil];
+	MTCDescriptionDto *dto = (MTCDescriptionDto *)[self.descriptionJsonTranslator objectFromDictionaryWithJson:data];
+	[self.spinner stopAnimating];
+	[self.descriptionWebView loadHTMLString:dto.text baseURL:nil];
 }
 
-- (void)onPreExecute
-{
-    [self.spinner startAnimating];
+- (void)onPreExecute {
+	[self.spinner startAnimating];
 }
 
-- (void)dealloc
-{
-    [_service release];
-    _service = nil;
-    [_descriptionJsonTranslator release];
-    _descriptionJsonTranslator = nil;
-    [_idItem release];
-    _idItem = nil;
-    _descriptionWebView.delegate = nil;
-    [_descriptionWebView release];
-    _descriptionWebView = nil;
-    [_spinner release];
-    [super dealloc];
+- (void)dealloc {
+	_descriptionWebView.delegate = nil;
 }
 
 @end

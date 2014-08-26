@@ -13,14 +13,14 @@
 #import "UIScrollView+SVInfiniteScrolling.h"
 #import "MTCServiceApiDelegate.h"
 
-@interface MTCAbtractListItemTableViewViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,MTCServiceApiDelegate>
+@interface MTCAbtractListItemTableViewViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, MTCServiceApiDelegate>
 
-@property (retain, nonatomic) MTCPagerList * pager;
-@property (retain, nonatomic) NSMutableArray * items;
-@property (retain, nonatomic) NSString * titleHeaderTable;
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
-@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (strong, nonatomic) MTCPagerList *pager;
+@property (strong, nonatomic) NSMutableArray *items;
+@property (strong, nonatomic) NSString *titleHeaderTable;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
-- (void) requestNewItems;
-- (void) updateTitle:(NSString *)title withCount:(NSInteger)countResults;
+- (void)requestNewItems;
+- (void)updateTitle:(NSString *)title withCount:(NSInteger)countResults;
 @end

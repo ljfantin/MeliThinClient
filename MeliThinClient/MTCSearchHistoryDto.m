@@ -11,33 +11,21 @@
 @implementation MTCSearchHistoryDto
 
 
-+ (instancetype) mtcSearchHistoryDtoWithQuery:(NSString*)query data:(NSDate*)date
-{
-    MTCSearchHistoryDto * instace = [[[MTCSearchHistoryDto alloc] init] autorelease];
-    instace.query = query;
-    instace.date = date;
-    return instace;
++ (instancetype)mtcSearchHistoryDtoWithQuery:(NSString *)query data:(NSDate *)date {
+	MTCSearchHistoryDto *instace = [[MTCSearchHistoryDto alloc] init];
+	instace.query = query;
+	instace.date = date;
+	return instace;
 }
 
-+ (instancetype) mtcSearchHistoryDtoWithQuery:(NSString*)query
-{
-    MTCSearchHistoryDto * instace = [[[MTCSearchHistoryDto alloc] init] autorelease];
-    instace.query = query;
-    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy/MM/dd hh:mm"];
-    NSDate * now = [[NSDate alloc] init];
-    instace.date = now;
-    [dateFormatter release];
-    [now release];
-    return instace;
++ (instancetype)mtcSearchHistoryDtoWithQuery:(NSString *)query {
+	MTCSearchHistoryDto *instace = [[MTCSearchHistoryDto alloc] init];
+	instace.query = query;
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"yyyy/MM/dd hh:mm"];
+	NSDate *now = [[NSDate alloc] init];
+	instace.date = now;
+	return instace;
 }
 
-- (void)dealloc
-{
-    [_query release];
-    _query = nil;
-    [_date release];
-    _date = nil;
-    [super dealloc];
-}
 @end

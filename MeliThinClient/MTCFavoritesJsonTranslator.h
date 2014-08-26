@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MTCSearchResultJsonTranslator.h"
 
-@interface MTCFavoritesJsonTranslator : NSObject<MTCJsonTranslator>
+@interface MTCFavoritesJsonTranslator : NSObject <MTCJsonTranslator>
 
-@property (nonatomic,retain)MTCSearchResultJsonTranslator * resultJsonTranslator;
+@property (nonatomic, strong) MTCSearchResultJsonTranslator *resultJsonTranslator;
 
 @end

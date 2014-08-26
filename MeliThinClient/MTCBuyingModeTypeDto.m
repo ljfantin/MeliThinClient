@@ -9,42 +9,40 @@
 #import "MTCBuyingModeTypeDto.h"
 
 @interface MTCBuyingModeTypeDto ()
-    typedef NS_ENUM(NSInteger, BUYING_MODE_TYPE) {BUY_IT_NOW, AUCTION, CLASSIFIED};
-    @property BUYING_MODE_TYPE type;
+typedef NS_ENUM (NSInteger, BUYING_MODE_TYPE) { BUY_IT_NOW, AUCTION, CLASSIFIED };
+@property BUYING_MODE_TYPE type;
 @end
 
 @implementation MTCBuyingModeTypeDto
 
-+ (instancetype) mtcBuyingModeTypeDtoWithBuyItNow   {
-
-    MTCBuyingModeTypeDto * instance = [[[MTCBuyingModeTypeDto alloc] init] autorelease];
-    instance.type = BUY_IT_NOW;
-    return instance;
++ (instancetype)mtcBuyingModeTypeDtoWithBuyItNow   {
+	MTCBuyingModeTypeDto *instance = [[MTCBuyingModeTypeDto alloc] init];
+	instance.type = BUY_IT_NOW;
+	return instance;
 }
 
-+ (instancetype) mtcBuyingModeTypeDtoWithAuction    {
-    MTCBuyingModeTypeDto * instance = [[[MTCBuyingModeTypeDto alloc] init] autorelease];
-    instance.type = AUCTION;
-    return instance;
++ (instancetype)mtcBuyingModeTypeDtoWithAuction    {
+	MTCBuyingModeTypeDto *instance = [[MTCBuyingModeTypeDto alloc] init];
+	instance.type = AUCTION;
+	return instance;
 }
 
-+ (instancetype) mtcBuyingModeTypeDtoWithClassified {
-    MTCBuyingModeTypeDto * instance = [[[MTCBuyingModeTypeDto alloc] init] autorelease];
-    instance.type = CLASSIFIED;
-    return instance;
++ (instancetype)mtcBuyingModeTypeDtoWithClassified {
+	MTCBuyingModeTypeDto *instance = [[MTCBuyingModeTypeDto alloc] init];
+	instance.type = CLASSIFIED;
+	return instance;
 }
 
-
-- (BOOL) isBuyItNow{
-    return (self.type == BUY_IT_NOW);
+- (BOOL)isBuyItNow {
+	return (self.type == BUY_IT_NOW);
 }
 
-- (BOOL) isAuction{
-    return (self.type == AUCTION);
+- (BOOL)isAuction {
+	return (self.type == AUCTION);
 }
 
-- (BOOL) isClassified{
-    return (self.type == CLASSIFIED);
+- (BOOL)isClassified {
+	return (self.type == CLASSIFIED);
 }
 
 @end

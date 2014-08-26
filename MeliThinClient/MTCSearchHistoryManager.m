@@ -10,105 +10,83 @@
 #import "MTCSearchHistoryDto.h"
 
 @interface MTCSearchHistoryManager ()
-@property (nonatomic,retain) NSString * pathFile;
-@property (nonatomic,retain) NSString * fileName;
-@property (nonatomic,retain) NSString * keyCollectionId;
-@property (nonatomic,retain) NSMutableDictionary *data;
+@property (nonatomic, strong) NSString *pathFile;
+@property (nonatomic, strong) NSString *fileName;
+@property (nonatomic, strong) NSString *keyCollectionId;
+@property (nonatomic, strong) NSMutableDictionary *data;
 @end
 
 @implementation MTCSearchHistoryManager
 
-+ (MTCSearchHistoryManager*)sharedInstance
-{
-    static MTCSearchHistoryManager *_sharedInstance = nil;
-    static dispatch_once_t oncePredicate;
-    dispatch_once(&oncePredicate, ^{
-        _sharedInstance = [[MTCSearchHistoryManager alloc] init];
-    });
-    return _sharedInstance;
++ (MTCSearchHistoryManager *)sharedInstance {
+	static MTCSearchHistoryManager *_sharedInstance = nil;
+	static dispatch_once_t oncePredicate;
+	dispatch_once(&oncePredicate, ^{
+	    _sharedInstance = [[MTCSearchHistoryManager alloc] init];
+	});
+	return _sharedInstance;
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _fileName = @"history.plist";
-        _keyCollectionId = @"historyIds";
-        [self buildPathFile];
-        [self createFile];
-    }
-    return self;
+- (instancetype)init {
+	self = [super init];
+	if (self) {
+		_fileName = @"history.plist";
+		_keyCollectionId = @"historyIds";
+		[self buildPathFile];
+		[self createFile];
+	}
+	return self;
 }
 
--(NSArray*) arrayWithObjects
-{
-    NSMutableArray * result = [NSMutableArray array];
-    NSDictionary * history = self.data[self.keyCollectionId] ;
-    //obtengo el diccionario ordenado por sus valores.
-    //no es la mejor manera, ver como cambiar el compare
-    NSArray* keywords = [[(NSArray *) [history keysSortedByValueUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
-    for( NSString * key in keywords)
-    {
-        NSDate * date = [history objectForKey:key];
-        [result addObject:[MTCSearchHistoryDto mtcSearchHistoryDtoWithQuery:key data:date]];
-    }
-    return result;
+- (NSArray *)arrayWithObjects {
+	NSMutableArray *result = [NSMutableArray array];
+	NSDictionary *history = self.data[self.keyCollectionId];
+	//obtengo el diccionario ordenado por sus valores.
+	//no es la mejor manera, ver como cambiar el compare
+	NSArray *keywords = [[(NSArray *)[history keysSortedByValueUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
+	for (NSString *key in keywords) {
+		NSDate *date = [history objectForKey:key];
+		[result addObject:[MTCSearchHistoryDto mtcSearchHistoryDtoWithQuery:key data:date]];
+	}
+	return result;
 }
 
-- (void) deleteAllSearchHistory
-{
-    NSMutableDictionary * history = (NSMutableDictionary *)self.data[self.keyCollectionId];
-    [history removeAllObjects];
+- (void)deleteAllSearchHistory {
+	NSMutableDictionary *history = (NSMutableDictionary *)self.data[self.keyCollectionId];
+	[history removeAllObjects];
 }
 
-- (void) saveSearchHistory:(MTCSearchHistoryDto*)dto
-{
-    NSMutableDictionary * history = (NSMutableDictionary *)self.data[self.keyCollectionId];
-    [history setValue:dto.date forKey:dto.query];
+- (void)saveSearchHistory:(MTCSearchHistoryDto *)dto {
+	NSMutableDictionary *history = (NSMutableDictionary *)self.data[self.keyCollectionId];
+	[history setValue:dto.date forKey:dto.query];
 }
 
-- (BOOL) commit
-{
-    NSString *error;
-    NSData *dataToSave = [NSPropertyListSerialization dataFromPropertyList:self.data
-                                                              format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
-    [dataToSave writeToFile:self.pathFile atomically:YES];
-    return YES;
+- (BOOL)commit {
+	NSString *error;
+	NSData *dataToSave = [NSPropertyListSerialization dataFromPropertyList:self.data
+	                                                                format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
+	[dataToSave writeToFile:self.pathFile atomically:YES];
+	return YES;
 }
 
-
-- (void)createFile
-{
-    //NSError * error;
-    NSFileManager * fileManager = [NSFileManager defaultManager];
-    if(![fileManager fileExistsAtPath:self.pathFile]) {
-        [fileManager createFileAtPath:self.pathFile contents:nil attributes:nil];
-        _data = [[NSMutableDictionary alloc] initWithDictionary:@{_keyCollectionId: [NSMutableDictionary dictionary]}];
-    }
-    else
-    {
-        _data = [[NSMutableDictionary alloc] initWithContentsOfFile:self.pathFile];
-        if (_data == nil)
-            _data = [[NSMutableDictionary alloc] initWithDictionary:@{_keyCollectionId: [NSMutableDictionary dictionary]}];
-    }
+- (void)createFile {
+	//NSError * error;
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	if (![fileManager fileExistsAtPath:self.pathFile]) {
+		[fileManager createFileAtPath:self.pathFile contents:nil attributes:nil];
+		_data = [[NSMutableDictionary alloc] initWithDictionary:@{ _keyCollectionId: [NSMutableDictionary dictionary] }];
+	}
+	else {
+		_data = [[NSMutableDictionary alloc] initWithContentsOfFile:self.pathFile];
+		if (_data == nil)
+			_data = [[NSMutableDictionary alloc] initWithDictionary:@{ _keyCollectionId: [NSMutableDictionary dictionary] }];
+	}
 }
 
-- (void)buildPathFile
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    self.pathFile = [documentsDirectory stringByAppendingPathComponent:self.fileName];
+- (void)buildPathFile {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	self.pathFile = [documentsDirectory stringByAppendingPathComponent:self.fileName];
 }
 
-- (void)dealloc
-{
-    [_pathFile release];
-    _pathFile = nil;
-    [_fileName release];
-    _fileName = nil;
-    [_keyCollectionId release];
-    _keyCollectionId = nil;
-    [_data release];
-    [super dealloc];
-}
 @end

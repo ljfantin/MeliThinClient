@@ -10,13 +10,13 @@
 #import "MTCSearchHistoryManager.h"
 
 
-@interface MTCSearchWithHistorialSearchViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate, UISearchBarDelegate>
+@interface MTCSearchWithHistorialSearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UISearchBarDelegate>
 
-@property (retain, nonatomic) IBOutlet UITableView *historialTableView;
-@property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-@property (retain, nonatomic) NSArray * listHistorial;
-@property (retain, nonatomic) NSMutableArray * listHistorialFiltered;
-@property (retain, nonatomic) IBOutlet UIImageView *imageLogo;
+@property (strong, nonatomic) IBOutlet UITableView *historialTableView;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (strong, nonatomic) NSArray *listHistorial;
+@property (strong, nonatomic) NSMutableArray *listHistorialFiltered;
+@property (strong, nonatomic) IBOutlet UIImageView *imageLogo;
 @property BOOL isFiltered;
 @end

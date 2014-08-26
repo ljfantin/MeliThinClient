@@ -10,13 +10,4 @@
 
 @implementation MTCUIListItemResultTableViewCell
 
-- (void)dealloc {
-    [_thumbnail release];
-    _thumbnail = nil;
-    [_title release];
-    _title = nil;
-    [_price release];
-    _price = nil;
-    [super dealloc];
-}
 @end

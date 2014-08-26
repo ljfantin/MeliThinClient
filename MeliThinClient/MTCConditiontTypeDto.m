@@ -10,44 +10,41 @@
 
 
 @interface MTCConditiontTypeDto ()
-typedef NS_ENUM(NSInteger, CONDITION_TYPE) {NEW, USED, UNESPECIFIED};
+typedef NS_ENUM (NSInteger, CONDITION_TYPE) { NEW, USED, UNESPECIFIED };
 @property CONDITION_TYPE type;
 @end
 
 
 @implementation MTCConditiontTypeDto
 
-+ (instancetype) mtcConditiontTypeDtoWithNew
-{
-    MTCConditiontTypeDto * instance = [[[MTCConditiontTypeDto alloc] init] autorelease];
-    instance.type = NEW;
-    return instance;
++ (instancetype)mtcConditiontTypeDtoWithNew {
+	MTCConditiontTypeDto *instance = [[MTCConditiontTypeDto alloc] init];
+	instance.type = NEW;
+	return instance;
 }
 
-+ (instancetype) mtcConditiontTypeDtoWithUsed
-{
-    MTCConditiontTypeDto * instance = [[[MTCConditiontTypeDto alloc] init] autorelease];
-    instance.type = USED;
-    return instance;
++ (instancetype)mtcConditiontTypeDtoWithUsed {
+	MTCConditiontTypeDto *instance = [[MTCConditiontTypeDto alloc] init];
+	instance.type = USED;
+	return instance;
 }
 
-+ (instancetype) mtcConditiontTypeDtoWithUnespecified
-{
-    MTCConditiontTypeDto * instance = [[[MTCConditiontTypeDto alloc] init] autorelease];
-    instance.type = UNESPECIFIED;
-    return instance;
++ (instancetype)mtcConditiontTypeDtoWithUnespecified {
+	MTCConditiontTypeDto *instance = [[MTCConditiontTypeDto alloc] init];
+	instance.type = UNESPECIFIED;
+	return instance;
 }
 
-- (BOOL) isNew{
-    return (self.type == NEW);
+- (BOOL)isNew {
+	return (self.type == NEW);
 }
 
-- (BOOL) isUsed{
-    return (self.type == USED);
+- (BOOL)isUsed {
+	return (self.type == USED);
 }
 
-- (BOOL) isUnespecified{
-    return (self.type == UNESPECIFIED);
+- (BOOL)isUnespecified {
+	return (self.type == UNESPECIFIED);
 }
 
 @end

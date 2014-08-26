@@ -10,29 +10,21 @@
 
 @implementation MTCFavoritesJsonTranslator
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _resultJsonTranslator = [[MTCSearchResultJsonTranslator alloc] init];
-    }
-    return self;
+- (instancetype)init {
+	self = [super init];
+	if (self) {
+		_resultJsonTranslator = [[MTCSearchResultJsonTranslator alloc] init];
+	}
+	return self;
 }
 
-- (NSArray *) arrayFromDictionaryWithJson:(NSDictionary *)json
-{
-    NSMutableArray * listItems = [NSMutableArray array];
-    for (NSDictionary * item in json) {
-        //agrego el item
-        [listItems addObject:[self.resultJsonTranslator objectFromDictionaryWithJson:item]];
-    }
-    return listItems;
+- (NSArray *)arrayFromDictionaryWithJson:(NSDictionary *)json {
+	NSMutableArray *listItems = [NSMutableArray array];
+	for (NSDictionary *item in json) {
+		//agrego el item
+		[listItems addObject:[self.resultJsonTranslator objectFromDictionaryWithJson:item]];
+	}
+	return listItems;
 }
 
-- (void)dealloc
-{
-    [_resultJsonTranslator dealloc];
-    _resultJsonTranslator = nil;
-    [super dealloc];
-}
 @end

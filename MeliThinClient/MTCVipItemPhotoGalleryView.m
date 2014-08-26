@@ -16,37 +16,28 @@
 @implementation MTCVipItemPhotoGalleryView
 
 
-- (void)loadImages:(NSArray*)images withTitle:(NSString*)title;
+- (void)loadImages:(NSArray *)images withTitle:(NSString *)title;
 {
-    for (NSUInteger i = 0; i < [images count]; i++) {
-        CGRect frame;
-        frame.origin.x = self.scrollGallery.frame.size.width * i;
-        frame.origin.y = 0;
-        frame.size = self.scrollGallery.frame.size;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-        imageView.contentMode=UIViewContentModeScaleAspectFit;
-        imageView.image = [images objectAtIndex:i];
-        [self.scrollGallery addSubview:imageView];
-        [imageView release];
-    }
-    self.scrollGallery.contentSize = CGSizeMake(self.frame.size.width * [images count], self.scrollGallery.frame.size.height);
-    self.pageControl.currentPage = 0;
-    self.pageControl.numberOfPages = [images count];
-    self.labelItemTitle.text=title;
-    [self.viewTitleItem setBackgroundColor:[UIColor darkGrayColor]];
-    [self addSubview:self.viewTitleItem];
+	for (NSUInteger i = 0; i < [images count]; i++) {
+		CGRect frame;
+		frame.origin.x = self.scrollGallery.frame.size.width * i;
+		frame.origin.y = 0;
+		frame.size = self.scrollGallery.frame.size;
+		UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+		imageView.contentMode = UIViewContentModeScaleAspectFit;
+		imageView.image = [images objectAtIndex:i];
+		[self.scrollGallery addSubview:imageView];
+	}
+	self.scrollGallery.contentSize = CGSizeMake(self.frame.size.width * [images count], self.scrollGallery.frame.size.height);
+	self.pageControl.currentPage = 0;
+	self.pageControl.numberOfPages = [images count];
+	self.labelItemTitle.text = title;
+	[self.viewTitleItem setBackgroundColor:[UIColor darkGrayColor]];
+	[self addSubview:self.viewTitleItem];
 }
 
 - (void)dealloc {
-    [_pageControl release];
-    _pageControl = nil;
-    _scrollGallery.delegate = nil;
-    [_scrollGallery release];
-    _scrollGallery = nil;
-    [_viewTitleItem release];
-    _viewTitleItem = nil;
-    [_labelItemTitle release];
-    _labelItemTitle = nil;
-    [super dealloc];
+	_scrollGallery.delegate = nil;
 }
+
 @end

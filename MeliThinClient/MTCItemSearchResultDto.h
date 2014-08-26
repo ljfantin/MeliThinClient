@@ -15,17 +15,17 @@
 @interface MTCItemSearchResultDto : NSObject
 
 
-@property (nonatomic,retain) NSString * identifier;
-@property (nonatomic,retain) NSString * tittle;
-@property (nonatomic,retain) NSNumber * price;
-@property (nonatomic,retain) NSString * subtitle;
-@property (nonatomic,retain) NSNumber * availableQuantity;
-@property (nonatomic,retain) NSString * urlThumbnail;
-@property (nonatomic,retain) MTCCurrencyTypeDto* currency;
-@property (nonatomic,retain) MTCBuyingModeTypeDto * buyingMode;
-@property (nonatomic,retain) MTCConditiontTypeDto * condition;
+@property (nonatomic, strong) NSString *identifier;
+@property (nonatomic, strong) NSString *tittle;
+@property (nonatomic, strong) NSNumber *price;
+@property (nonatomic, strong) NSString *subtitle;
+@property (nonatomic, strong) NSNumber *availableQuantity;
+@property (nonatomic, strong) NSString *urlThumbnail;
+@property (nonatomic, strong) MTCCurrencyTypeDto *currency;
+@property (nonatomic, strong) MTCBuyingModeTypeDto *buyingMode;
+@property (nonatomic, strong) MTCConditiontTypeDto *condition;
 
 
-+(instancetype) mtcItemSearchResultDtoWithIdentifier:(NSString*)identifier title:(NSString *) title price:(NSNumber*) price subtitle:(NSString*) subtitle  availableQuantity:(NSNumber*)quantity condition:(MTCConditiontTypeDto*)condition buyingMode:(MTCBuyingModeTypeDto*)buyingMode currency:(MTCCurrencyTypeDto*)currency urlThumbnail:(NSString*) urlThumbnail;
++ (instancetype)mtcItemSearchResultDtoWithIdentifier:(NSString *)identifier title:(NSString *)title price:(NSNumber *)price subtitle:(NSString *)subtitle availableQuantity:(NSNumber *)quantity condition:(MTCConditiontTypeDto *)condition buyingMode:(MTCBuyingModeTypeDto *)buyingMode currency:(MTCCurrencyTypeDto *)currency urlThumbnail:(NSString *)urlThumbnail;
 
 @end
