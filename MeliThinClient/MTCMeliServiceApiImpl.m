@@ -18,6 +18,8 @@
 
 @implementation MTCMeliServiceApiImpl
 
+@synthesize delegate;
+
 - (instancetype)init {
 	self = [super init];
 	if (self) {

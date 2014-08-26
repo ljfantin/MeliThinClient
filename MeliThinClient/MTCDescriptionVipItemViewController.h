@@ -15,8 +15,8 @@
 
 @property (nonatomic, strong) id <MTCMeliServiceApi> service;
 @property (nonatomic, strong) MTCDescriptionJsonTranslator *descriptionJsonTranslator;
-@property (strong, nonatomic) IBOutlet UIWebView *descriptionWebView;
+@property (weak, nonatomic) IBOutlet UIWebView *descriptionWebView;
 @property (strong, nonatomic) NSString *idItem;
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end

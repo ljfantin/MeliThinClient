@@ -12,9 +12,7 @@
 #import "MTCSearchJsonTranslator.h"
 #import "MTCItemTranslator.h"
 
-@interface MTCMeliServiceApiImpl : NSObject <MTCMeliServiceApi> {
-	id <MTCServiceApiDelegate> delegate;
-}
+@interface MTCMeliServiceApiImpl : NSObject <MTCMeliServiceApi>
 
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSString *pathSearch;

@@ -18,8 +18,8 @@
 @property (strong, nonatomic) MTCPagerList *pager;
 @property (strong, nonatomic) NSMutableArray *items;
 @property (strong, nonatomic) NSString *titleHeaderTable;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 - (void)requestNewItems;
 - (void)updateTitle:(NSString *)title withCount:(NSInteger)countResults;

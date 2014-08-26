@@ -33,6 +33,9 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.tableView.tableFooterView = [[UIView alloc] init];
+
+	UINib *nib = [UINib nibWithNibName:@"MTCUIListItemResultTableViewCell" bundle:nil];
+	[self.tableView registerNib:nib forCellReuseIdentifier:@"cellItemFromSearch"];
 }
 
 - (void)requestNewItems {
@@ -59,11 +62,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	MTCUIListItemResultTableViewCell *cell = (MTCUIListItemResultTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"cellItemFromSearch"];
 
-	if (cell == nil) {
-		UINib *nib = [UINib nibWithNibName:@"MTCUIListItemResultTableViewCell" bundle:nil];
-		[tableView registerNib:nib forCellReuseIdentifier:@"cellItemFromSearch"];
-		cell = [tableView dequeueReusableCellWithIdentifier:@"cellItemFromSearch"];
-	}
 
 	MTCItemSearchResultDto *item = [self.items objectAtIndex:indexPath.row];
 	//SE PODRIA FORMATEAR EL NUMERO POR LOCALE
@@ -136,11 +134,6 @@
 	[self.spinner stopAnimating];
 	UIAlertView *alert = [UIAlertView alertViewWithErrorConectionMessageWithDelegate:self];
 	[alert show];
-}
-
-- (void)dealloc {
-	_tableView.delegate = nil;
-	_tableView.dataSource = nil;
 }
 
 @end

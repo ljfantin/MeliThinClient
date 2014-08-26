@@ -16,12 +16,17 @@
 #import "MTCDescriptionVipItemViewController.h"
 #import "MTCMeliServiceApiImpl+SecureMethods.h"
 #import "UIAlertView+MTCMessage.h"
+#import "UITableViewCell+Utils.h"
 
 #define INDEX_PRICE_FAVORITE_CELL 0
 #define INDEX_SUBTITLE_CELL 1
 #define INDEX_CONDITION_CELL 2
 #define INDEX_AVAILABLE_CELL 3
 #define INDEX_DESCRIPCION_CELL 4
+NSString *const ID_GENERIC_CELL = @"idGenericCell";
+NSString *const ID_BUY_CELL = @"idBuyCell";
+NSString *const ID_PRICE_FAVORITE_CELL = @"idPriceFavoriteCell";
+
 
 
 
@@ -77,6 +82,13 @@
 		self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_AVAILABLE_CELL];
 		self.cellsCount++;
 	}
+	//registracion de celdas
+	[self.detailItemTableview registerNib:[UINib nibWithNibName:@"MTCBuyButtonVipItemTableViewCell" bundle:nil] forCellReuseIdentifier:ID_BUY_CELL];
+
+	//[self.detailItemTableview registerClass:[UITableViewCell class] forCellReuseIdentifier:ID_GENERIC_CELL];
+
+	[self.detailItemTableview registerClass:[MTCPriceFavoriteButtonVipItemViewTableViewCell class] forCellReuseIdentifier:ID_PRICE_FAVORITE_CELL];
+
 	//if (self.item.descriptions!=nil && [self.item.descriptions count]>0) {
 	self.cells[self.cellsCount] = [NSNumber numberWithInteger:INDEX_DESCRIPCION_CELL];
 	self.cellsCount++;
@@ -111,23 +123,23 @@
 	NSNumber *cellId =  self.cells[indexPath.row];
 	switch ([cellId intValue]) {
 		case INDEX_PRICE_FAVORITE_CELL:
-			cell = [self buildPriceFavoriteCell:tableView];
+			cell = [self buildPriceFavoriteCell:tableView withIndexPath:indexPath];
 			break;
 
 		case INDEX_SUBTITLE_CELL:
-			cell = [self buildSubtitleCell:tableView];
+			cell = [self buildSubtitleCell:tableView withIndexPath:indexPath];
 			break;
 
 		case INDEX_CONDITION_CELL:
-			cell = [self buildConditionCell:tableView];
+			cell = [self buildConditionCell:tableView withIndexPath:indexPath];
 			break;
 
 		case INDEX_AVAILABLE_CELL:
-			cell = [self buildAvailableCell:tableView];
+			cell = [self buildAvailableCell:tableView withIndexPath:indexPath];
 			break;
 
 		case INDEX_DESCRIPCION_CELL:
-			cell = [self buildDescriptionCell:tableView];
+			cell = [self buildDescriptionCell:tableView withIndexPath:indexPath];
 			break;
 
 		default:
@@ -137,14 +149,12 @@
 	return cell;
 }
 
-- (UITableViewCell *)buildPriceFavoriteCell:(UITableView *)tableView {
-	static NSString *idPriceFavoriteCell = @"idPriceFavoriteCell";
-
-	MTCPriceFavoriteButtonVipItemViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idPriceFavoriteCell];
-	if (cell == nil) {
-		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MTCPriceFavoriteButtonVipItemViewTableViewCell" owner:self options:nil];
-		cell = [nib objectAtIndex:0];
-	}
+- (UITableViewCell *)buildPriceFavoriteCell:(UITableView *)tableView withIndexPath:(NSIndexPath *)index {
+	MTCPriceFavoriteButtonVipItemViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID_PRICE_FAVORITE_CELL forIndexPath:index];
+	/*if (cell == nil) {
+	    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MTCPriceFavoriteButtonVipItemViewTableViewCell" owner:self options:nil];
+	    cell = [nib objectAtIndex:0];
+	   }*/
 	NSMutableString *price = [NSMutableString string];
 	[price appendString:self.item.currency.symbol];
 	[price appendString:[self.item.price stringValue]];
@@ -153,13 +163,12 @@
 	return cell;
 }
 
-- (UITableViewCell *)buildSubtitleCell:(UITableView *)tableView {
-	static NSString *idSubtitleCell = @"idSubtitleCell";
-
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idSubtitleCell];
+- (UITableViewCell *)buildSubtitleCell:(UITableView *)tableView withIndexPath:(NSIndexPath *)index {
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID_GENERIC_CELL];
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idSubtitleCell];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID_GENERIC_CELL];
 	}
+	[cell reset];
 	cell.textLabel.text = self.item.subtitle;
 	//Ver esto
 	cell.textLabel.font = [UIFont systemFontOfSize:12];
@@ -168,14 +177,12 @@
 	return cell;
 }
 
-- (UITableViewCell *)buildConditionCell:(UITableView *)tableView {
-	static NSString *idConditionCell = @"idConditionCell";
-
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idConditionCell];
+- (UITableViewCell *)buildConditionCell:(UITableView *)tableView withIndexPath:(NSIndexPath *)index {
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID_GENERIC_CELL];
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idConditionCell];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID_GENERIC_CELL];
 	}
-
+	[cell reset];
 	if ([self.item.condition isNew]) {
 		cell.textLabel.text = NSLocalizedString(@"item.condition.new", nil);
 	}
@@ -192,13 +199,12 @@
 	return cell;
 }
 
-- (UITableViewCell *)buildDescriptionCell:(UITableView *)tableView {
-	static NSString *idSubtitleCell = @"idDescriptionCell";
-
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idSubtitleCell];
+- (UITableViewCell *)buildDescriptionCell:(UITableView *)tableView withIndexPath:(NSIndexPath *)index {
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID_GENERIC_CELL];
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idSubtitleCell];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID_GENERIC_CELL];
 	}
+	[cell reset];
 	cell.textLabel.text = NSLocalizedString(@"descripcion.title", nil);
 	//Ver esto
 	cell.textLabel.font = [UIFont systemFontOfSize:12];
@@ -208,29 +214,22 @@
 	return cell;
 }
 
-- (UITableViewCell *)buildAvailableCell:(UITableView *)tableView {
-	static NSString *idSubtitleCell = @"idAvailableCell";
-
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idSubtitleCell];
+- (UITableViewCell *)buildAvailableCell:(UITableView *)tableView withIndexPath:(NSIndexPath *)index {
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID_GENERIC_CELL];
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:idSubtitleCell];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID_GENERIC_CELL];
 	}
+	[cell reset];
 	cell.textLabel.text = NSLocalizedString(@"cantidad.title", nil);
 	//Ver esto
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	cell.textLabel.font = [UIFont systemFontOfSize:12];
 	cell.detailTextLabel.text = [self.item.availableQuantity stringValue];
-	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	return cell;
 }
 
-- (UITableViewCell *)buildBuyButtonCell:(UITableView *)tableView {
-	static NSString *idButtonCell = @"idBuyButtonCell";
-
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idButtonCell];
-	if (cell == nil) {
-		cell = [[[NSBundle mainBundle] loadNibNamed:@"MTCBuyButtonVipItemTableViewCell" owner:self options:nil] firstObject];
-	}
-	return cell;
+- (UITableViewCell *)buildBuyButtonCell:(UITableView *)tableView withIndexPath:(NSIndexPath *)index {
+	return [tableView dequeueReusableCellWithIdentifier:ID_BUY_CELL forIndexPath:index];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -293,11 +292,6 @@
 
 - (void)onPreExecute {
 	[self.spinnerGallery startAnimating];
-}
-
-- (void)dealloc {
-	_detailItemTableview.dataSource = nil;
-	_detailItemTableview.delegate = nil;
 }
 
 @end

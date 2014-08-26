@@ -10,10 +10,10 @@
 
 @interface MTCCurrencyTypeDto : NSObject
 
-@property (nonatomic, strong) NSString *identifier;
-@property (nonatomic, strong) NSString *description;
-@property (nonatomic, strong) NSString *symbol;
-@property (nonatomic, strong) NSString *decimalPlaces;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *symbol;
+@property (nonatomic, copy) NSString *decimalPlaces;
 
 + (instancetype)mtcCurrencyTypeDtoWithIdentifier:(NSString *)identifier;
 

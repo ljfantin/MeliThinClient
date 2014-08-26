@@ -12,11 +12,11 @@
 
 @interface MTCSearchWithHistorialSearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UISearchBarDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView *historialTableView;
-@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UITableView *historialTableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (strong, nonatomic) NSArray *listHistorial;
 @property (strong, nonatomic) NSMutableArray *listHistorialFiltered;
-@property (strong, nonatomic) IBOutlet UIImageView *imageLogo;
+@property (weak, nonatomic) IBOutlet UIImageView *imageLogo;
 @property BOOL isFiltered;
 @end

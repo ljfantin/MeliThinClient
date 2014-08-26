@@ -33,6 +33,7 @@
 		4FE6006B1993B58100AF3DFE /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6006A1993B58100AF3DFE /* UIImage+Utils.m */; };
 		4FE6007319940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6007119940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m */; };
 		4FE6007419940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */; };
+		4FF2634D19ACFF500011226F /* UITableViewCell+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF2634C19ACFF500011226F /* UITableViewCell+Utils.m */; };
 		4FF2B0281992876F000BFE85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B0271992876F000BFE85 /* Foundation.framework */; };
 		4FF2B02A1992876F000BFE85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B0291992876F000BFE85 /* CoreGraphics.framework */; };
 		4FF2B02C1992876F000BFE85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B02B1992876F000BFE85 /* UIKit.framework */; };
@@ -127,6 +128,8 @@
 		4FE6007019940A3200AF3DFE /* MTCUIListItemResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCUIListItemResultTableViewCell.h; sourceTree = "<group>"; };
 		4FE6007119940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCUIListItemResultTableViewCell.m; sourceTree = "<group>"; };
 		4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCUIListItemResultTableViewCell.xib; sourceTree = "<group>"; };
+		4FF2634B19ACFF500011226F /* UITableViewCell+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Utils.h"; sourceTree = "<group>"; };
+		4FF2634C19ACFF500011226F /* UITableViewCell+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Utils.m"; sourceTree = "<group>"; };
 		4FF2B0241992876F000BFE85 /* MeliThinClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliThinClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF2B0271992876F000BFE85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FF2B0291992876F000BFE85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -281,6 +284,8 @@
 				4F7691DE19A3C76D0055945B /* UIAlertView+MTCMessage.m */,
 				4F86382619A4EFD3002E1045 /* NSDateFormatter+MTCDateFormatter.h */,
 				4F86382719A4EFD3002E1045 /* NSDateFormatter+MTCDateFormatter.m */,
+				4FF2634B19ACFF500011226F /* UITableViewCell+Utils.h */,
+				4FF2634C19ACFF500011226F /* UITableViewCell+Utils.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -616,6 +621,7 @@
 				8BB06265199CD0B300A4DD1C /* MTCCurrencyTypeDto.m in Sources */,
 				8B7510C11998119400E03739 /* MTCPagerJsonTranslator.m in Sources */,
 				4FE6007319940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m in Sources */,
+				4FF2634D19ACFF500011226F /* UITableViewCell+Utils.m in Sources */,
 				4F107003199BB5FB002C5A75 /* MTCSearchHistoryDto.m in Sources */,
 				4F816BBF1998FA9E00E64B32 /* MTCConditionTranslator.m in Sources */,
 				4FF2B0751992ADF7000BFE85 /* MTCItemSearchResultDto.m in Sources */,

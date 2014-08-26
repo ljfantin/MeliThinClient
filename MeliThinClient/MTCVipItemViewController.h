@@ -19,21 +19,21 @@
 
 @interface MTCVipItemViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, MTCServiceApiDelegate, UIAlertViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UIButton *addFavoriteButton;
+@property (weak, nonatomic) IBOutlet UIButton *addFavoriteButton;
 - (IBAction)addFavoritePushButton:(id)sender;
 - (IBAction)pushBuyButton:(id)sender;
-@property (strong, nonatomic) IBOutlet UIScrollView *galleryScrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *galleryScrollView;
 - (IBAction)valueChanged:(id)sender;
 
 
 @property (strong, nonatomic) MTCItemDto *item;
-@property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (strong, nonatomic) IBOutlet UITableView *detailItemTableview;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UITableView *detailItemTableview;
 @property (strong, nonatomic) MTCMeliServiceApiImpl *service;
 @property (strong, nonatomic) MTCPicturesJsonTranslator *picturesTranslator;
 @property (strong, nonatomic) UIImage *imageIsFavorite;
 @property (strong, nonatomic) UIImage *imageIsNotFavorite;
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinnerGallery;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinnerGallery;
 
 
 @end

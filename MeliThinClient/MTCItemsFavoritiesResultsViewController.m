@@ -22,7 +22,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
-		_service = [[MTCMeliServiceApiImpl alloc] init];
+		//_service = [[MTCMeliServiceApiImpl alloc] init];
 		_favoritesJsonTranslator = [[MTCFavoritesJsonTranslator alloc] init];
 		//Titulo utilizado para tab bar
 		self.title = @"Favoritos";
@@ -32,6 +32,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
 	[self requestNewItems];
 }
 

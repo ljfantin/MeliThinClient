@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MTCVipItemTableViewFooter : UIView
-@property (strong, nonatomic) IBOutlet UIButton *buttonBuy;
+@property (weak, nonatomic) IBOutlet UIButton *buttonBuy;
 @end

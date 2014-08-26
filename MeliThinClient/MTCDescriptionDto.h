@@ -10,8 +10,8 @@
 
 @interface MTCDescriptionDto : NSObject
 
-@property (nonatomic, strong) NSString *text;
-@property (nonatomic, strong) NSString *plainText;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSString *plainText;
 
 + (instancetype)mtcDescriptionDtoWithText:(NSString *)text plainText:(NSString *)plainText;
 

@@ -10,7 +10,7 @@
 
 @interface MTCPriceFavoriteButtonVipItemViewTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIButton *addFavoritesButton;
+@property (weak, nonatomic) IBOutlet UIButton *addFavoritesButton;
 
-@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @end

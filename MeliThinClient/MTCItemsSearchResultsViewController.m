@@ -39,8 +39,8 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.searchBar.text = self.searchQuery;
-	// TODO __block ? agrego el infinito scrolling
-	__block typeof(self) weakSelf = self;
+	__weak typeof(self) weakSelf = self;
+
 	[self.tableView addInfiniteScrollingWithActionHandler: ^{
 	    [weakSelf addNewItemsToTableView];
 	}];
@@ -112,11 +112,6 @@
 		[self.tableView.pullToRefreshView stopAnimating];
 		[self.tableView.infiniteScrollingView stopAnimating];
 	}
-}
-
-
-- (void)dealloc {
-	_searchBar.delegate = nil;
 }
 
 @end

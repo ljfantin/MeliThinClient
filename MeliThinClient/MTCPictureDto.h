@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface MTCPictureDto : NSObject
-@property (strong, nonatomic) NSString *identifier;
-@property (strong, nonatomic) NSString *url;
-@property (strong, nonatomic) UIImage *image;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, strong) UIImage *image;
 
 + (instancetype)mtcPictureDtoWithIdentifier:(NSString *)identifier url:(NSString *)url image:(UIImage *)image;
 @end

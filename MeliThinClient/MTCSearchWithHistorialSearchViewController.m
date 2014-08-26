@@ -134,9 +134,4 @@
 	[self.navigationController pushViewController:itemsSearchResult animated:YES];
 }
 
-- (void)dealloc {
-	_historialTableView.delegate = nil;
-	_historialTableView.dataSource = nil;
-}
-
 @end

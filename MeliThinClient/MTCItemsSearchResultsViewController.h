@@ -22,7 +22,7 @@
 @property (nonatomic, strong) MTCSearchJsonTranslator *searchJsonTranslator;
 @property (nonatomic, strong) MTCPagerJsonTranslator *pagerJsonTranslator;
 @property (nonatomic, strong) MTCMeliServiceApiImpl *service;
-@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong) NSArray *queryHistorial;
 @property (nonatomic, strong) MTCSearchHistoryManager *searchHistoryDao;
 

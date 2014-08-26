@@ -55,8 +55,5 @@
 	[self.spinner startAnimating];
 }
 
-- (void)dealloc {
-	_descriptionWebView.delegate = nil;
-}
 
 @end

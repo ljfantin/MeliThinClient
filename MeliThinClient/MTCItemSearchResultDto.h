@@ -15,12 +15,12 @@
 @interface MTCItemSearchResultDto : NSObject
 
 
-@property (nonatomic, strong) NSString *identifier;
-@property (nonatomic, strong) NSString *tittle;
-@property (nonatomic, strong) NSNumber *price;
-@property (nonatomic, strong) NSString *subtitle;
-@property (nonatomic, strong) NSNumber *availableQuantity;
-@property (nonatomic, strong) NSString *urlThumbnail;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *tittle;
+@property (nonatomic, copy) NSNumber *price;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSNumber *availableQuantity;
+@property (nonatomic, copy) NSString *urlThumbnail;
 @property (nonatomic, strong) MTCCurrencyTypeDto *currency;
 @property (nonatomic, strong) MTCBuyingModeTypeDto *buyingMode;
 @property (nonatomic, strong) MTCConditiontTypeDto *condition;
