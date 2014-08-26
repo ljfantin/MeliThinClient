@@ -11,7 +11,7 @@
 #import "MTCFavoriteManager.h"
 
 
-@implementation MTCMeliServiceApiImpl (SecureMethods)
+@implementation MTCMeliServiceApi (SecureMethods)
 
 - (void) getAllBookmarks:(NSString*)token{
     MTCFavoriteManager * manager = [MTCFavoriteManager sharedInstance];

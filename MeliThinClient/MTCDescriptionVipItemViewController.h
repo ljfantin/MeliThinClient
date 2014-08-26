@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MTCServiceApiDelegate.h"
 #import "MTCDescriptionJsonTranslator.h"
-#import "MTCMeliDescriptionServiceDelegate.h"
 
-@interface MTCDescriptionVipItemViewController : UIViewController <MTCMeliDescriptionServiceDelegate>
+@interface MTCDescriptionVipItemViewController : UIViewController
 
 @property (nonatomic, retain) MTCDescriptionJsonTranslator *descriptionJsonTranslator;
 @property (retain, nonatomic) IBOutlet UIWebView *descriptionWebView;

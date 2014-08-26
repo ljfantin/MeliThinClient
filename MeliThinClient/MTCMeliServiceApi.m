@@ -5,8 +5,7 @@
 //  Created by Leandro Fantin on 06/08/14.
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
-
-#import "MTCMeliServiceApiImpl.h"
+#import "MTCMeliServiceApi.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "MTCItemSearchResultDto.h"
 #import "UIImage+Utils.h"
@@ -16,7 +15,7 @@
 #import "MTCItemDto.h"
 
 
-@implementation MTCMeliServiceApiImpl
+@implementation MTCMeliServiceApi
 
 - (instancetype)init {
 	self = [super init];
@@ -30,10 +29,10 @@
 - (void)buildRequest:(NSString *)httpMethod path:(NSString *)path parameters:(NSDictionary *)parameters;
 {
 	//construyo url
-	NSMutableString *urlSearch = [NSMutableString stringWithString:self.url];
-	[urlSearch appendString:path];
+	NSMutableString *completeUrl = [NSMutableString stringWithString:self.url];
+	[completeUrl appendString:path];
 
-	NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:httpMethod URLString:urlSearch parameters:parameters error:nil];
+	NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:httpMethod URLString:completeUrl parameters:parameters error:nil];
 	//Ver esto !!!
 	self.operation = [[[AFHTTPRequestOperation alloc] initWithRequest:request] autorelease];
 	self.operation.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -73,8 +72,6 @@
 - (void)dealloc {
 	[_url release];
 	_url = nil;
-	[_operation release];
-	_operation = nil;
 	[super dealloc];
 }
 

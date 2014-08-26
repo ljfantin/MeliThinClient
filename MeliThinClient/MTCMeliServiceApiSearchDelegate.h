@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MTCServiceApiDelegate.h"
 
-@protocol MTCMeliSearchServiceDelegate <MTCServiceApiDelegate>
+@protocol MTCMeliServiceApiSearchDelegate <MTCServiceApiDelegate>
 
 - (void)onPostExecute:(MTCItemSearchResultDto *)dto;
 

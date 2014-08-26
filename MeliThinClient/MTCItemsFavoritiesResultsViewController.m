@@ -23,7 +23,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _service = [[MTCMeliServiceApiImpl alloc] init];
+        _service = [[MTCMeliServiceApi alloc] init];
         _favoritesJsonTranslator = [[MTCFavoritesJsonTranslator alloc] init];
         //Titulo utilizado para tab bar
         self.title = @"Favoritos";

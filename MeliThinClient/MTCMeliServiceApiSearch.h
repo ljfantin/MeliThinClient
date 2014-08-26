@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "MTCMeliServiceApiImpl.h"
+#import "MTCMeliServiceApi.h"
 #import "MTCPagerList.h"
 #import "MTCMeliServiceApiItemDelegate.h"
 
-@interface MTCMeliSearchService : MTCMeliServiceApiImpl
+@interface MTCMeliServiceApiSearch : MTCMeliServiceApi
 
 @property (nonatomic, copy) NSString *path;
 @property (nonatomic, assign) id <MTCMeliServiceApiItemDelegate> delegate;
 
-- (void)search:(NSString *)query pager:(MTCPagerList *)pager;
+- (void)searchWithQuery:(NSString *)query withPager:(MTCPagerList *)pager;
 
 @end

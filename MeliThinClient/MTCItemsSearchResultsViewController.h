@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MTCAbtractListItemTableViewViewController.h"
-#import "MTCServiceApiDelegate.h"
-#import "MTCMeliServiceApiImpl.h"
+#import "MTCMeliServiceApi.h"
 #import "MTCPagerList.h"
 #import "MTCSearchJsonTranslator.h"
 #import "MTCPagerJsonTranslator.h"
@@ -21,7 +20,7 @@
 @property (nonatomic, retain) NSString * searchQuery;
 @property (nonatomic, retain) MTCSearchJsonTranslator * searchJsonTranslator;
 @property (nonatomic, retain) MTCPagerJsonTranslator * pagerJsonTranslator;
-@property (nonatomic, retain) MTCMeliServiceApiImpl * service;
+@property (nonatomic, retain) MTCMeliServiceApi * service;
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain) NSArray * queryHistorial;
 @property (nonatomic, retain) MTCSearchHistoryManager * searchHistoryDao;

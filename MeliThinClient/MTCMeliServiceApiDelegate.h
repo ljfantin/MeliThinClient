@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol MTCServiceApiDelegate <NSObject>
+@protocol MTCMeliServiceApiDelegate <NSObject>
 
 @optional
 

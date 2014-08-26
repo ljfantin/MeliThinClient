@@ -8,7 +8,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "MTCItemsSearchResultsViewController.h"
-#import "MTCMeliServiceApiImpl.h"
+#import "MTCMeliServiceApi.h"
 #import "MTCPagerList.h"
 #import "MTCItemSearchResultDto.h"
 #import "MTCSearchHistoryDto.h"
@@ -25,7 +25,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.service = [[[MTCMeliServiceApiImpl alloc] init] autorelease];
+        self.service = [[[MTCMeliServiceApi alloc] init] autorelease];
         [self.service setDelegate:self];
         _searchJsonTranslator = [[MTCSearchJsonTranslator alloc] init];
         _pagerJsonTranslator = [[MTCPagerJsonTranslator alloc] init];

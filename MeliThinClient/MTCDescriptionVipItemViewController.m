@@ -7,7 +7,7 @@
 //
 
 #import "MTCDescriptionVipItemViewController.h"
-#import "MTCMeliServiceApiImpl.h"
+#import "MTCMeliServiceApi.h"
 #import "MTCDescriptionDto.h"
 
 @interface MTCDescriptionVipItemViewController ()

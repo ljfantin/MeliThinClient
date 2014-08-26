@@ -11,17 +11,15 @@
 #import "MTCItemTranslator.h"
 #import "AFHTTPRequestOperation.h"
 
-@interface MTCMeliServiceApiImpl : NSObject
+@interface MTCMeliServiceApi : NSObject
 
 @property (nonatomic, copy) NSString *url;
-@property (nonatomic, retain) AFHTTPRequestOperation *operation;
 
 /*
    - (void)handleErrorWithOutConnection;
    - (void)handleError:(NSError *)error;
    - (BOOL)hasConecction;
  */
-- (void)buildRequest:(NSString *)httpMethod path:(NSString *)path parameters:(NSDictionary *)parameters;
 - (void)cancelOperation;
 
 @end

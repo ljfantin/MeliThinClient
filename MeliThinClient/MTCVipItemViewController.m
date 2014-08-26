@@ -8,7 +8,7 @@
 
 #import "MTCVipItemViewController.h"
 #import "MTCVipItemPhotoGalleryView.h"
-#import "MTCMeliServiceApiImpl.h"
+#import "MTCMeliServiceApi.h"
 #import "MTCPictureDto.h"
 #import "MTCPriceFavoriteButtonVipItemViewTableViewCell.h"
 #import "MTCVipItemTableViewFooter.h"
@@ -40,7 +40,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _service = [[MTCMeliServiceApiImpl alloc] init];
+        _service = [[MTCMeliServiceApi alloc] init];
         [_service setDelegate:self];
         _picturesTranslator = [[MTCPicturesJsonTranslator alloc] init];
         _cells = [[NSMutableArray alloc] init];

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MTCDescriptionDto.h"
 
-@protocol MTCMeliDescriptionServiceDelegate <MTCServiceApiDelegate>
+@protocol MTCMeliServiceApiDescriptionDelegate <MTCMeliServiceApiDelegate>
 
 - (void)onPostExecute:(MTCDescriptionDto *)item;
 

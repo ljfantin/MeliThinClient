@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "MTCMeliDescriptionService.h"
+#import "MTCMeliServiceApiDescription.h"
 
-@implementation MTCMeliDescriptionService
+@implementation MTCMeliServiceApiDescription
 
 - (instancetype)init {
 	self = [super init];
@@ -29,7 +29,7 @@
 		//construyo el request
 		AFHTTPRequestOperation *op = [self buildRequest:@"GET" path:pathPicturesWithId parameters:nil];
 
-		__block MTCMeliServiceApiImpl *weakSelf = self;
+		__block MTCMeliServiceApi *weakSelf = self;
 		[op setCompletionBlockWithSuccess: ^(AFHTTPRequestOperation *operation, id responseObject) {
 		    [[weakSelf getDelegate] onPostExecute:responseObject];
 		} failure: ^(AFHTTPRequestOperation *operation, NSError *error) {

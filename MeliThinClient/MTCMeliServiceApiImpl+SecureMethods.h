@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "MTCMeliServiceApiImpl.h"
+#import "MTCMeliServiceApi.h"
 #import "MTCItemDto.h"
 
-@interface MTCMeliServiceApiImpl (SecureMethods)
+@interface MTCMeliServiceApi (SecureMethods)
 
 - (void) getAllBookmarks:(NSString*)token;
 - (void) addBookmark:(MTCItemDto*)item withToken:(NSString*)token;

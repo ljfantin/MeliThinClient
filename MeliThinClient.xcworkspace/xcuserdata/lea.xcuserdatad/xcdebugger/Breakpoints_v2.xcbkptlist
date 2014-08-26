@@ -9,14 +9,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCMeliServiceApiImpl.m"
+            filePath = "MeliThinClient/MTCMeliServiceApi.m"
             timestampString = "429495809.567613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "-search:pager:"
-            landmarkType = "5">
+            landmarkName = "@implementation MTCMeliServiceApi"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -25,14 +25,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCMeliServiceApiImpl.m"
+            filePath = "MeliThinClient/MTCMeliServiceApi.m"
             timestampString = "429495809.567613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "-search:pager:"
-            landmarkType = "5">
+            landmarkName = "@implementation MTCMeliServiceApi"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCMeliServiceApiImpl.m"
+            filePath = "MeliThinClient/MTCMeliServiceApi.m"
             timestampString = "429495809.567613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
-            landmarkName = "-search:pager:"
+            landmarkName = "-hasConecction"
             landmarkType = "5">
             <Locations>
                <Location
@@ -271,14 +271,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCMeliServiceApiImpl.m"
+            filePath = "MeliThinClient/MTCMeliServiceApi.m"
             timestampString = "429495809.567613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "-itemWithIdentifier:attributes:"
-            landmarkType = "5">
+            landmarkName = "@implementation MTCMeliServiceApi"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -287,13 +287,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCMeliServiceApiImpl.m"
+            filePath = "MeliThinClient/MTCMeliServiceApi.m"
             timestampString = "429495809.567613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
             endingLineNumber = "75"
-            landmarkName = "-itemWithIdentifier:attributes:"
+            landmarkName = "-dealloc"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -303,14 +303,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCMeliServiceApiImpl.m"
+            filePath = "MeliThinClient/MTCMeliServiceApi.m"
             timestampString = "429495809.567613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "-itemWithIdentifier:attributes:"
-            landmarkType = "5">
+            landmarkName = "@implementation MTCMeliServiceApi"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -319,14 +319,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCMeliServiceApiImpl.m"
+            filePath = "MeliThinClient/MTCMeliServiceApi.m"
             timestampString = "429495809.567613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
             endingLineNumber = "69"
-            landmarkName = "-itemWithIdentifier:attributes:"
-            landmarkType = "5">
+            landmarkName = "@implementation MTCMeliServiceApi"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -335,14 +335,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCMeliServiceApiImpl.m"
+            filePath = "MeliThinClient/MTCMeliServiceApi.m"
             timestampString = "429496297.24949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
-            landmarkName = "-itemWithIdentifier:attributes:"
-            landmarkType = "5">
+            landmarkName = "@implementation MTCMeliServiceApi"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -351,14 +351,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeliThinClient/MTCMeliServiceApiImpl.m"
+            filePath = "MeliThinClient/MTCMeliServiceApi.m"
             timestampString = "429496298.171572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
             endingLineNumber = "67"
-            landmarkName = "-itemWithIdentifier:attributes:"
-            landmarkType = "5">
+            landmarkName = "@implementation MTCMeliServiceApi"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -373,7 +373,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "-dealloc"
+            landmarkName = "-onPostExecute:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -914,6 +914,22 @@
             startingLineNumber = "81"
             endingLineNumber = "81"
             landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeliThinClient/MTCMeliServiceOperation.m"
+            timestampString = "430705862.741809"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-initWithGetHttpMethodAndPath:andWithParameter:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

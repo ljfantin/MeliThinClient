@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MTCMeliServiceApiImpl.h"
+#import "MTCMeliServiceApi.h"
 #import "MTCMeliServiceApiItemDelegate.h"
 
-@interface MTCMeliItemService : MTCMeliServiceApiImpl
+@interface MTCMeliServiceApiItem : MTCMeliServiceApi
 
 @property (nonatomic, copy) NSString *path;
 @property (nonatomic, assign) id <MTCMeliServiceApiItemDelegate> *delegate;
 
-- (void)itemWithIdentifier:(NSString *)idItem attributes:(NSArray *)atributes;
+- (void)itemWithIdentifier:(NSString *)idItem withAttributes:(NSArray *)atributes;
 - (void)itemsWithIdentifiers:(NSArray *)idsItem;
 
 @end

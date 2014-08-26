@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "MTCMeliSearchService.h"
+#import "MTCMeliServiceApiSearch.h"
 
-@implementation MTCMeliSearchService
+@implementation MTCMeliServiceApiSearch
 
 - (instancetype)init {
 	self = [super init];
@@ -19,7 +19,8 @@
 }
 
 //TODO Ver si puedo hacer un metodo generico que haga un GET y desde este llamarlo
-- (void)search:(NSString *)query pager:(MTCPagerList *)pager {
+- (void)searchWithQuery:(NSString *)query withPager:(MTCPagerList *)pager
+{
 	/*[self preExecute];
 	   if (![self hasConecction]) {
 	    [self handleErrorWithOutConnection];
@@ -32,7 +33,7 @@
 	//construyo el request
 	AFHTTPRequestOperation *op = [self buildRequest:@"GET" path:self.pathSearch parameters:params];
     
-	__block MTCMeliServiceApiImpl *weakSelf = self;
+	__block MTCMeliServiceApi *weakSelf = self;
 	[op setCompletionBlockWithSuccess: ^(AFHTTPRequestOperation *operation, id responseObject) {
 	    NSLog(@"Respuesta json search %@: %@", query, responseObject);
 	    [[weakSelf getDelegate] onPostExecute:responseObject];

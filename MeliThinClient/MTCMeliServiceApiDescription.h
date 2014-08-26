@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 mercadolibre. All rights reserved.
 //
 
-#import "MTCMeliServiceApiImpl.h"
+#import "MTCMeliServiceApi.h"
 
-@interface MTCMeliDescriptionService : MTCMeliServiceApiImpl
+@interface MTCMeliServiceApiDescription : MTCMeliServiceApi
 
 @property (nonatomic, copy) NSString *path;
 

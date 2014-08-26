@@ -33,9 +33,9 @@
 		4FE6006B1993B58100AF3DFE /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6006A1993B58100AF3DFE /* UIImage+Utils.m */; };
 		4FE6007319940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6007119940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m */; };
 		4FE6007419940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */; };
-		4FEB147A19ABBC36008702E6 /* MTCMeliItemService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB147919ABBC36008702E6 /* MTCMeliItemService.m */; };
-		4FEB147D19ABC274008702E6 /* MTCMeliSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB147C19ABC274008702E6 /* MTCMeliSearchService.m */; };
-		4FEB148019ABC3F2008702E6 /* MTCMeliDescriptionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB147F19ABC3F2008702E6 /* MTCMeliDescriptionService.m */; };
+		4FEB147A19ABBC36008702E6 /* MTCMeliServiceApiItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB147919ABBC36008702E6 /* MTCMeliServiceApiItem.m */; };
+		4FEB147D19ABC274008702E6 /* MTCMeliServiceApiSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB147C19ABC274008702E6 /* MTCMeliServiceApiSearch.m */; };
+		4FEB148019ABC3F2008702E6 /* MTCMeliServiceApiDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB147F19ABC3F2008702E6 /* MTCMeliServiceApiDescription.m */; };
 		4FF2B0281992876F000BFE85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B0271992876F000BFE85 /* Foundation.framework */; };
 		4FF2B02A1992876F000BFE85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B0291992876F000BFE85 /* CoreGraphics.framework */; };
 		4FF2B02C1992876F000BFE85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF2B02B1992876F000BFE85 /* UIKit.framework */; };
@@ -60,7 +60,7 @@
 		8B7510C419984D9D00E03739 /* MTCItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7510C319984D9D00E03739 /* MTCItemDto.m */; };
 		8B7510C7199853F500E03739 /* MTCItemTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7510C6199853F500E03739 /* MTCItemTranslator.m */; };
 		8B9A14FA19959D3C0066221B /* MTCVipItemPhotoGalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */; };
-		8BAD05EE1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */; };
+		8BAD05EE1992FD7600BE28C1 /* MTCMeliServiceApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApi.m */; };
 		8BAE6FE619968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib */; };
 		8BAE6FE81996B67300BD9B74 /* MTCVipItemTableViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAE6FE71996B67300BD9B74 /* MTCVipItemTableViewFooter.xib */; };
 		8BAE6FEB1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6FEA1996B76B00BD9B74 /* MTCVipItemTableViewFooter.m */; };
@@ -71,6 +71,7 @@
 		8BB0753619998A3A0008F581 /* MTCDescriptionVipItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB0753419998A3A0008F581 /* MTCDescriptionVipItemViewController.xib */; };
 		8BB0753919998AFF0008F581 /* MTCDescriptionJsonTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB0753819998AFF0008F581 /* MTCDescriptionJsonTranslator.m */; };
 		8BB0753C19998B860008F581 /* MTCDescriptionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB0753B19998B860008F581 /* MTCDescriptionDto.m */; };
+		8BB585BC19AC0A2A00F985F7 /* MTCMeliServiceOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB585BB19AC0A2A00F985F7 /* MTCMeliServiceOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,19 +127,19 @@
 		4FE10171199AB0AB00354A13 /* MTCFavoritesJsonTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCFavoritesJsonTranslator.m; sourceTree = "<group>"; };
 		4FE600691993B58100AF3DFE /* UIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
 		4FE6006A1993B58100AF3DFE /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
-		4FE6006C1993CC1500AF3DFE /* MTCServiceApiDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCServiceApiDelegate.h; sourceTree = "<group>"; };
+		4FE6006C1993CC1500AF3DFE /* MTCMeliServiceApiDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiDelegate.h; sourceTree = "<group>"; };
 		4FE6007019940A3200AF3DFE /* MTCUIListItemResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCUIListItemResultTableViewCell.h; sourceTree = "<group>"; };
 		4FE6007119940A3200AF3DFE /* MTCUIListItemResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCUIListItemResultTableViewCell.m; sourceTree = "<group>"; };
 		4FE6007219940A3200AF3DFE /* MTCUIListItemResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCUIListItemResultTableViewCell.xib; sourceTree = "<group>"; };
-		4FEB147819ABBC36008702E6 /* MTCMeliItemService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliItemService.h; sourceTree = "<group>"; };
-		4FEB147919ABBC36008702E6 /* MTCMeliItemService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliItemService.m; sourceTree = "<group>"; };
-		4FEB147B19ABC274008702E6 /* MTCMeliSearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliSearchService.h; sourceTree = "<group>"; };
-		4FEB147C19ABC274008702E6 /* MTCMeliSearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliSearchService.m; sourceTree = "<group>"; };
-		4FEB147E19ABC3F2008702E6 /* MTCMeliDescriptionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliDescriptionService.h; sourceTree = "<group>"; };
-		4FEB147F19ABC3F2008702E6 /* MTCMeliDescriptionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliDescriptionService.m; sourceTree = "<group>"; };
+		4FEB147819ABBC36008702E6 /* MTCMeliServiceApiItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiItem.h; sourceTree = "<group>"; };
+		4FEB147919ABBC36008702E6 /* MTCMeliServiceApiItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceApiItem.m; sourceTree = "<group>"; };
+		4FEB147B19ABC274008702E6 /* MTCMeliServiceApiSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiSearch.h; sourceTree = "<group>"; };
+		4FEB147C19ABC274008702E6 /* MTCMeliServiceApiSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceApiSearch.m; sourceTree = "<group>"; };
+		4FEB147E19ABC3F2008702E6 /* MTCMeliServiceApiDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiDescription.h; sourceTree = "<group>"; };
+		4FEB147F19ABC3F2008702E6 /* MTCMeliServiceApiDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceApiDescription.m; sourceTree = "<group>"; };
 		4FEB148119ABC83D008702E6 /* MTCMeliServiceApiItemDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiItemDelegate.h; sourceTree = "<group>"; };
-		4FEB148219ABC94B008702E6 /* MTCMeliDescriptionServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliDescriptionServiceDelegate.h; sourceTree = "<group>"; };
-		4FEB148319ABD6E0008702E6 /* MTCMeliSearchServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliSearchServiceDelegate.h; sourceTree = "<group>"; };
+		4FEB148219ABC94B008702E6 /* MTCMeliServiceApiDescriptionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiDescriptionDelegate.h; sourceTree = "<group>"; };
+		4FEB148319ABD6E0008702E6 /* MTCMeliServiceApiSearchDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiSearchDelegate.h; sourceTree = "<group>"; };
 		4FF2B0241992876F000BFE85 /* MeliThinClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliThinClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF2B0271992876F000BFE85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FF2B0291992876F000BFE85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -177,8 +178,8 @@
 		8B7510C5199853F500E03739 /* MTCItemTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCItemTranslator.h; sourceTree = "<group>"; };
 		8B7510C6199853F500E03739 /* MTCItemTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCItemTranslator.m; sourceTree = "<group>"; };
 		8B9A14F919959D3C0066221B /* MTCVipItemPhotoGalleryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemPhotoGalleryView.xib; sourceTree = "<group>"; };
-		8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApiImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApiImpl.h; sourceTree = "<group>"; };
-		8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceApiImpl.m; sourceTree = "<group>"; };
+		8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceApi.h; sourceTree = "<group>"; };
+		8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceApi.m; sourceTree = "<group>"; };
 		8BAE6FE419968EE300BD9B74 /* MTCPriceFavoriteButtonVipItemViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCPriceFavoriteButtonVipItemViewTableViewCell.xib; sourceTree = "<group>"; };
 		8BAE6FE71996B67300BD9B74 /* MTCVipItemTableViewFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCVipItemTableViewFooter.xib; sourceTree = "<group>"; };
 		8BAE6FE91996B76B00BD9B74 /* MTCVipItemTableViewFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCVipItemTableViewFooter.h; sourceTree = "<group>"; };
@@ -196,6 +197,8 @@
 		8BB0753819998AFF0008F581 /* MTCDescriptionJsonTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCDescriptionJsonTranslator.m; sourceTree = "<group>"; };
 		8BB0753A19998B860008F581 /* MTCDescriptionDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCDescriptionDto.h; sourceTree = "<group>"; };
 		8BB0753B19998B860008F581 /* MTCDescriptionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCDescriptionDto.m; sourceTree = "<group>"; };
+		8BB585BA19AC0A2A00F985F7 /* MTCMeliServiceOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCMeliServiceOperation.h; sourceTree = "<group>"; };
+		8BB585BB19AC0A2A00F985F7 /* MTCMeliServiceOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCMeliServiceOperation.m; sourceTree = "<group>"; };
 		D7E87F6F256746BD8060E767 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -382,20 +385,22 @@
 			children = (
 				4FDFF8A819955AF40012C7D4 /* dto */,
 				4FDFF8A719955AB90012C7D4 /* translators */,
-				8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApiImpl.h */,
-				8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m */,
-				4FE6006C1993CC1500AF3DFE /* MTCServiceApiDelegate.h */,
+				8BAD05EC1992FD7600BE28C1 /* MTCMeliServiceApi.h */,
+				8BAD05ED1992FD7600BE28C1 /* MTCMeliServiceApi.m */,
 				4FE10167199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.h */,
 				4FE10168199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.m */,
-				4FEB147819ABBC36008702E6 /* MTCMeliItemService.h */,
-				4FEB147919ABBC36008702E6 /* MTCMeliItemService.m */,
-				4FEB147B19ABC274008702E6 /* MTCMeliSearchService.h */,
-				4FEB147C19ABC274008702E6 /* MTCMeliSearchService.m */,
-				4FEB147E19ABC3F2008702E6 /* MTCMeliDescriptionService.h */,
-				4FEB147F19ABC3F2008702E6 /* MTCMeliDescriptionService.m */,
+				4FEB147819ABBC36008702E6 /* MTCMeliServiceApiItem.h */,
+				4FEB147919ABBC36008702E6 /* MTCMeliServiceApiItem.m */,
+				4FEB147B19ABC274008702E6 /* MTCMeliServiceApiSearch.h */,
+				4FEB147C19ABC274008702E6 /* MTCMeliServiceApiSearch.m */,
+				4FEB147E19ABC3F2008702E6 /* MTCMeliServiceApiDescription.h */,
+				4FEB147F19ABC3F2008702E6 /* MTCMeliServiceApiDescription.m */,
+				4FE6006C1993CC1500AF3DFE /* MTCMeliServiceApiDelegate.h */,
 				4FEB148119ABC83D008702E6 /* MTCMeliServiceApiItemDelegate.h */,
-				4FEB148219ABC94B008702E6 /* MTCMeliDescriptionServiceDelegate.h */,
-				4FEB148319ABD6E0008702E6 /* MTCMeliSearchServiceDelegate.h */,
+				4FEB148219ABC94B008702E6 /* MTCMeliServiceApiDescriptionDelegate.h */,
+				4FEB148319ABD6E0008702E6 /* MTCMeliServiceApiSearchDelegate.h */,
+				8BB585BA19AC0A2A00F985F7 /* MTCMeliServiceOperation.h */,
+				8BB585BB19AC0A2A00F985F7 /* MTCMeliServiceOperation.m */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -605,7 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BAD05EE1992FD7600BE28C1 /* MTCMeliServiceApiImpl.m in Sources */,
+				8BAD05EE1992FD7600BE28C1 /* MTCMeliServiceApi.m in Sources */,
 				4FE1016F199AA7DF00354A13 /* MTCSearchResultJsonTranslator.m in Sources */,
 				4FDFF8A6199555B00012C7D4 /* MTCPictureDto.m in Sources */,
 				4FDFF8A019954C280012C7D4 /* MTCSearchJsonTranslator.m in Sources */,
@@ -624,7 +629,7 @@
 				4F816BBC1998F96100E64B32 /* MTCBuyingModeTranslator.m in Sources */,
 				4F86382819A4EFD3002E1045 /* NSDateFormatter+MTCDateFormatter.m in Sources */,
 				4FF8A96C199EA9BE003ECFB5 /* UIColor+MTCColorPalette.m in Sources */,
-				4FEB147D19ABC274008702E6 /* MTCMeliSearchService.m in Sources */,
+				4FEB147D19ABC274008702E6 /* MTCMeliServiceApiSearch.m in Sources */,
 				8B7510C7199853F500E03739 /* MTCItemTranslator.m in Sources */,
 				4FE10169199A53DD00354A13 /* MTCMeliServiceApiImpl+SecureMethods.m in Sources */,
 				4FF2B0381992876F000BFE85 /* MTCAppDelegate.m in Sources */,
@@ -643,8 +648,9 @@
 				8BAE6FF11996C5EB00BD9B74 /* MTCConditiontTypeDto.m in Sources */,
 				8BB0753919998AFF0008F581 /* MTCDescriptionJsonTranslator.m in Sources */,
 				4FF2B06019928A55000BFE85 /* MTCItemsFavoritiesResultsViewController.m in Sources */,
-				4FEB147A19ABBC36008702E6 /* MTCMeliItemService.m in Sources */,
-				4FEB148019ABC3F2008702E6 /* MTCMeliDescriptionService.m in Sources */,
+				4FEB147A19ABBC36008702E6 /* MTCMeliServiceApiItem.m in Sources */,
+				8BB585BC19AC0A2A00F985F7 /* MTCMeliServiceOperation.m in Sources */,
+				4FEB148019ABC3F2008702E6 /* MTCMeliServiceApiDescription.m in Sources */,
 				4F107006199BB9C0002C5A75 /* MTCSearchHistoryManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
