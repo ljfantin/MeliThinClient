@@ -17,62 +17,42 @@
 
 @implementation MTCMeliServiceApi
 
-- (instancetype)init {
+
+- (instancetype)initWithGetHttpMethodAndPath:(NSString *)path andWithParameter:(NSDictionary *)parameters {
 	self = [super init];
 	if (self) {
-		//TODO Hacer una clase que levante propiedades de un archivo
 		self.url = @"https://api.mercadolibre.com/";
+		NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:self.url parameters:parameters error:nil];
+		self.operation = [[[AFHTTPRequestOperation alloc] initWithRequest:request] autorelease];
+		self.operation.responseSerializer = [AFJSONResponseSerializer serializer];
 	}
 	return self;
 }
 
-- (void)buildRequest:(NSString *)httpMethod path:(NSString *)path parameters:(NSDictionary *)parameters;
-{
-	//construyo url
-	NSMutableString *completeUrl = [NSMutableString stringWithString:self.url];
-	[completeUrl appendString:path];
+- (instancetype)initWithPostHttpMethodAndPath:(NSString *)path andWithParameter:(NSDictionary *)parameters {
+	self = [super init];
+	if (self) {
+		self.url = @"https://api.mercadolibre.com/";
+		NSMutableString *completeUrl = [NSMutableString stringWithString:self.url];
+		[completeUrl appendString:path];
 
-	NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:httpMethod URLString:completeUrl parameters:parameters error:nil];
-	//Ver esto !!!
-	self.operation = [[[AFHTTPRequestOperation alloc] initWithRequest:request] autorelease];
-	self.operation.responseSerializer = [AFJSONResponseSerializer serializer];
+		NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST" URLString:self.url parameters:parameters error:nil];
+		self.operation = [[[AFHTTPRequestOperation alloc] initWithRequest:request] autorelease];
+		self.operation.responseSerializer = [AFJSONResponseSerializer serializer];
+	}
+	return self;
 }
 
-- (void)cancelOperation {
+- (void)run {
+	[self.operation start];
+}
+
+- (BOOL)isRunning {
+	return [self.operation isExecuting];
+}
+
+- (void)cancel {
 	[self.operation cancel];
-}
-
-- (BOOL)hasConecction {
-	return ([[AFNetworkReachabilityManager sharedManager] isReachable]);
-}
-
-/*- (void)preExecute {
-   ////Si el delegate tiene implementado onPreExecute
-   if ([[self getDelegate] respondsToSelector:@selector(onPreExecute)]) {
-   [[self getDelegate] onPreExecute];
-   }
-   }*/
-
-/*- (void)handleError:(NSError *)error {
-    NSLog(@"Error: %@", error);
-    //Si el delegate tiene implementado el manejo de errores genericos entonces lo invoco.
-    if ([[self getDelegate] respondsToSelector:@selector(onHandleError:)]) {
-        [[self getDelegate] onHandleError:error];
-    }
-   }*/
-
-/*- (void)handleErrorWithOutConnection {
-    NSLog(@"Error: Se corto la conexion");
-    //Si el delegate tiene implementado el manejo de errores para cuando se corta la conexion
-    if ([[self getDelegate] respondsToSelector:@selector(onHandleErrorWithOutConnection)]) {
-        [[self getDelegate] onHandleErrorWithOutConnection];
-    }
-   }*/
-
-- (void)dealloc {
-	[_url release];
-	_url = nil;
-	[super dealloc];
 }
 
 @end

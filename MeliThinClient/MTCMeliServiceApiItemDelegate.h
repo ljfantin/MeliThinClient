@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MTCItemDto.h"
+#import "MTCMeliServiceApiDelegate.h"
 
 @protocol MTCMeliServiceApiItemDelegate <MTCMeliServiceApiDelegate>
 

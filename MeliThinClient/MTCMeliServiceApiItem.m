@@ -10,58 +10,49 @@
 
 @implementation MTCMeliServiceApiItem
 
-- (instancetype)init {
-	self = [super init];
-	if (self) {
-		self.path = @"items/%@/";
+
++ (instancetype)meliServiceApiItemWithIdentifier:(NSString *)idItem withAttributes:(NSArray *)atributes withDelegate:(id <MTCMeliServiceApiItemDelegate> )delegate {
+	//agrego parametros
+	NSDictionary *params =  nil;
+	if (atributes != nil) {
+		NSString *attributesJoined = [atributes componentsJoinedByString:@","];
+		params = @{ @"attributes":attributesJoined };
 	}
-	return self;
+
+	NSString *pathWithIdItemAndAttributes = [NSString stringWithFormat:@"items/%@/", idItem];
+
+	MTCMeliServiceApiItem *serviceApi = [[MTCMeliServiceApiItem alloc] initWithGetHttpMethodAndPath:pathWithIdItemAndAttributes andWithParameter:params];
+	__block id <MTCMeliServiceApiItemDelegate> weakDelegate = delegate;
+	[serviceApi.operation setCompletionBlockWithSuccess: ^(AFHTTPRequestOperation *operation, id responseObject) {
+	    [weakDelegate onPostExecute:responseObject];
+	} failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
+	    //TODO hay warning
+	    [weakDelegate handleError:error];
+	}];
+
+	return serviceApi;
 }
 
-- (void)itemWithIdentifier:(NSString *)idItem attributes:(NSArray *)atributes
-{
-    //agrego parametros
-    NSDictionary *params =  nil;
-    if (atributes != nil) {
-        NSString *attributesJoined = [atributes componentsJoinedByString:@","];
-        params = @{ @"attributes":attributesJoined };
-    }
++ (instancetype)meliServiceApiItemWithIdentifiers:(NSArray *)idsItem {
+	//agrego parametros
+	NSDictionary *params =  nil;
+	if (idsItem != nil) {
+		NSString *attributesJoined = [idsItem componentsJoinedByString:@","];
+		params = @{ @"ids":attributesJoined };
+	}
 
-    NSString *pathPicturesWithId = [NSString stringWithFormat:self.path, idItem];
+	NSString *pathMultigetItems = [NSString stringWithFormat:self.pathMultiGetsItems, params];
 
-    //construyo el request
-    AFHTTPRequestOperation *op = [self buildRequest:@"GET" path:pathPicturesWithId parameters:params];
+	MTCMeliServiceApiItem *serviceApi = [[MTCMeliServiceApiItem alloc] initWithGetHttpMethodAndPath:pathWithIdItemAndAttributes andWithParameter:params];
+	__block id <MTCMeliServiceApiItemDelegate> weakDelegate = delegate;
+	[serviceApi.operation setCompletionBlockWithSuccess: ^(AFHTTPRequestOperation *operation, id responseObject) {
+	    [weakDelegate onPostExecute:responseObject];
+	} failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
+	    //TODO hay warning
+	    [weakDelegate handleError:error];
+	}];
 
-    __block MTCMeliServiceApi *weakSelf = self;
-    [op setCompletionBlockWithSuccess: ^(AFHTTPRequestOperation *operation, id responseObject) {
-		    [[weakSelf getDelegate] onPostExecute:responseObject];
-    } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
-		    [weakSelf handleError:error];
-    }];
-    [[NSOperationQueue mainQueue] addOperation:op];
-}
-
-- (void)itemsWithIdentifiers:(NSArray *)idsItem {
-	
-    //agrego parametros
-    NSDictionary *params =  nil;
-    if (idsItem != nil) {
-        NSString *attributesJoined = [idsItem componentsJoinedByString:@","];
-        params = @{ @"ids":attributesJoined };
-    }
-
-    NSString *pathMultigetItems = [NSString stringWithFormat:self.pathMultiGetsItems, params];
-
-    //construyo el request
-    AFHTTPRequestOperation *op = [self buildRequest:@"GET" path:pathMultigetItems parameters:params];
-
-    __block MTCMeliServiceApi *weakSelf = self;
-    [op setCompletionBlockWithSuccess: ^(AFHTTPRequestOperation *operation, id responseObject) {
-        [[weakSelf getDelegate] onPostExecute:responseObject];
-    } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
-		    [weakSelf handleError:error];
-    }];
-    [[NSOperationQueue mainQueue] addOperation:op];
+	return serviceApi;
 }
 
 @end

@@ -13,9 +13,9 @@
 @interface MTCMeliServiceApiItem : MTCMeliServiceApi
 
 @property (nonatomic, copy) NSString *path;
-@property (nonatomic, assign) id <MTCMeliServiceApiItemDelegate> *delegate;
+//@property (nonatomic, assign) id <MTCMeliServiceApiItemDelegate> *delegate;
 
-- (void)itemWithIdentifier:(NSString *)idItem withAttributes:(NSArray *)atributes;
-- (void)itemsWithIdentifiers:(NSArray *)idsItem;
++ (instancetype)meliServiceApiItemWithIdentifier:(NSString *)idItem withAttributes:(NSArray *)atributes withDelegate:(id <MTCMeliServiceApiItemDelegate> )delegate;
++ (instancetype)meliServiceApiItemWithIdentifiers:(NSArray *)idsItem withDelegate:(id <MTCMeliServiceApiItemDelegate> )delegate;
 
 @end

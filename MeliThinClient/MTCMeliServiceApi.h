@@ -10,16 +10,19 @@
 #import "MTCSearchJsonTranslator.h"
 #import "MTCItemTranslator.h"
 #import "AFHTTPRequestOperation.h"
+#import "MTCMeliServiceOperation.h"
 
 @interface MTCMeliServiceApi : NSObject
 
 @property (nonatomic, copy) NSString *url;
+@property (nonatomic, retain) AFHTTPRequestOperation *operation;
 
-/*
-   - (void)handleErrorWithOutConnection;
-   - (void)handleError:(NSError *)error;
-   - (BOOL)hasConecction;
- */
-- (void)cancelOperation;
+- (instancetype)initWithGetHttpMethodAndPath:(NSString *)path andWithParameter:(NSDictionary *)parameters;
+
+- (instancetype)initWithPostHttpMethodAndPath:(NSString *)path andWithParameter:(NSDictionary *)parameters;
+
+- (void)run;
+- (BOOL)isRunning;
+- (void)cancel;
 
 @end
